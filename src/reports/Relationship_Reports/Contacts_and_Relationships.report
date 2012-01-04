@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>FIRST_NAME</field>
+    </columns>
+    <columns>
+        <field>LAST_NAME</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Relationship__c.RelatedContact__c</field>
+    </columns>
+    <columns>
+        <field>Relationship__c.Type__c</field>
+    </columns>
+    <columns>
+        <field>Relationship__c.Status__c</field>
+    </columns>
+    <columns>
+        <field>Relationship__c.Description__c</field>
+    </columns>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>CONTACT_ID</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Contacts and Relationships</name>
+    <reportType>ContactCustomEntity$Relationship__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>LAST_ACTIVITY</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
