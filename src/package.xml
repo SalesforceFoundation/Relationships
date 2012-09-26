@@ -6,16 +6,32 @@
     </types>
     <types>
         <members>*</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomLabels</name>
     </types>
     <types>
         <members>*</members>
         <name>CustomObject</name>
     </types>
     <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
         <members>Relationship_Reports</members>
         <members>Relationship_Reports/Contacts_and_Relationships</members>
         <name>Report</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
     </types>
     <version>23.0</version>
 </Package>
