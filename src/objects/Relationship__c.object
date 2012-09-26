@@ -88,6 +88,14 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>SYSTEM_SystemCreated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>_SYSTEM: SystemCreated</label>
+        <trackHistory>false</trackHistory>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Status__c</fullName>
         <deprecated>false</deprecated>
         <externalId>false</externalId>
@@ -126,6 +134,18 @@
             </picklistValues>
             <picklistValues>
                 <fullName>Acquaintance</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Father</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Niece</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wife</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
