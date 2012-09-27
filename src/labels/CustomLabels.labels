@@ -1,3 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata"/>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Automatic_Relationship_Help_Text</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Automatic Relationship Help Text</shortDescription>
+        <value>Defines the way a relationship type, and its reciprocal, is displayed.</value>
+    </labels>
+    <labels>
+        <fullName>Female</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Female</shortDescription>
+        <value>Female</value>
+    </labels>
+    <labels>
+        <fullName>List_Setting_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>List Setting Help Text</shortDescription>
+        <value>List Settings: Appends the reciprocal relationship based on the gender from the suffix and gender fields on the contact.  You can define the relationships in the custom settings section titled &quot;custom relationship settings&quot; label.</value>
+    </labels>
+    <labels>
+        <fullName>Male</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Male</shortDescription>
+        <value>Male</value>
+    </labels>
+    <labels>
+        <fullName>Relationship_Split</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship Split</shortDescription>
+        <value>-</value>
+    </labels>
+    <labels>
+        <fullName>Value_Inversion_Help_Text</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Value Inversion Help Text</shortDescription>
+        <value>Value Inversion:
 
+Uses a hyphenated option as the type and inverts the selection on the reciprocal.</value>
+    </labels>
+</CustomLabels>
