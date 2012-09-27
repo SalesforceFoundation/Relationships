@@ -29,24 +29,21 @@
 */
 trigger Relationships on Relationship__c (before insert, before update, before delete, 
 after insert, after update, after delete, after undelete) {
-
-  
-    if(Trigger.isInsert && Trigger.isBefore){
-        Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.beforeInsert);
+    if (Relationships_ProcessControl.hasRun != true){  
+        if(Trigger.isBefore && Trigger.isInsert){    	   
+            Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.beforeInsert);
+        }        
+        else if(Trigger.isBefore && Trigger.isUpdate){    	
+            Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.beforeUpdate);
+        }
+        else if(Trigger.isAfter && Trigger.isInsert ){         
+            Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.afterInsert);
+        }    
+        else if(Trigger.isAfter && Trigger.isUpdate ){    	   
+            Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.afterUpdate);
+        }
+        else if(Trigger.isAfter && Trigger.isDelete ){
+            Relationships process = new Relationships(Trigger.old, null, Relationships_Utils.triggerAction.afterDelete);
+        }   
     }
-    if( Trigger.isAfter && Trigger.isInsert ){
-        Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.afterInsert);
-    }
-    if(Trigger.isUpdate && Trigger.isBefore){
-        Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.beforeUpdate);
-    }
-    if( Trigger.isAfter && Trigger.isUpdate ){
-        Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.afterUpdate);
-    }/*
-    if( Trigger.isAfter && Trigger.isUpdate ){
-        Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.afterUpdate);
-    }*/
-    if( Trigger.isAfter && Trigger.isDelete ){
-        Relationships process = new Relationships(Trigger.old, null, Relationships_Utils.triggerAction.afterDelete);
-    }   
 }
