@@ -6,6 +6,50 @@
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>DISABLE_RelationshipCM_trigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>DISABLES the RelationshipCampaignMembers.trigger (CampaignMember, after insert, after update) 
+- checking this box will disable a trigger. This can cause erratic and unpredictable behavior in your NPSP. FOR ADVANCED CONSULTANTS AND DEVELOPERS ONLY.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DISABLES the RelationshipCampaignMembers.trigger (CampaignMember, after insert, after update) 
+- checking this box will disable a trigger. This can cause erratic and unpredictable behavior in your NPSP. FOR ADVANCED CONSULTANTS AND DEVELOPERS ONLY.</inlineHelpText>
+        <label>DISABLE_RelationshipCM_trigger</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_RelationshipContacts_trigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>DISABLES the RelationshipContacts.trigger (Contact, after delete)
+- checking this box will disable a trigger.  This can cause erratic and unpredictable behavior in your NPSP.  FOR ADVANCED CONSULTANT AND DEVELOPERS ONLY.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DISABLES the RelationshipContacts.trigger (Contact, after delete)
+- checking this box will disable a trigger.  This can cause erratic and unpredictable behavior in your NPSP.  FOR ADVANCED CONSULTANT AND DEVELOPERS ONLY.</inlineHelpText>
+        <label>DISABLE_RelationshipContacts_trigger</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DISABLE_Relationships_trigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>DISABLES the Relationships.trigger (Relationship__c, before insert, before update, before delete, after insert, after update, after delete, after undelete)
+- checking this box will disable a trigger.  This can cause erratic and unpredictable behavior in your NPSP.  FOR ADVANCED CONSULTANT AND DEVELOPERS ONLY.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DISABLES the Relationships.trigger (Relationship__c, before insert, before update, before delete, after insert, after update, after delete, after undelete)
+- checking this box will disable a trigger. This can cause erratic and unpredictable behavior in y</inlineHelpText>
+        <label>DISABLE_Relationships_trigger</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Gender_Field__c</fullName>
+        <description>The custom field used to define the gender of a Contact for determining reciprocal relationships</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The custom field used to define the gender of a Contact for determining reciprocal relationships</inlineHelpText>
+        <label>Gender Field</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Reciprocal_Method__c</fullName>
         <externalId>false</externalId>
         <label>Reciprocal Method</label>
