@@ -33,5 +33,28 @@
 * @description Simple enum for defining trigger types
 */
 public class Relationships_Utils {
+	private static Relationship_Settings__c RelationshipSettings;
+	
 	public enum triggerAction {beforeInsert, beforeUpdate, beforeDelete, afterInsert, afterUpdate, afterDelete, afterUndelete}
+    
+    public static Relationship_Settings__c getRelationshipSettings(){
+        if (RelationshipSettings == null){
+            RelationshipSettings = Relationship_Settings__c.getOrgDefaults();
+            
+            //if we don't have org defaults...
+            if (RelationshipSettings == null){
+                RelationshipSettings = new Relationship_Settings__c(
+                   
+                
+                );
+                
+                insert RelationshipSettings;	
+            }
+        }	
+    	
+    	return RelationshipSettings;
+    }
+
+
+
 }
