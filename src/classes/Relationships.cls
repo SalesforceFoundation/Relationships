@@ -38,6 +38,7 @@ public with sharing class Relationships {
 	/// <summary> Default Constructor </summary>
 	public Relationships()
 	{
+        
 	}
 
 	/// <name> Relationships </name>
@@ -54,6 +55,9 @@ public with sharing class Relationships {
 		List<Relationship__c> relationshipsToDelete = new List<Relationship__c>();
 		List<Relationship__c> reciprocalsToUpdate = new List<Relationship__c>();
 		
+		if (ta==Relationships_Utils.triggerAction.afterUpdate){
+		Relationships_ProcessControl.hasRun = true;
+		}
 		Integer i = 0;			// processing counter		
 		
 		for(Relationship__c r : Relationships) 
@@ -177,20 +181,25 @@ public with sharing class Relationships {
 	{
 		List<Relationship__c> relationshipsToCreate = new List<Relationship__c>();
 		List<Relationship__c> relationshipsToUpdate = new List<Relationship__c>();
-		for(Relationship__c r : Relationships) 
-		{
-			Relationship__c copy = new Relationship__c();
-			copy.Contact__c = r.RelatedContact__c;
-			copy.RelatedContact__c = r.Contact__c;
-			copy.Status__c = r.Status__c;
-			copy.Type__c = r.Type__c;
+		
+		
+	            
+        for(Relationship__c r : Relationships) 
+        {
+            Relationship__c copy = new Relationship__c();        	   
+        	copy.Contact__c = r.RelatedContact__c;
+            copy.RelatedContact__c = r.Contact__c;
+            copy.Status__c = r.Status__c;
 			copy.ReciprocalRelationship__c = r.Id;
 			copy.Description__c = r.Description__c;
+			copy.SYSTEM_SystemCreated__c = true;
 			relationshipsToCreate.add(copy);
 		}
-
+		
+		//evaluate and add the type
+		addType(Relationships, relationshipstoCreate);
+		
 		insert relationshipsToCreate;
-
 	}
 
 	/// <name> updateRelationship </name>
@@ -198,13 +207,16 @@ public with sharing class Relationships {
 	/// <param name="Relationships">  </param>
 	/// <param name="oldRelationships">  </param>
 	public static void updateRelationship(Relationship__c[] Relationships, Relationship__c[] oldRelationships)
-	{
+	{		
 		List<Relationship__c> relationshipsToCreate = new List<Relationship__c>();
 		List<Relationship__c> relationshipsToUpdate = new List<Relationship__c>();
 		Integer counter = 0;											// processing counter		
 
 		for(Relationship__c r : Relationships) 
 		{
+			system.debug('STATUS: ' + r.Type__c + ' -- ' + oldRelationships[counter].Type__c);
+			system.debug('Reciprocal Relationship: ' + r.ReciprocalRelationship__c);
+			
 			//SWA 2009-05-13 removed a duplicate check for change to Status__c from this OR statement
 			if ((r.Status__c != oldRelationships[counter].Status__c || r.Type__c != oldRelationships[counter].Type__c || r.Description__c != oldRelationships[counter].Description__c)&& r.ReciprocalRelationship__c != null)
 			{
@@ -215,12 +227,115 @@ public with sharing class Relationships {
 					copy.Contact__c = r.RelatedContact__c;
 				}
 				copy.Status__c = r.Status__c;
-				copy.Type__c = r.Type__c;
 				copy.Description__c = r.Description__c;
 				relationshipsToUpdate.add(copy);
 			}
 			counter += 1;
 		}
+		system.debug('++++++++++++++++++++++++++++++++++++++++++++' + relationshipsToUpdate.size());
+		
+		//add type info as needed
+		addType(Relationships, relationshipstoUpdate);
 		update relationshipsToUpdate;
+		
 	}
+	
+	public static Relationship_Settings__c getRelationshipSettings(){
+		Relationship_Settings__c rs;
+		rs = Relationship_Settings__c.getOrgDefaults();
+		if (rs == null){
+			rs = new Relationship_Settings__c(Reciprocal_Method__c = 'List Setting');
+			insert rs;
+		}
+		
+		return rs;
+		
+	}
+	
+	private static void addType(list<Relationship__c> rList, list<Relationship__c> rCopy){
+		
+		Relationship_Settings__c rs = getRelationshipSettings();
+        
+        //used for tracking place in array
+        integer counter = 0;		    
+		    
+        if (rs.Reciprocal_Method__c == 'List Setting'){            
+            map<string, Relationship_Lookup__c> rlMap = Relationship_Lookup__c.getAll();
+        
+            //remove inactive values
+            for (string s : rlMap.keySet()){
+                if (rlMap.get(s).Active__c != true){
+                    rlMap.remove(s);
+                }
+            }
+        
+            list<id> rIDs = new list<id>();
+                
+            for (Relationship__c r : rList){
+                rIDs.add(r.RelatedContact__c);
+            }
+        /*
+            map<id, Contact> cMap = new map<id,Contact>([select id, Salutation, Gender__c from Contact where id IN :rIDs]);
+                
+            for(Relationship__c r : rList){
+            	
+                Relationship__c copy = rCopy[counter];
+
+                Contact relatedContact = cMap.get(r.RelatedContact__c);
+            
+                if (rlMap.containsKey(r.Type__c)){
+                    if (relatedContact.Salutation == 'Mr.' && rlMap.get(r.Type__c).Male__c != null){
+                        copy.Type__c = rlMap.get(r.Type__c).Male__c;
+                    }
+                    else if ((relatedContact.Salutation == 'Ms.' || relatedContact.Salutation == 'Mrs.') && rlMap.get(r.Type__c).Female__c != null){
+                        copy.Type__c = rlMap.get(r.Type__c).Female__c;
+                    }
+                    //no salutation, check gender
+                    else{
+                        if ((relatedContact.Gender__c == system.label.Male) && rlMap.get(r.Type__c).Male__c != null){
+                            copy.Type__c = rlMap.get(r.Type__c).Male__c;
+                        }               
+                        else if ((relatedContact.Gender__c == system.label.Female) && rlMap.get(r.Type__c).Female__c != null){
+                            copy.Type__c = rlMap.get(r.Type__c).Female__c;
+                        }
+                        //ambiguous gender                
+                        else{
+                            copy.Type__c = rlMap.get(r.Type__c).Neutral__c;
+                        }       
+                    }
+                }                
+                //no matching custom list setting, use provided type
+                else{
+                    copy.Type__c = r.Type__c;
+                }
+                
+                counter++;
+            }
+            */
+        }
+        
+        else if(rs.Reciprocal_Method__c == 'Value Inversion'){
+            for (Relationship__c r : rList){            
+            
+                
+                //instead lets split the type
+                list<string> splitrelationship = r.Type__c.split(system.label.Relationship_Split);
+                string newstring = splitrelationship[1] + system.label.Relationship_Split + splitrelationship[0];
+            
+                rCopy[counter].Type__c = newstring;
+                counter++;
+            }
+        }
+        else{
+        	for (Relationship__c r : rList){
+            	rCopy[counter].Type__c = r.Type__c;
+            	counter++; 
+        	}	
+        }
+		
+		
+	}
+	
+	
+	
 }
