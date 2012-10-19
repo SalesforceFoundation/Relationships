@@ -272,12 +272,13 @@ public with sharing class Relationships {
             list<id> rIDs = new list<id>();
                 
             for (Relationship__c r : rList){
-                rIDs.add(r.RelatedContact__c);
+            //    rIDs.add(r.RelatedContact__c);
+                rIDs.add(r.Contact__c);
             }            
             
-            String query_string = 'select id, Salutation';
-            
+            String query_string = 'select id, Salutation';            
             String gender_field = '';
+            
             if (rs.Gender_Field__c != null){
                 gender_field = rs.Gender_Field__c;
                 query_string += ', ' + gender_field;            	
@@ -291,11 +292,11 @@ public with sharing class Relationships {
             	
                 Relationship__c copy = rCopy[counter];
 
-                Contact relatedContact = cMap.get(r.RelatedContact__c);
+                Contact relatedContact = cMap.get(r.Contact__c);
             
                 if (rlMap.containsKey(r.Type__c)){
                     //was a gender field defined? 
-                    if (gender_field != null && relatedContact.get(gender_field) != null){                        
+                    if (gender_field != null && gender_field != '' && relatedContact.get(gender_field) != null){                        
                         
                         String contact_gender = (String)relatedContact.get(gender_field);
                         List<String> malelist = system.label.Male.split(',');                                                                                                        
