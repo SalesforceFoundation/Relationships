@@ -33,5 +33,20 @@
 * @description Controller for Relationships Setings VF page 
 */
 public with sharing class RelationshipsSettings_CTRL {
+	
+	Relationship_Settings__c relSettings;
+	
+	//controls the active tab
+	public String active_tab{get;set;}
+	
+	
+	
+	
+	public RelationshipsSettings_CTRL(){
+		relSettings = Relationships_Utils.getRelationshipSettings();
+		active_tab = 'general_settings'; 
+		
+		
+	}
 
 }
