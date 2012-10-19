@@ -148,6 +148,14 @@
                 <fullName>Wife</fullName>
                 <default>false</default>
             </picklistValues>
+            <picklistValues>
+                <fullName>Son</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Daughter</fullName>
+                <default>false</default>
+            </picklistValues>
             <sorted>false</sorted>
         </picklist>
         <trackHistory>false</trackHistory>
