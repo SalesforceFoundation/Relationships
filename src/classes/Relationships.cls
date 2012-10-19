@@ -273,10 +273,20 @@ public with sharing class Relationships {
                 
             for (Relationship__c r : rList){
                 rIDs.add(r.RelatedContact__c);
+            }            
+            
+            String query_string = 'select id, Salutation';
+            
+            String gender_field = '';
+            if (rs.Gender_Field__c != null){
+                gender_field = rs.Gender_Field__c;
+                query_string += ', ' + gender_field;            	
             }
-        /*
-            map<id, Contact> cMap = new map<id,Contact>([select id, Salutation, Gender__c from Contact where id IN :rIDs]);
-                
+            
+            query_string += ' from Contact where Id IN :rIDs';                         
+            
+            map<id, Contact> cMap = new map<id,Contact>((List<Contact>)database.query('select id, Salutation from Contact where id IN :rIDs'));
+            
             for(Relationship__c r : rList){
             	
                 Relationship__c copy = rCopy[counter];
@@ -284,40 +294,38 @@ public with sharing class Relationships {
                 Contact relatedContact = cMap.get(r.RelatedContact__c);
             
                 if (rlMap.containsKey(r.Type__c)){
-                    if (relatedContact.Salutation == 'Mr.' && rlMap.get(r.Type__c).Male__c != null){
+                    //was a gender field defined? 
+                    if (gender_field != null && relatedContact.get(gender_field) != null){
+                                                
+                        
+                        	
+                    	
+                    	
+                    	
+                    }
+                    
+                    else if (relatedContact.Salutation == 'Mr.' && rlMap.get(r.Type__c).Male__c != null){
                         copy.Type__c = rlMap.get(r.Type__c).Male__c;
                     }
                     else if ((relatedContact.Salutation == 'Ms.' || relatedContact.Salutation == 'Mrs.') && rlMap.get(r.Type__c).Female__c != null){
                         copy.Type__c = rlMap.get(r.Type__c).Female__c;
                     }
-                    //no salutation, check gender
-                    else{
-                        if ((relatedContact.Gender__c == system.label.Male) && rlMap.get(r.Type__c).Male__c != null){
-                            copy.Type__c = rlMap.get(r.Type__c).Male__c;
-                        }               
-                        else if ((relatedContact.Gender__c == system.label.Female) && rlMap.get(r.Type__c).Female__c != null){
-                            copy.Type__c = rlMap.get(r.Type__c).Female__c;
-                        }
-                        //ambiguous gender                
-                        else{
-                            copy.Type__c = rlMap.get(r.Type__c).Neutral__c;
-                        }       
-                    }
-                }                
+                    
+                    //can't match up gender, bad field or otherwise
+                    else{                    	
+                    	copy.Type__c = rlMap.get(r.Type__c).Neutral__c;                    	
+                    }          
+                }                            
                 //no matching custom list setting, use provided type
                 else{
                     copy.Type__c = r.Type__c;
-                }
-                
+                }                
                 counter++;
-            }
-            */
+            }            
         }
         
         else if(rs.Reciprocal_Method__c == 'Value Inversion'){
-            for (Relationship__c r : rList){            
-            
-                
+            for (Relationship__c r : rList){                           
                 //instead lets split the type
                 list<string> splitrelationship = r.Type__c.split(system.label.Relationship_Split);
                 string newstring = splitrelationship[1] + system.label.Relationship_Split + splitrelationship[0];
@@ -332,10 +340,5 @@ public with sharing class Relationships {
             	counter++; 
         	}	
         }
-		
-		
 	}
-	
-	
-	
 }
