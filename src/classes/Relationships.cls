@@ -285,7 +285,7 @@ public with sharing class Relationships {
             
             query_string += ' from Contact where Id IN :rIDs';                         
             
-            map<id, Contact> cMap = new map<id,Contact>((List<Contact>)database.query('select id, Salutation from Contact where id IN :rIDs'));
+            map<id, Contact> cMap = new map<id,Contact>((List<Contact>)database.query(query_string));
             
             for(Relationship__c r : rList){
             	
@@ -295,13 +295,36 @@ public with sharing class Relationships {
             
                 if (rlMap.containsKey(r.Type__c)){
                     //was a gender field defined? 
-                    if (gender_field != null && relatedContact.get(gender_field) != null){
-                                                
+                    if (gender_field != null && relatedContact.get(gender_field) != null){                        
                         
-                        	
-                    	
-                    	
-                    	
+                        String contact_gender = (String)relatedContact.get(gender_field);
+                        List<String> malelist = system.label.Male.split(',');                                                                                                        
+                        List<String> femalelist = system.label.Female.split(',');                       
+                        String match_type = '';                        
+                        
+                        //try male
+                        for (String s : malelist){
+                        	if (contact_gender.toLowerCase() == s.toLowerCase().trim()){
+                                match_type = 'male';
+                        		break;
+                        	}
+                        }
+                        //if we haven't found it, try female
+                        if(match_type == ''){
+                            for (String s : femalelist){
+                                if (contact_gender.toLowerCase() == s.toLowerCase().trim()){
+                                    match_type = 'female';
+                                    break;
+                                }
+                            }
+                        }     
+                        
+                        if (match_type == 'male' && rlMap.get(r.Type__c).Male__c != null)
+                            copy.Type__c = rlMap.get(r.Type__c).Male__c;
+                        else if (match_type == 'female' && rlMap.get(r.Type__c).Female__c != null)                            
+                            copy.Type__c = rlMap.get(r.Type__c).Female__c;
+                        else
+                            copy.Type__c = rlMap.get(r.Type__c).Neutral__c;
                     }
                     
                     else if (relatedContact.Salutation == 'Mr.' && rlMap.get(r.Type__c).Male__c != null){
