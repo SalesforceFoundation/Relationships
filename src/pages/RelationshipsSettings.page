@@ -1,6 +1,5 @@
-<apex:page id="NPSPRelationshipsSettings" controller="RelationshipsSettings_CTRL">
+<apex:page id="NPSPRelationshipsSettings" controller="RelationshipsSettings_CTRL" tabStyle="Relationships_Settings__tab">
     <apex:PageBlock >
-        <apex:sectionHeader title="Relationships Configuration & Settings" subtitle="Configuration & Settings" />
         <apex:Pagemessages />
         <apex:PageBlockSection columns="1">
             <apex:outputtext value="{!$Label.RelationshipsSettingsDescription}" style="font-style:italic;" />
@@ -10,6 +9,14 @@
             <apex:TabPanel switchtype="client" value="{!active_tab}" id="tabpanel">
                 <apex:tab label="General Settings" name="general_settings">
                 </apex:tab>
+                <apex:tab label="Reciprocal Relationships" name="reciprocal_settings">
+                </apex:tab>
+                <apex:tab label="Relationships Errors" name="relationships_errors">
+                </apex:tab>
+                
+                
+                
+                
             </apex:TabPanel>                                    
         </apex:form>                
     </apex:PageBlock>                                 
