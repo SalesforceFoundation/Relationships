@@ -40,6 +40,14 @@
         <value>-</value>
     </labels>
     <labels>
+        <fullName>RelationshipsSettingsDescription</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RelationshipsSettingsDescription</shortDescription>
+        <value>Settings that control the behavior of the Relationships package. Changing these will change how the Relationships records behave.</value>
+    </labels>
+    <labels>
         <fullName>Value_Inversion_Help_Text</fullName>
         <language>en_US</language>
         <protected>false</protected>
