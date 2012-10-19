@@ -34,10 +34,11 @@
 */
 public with sharing class RelationshipsSettings_CTRL {
 	
-	Relationship_Settings__c relSettings;
+	public Relationship_Settings__c relSettings{get;set;}
 	
 	//controls the active tab
 	public String active_tab{get;set;}
+	public Boolean canEditRelSettings{get;set;}
 	
 	
 	
@@ -45,6 +46,7 @@ public with sharing class RelationshipsSettings_CTRL {
 	public RelationshipsSettings_CTRL(){
 		relSettings = Relationships_Utils.getRelationshipSettings();
 		active_tab = 'general_settings'; 
+		canEditRelSettings = false;
 		
 		
 	}
