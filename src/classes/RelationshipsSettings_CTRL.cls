@@ -38,8 +38,26 @@ public with sharing class RelationshipsSettings_CTRL {
 	
 	//controls the active tab
 	public String active_tab{get;set;}
+	//edit controls
 	public Boolean canEditRelSettings{get;set;}
-	
+	//dynamically load possible custom gender fields for selection options
+	public List<SelectOption> genderFieldOptions{get{
+        if (genderFieldOptions == null){
+            genderFieldOptions = new List<SelectOption>();
+            //add a default option
+            genderFieldOptions.add(new SelectOption('', '-None-'));
+                    	
+        	map<String, Schema.SObjectField> conFieldTokenList = Schema.SObjectType.Contact.fields.getMap(); 
+           
+            //only get the describe information for custom fields
+            for(string fieldName : conFieldTokenList.keyset()){
+                if (fieldname.endsWith('__c')){
+                    genderFieldOptions.add(new SelectOption(fieldName, fieldName));	
+                }            	
+            }
+        }	   			
+		return genderFieldOptions;
+	}set;}
 	
 	
 	
@@ -50,5 +68,30 @@ public with sharing class RelationshipsSettings_CTRL {
 		
 		
 	}
+	
+	public PageReference cancel(){
+		
+		canEditRelSettings = false;
+		relSettings = Relationships_Utils.getRelationshipSettings();		
+		
+		return null;
+	}
+	
+	public PageReference saveGeneralSettings(){
+		return null;
+	}
+	public PageReference editGeneralSettings(){
+		canEditRelSettings = true;		
+		return null;		
+	}
+	
+
+    static testMethod void RelationshipsSettings_CTRL_TEST(){
+    	//create a new instance of the controller
+    	RelationshipsSettings_CTRL rsCTRL = new RelationshipsSettings_CTRL();
+    	
+    	
+    	
+    }
 
 }
