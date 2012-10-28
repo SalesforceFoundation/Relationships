@@ -9,22 +9,27 @@
         <apex:form id="generalform">
             <apex:TabPanel switchtype="client" value="{!active_tab}" id="tabpanel">
                 <apex:tab label="General Settings" name="general_settings">
-                    <apex:PageBlockSection columns="2" title="General Settings" collapsible="false">
-                        <apex:outputField value="{!relSettings.Reciprocal_Method__c}" rendered="{!NOT(canEditRelSettings)}"/>
-                        <apex:selectList value="{!relSettings.Reciprocal_Method__c}" size="1" multiselect="false" rendered="{!canEditRelSettings}">
-                            <apex:selectOption itemValue="List Setting" itemLabel="List Settings"/>
-                            <apex:selectOption itemValue="Value Inversion" itemLabel="Value Inversion"/>
-                        </apex:selectList>
-                        <apex:outputField value="{!relSettings.Gender_Field__c}" rendered="{!NOT(canEditRelSettings)}"/>
-                        
-                        
-                        <apex:selectList value="{!relSettings.Gender_Field__c}" size="1" multiselect="false" rendered="{!canEditRelSettings}">
-                            <apex:selectOption itemValue="List Setting" itemLabel="List Settings"/>
-                            <apex:selectOption itemValue="Value Inversion" itemLabel="Value Inversion"/>
-                        </apex:selectList>
-                     
-                     
-                    </apex:PageBlockSection>
+                    <apex:outputpanel id="generalsettingspanel">
+	                    <apex:PageBlockSection columns="2" title="General Settings" collapsible="false">
+	                        <apex:outputField value="{!relSettings.Reciprocal_Method__c}" rendered="{!NOT(canEditRelSettings)}"/>
+	                        <apex:selectList value="{!relSettings.Reciprocal_Method__c}" size="1" multiselect="false" rendered="{!canEditRelSettings}">
+	                            <apex:selectOption itemValue="List Setting" itemLabel="List Settings"/>
+	                            <apex:selectOption itemValue="Value Inversion" itemLabel="Value Inversion"/>
+	                        </apex:selectList>
+	                        <apex:outputField value="{!relSettings.Gender_Field__c}" rendered="{!NOT(canEditRelSettings)}"/>
+	                        <apex:selectList value="{!relSettings.Gender_Field__c}" size="1" multiselect="false" rendered="{!canEditRelSettings}">
+	                            <apex:selectOptions value="{!genderFieldOptions}"/>
+	                        </apex:selectList>
+	                     
+	                     
+	                    </apex:PageBlockSection>
+	                    
+	                    <apex:outputPanel style="text-align: center; display: block; margin-left:auto; margin-right:auto;">
+	                        <apex:commandButton value="Save" rendered="{!canEditRelSettings}" action="{!saveGeneralSettings}"/>  
+	                        <apex:commandButton value="Cancel" rendered="{!canEditRelSettings}" action="{!cancel}"/>
+	                        <apex:commandButton value="Edit" rendered="{!NOT(canEditRelSettings)}" action="{!editGeneralSettings}" rerender="generalsettingspanel"/>
+                        </apex:outputpanel>
+                    </apex:outputPanel>
                 </apex:tab>
                 <apex:tab label="Reciprocal Relationships" name="reciprocal_settings">
                 </apex:tab>
