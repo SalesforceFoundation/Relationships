@@ -35,6 +35,14 @@
 public with sharing class RelationshipsSettings_CTRL {
 	
 	public Relationship_Settings__c relSettings{get;set;}
+	public List<Relationship_Auto_Create__c> relAutoCreateList{get{
+	    relACMap = Relationship_Auto_Create__c.getAll();	   
+	   return relACMap.values();
+	}set;}
+	
+	public Integer acListSize{get{return relACMap.keySet().size();}set;}	
+	
+	private Map<String, Relationship_Auto_Create__c> relACMap = new Map<String, Relationship_Auto_Create__c>();
 	
 	//controls the active tab
 	public String active_tab{get;set;}
@@ -63,13 +71,14 @@ public with sharing class RelationshipsSettings_CTRL {
 	
 	public RelationshipsSettings_CTRL(){
 		relSettings = Relationships_Utils.getRelationshipSettings();
+		relACMap = Relationship_Auto_Create__c.getAll();  
 		active_tab = 'general_settings'; 
 		canEditRelSettings = false;
 		
 		
 	}
 	
-	public PageReference cancel(){
+	public PageReference cancel(){ 
 		
 		canEditRelSettings = false;
 		relSettings = Relationships_Utils.getRelationshipSettings();		
