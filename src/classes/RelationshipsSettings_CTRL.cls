@@ -127,6 +127,8 @@ public with sharing class RelationshipsSettings_CTRL {
 		return null;
 	}
 	public PageReference saveAC(){
+		canCRUDAC = true;
+		activeAC = new Relationship_Auto_Create__c();
 		try{
 			upsert activeAC;
 		}catch(Exception e){
