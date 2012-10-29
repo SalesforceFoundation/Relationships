@@ -55,12 +55,22 @@
 		                            <apex:column > 
 		                                <apex:facet name="header">Action</apex:facet>
 		                                <a href="javascript:EditAC('{!ac.Name}');">edit|</a>
-		                                <a href="javascript:DeleteAC('{!ac.Name}');">del</a>
+		                                <a href="javascript:DeleteAC('{!ac.Name}');">del</a>		                                
 		                            </apex:column>
 		                        </apex:pageblocktable>	                                        
 	                        </apex:outputpanel>
 	                        <apex:commandLink action="{!addAC}" value="Add New Auto-Created Relationship" rendered="{!NOT(canCRUDAC)}" id="addACRowLink" rerender="autorelationships_panel"/>
-	                    </apex:pageblocksection>                    
+	                    </apex:pageblocksection> 
+	                    
+                        
+                        
+                        
+                        <apex:actionFunction action="{!deleteAC}" name="DeleteAC" rerender="autorelationships_panel">
+                            <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
+                        </apex:actionFunction>
+                        <apex:actionFunction action="{!editAC}" name="EditAC" rerender="autorelationships_panel">
+                            <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
+                        </apex:actionFunction>                   
 	                    <apex:pageblocksection columns="2" rendered="{!canCRUDAC}" id="acinputblock">
 	                        <apex:outputpanel id="newacpanel">                            
 	                            <apex:inputfield value="{!activeAC.Name}"/>
@@ -76,17 +86,6 @@
 	                            </apex:outputpanel>  
 	                        </apex:outputpanel>                           
 	                    </apex:pageblocksection>
-	                    
-	                    
-	                    
-	                    
-	                    <apex:actionFunction action="{!deleteAC}" name="DeleteAC">
-	                        <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
-	                    </apex:actionFunction>
-	                    <apex:actionFunction action="{!editAC}" name="EditAC">
-	                        <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
-	                    </apex:actionFunction>
-                    
                     </apex:outputpanel>                                                                            
                 </apex:tab>
                 <apex:tab label="Relationships Errors" name="relationships_errors">

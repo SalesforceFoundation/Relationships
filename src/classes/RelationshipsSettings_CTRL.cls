@@ -110,9 +110,13 @@ public with sharing class RelationshipsSettings_CTRL {
 	
 	/** Autorelationships Methods **/
 	public PageReference deleteAC(){
+        system.debug('ACNAME: ' + selectedACName);
+        activeAC = relACMap.get(selectedACName);
+        delete activeAC;        	   
 		return null;
 	}
 	public PageReference editAC(){
+		system.debug('ACNAME: ' + selectedACName);
 		activeAC = relACMap.get(selectedACName);
 		canCRUDAC = true;
 		return null;
