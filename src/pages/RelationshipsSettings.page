@@ -33,6 +33,14 @@
                 </apex:tab>
                 <apex:tab label="Reciprocal Relationships" name="reciprocal_settings">
                 </apex:tab>
+                <apex:tab label="Auto Relationships" name="autorelationships_settings">
+                    <apex:outputtext value="{!$Label.RelationshipsAutoDescription}" style="font-style:italic;" />
+                    <apex:pageblocksection collapsible="false" title="Automatic Relationships Settings">
+                
+                    
+                        
+                    </apex:pageblocksection>                        
+                </apex:tab>
                 <apex:tab label="Relationships Errors" name="relationships_errors">
                 </apex:tab>
                 
