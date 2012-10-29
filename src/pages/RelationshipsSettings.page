@@ -34,63 +34,60 @@
                 <apex:tab label="Reciprocal Relationships" name="reciprocal_settings">
                 </apex:tab>
                 <apex:tab label="Auto Relationships" name="autorelationships_settings">
-                    <apex:outputtext value="{!$Label.RelationshipsAutoDescription}" style="font-style:italic;" />
-                    <apex:pageblocksection collapsible="false" title="Automatic Relationships Settings">
-                        <apex:outputText value="No Auto Relationships Defined" rendered="{!acListSize < 1}"/>
-                        <apex:pageblocktable value="{!relAutoCreateList}" var="ac">
-                        
-                        
-                        
-                        
-                        <!-- 
-                        
-                        
-                          
-                              <apex:pageBlockTable var="ci" value="{!cis}" rendered="{!NOT(deleteInstallmentMode)}"  >                
-                                <apex:column value="{!ci.Name}" rendered="{!AND(cisSize>0,NOT(canEditCISettings),NOT(deleteInstallmentMode))}"/>
-                                <apex:column value="{!ci.Value__c}" rendered="{!AND(cisSize>0,NOT(canEditCISettings),NOT(deleteInstallmentMode))}"/>
-                                <apex:column value="{!ci.Increment__c}" rendered="{!AND(cisSize>0,NOT(canEditCISettings),NOT(deleteInstallmentMode))}"/>
-                                <apex:column rendered="{!AND(cisSize>0,NOT(canEditCISettings),NOT(deleteInstallmentMode))}"> 
-                                    <apex:facet name="header"></apex:facet>
-                                    <a href="javascript:DeleteInstallment('{!ci.Name}');">Replace and Delete</a>
-                                    <apex:commandLink action="{!runDeleteWizard}" value="Delete and Replace" id="deleteLink" rendered="{!AND(NOT(deleteInstallmentMode),canEditCISettings)}" rerender="CustomInstallmentsOutputPanel"/>
-                                </apex:column>                                  
-                                <apex:column rendered="{!AND(cisSize>0,canEditCISettings,NOT(deleteInstallmentMode))}">
-                                    <apex:facet name="header">Custom Installment Name</apex:facet>
-                                    <apex:inputtext value="{!ci.Name}"/>
-                                </apex:column>
-                                <apex:column rendered="{!AND(cisSize>0,canEditCISettings,NOT(deleteInstallmentMode))}">       
-                                        <apex:facet name="header">Custom Installment Value (#)</apex:facet>
-                                    <apex:inputtext value="{!ci.Value__c}"/>
-                                </apex:column>
-                                <apex:column rendered="{!AND(cisSize>0,canEditCISettings,NOT(deleteInstallmentMode))}">
-                                    <apex:facet name="header">Custom Installment Interval</apex:facet>                     
-                                    <apex:selectList value="{!ci.Increment__c}" multiselect="false" size="1" required="true">
-                                        <apex:selectOption itemValue="Days" itemLabel="Days"/> 
-                                        <apex:selectOption itemValue="Weeks" itemLabel="Weeks"/>                                        
-                                        <apex:selectOption itemValue="Months" itemLabel="Months"/>
-                                        <apex:selectOption itemValue="Years" itemLabel="Years"/>                                        
-                                    </apex:selectList>
-                                </apex:column>  
-                            </apex:pageBlockTable>
-                            <apex:commandLink action="{!addCIRow}" value="Add New Custom Installment" id="addCIRowLink" rendered="{!AND(canEditCISettings,NOT(deleteInstallmentMode))}" rerender="CustomInstallmentsOutputPanel"/>
-                        
-                        
-                        
-                        
-                         -->
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        </apex:pageblocktable>
+                    <apex:outputpanel id="autorelationships_panel">
+	                    <apex:outputtext value="{!$Label.RelationshipsAutoDescription}" style="font-style:italic;" />
+	                    <apex:pageblocksection columns="1" collapsible="false" title="Automatic Relationships Settings">
+	                        <apex:outputText value="No Auto-Created Relationships Defined" rendered="{!acListSize < 1}"/>
+		                    <apex:outputpanel id="actablepanel">
+		                        <apex:pageblocktable value="{!relAutoCreateList}" var="ac" rendered="{!acListSize > 0}">
+		                            <apex:column value="{!ac.Name}">
+                                        <apex:facet name="header">Name</apex:facet>
+                                    </apex:column>		                              
+		                            <apex:column value="{!ac.Object__c}">
+		                                <apex:facet name="header">Trigger Object</apex:facet>
+		                            </apex:column>
+		                            <apex:column value="{!ac.Field__c}">
+		                                <apex:facet name="header">Trigger Field</apex:facet>
+		                            </apex:column>
+		                            <apex:column value="{!ac.Relationship_Type__c}">
+		                                <apex:facet name="header">Relationship Type</apex:facet>
+		                            </apex:column>
+		                            <apex:column > 
+		                                <apex:facet name="header">Action</apex:facet>
+		                                <a href="javascript:EditAC('{!ac.Name}');">edit|</a>
+		                                <a href="javascript:DeleteAC('{!ac.Name}');">del</a>
+		                            </apex:column>
+		                        </apex:pageblocktable>	                                        
+	                        </apex:outputpanel>
+	                        <apex:commandLink action="{!addAC}" value="Add New Auto-Created Relationship" rendered="{!NOT(canCRUDAC)}" id="addACRowLink" rerender="autorelationships_panel"/>
+	                    </apex:pageblocksection>                    
+	                    <apex:pageblocksection columns="2" rendered="{!canCRUDAC}" id="acinputblock">
+	                        <apex:outputpanel id="newacpanel">                            
+	                            <apex:inputfield value="{!activeAC.Name}"/>
+	                            <apex:outputlabel value="Object Name" for="objectinputfld">
+	                                <apex:inputfield value="{!activeAC.Object__c}" id="objectinputfld"/>
+	                            </apex:outputlabel>
+	                            
+	                            <apex:inputfield value="{!activeAC.Field__c}"/>
+	                            <apex:inputfield value="{!activeAC.Relationship_Type__c}"/>
+	                            <apex:outputPanel style="text-align: center; display: block; margin-left:auto; margin-right:auto;">
+	                                <apex:commandButton value="Save" action="{!saveAC}"/>  
+	                                <apex:commandButton value="Cancel" action="{!cancel}"/>                            
+	                            </apex:outputpanel>  
+	                        </apex:outputpanel>                           
+	                    </apex:pageblocksection>
+	                    
+	                    
+	                    
+	                    
+	                    <apex:actionFunction action="{!deleteAC}" name="DeleteAC">
+	                        <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
+	                    </apex:actionFunction>
+	                    <apex:actionFunction action="{!editAC}" name="EditAC">
+	                        <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
+	                    </apex:actionFunction>
                     
-                        
-                    </apex:pageblocksection>                        
+                    </apex:outputpanel>                                                                            
                 </apex:tab>
                 <apex:tab label="Relationships Errors" name="relationships_errors">
                 </apex:tab>

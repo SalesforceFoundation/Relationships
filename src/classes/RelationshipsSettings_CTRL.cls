@@ -35,14 +35,20 @@
 public with sharing class RelationshipsSettings_CTRL {
 	
 	public Relationship_Settings__c relSettings{get;set;}
+	
+	/** Handling Auto-creation vars **/	
 	public List<Relationship_Auto_Create__c> relAutoCreateList{get{
-	    relACMap = Relationship_Auto_Create__c.getAll();	   
-	   return relACMap.values();
+        relACMap = Relationship_Auto_Create__c.getAll();	   
+        return relACMap.values();
 	}set;}
-	
-	public Integer acListSize{get{return relACMap.keySet().size();}set;}	
-	
+	public Integer acListSize{get{return relACMap.keySet().size();}set;}
 	private Map<String, Relationship_Auto_Create__c> relACMap = new Map<String, Relationship_Auto_Create__c>();
+	public String selectedACName{get;set;}
+	public Relationship_Auto_Create__c activeAC{get;set;}
+	public Boolean canCRUDAC{get;set;}
+	
+	/******/
+	
 	
 	//controls the active tab
 	public String active_tab{get;set;}
@@ -74,17 +80,24 @@ public with sharing class RelationshipsSettings_CTRL {
 		relACMap = Relationship_Auto_Create__c.getAll();  
 		active_tab = 'general_settings'; 
 		canEditRelSettings = false;
+		canCRUDAC = false;
 		
 		
 	}
 	
-	public PageReference cancel(){ 
+	public PageReference cancel(){		
 		
+		//reset general settings
 		canEditRelSettings = false;
-		relSettings = Relationships_Utils.getRelationshipSettings();		
+		relSettings = Relationships_Utils.getRelationshipSettings();
 		
+		//reset autocreate rel
+		activeAC = new Relationship_Auto_Create__c();			
+		canCRUDAC = false;
 		return null;
 	}
+	
+	/** General Settings Methods **/
 	
 	public PageReference saveGeneralSettings(){
 		return null;
@@ -94,6 +107,29 @@ public with sharing class RelationshipsSettings_CTRL {
 		return null;		
 	}
 	
+	
+	/** Autorelationships Methods **/
+	public PageReference deleteAC(){
+		return null;
+	}
+	public PageReference editAC(){
+		activeAC = relACMap.get(selectedACName);
+		canCRUDAC = true;
+		return null;
+	}
+	public PageReference addAC(){
+		activeAC = new Relationship_Auto_Create__c();
+		canCRUDAC = true;
+		return null;
+	}
+	public PageReference saveAC(){
+		try{
+			upsert activeAC;
+		}catch(Exception e){
+			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Error Saving Auto-Relationship Record.  Please refresh your page and try again.'));
+		}
+		return null;
+	}	
 
     static testMethod void RelationshipsSettings_CTRL_TEST(){
     	//create a new instance of the controller
