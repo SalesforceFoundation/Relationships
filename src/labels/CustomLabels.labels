@@ -51,6 +51,16 @@
 Note that this feature is not available for Leads or Campaign Member objects that reference Leads.</value>
     </labels>
     <labels>
+        <fullName>RelationshipsCustomFieldOverload</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RelationshipsCustomFieldOverload</shortDescription>
+        <value>May not be able to show all available fields.  
+
+There are more than 100 custom fields defined on the Contact or Campaign Member object. If the field you wish to use is not shown, you may need to enter this Auto-Create record manually.  Go to Setup-&gt;Develop-&gt;Custom Settings and click &apos;Manage&apos; next to &apos;Relationship Auto-Create&apos;, then click &apos;New&apos; to enter a new record manually.  Use API names (not the field label) to identify the fields that should trigger a new Relationship record.</value>
+    </labels>
+    <labels>
         <fullName>RelationshipsSettingsDescription</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
