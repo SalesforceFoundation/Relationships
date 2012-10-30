@@ -34,22 +34,8 @@
 */
 public with sharing class RelationshipsSettings_CTRL {
 	
+	/*** General Settings Properties ***/
 	public Relationship_Settings__c relSettings{get;set;}
-	
-	/** Handling Auto-creation vars **/	
-	public List<Relationship_Auto_Create__c> relAutoCreateList{get{
-        relACMap = Relationship_Auto_Create__c.getAll();	   
-        return relACMap.values();
-	}set;}
-	public Integer acListSize{get{return relACMap.keySet().size();}set;}
-	private Map<String, Relationship_Auto_Create__c> relACMap = new Map<String, Relationship_Auto_Create__c>();
-	public String selectedACName{get;set;}
-	public Relationship_Auto_Create__c activeAC{get;set;}
-	public Boolean canCRUDAC{get;set;}
-	
-	/******/
-	
-	
 	//controls the active tab
 	public String active_tab{get;set;}
 	//edit controls
@@ -71,7 +57,59 @@ public with sharing class RelationshipsSettings_CTRL {
             }
         }	   			
 		return genderFieldOptions;
-	}set;}
+	}set;}	
+	/******/
+		
+	/*** Relationship Autocreate Properties ***/       
+    public List<Relationship_Auto_Create__c> relAutoCreateList{get{
+        relACMap = Relationship_Auto_Create__c.getAll();       
+        return relACMap.values();
+    }set;}
+    public Integer acListSize{get{return relACMap.keySet().size();}set;}
+    private Map<String, Relationship_Auto_Create__c> relACMap = new Map<String, Relationship_Auto_Create__c>();
+    public String selectedACName{get;set;}
+    public Relationship_Auto_Create__c activeAC{get;set;}
+    public Boolean canCRUDAC{get;set;}    
+    public List<SelectOption> ACfieldOptions{get{
+    	ACfieldOptions = new List<SelectOption>();
+    	ACfieldOptions.add(new SelectOption('', '-None-'));
+	    if(activeAC.Object__c != null){
+	        map<String, Schema.SObjectField> fieldTokenMap = new Map<String, Schema.SobjectField>();
+	        if(activeAC.Object__c == 'Contact'){
+	        	fieldTokenMap = Schema.SObjectType.Contact.fields.getMap();        	
+	        }   
+	        else if (activeAC.Object__c == 'CampaignMember'){
+	        	fieldTokenMap = Schema.SObjectType.CampaignMember.fields.getMap();        	
+	        } 	
+	        for (String s : fieldTokenMap.keySet()){
+	        	if (s.endsWith('__c') && !s.startsWith('npe01__') && !s.startsWith('npo02__') && !s.startsWith('npe03__')){
+	                //if we've hit the limit, throw a warning and recommend manual entry
+	                if (system.Limits.getFieldsDescribes() == system.Limits.getLimitFieldsDescribes()){
+	                    ApexPages.addMessage(new ApexPages.message(ApexPages.severity.WARNING, system.Label.RelationshipsCustomFieldOverload));                	
+	                }
+	                else{
+	                    Schema.DescribeFieldResult F = fieldTokenMap.get(s).getDescribe();        	   
+	                    List <Schema.sObjectType> sobjref = new List<Schema.sObjectType>(); 
+	                    sobjref = F.getReferenceTo();
+	                    for (Schema.sObjectType objT : sobjref){
+	                        if (objT == Contact.sObjectType){
+	                            ACfieldOptions.add(new SelectOption(F.getName(), F.getName()));
+	            			}        			
+	            		}        		
+	            	}        	
+	            }
+	        }
+        }            	                       
+        return ACfieldOptions;    	
+    }set;}
+    
+    /******/
+	
+	/*** Relationship Lookup Properties ***/
+	
+	
+	
+	
 	
 	
 	
@@ -108,15 +146,15 @@ public with sharing class RelationshipsSettings_CTRL {
 	}
 	
 	
-	/** Autorelationships Methods **/
-	public PageReference deleteAC(){
-        system.debug('ACNAME: ' + selectedACName);
+	/*** Autorelationships CRUD Methods ***/
+	public PageReference deleteAC(){     
         activeAC = relACMap.get(selectedACName);
-        delete activeAC;        	   
+        delete activeAC;
+        //refetch the map
+        relACMap = Relationship_Auto_Create__c.getAll();                            	       
 		return null;
 	}
-	public PageReference editAC(){
-		system.debug('ACNAME: ' + selectedACName);
+	public PageReference editAC(){		
 		activeAC = relACMap.get(selectedACName);
 		canCRUDAC = true;
 		return null;
@@ -127,20 +165,78 @@ public with sharing class RelationshipsSettings_CTRL {
 		return null;
 	}
 	public PageReference saveAC(){
-		canCRUDAC = true;
-		activeAC = new Relationship_Auto_Create__c();
+		canCRUDAC = false;
+		//if this is a new AC, we need to set the name 
+		if (activeAC.Id == null){
+			integer keyCount = relACMap.keySet().size();
+			activeAC.Name = 'AutoCreateRel-' + keyCount;			
+			//if the name is taken, increment until we find the next value slot...
+			while(relACMap.containsKey(activeAC.Name)){
+                keyCount++;			     
+				activeAC.Name = 'AutoCreateRel-' + keyCount;
+            }		
+		}
 		try{
+			//upsert our active ac
 			upsert activeAC;
+			//refetch the data
+			relACMap = Relationship_Auto_Create__c.getAll();  
 		}catch(Exception e){
 			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Error Saving Auto-Relationship Record.  Please refresh your page and try again.'));
 		}
 		return null;
 	}	
 
+
+    /*** Relationship Lookup CRUD Methods ***/
+    public PageReference deleteLookup(){    	
+    	return null;
+    } 
+    public PageReference editLookup(){
+    	return null;
+    }
+    public PageReference addLookup(){
+    	return null;
+    }
+    public PageReference saveLookup(){
+    	return null;
+    }
+
+
     static testMethod void RelationshipsSettings_CTRL_TEST(){
-    	//create a new instance of the controller
-    	RelationshipsSettings_CTRL rsCTRL = new RelationshipsSettings_CTRL();
+    	    	
+    	//test auto relationship creation
+    	Relationship_Auto_Create__c newAC = new Relationship_Auto_Create__c(Name = 'TESTACAUTO', Object__c = 'Contact', Field__c = 'Description', Relationship_Type__c = 'NewType');
+    	insert newAC;
     	
+    	
+    	
+    	
+    	//create a new instance of the controller
+        RelationshipsSettings_CTRL rsCTRL = new RelationshipsSettings_CTRL();
+        system.assertNotEquals(null, rsCTRL.relSettings);
+        system.assertNotEquals(null, rsCTRL.relACMap);
+        system.assertEquals('general_settings', rsCTRL.active_tab);
+          	
+    	//test auto relationship behavior
+    	system.assert(rsCTRL.relACMap.keySet().size() > 0);
+    	system.assert(rsCTRL.relAutoCreateList.size() == rsCTRL.relACMap.keySet().size());
+    	rsCTRL.selectedACName = 'TESTACAUTO';
+    	rsCTRL.editAC();
+    	system.assertEquals('TESTACAUTO', rsCTRL.activeAC.Name);
+    	rsCTRL.activeAC.Name = 'TESTACAUTO2';
+    	rsCTRL.saveAC();
+    	system.assert(rsCTRL.relACMap.keySet().size() > 0);
+    	system.assert(rsCTRL.relACMap.containsKey('TESTACAUTO2'));
+    	rsCTRL.selectedACName = 'TESTACAUTO2';
+    	rsCTRL.deleteAC();
+    	system.assert(!rsCTRL.relACMap.containsKey('TESTACAUTO2'));
+    	rsCTRL.addAC();
+    	rsCTRL.activeAC.Object__c = 'CampaignMember';
+    	rsCTRL.activeAC.Field__c = 'TestField__c';
+    	rsCTRL.activeAC.Relationship_Type__c = 'Whatever';
+    	rsCTRL.saveAC();
+    	system.assert(rsCTRL.relACMap.keySet().size() > 0);
     	
     	
     }

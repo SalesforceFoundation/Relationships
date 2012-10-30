@@ -1,5 +1,5 @@
 <apex:page id="NPSPRelationshipsSettings" controller="RelationshipsSettings_CTRL" tabStyle="Relationships_Settings__tab">
-    <apex:PageBlock > 
+    <apex:PageBlock id="settingsblock"> 
         <apex:sectionHeader title="Relationships Configuration & Settings" subtitle="Configuration & Settings" />
         <apex:Pagemessages />
         <apex:PageBlockSection columns="1">
@@ -60,11 +60,7 @@
 		                        </apex:pageblocktable>	                                        
 	                        </apex:outputpanel>
 	                        <apex:commandLink action="{!addAC}" value="Add New Auto-Created Relationship" rendered="{!NOT(canCRUDAC)}" id="addACRowLink" rerender="autorelationships_panel"/>
-	                    </apex:pageblocksection> 
-	                    
-                        
-                        
-                        
+	                    </apex:pageblocksection>                        
                         <apex:actionFunction action="{!deleteAC}" name="DeleteAC" rerender="autorelationships_panel">
                             <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
                         </apex:actionFunction>
@@ -72,20 +68,30 @@
                             <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
                         </apex:actionFunction>                   
 	                    <apex:pageblocksection columns="2" rendered="{!canCRUDAC}" id="acinputblock">
-	                        <apex:outputpanel id="newacpanel">                            
-	                            <apex:inputfield value="{!activeAC.Name}"/>
-	                            <apex:outputlabel value="Object Name" for="objectinputfld">
-	                                <apex:inputfield value="{!activeAC.Object__c}" id="objectinputfld"/>
-	                            </apex:outputlabel>
-	                            
-	                            <apex:inputfield value="{!activeAC.Field__c}"/>
-	                            <apex:inputfield value="{!activeAC.Relationship_Type__c}"/>
-	                            <apex:outputPanel style="text-align: center; display: block; margin-left:auto; margin-right:auto;">
-	                                <apex:commandButton value="Save" action="{!saveAC}"/>  
-	                                <apex:commandButton value="Cancel" action="{!cancel}"/>                            
-	                            </apex:outputpanel>  
-	                        </apex:outputpanel>                           
+                            <apex:pageblocksectionitem helptext="Select the Salesforce object on which your Contact lookup resides" >
+                                <apex:outputlabel value="Object Name" for="objectinputselect"/>
+	                            <apex:selectList value="{!activeAC.Object__c}" id="objectinputselect" multiselect="false" size="1">
+                                   <apex:selectoption itemValue="" itemLabel="-None-"/>
+                                   <apex:selectoption itemValue="Contact" itemLabel="Contact"/>
+                                   <apex:selectoption itemValue="CampaignMember" itemLabel="Campaign Member"/>
+                                   <apex:actionSupport event="onchange" rerender="settingsblock"/>
+                                </apex:selectList>              
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem helptext="Select the Salesforce field that should trigger a new Relationship on update or insert">
+                                   <apex:outputlabel value="Object Field" for="fieldinputselect"/>
+                                   <apex:selectlist value="{!activeAC.Field__c}" id="fieldinputselect" multiselect="false" size="1">
+                                       <apex:selectOptions value="{!ACfieldOptions}"/>
+                                   </apex:selectlist>
+                            </apex:pageblocksectionitem>	                            
+                            <apex:pageblocksectionitem helpText="Select the type of Relationship to be created.  A reciprocal Relationship will also automatically be created in this process.">
+                                   <apex:outputlabel value="Relationship Type" for="reltypeinputfld"/>
+                                   <apex:inputfield value="{!activeAC.Relationship_Type__c}" id="reltypeinputfld"/>
+                            </apex:pageblocksectionitem>                  
 	                    </apex:pageblocksection>
+	                    <apex:outputPanel style="text-align: center; display: block; margin-left:auto; margin-right:auto;" rendered="{!canCRUDAC}">
+                            <apex:commandButton value="Save" action="{!saveAC}"/>  
+                            <apex:commandButton value="Cancel" action="{!cancel}"/>                            
+                        </apex:outputpanel> 
                     </apex:outputpanel>                                                                            
                 </apex:tab>
                 <apex:tab label="Relationships Errors" name="relationships_errors">
