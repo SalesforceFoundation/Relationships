@@ -32,6 +32,13 @@
                     </apex:outputPanel>
                 </apex:tab>
                 <apex:tab label="Reciprocal Relationships" name="reciprocal_settings">
+                    <apex:outputpanel id="relationshiplookup_panel">
+                        <apex:outputtext value="{!$Label.RelationshipsLookupDescription}" style="font-style:italic;"/>
+                        <apex:pageblocksection columns="1" collapsible="false" title="Relationship Reciprocal Settings">
+                         
+                        
+                        </apex:pageblocksection>
+                    </apex:outputpanel> 
                 </apex:tab>
                 <apex:tab label="Auto Relationships" name="autorelationships_settings">
                     <apex:outputpanel id="autorelationships_panel">
@@ -47,10 +54,10 @@
 		                                <apex:facet name="header">Trigger Object</apex:facet>
 		                            </apex:column>
 		                            <apex:column value="{!ac.Field__c}">
-		                                <apex:facet name="header">Trigger Field</apex:facet>
+		                                <apex:facet name="header">Trigger Field</apex:facet> 
 		                            </apex:column>
 		                            <apex:column value="{!ac.Relationship_Type__c}">
-		                                <apex:facet name="header">Relationship Type</apex:facet>
+		                                <apex:facet name="header">Relationship Type</apex:facet> 
 		                            </apex:column>
 		                            <apex:column > 
 		                                <apex:facet name="header">Action</apex:facet>

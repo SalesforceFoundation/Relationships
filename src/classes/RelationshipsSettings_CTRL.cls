@@ -106,10 +106,18 @@ public with sharing class RelationshipsSettings_CTRL {
     /******/
 	
 	/*** Relationship Lookup Properties ***/
-	
-	
-	
-	
+	public Boolean canCRUDRL{get;set;}
+	public Relationship_Lookup__c activeRL{get;set;}
+	public String selectedRLName{get;set;}
+	public List<Relationship_Lookup__c> relLookupList{get{
+        relLookupMap = Relationship_Lookup__c.getAll();       
+        return relLookupMap.values();
+    }set;}
+    public Integer rlListSize{get{return relLookupMap.keySet().size();}set;}
+    private Map<String, Relationship_Lookup__c> relLookupMap = new Map<String, Relationship_Lookup__c>();
+	 
+	/******/ 
+	   
 	
 	
 	
@@ -132,6 +140,11 @@ public with sharing class RelationshipsSettings_CTRL {
 		//reset autocreate rel
 		activeAC = new Relationship_Auto_Create__c();			
 		canCRUDAC = false;
+		
+		//reset rl
+		canCRUDRL = false;
+		activeRL = new Relationship_Lookup__c();
+		
 		return null;
 	}
 	
