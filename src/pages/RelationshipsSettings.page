@@ -35,8 +35,24 @@
                     <apex:outputpanel id="relationshiplookup_panel">
                         <apex:outputtext value="{!$Label.RelationshipsLookupDescription}" style="font-style:italic;"/>
                         <apex:pageblocksection columns="1" collapsible="false" title="Relationship Reciprocal Settings">
-                         
-                        
+                           
+                            <apex:outputpanel id="rltablepanel">
+                                <apex:pageblocktable value="{!relLookupList}" var="rl" rendered="{!rlListSize > 0}">
+                                    <apex:column value="{!rl.Name}">
+                                        <apex:facet name="header">Relationship Type</apex:facet>
+                                    </apex:column>
+                                    <apex:column value="{!rl.Male__c}">
+                                        <apex:facet name="header">Male</apex:facet>
+                                    </apex:column>
+                                    <apex:column value="{!rl.Female__c}">
+                                        <apex:facet name="header">Female</apex:facet>
+                                    </apex:column>
+                                    <apex:column value="{!rl.Neutral__c}">
+                                        <apex:facet name="header">Neutral</apex:facet>
+                                    </apex:column>                          
+                                </apex:pageblocktable>
+                            </apex:outputpanel>
+                            <apex:commandLink action="{!addLookup}" value="Add New Reciprocal Relationship Type" rendered="{!NOT(canCRUDRL)}" id="addRLRowLink" rerender="relationshiplookup_panel"/>
                         </apex:pageblocksection>
                     </apex:outputpanel> 
                 </apex:tab>

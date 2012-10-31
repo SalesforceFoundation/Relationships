@@ -124,6 +124,7 @@ public with sharing class RelationshipsSettings_CTRL {
 	public RelationshipsSettings_CTRL(){
 		relSettings = Relationships_Utils.getRelationshipSettings();
 		relACMap = Relationship_Auto_Create__c.getAll();  
+		relLookupMap = Relationship_Lookup__c.getAll();
 		active_tab = 'general_settings'; 
 		canEditRelSettings = false;
 		canCRUDAC = false;
