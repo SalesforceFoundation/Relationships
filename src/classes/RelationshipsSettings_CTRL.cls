@@ -111,13 +111,34 @@ public with sharing class RelationshipsSettings_CTRL {
 	public String selectedRLName{get;set;}
 	public List<Relationship_Lookup__c> relLookupList{get{
         relLookupMap = Relationship_Lookup__c.getAll();       
-        return relLookupMap.values();
+        return (List<Relationship_Lookup__c>)setCon.getRecords();
     }set;}
+    public Integer numLookups{get;set;}
+    public Integer pageSize{get;set;}
     public Integer rlListSize{get{return relLookupMap.keySet().size();}set;}
     private Map<String, Relationship_Lookup__c> relLookupMap = new Map<String, Relationship_Lookup__c>();
-	 
+    public Boolean hasNextRL{get{return setCon.getHasNext();}set;}
+    public Boolean hasPreviousRL{get{return setCon.getHasPrevious();}set;}
+    public Integer pageNumberRL{get{return setCon.getPageNumber();}set;}    
+    public Integer pageCountRL{get{
+    	Integer recDiv;
+    	recDiv = (Integer)setCon.getResultSize()/pageSize;
+    	if (Math.mod((Long)setCon.getResultSize(), (Long)pageSize) > 0)
+    	   recDiv++;
+        return recDiv;
+    }set;}
+    public ApexPages.Standardsetcontroller setCon{get{
+        if (setCon == null){
+        	pageSize = 20;  
+            setCon = new ApexPages.Standardsetcontroller(relLookupMap.values());
+            numLookups = setCon.getResultSize();
+            setCon.setPageSize(pageSize);
+        } 
+        return setCon;            		
+    }set;}
+    	  
 	/******/ 
-	   
+	    
 	
 	
 	

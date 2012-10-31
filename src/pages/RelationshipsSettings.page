@@ -31,13 +31,26 @@
                         </apex:outputpanel>
                     </apex:outputPanel>
                 </apex:tab>
+                
                 <apex:tab label="Reciprocal Relationships" name="reciprocal_settings">
                     <apex:outputpanel id="relationshiplookup_panel">
                         <apex:outputtext value="{!$Label.RelationshipsLookupDescription}" style="font-style:italic;"/>
                         <apex:pageblocksection columns="1" collapsible="false" title="Relationship Reciprocal Settings">
                            
                             <apex:outputpanel id="rltablepanel">
+                                <apex:panelGrid columns="5" rendered="{!rlListSize > 0}">
+                                    <apex:commandLink reRender="relationshiplookup_panel" value="<<" action="{!setCon.first}" title="First Page"/>
+                                    <apex:commandLink reRender="relationshiplookup_panel" value="<" action="{!setCon.previous}" title="Previous Page"/>
+                                    <apex:commandLink reRender="relationshiplookup_panel" value=">" action="{!setCon.next}"  title="Next Page"/>
+                                    <apex:commandLink reRender="relationshiplookup_panel" value=">>" action="{!setCon.last}" title="Last Page"/>
+                                    <apex:outputtext >Showing page {!pageNumberRL} of {!pageCountRL}</apex:outputtext>                                    
+                                </apex:panelGrid>    
                                 <apex:pageblocktable value="{!relLookupList}" var="rl" rendered="{!rlListSize > 0}">
+                                    <apex:column > 
+                                        <apex:facet name="header">Action</apex:facet>
+                                        <a href="javascript:EditRL('{!rl.Name}');">edit|</a>
+                                        <a href="javascript:DeleteRL('{!rl.Name}');">del</a>                                        
+                                    </apex:column>                                    
                                     <apex:column value="{!rl.Name}">
                                         <apex:facet name="header">Relationship Type</apex:facet>
                                     </apex:column>
@@ -50,12 +63,20 @@
                                     <apex:column value="{!rl.Neutral__c}">
                                         <apex:facet name="header">Neutral</apex:facet>
                                     </apex:column>                          
-                                </apex:pageblocktable>
+                                </apex:pageblocktable> 
                             </apex:outputpanel>
                             <apex:commandLink action="{!addLookup}" value="Add New Reciprocal Relationship Type" rendered="{!NOT(canCRUDRL)}" id="addRLRowLink" rerender="relationshiplookup_panel"/>
-                        </apex:pageblocksection>
+                        </apex:pageblocksection>                        
+                        <apex:actionFunction action="{!deleteLookup}" name="DeleteRL" rerender="relationshiplookup_panel">
+                            <apex:param name="rlname" value="" assignTo="{!selectedRLName}"/>
+                        </apex:actionFunction>
+                        <apex:actionFunction action="{!editLookup}" name="EditRL" rerender="relationshiplookup_panel">
+                            <apex:param name="rlname" value="" assignTo="{!selectedRLName}"/>
+                        </apex:actionFunction>
                     </apex:outputpanel> 
                 </apex:tab>
+                
+                
                 <apex:tab label="Auto Relationships" name="autorelationships_settings">
                     <apex:outputpanel id="autorelationships_panel">
 	                    <apex:outputtext value="{!$Label.RelationshipsAutoDescription}" style="font-style:italic;" />
@@ -63,6 +84,11 @@
 	                        <apex:outputText value="No Auto-Created Relationships Defined" rendered="{!acListSize < 1}"/>
 		                    <apex:outputpanel id="actablepanel">
 		                        <apex:pageblocktable value="{!relAutoCreateList}" var="ac" rendered="{!acListSize > 0}">
+		                            <apex:column > 
+                                        <apex:facet name="header">Action</apex:facet>
+                                        <a href="javascript:EditAC('{!ac.Name}');">edit|</a>
+                                        <a href="javascript:DeleteAC('{!ac.Name}');">del</a>                                        
+                                    </apex:column>
 		                            <apex:column value="{!ac.Name}">
                                         <apex:facet name="header">Name</apex:facet>
                                     </apex:column>		                              
@@ -74,12 +100,7 @@
 		                            </apex:column>
 		                            <apex:column value="{!ac.Relationship_Type__c}">
 		                                <apex:facet name="header">Relationship Type</apex:facet> 
-		                            </apex:column>
-		                            <apex:column > 
-		                                <apex:facet name="header">Action</apex:facet>
-		                                <a href="javascript:EditAC('{!ac.Name}');">edit|</a>
-		                                <a href="javascript:DeleteAC('{!ac.Name}');">del</a>		                                
-		                            </apex:column>
+		                            </apex:column>		                            
 		                        </apex:pageblocktable>	                                        
 	                        </apex:outputpanel>
 	                        <apex:commandLink action="{!addAC}" value="Add New Auto-Created Relationship" rendered="{!NOT(canCRUDAC)}" id="addACRowLink" rerender="autorelationships_panel"/>
@@ -117,11 +138,10 @@
                         </apex:outputpanel> 
                     </apex:outputpanel>                                                                            
                 </apex:tab>
+                
+                
                 <apex:tab label="Relationships Errors" name="relationships_errors">
                 </apex:tab>
-                
-                
-                
                 
             </apex:TabPanel>                                    
         </apex:form>                
