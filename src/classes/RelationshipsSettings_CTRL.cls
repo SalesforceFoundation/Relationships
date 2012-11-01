@@ -59,7 +59,20 @@ public with sharing class RelationshipsSettings_CTRL {
 		return genderFieldOptions;
 	}set;}	
 	/******/
-		
+	
+	/*** Relationship Error Properties ***/
+	public List<Relationship_Error__c> relErrorsList{get{
+        if (relErrorsList == null){	       
+	       relErrorsList = new List<Relationship_Error__c>();
+	       relErrorsList = [select id, Name, Error_Record_Link__c, 
+	                      Error_Type__c, Full_Error_Message__c, Error_Date_Time__c
+	                      from Relationship_Error__c order by Error_Date_Time__c desc];
+        }	                      	
+	   return relErrorsList;
+	}set;}
+	public Integer relErrorsSize{get{return relErrorsList.size();}set;}
+    /******/
+    		
 	/*** Relationship Autocreate Properties ***/       
     public List<Relationship_Auto_Create__c> relAutoCreateList{get{
         relACMap = Relationship_Auto_Create__c.getAll();       
@@ -143,6 +156,9 @@ public with sharing class RelationshipsSettings_CTRL {
 		active_tab = 'general_settings'; 
 		canEditRelSettings = false;
 		canCRUDAC = false;
+		if(relErrorsSize > 0){
+            ApexPages.addMessage(new ApexPages.message(ApexPages.severity.WARNING, 'Some errors have occurred during the normal operation of your Relationships package.  Please check the Relationship Errors tab below for more information.'));			
+		}
 	}
 	
 	public PageReference cancel(){		
