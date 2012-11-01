@@ -61,6 +61,14 @@ Note that this feature is not available for Leads or Campaign Member objects tha
 There are more than 100 custom fields defined on the Contact or Campaign Member object. If the field you wish to use is not shown, you may need to enter this Auto-Create record manually.  Go to Setup-&gt;Develop-&gt;Custom Settings and click &apos;Manage&apos; next to &apos;Relationship Auto-Create&apos;, then click &apos;New&apos; to enter a new record manually.  Use API names (not the field label) to identify the fields that should trigger a new Relationship record.</value>
     </labels>
     <labels>
+        <fullName>RelationshipsErrorsDescription</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>RelationshipsErrorsDescription</shortDescription>
+        <value>Errors can occur during the normal operation of your Relationships Package.  They can be caused by things such as improperly constructed validation rules, required field, security/permissions, and other reasons.  This tab provides information about errors that may have occurred, when, and why they occurred.</value>
+    </labels>
+    <labels>
         <fullName>RelationshipsLookupDescription</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
