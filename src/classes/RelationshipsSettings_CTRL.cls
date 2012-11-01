@@ -66,7 +66,7 @@ public with sharing class RelationshipsSettings_CTRL {
 	       relErrorsList = new List<Relationship_Error__c>();
 	       relErrorsList = [select id, Name, Error_Record_Link__c, 
 	                      Error_Type__c, Full_Error_Message__c, Error_Date_Time__c
-	                      from Relationship_Error__c order by Error_Date_Time__c desc];
+	                      from Relationship_Error__c order by Error_Date_Time__c desc limit 1000];
         }	                      	
 	   return relErrorsList;
 	}set;}
@@ -175,6 +175,11 @@ public with sharing class RelationshipsSettings_CTRL {
 		canCRUDRL = false;
 		activeRL = new Relationship_Lookup__c();
 		
+		return null;
+	}
+	
+	public PageReference deleteErrors(){
+		delete relErrorsList;
 		return null;
 	}
 	
