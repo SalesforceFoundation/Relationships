@@ -29,7 +29,7 @@
 */
 trigger Relationships on Relationship__c (before insert, before update, before delete, 
 after insert, after update, after delete, after undelete) {
-    if (Relationships_ProcessControl.hasRun != true){  
+    if (Relationships_ProcessControl.hasRun != true && !Relationships_Utils.getRelationshipSettings().DISABLE_Relationships_trigger__c){  
         if(Trigger.isBefore && Trigger.isInsert){    	   
             Relationships process = new Relationships(Trigger.new, Trigger.old, Relationships_Utils.triggerAction.beforeInsert);
         }        
