@@ -66,7 +66,7 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsErrorsDescription</shortDescription>
-        <value>Errors can occur during the normal operation of your Relationships Package.  They can be caused by things such as improperly constructed validation rules, required field, security/permissions, and other reasons.  This tab provides information about errors that may have occurred, when, and why they occurred.</value>
+        <value>Errors can occur during the normal operation of your Relationships Package.  They can be caused by things such as improperly constructed validation rules, required fields, security/permissions, and other reasons.  This tab provides information about errors that may have occurred, when, and why they occurred.</value>
     </labels>
     <labels>
         <fullName>RelationshipsLookupDescription</fullName>
