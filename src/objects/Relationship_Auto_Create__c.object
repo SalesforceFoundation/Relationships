@@ -27,11 +27,11 @@
         <unique>false</unique>
     </fields>
     <fields>
-        <fullName>Type__c</fullName>
+        <fullName>Relationship_Type__c</fullName>
         <description>The Relationship type to be created between the base object and the lookup object.  The lookup object will receive the reciprocal Relationship, if one is available.</description>
         <externalId>false</externalId>
         <inlineHelpText>The Relationship type to be created between the base object and the lookup object.  The lookup object will receive the reciprocal Relationship, if one is available.</inlineHelpText>
-        <label>Type</label>
+        <label>Relationship Type</label>
         <length>255</length>
         <required>false</required>
         <type>Text</type>
