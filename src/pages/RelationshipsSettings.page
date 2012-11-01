@@ -36,13 +36,13 @@
                     <apex:outputpanel id="relationshiplookup_panel">
                         <apex:outputtext value="{!$Label.RelationshipsLookupDescription}" style="font-style:italic;"/>
                         <apex:pageblocksection columns="1" collapsible="false" title="Relationship Reciprocal Settings">
-                           
+                            <apex:outputText value="No Relationship Lookups Defined" rendered="{!rlListSize < 1}"/>
                             <apex:outputpanel id="rltablepanel">
-                                <apex:panelGrid columns="5" rendered="{!rlListSize > 0}">
-                                    <apex:commandLink reRender="relationshiplookup_panel" value="<<" action="{!setCon.first}" title="First Page"/>
-                                    <apex:commandLink reRender="relationshiplookup_panel" value="<" action="{!setCon.previous}" title="Previous Page"/>
-                                    <apex:commandLink reRender="relationshiplookup_panel" value=">" action="{!setCon.next}"  title="Next Page"/>
-                                    <apex:commandLink reRender="relationshiplookup_panel" value=">>" action="{!setCon.last}" title="Last Page"/>
+                                <apex:panelGrid columns="5" rendered="{!rlListSize > 0}"> 
+                                    <apex:commandLink reRender="relationshiplookup_panel" value="<<" action="{!setCon.first}" title="First Page" style="text-decoration:none;"/>
+                                    <apex:commandLink reRender="relationshiplookup_panel" value="<" action="{!setCon.previous}" title="Previous Page" style="text-decoration:none;"/>
+                                    <apex:commandLink reRender="relationshiplookup_panel" value=">" action="{!setCon.next}"  title="Next Page" style="text-decoration:none;"/>
+                                    <apex:commandLink reRender="relationshiplookup_panel" value=">>" action="{!setCon.last}" title="Last Page" style="text-decoration:none;"/>
                                     <apex:outputtext >Showing page {!pageNumberRL} of {!pageCountRL}</apex:outputtext>                                    
                                 </apex:panelGrid>    
                                 <apex:pageblocktable value="{!relLookupList}" var="rl" rendered="{!rlListSize > 0}">
@@ -73,10 +73,30 @@
                         <apex:actionFunction action="{!editLookup}" name="EditRL" rerender="relationshiplookup_panel">
                             <apex:param name="rlname" value="" assignTo="{!selectedRLName}"/>
                         </apex:actionFunction>
+                        <apex:pageblocksection columns="2" showheader="false" rendered="{!canCRUDRL}">
+                            <apex:pageblocksectionitem helptext="The Relationships Type that should trigger the gendered reciprocal.  (i.e. 'Father' as the type should trigger a reciprocal of 'daughter', 'son' or 'child')">
+                                <apex:outputlabel value="Relationship Type" for="rlnamefld"/>
+                                <apex:inputfield value="{!activeRL.Name}" id="rlnamefld"/>                                
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem helptext="The male reciprocal type for the Relationship">
+                                <apex:outputlabel value="Male Reciprocal" for="rlmalefld"/>
+                                <apex:inputfield value="{!activeRL.Male__c}" id="rlmalefld"/>                                
+                            </apex:pageblocksectionitem>        
+                            <apex:pageblocksectionitem helptext="The female reciprocal type for the Relationship">
+                                <apex:outputlabel value="Female Reciprocal" for="rlfemalefld"/>
+                                <apex:inputfield value="{!activeRL.Female__c}" id="rlfemalefld"/>                                
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem helptext="The gender-neutral reciprocal type for the Relationship">
+                                <apex:outputlabel value="Neutral Reciprocal" for="rlneutralfld"/>
+                                <apex:inputfield value="{!activeRL.Neutral__c}" id="rlneutralfld"/>                                
+                            </apex:pageblocksectionitem>
+                        </apex:pageblocksection>                        
+                        <apex:outputPanel style="text-align: center; display: block; margin-left:auto; margin-right:auto;" rendered="{!canCRUDRL}">
+                            <apex:commandButton value="Save" action="{!saveLookup}"/>  
+                            <apex:commandButton value="Cancel" action="{!cancel}"/>                            
+                        </apex:outputpanel>
                     </apex:outputpanel> 
                 </apex:tab>
-                
-                
                 <apex:tab label="Auto Relationships" name="autorelationships_settings">
                     <apex:outputpanel id="autorelationships_panel">
 	                    <apex:outputtext value="{!$Label.RelationshipsAutoDescription}" style="font-style:italic;" />

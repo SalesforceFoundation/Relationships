@@ -109,8 +109,7 @@ public with sharing class RelationshipsSettings_CTRL {
 	public Boolean canCRUDRL{get;set;}
 	public Relationship_Lookup__c activeRL{get;set;}
 	public String selectedRLName{get;set;}
-	public List<Relationship_Lookup__c> relLookupList{get{
-        relLookupMap = Relationship_Lookup__c.getAll();       
+	public List<Relationship_Lookup__c> relLookupList{get{              
         return (List<Relationship_Lookup__c>)setCon.getRecords();
     }set;}
     public Integer numLookups{get;set;}
@@ -128,19 +127,14 @@ public with sharing class RelationshipsSettings_CTRL {
         return recDiv;
     }set;}
     public ApexPages.Standardsetcontroller setCon{get{
-        if (setCon == null){
-        	pageSize = 20;  
-            setCon = new ApexPages.Standardsetcontroller(relLookupMap.values());
-            numLookups = setCon.getResultSize();
-            setCon.setPageSize(pageSize);
-        } 
+        pageSize = 20;  
+        setCon = new ApexPages.Standardsetcontroller(relLookupMap.values());
+        numLookups = setCon.getResultSize();
+        setCon.setPageSize(pageSize);        
         return setCon;            		
     }set;}
     	  
-	/******/ 
-	    
-	
-	
+	/******/
 	
 	public RelationshipsSettings_CTRL(){
 		relSettings = Relationships_Utils.getRelationshipSettings();
@@ -149,8 +143,6 @@ public with sharing class RelationshipsSettings_CTRL {
 		active_tab = 'general_settings'; 
 		canEditRelSettings = false;
 		canCRUDAC = false;
-		
-		
 	}
 	
 	public PageReference cancel(){		
@@ -225,32 +217,48 @@ public with sharing class RelationshipsSettings_CTRL {
 
     /*** Relationship Lookup CRUD Methods ***/
     public PageReference deleteLookup(){    	
+    	activeRL = relLookupMap.get(selectedRLName);
+    	delete activeRL;
+    	relLookupMap = Relationship_Lookup__c.getAll();    	
     	return null;
     } 
     public PageReference editLookup(){
+    	activeRL = relLookupMap.get(selectedRLName);
+    	canCRUDRL = true;
     	return null;
     }
     public PageReference addLookup(){
+    	activeRL = new Relationship_Lookup__c();
+    	canCRUDRL = true;
     	return null;
     }
     public PageReference saveLookup(){
+    	canCRUDRL = false;
+    	try{
+    		upsert activeRL;
+            relLookupMap = Relationship_Lookup__c.getAll();
+    	}catch(Exception e){
+    		ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Error Saving Relationship Lookup Record.  Please refresh your page and try again.'));
+    	}
     	return null;
     }
 
-
+    /*** TEST METHODS ***/
     static testMethod void RelationshipsSettings_CTRL_TEST(){
     	    	
     	//test auto relationship creation
     	Relationship_Auto_Create__c newAC = new Relationship_Auto_Create__c(Name = 'TESTACAUTO', Object__c = 'Contact', Field__c = 'Description', Relationship_Type__c = 'NewType');
     	insert newAC;
     	
-    	
-    	
+    	//test relationship lookup creation
+    	Relationship_Lookup__c newRL = new Relationship_Lookup__c(Name='TESTRL', Male__c='Male', Female__c='Female', Neutral__c='Neutral');
+    	insert newRL;
     	
     	//create a new instance of the controller
         RelationshipsSettings_CTRL rsCTRL = new RelationshipsSettings_CTRL();
         system.assertNotEquals(null, rsCTRL.relSettings);
         system.assertNotEquals(null, rsCTRL.relACMap);
+        system.assertNotEquals(null, rsCTRL.relLookupMap);
         system.assertEquals('general_settings', rsCTRL.active_tab);
           	
     	//test auto relationship behavior
@@ -272,6 +280,13 @@ public with sharing class RelationshipsSettings_CTRL {
     	rsCTRL.activeAC.Relationship_Type__c = 'Whatever';
     	rsCTRL.saveAC();
     	system.assert(rsCTRL.relACMap.keySet().size() > 0);
+    	
+    	//test relationships lookup behavior
+    	
+    	
+    	
+    	
+    	
     	
     	
     }
