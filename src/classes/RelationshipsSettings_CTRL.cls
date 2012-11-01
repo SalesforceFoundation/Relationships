@@ -282,8 +282,29 @@ public with sharing class RelationshipsSettings_CTRL {
     	system.assert(rsCTRL.relACMap.keySet().size() > 0);
     	
     	//test relationships lookup behavior
-    	
-    	
+    	system.assert(rsCTRL.relLookupMap.keySet().size() > 0);
+        system.assert(rsCTRL.setCon.getResultSize() == rsCTRL.relLookupMap.keySet().size());
+    	rsCTRL.selectedRLName = 'TESTRL';
+    	rsCTRL.editLookup();
+    	system.assertEquals('TESTRL', rsCTRL.activeRL.Name);
+    	rsCTRL.activeRL.Name = 'TESTRL2';
+    	rsCTRL.saveLookup();
+    	system.assert(rsCTRL.relLookupMap.keySet().size() > 0);
+    	system.assert(rsCTRL.relLookupMap.containsKey('TESTRL2'));
+    	system.assert(rsCTRL.relLookupList.size() > 0);
+    	rsCTRL.addLookup();
+    	rsCTRL.activeRL.Name = 'TESTRLName3';
+    	rsCTRL.activeRL.Male__c = 'Male';
+    	rsCTRL.activeRL.Female__c = 'Female';
+        rsCTRL.activeRL.Neutral__c = 'Neutral';
+        rsCTRL.saveLookup();
+        system.assert(rsCTRL.relLookupMap.containsKey('TESTRLName3'));           
+        rsCTRL.selectedRLName = 'TESTRLName3';
+        rsCTRL.deleteLookup(); 	
+    	system.assert(!rsCTRL.relLookupMap.containsKey('TESTRLName3'));
+    	rsCTRL.activeRL = rsCTRL.relLookupMap.get('TESTRL');
+    	rsCTRL.cancel();
+    	system.assertNotEquals('TESTRL', rsCTRL.activeRL.Name);
     	
     	
     	
