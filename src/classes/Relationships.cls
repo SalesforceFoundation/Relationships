@@ -36,10 +36,24 @@ public with sharing class Relationships {
 
 /// <name> Relationships </name>
 	/// <summary> Default Constructor </summary>
-	public Relationships()
-	{
-        
+	public Relationships(){}
+	
+	
+	public Relationships(Map<Id, Contact> newMap, Map<Id, Contact> oldMap, Map<String, Relationship_Auto_Create__c> autoFields, Relationships_Utils.triggerAction ta){}
+	
+	public Relationships(Map<Id, CampaignMember> newMap, Map<Id, CampaignMember> oldMap, Map<String, Relationship_Auto_Create__c> autoFields, Relationships_Utils.triggerAction ta){
+	
+	
+	
+	
+	
+	
 	}
+	
+	
+	
+	
+	
 
 	/// <name> Relationships </name>
 	/// <summary> Overloads the Relationships object constructor to handle Relationship processing </summary>
