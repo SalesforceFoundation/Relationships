@@ -42,19 +42,13 @@ public class Relationships_Utils {
             RelationshipSettings = Relationship_Settings__c.getOrgDefaults();
             
             //if we don't have org defaults...
-            if (RelationshipSettings == null){
+            if (RelationshipSettings.id == null){
                 RelationshipSettings = new Relationship_Settings__c(
-                   
-                
+                    Reciprocal_Method__c = 'List Setting'
                 );
-                
                 insert RelationshipSettings;	
             }
         }	
-    	
     	return RelationshipSettings;
     }
-
-
-
 }
