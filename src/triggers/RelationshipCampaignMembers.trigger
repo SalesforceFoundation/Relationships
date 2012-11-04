@@ -29,12 +29,11 @@
 */ 
 trigger RelationshipCampaignMembers on CampaignMember (after insert, after update) {
     if(!Relationships_Utils.getRelationshipSettings().DISABLE_RelationshipCM_trigger__c){
-        Map<String, Relationship_Auto_Create__c> autoRel = Relationship_Auto_Create__c.getAll();
-        if (!autoRel.isEmpty() && trigger.isAfter && trigger.isInsert){
-            Relationships process = new Relationships(trigger.newMap, null, autoRel, Relationships_Utils.triggerAction.afterInsert);        	
+        if (Relationships_Utils.hasCMAutoCreate && trigger.isAfter && trigger.isInsert){
+            Relationships process = new Relationships(trigger.newMap, null, Relationships_Utils.triggerAction.afterInsert);        	
         }
-        else if (!autoRel.isEmpty() && trigger.isAfter && trigger.isUpdate){
-        	Relationships process = new Relationships(trigger.newMap, trigger.oldMap, autoRel, Relationships_Utils.triggerAction.afterUpdate);
+        else if (Relationships_Utils.hasCMAutoCreate && trigger.isAfter && trigger.isUpdate){
+        	Relationships process = new Relationships(trigger.newMap, trigger.oldMap, Relationships_Utils.triggerAction.afterUpdate);
         }        
     }
 }
