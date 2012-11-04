@@ -42,7 +42,7 @@ public class Relationships_Utils {
             RelationshipSettings = Relationship_Settings__c.getOrgDefaults();
             
             //if we don't have org defaults...
-            if (RelationshipSettings.id == null){
+            if (RelationshipSettings == null){
                 RelationshipSettings = new Relationship_Settings__c(
                     Reciprocal_Method__c = 'List Setting'
                 );
@@ -50,5 +50,40 @@ public class Relationships_Utils {
             }
         }	
     	return RelationshipSettings;
-    }
+    }    
+
+    private static Map<String, Relationship_Auto_Create__c> AutoCreateMap;
+    public static Map<String, Relationship_Auto_Create__c> getAutoCreateMap(){
+    	if(AutoCreateMap == null){
+    		AutoCreateMap = Relationship_Auto_Create__c.getAll();
+    	}
+    	return AutoCreateMap;
+    }    
+    private static Boolean contactAutoCreate;
+    public static Boolean hasContactAutoCreate{get{
+        if (contactAutoCreate == null){
+            for(String s : AutoCreateMap.keySet()){
+        	   if (AutoCreateMap.get(s).Object__c == 'Contact'){
+        	       contactAutoCreate = true;
+        	       break;
+        	   }        		
+        	}     
+        	if (contactAutoCreate != true)contactAutoCreate = false;   	
+        }	    	
+        return contactAutoCreate;	
+    }}
+    
+    private static Boolean cmAutoCreate;
+    public static Boolean hasCMAutoCreate{get{
+        if (cmAutoCreate == null){
+        	for(String s : AutoCreateMap.keySet()){
+        		if(AutoCreateMap.get(s).Object__c == 'CampaignMember'){
+        			cmAutoCreate = true;
+        			break;
+        		}
+        	}
+            if (cmAutoCreate != true)cmAutoCreate = false;
+        }	
+    	return cmAutoCreate;
+    }}
 }
