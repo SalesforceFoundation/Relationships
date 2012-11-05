@@ -70,9 +70,12 @@ public with sharing class Relationships {
         	}        	
         }	
         //use @future for inserts
-        if (!ContactIds.isEmpty()){
-        	CreateNewRelationships(ContactIds, ReciprocalIds, Types);
+        if (!ContactIds.isEmpty() && !Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
+        	CreateNewRelationshipsFuture(ContactIds, ReciprocalIds, Types);
         }        		
+        else if (!ContactIds.isEmpty() && Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
+        	CreateNewRelationships(ContactIds, ReciprocalIds, Types);
+        }
 	}
 	
 	public Relationships(Map<Id, CampaignMember> newMap, Map<Id, CampaignMember> oldMap, Relationships_Utils.triggerAction ta){
@@ -107,10 +110,13 @@ public with sharing class Relationships {
 	            }
             }           
         }   
-       //use @future for inserts
-        if (!ContactIds.isEmpty()){
+        //use @future for inserts
+        if (!ContactIds.isEmpty() && !Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
+            CreateNewRelationshipsFuture(ContactIds, ReciprocalIds, Types);
+        }               
+        else if (!ContactIds.isEmpty() && Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
             CreateNewRelationships(ContactIds, ReciprocalIds, Types);
-        }    
+        }
 	}
 
 	/// <name> Relationships </name>
@@ -312,7 +318,11 @@ public with sharing class Relationships {
 		
 	}
     
+    
     @future
+    public static void CreateNewRelationshipsFuture(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
+        CreateNewRelationships(ContactIds, RelatedContactIds, Types);	
+    }    
     public static void CreateNewRelationships(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
     	Integer i = 0;
     	List<Relationship__c> relationshipsForInsert = new List<Relationship__c>();
