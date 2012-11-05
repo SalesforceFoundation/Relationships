@@ -39,6 +39,15 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Force_Synchronous_Auto_Create__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Forces the Relationships package to synchronously process the auto creation of relationships for auto-create functionality</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Forces the Relationships package to synchronously process the auto creation of relationships for auto-create functionality</inlineHelpText>
+        <label>Force Synchronous Auto Create</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Gender_Field__c</fullName>
         <description>The custom field used to define the gender of a Contact for determining reciprocal relationships</description>
         <externalId>false</externalId>
