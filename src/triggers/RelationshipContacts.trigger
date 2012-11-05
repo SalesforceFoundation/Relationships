@@ -27,8 +27,8 @@
 	ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
 	POSSIBILITY OF SUCH DAMAGE.
 */
-trigger RelationshipContacts on Contact (after delete) {
-    if(!Relationships_Utils.getRelationshipSettings().DISABLE_RelationshipCM_trigger__c){
+trigger RelationshipContacts on Contact (after delete, after insert, after update) {
+    if(!Relationships_Utils.getRelationshipSettings().DISABLE_RelationshipContacts_trigger__c){
         if (Relationships_Utils.hasContactAutoCreate && trigger.isAfter && trigger.isInsert){
             Relationships process = new Relationships(trigger.newMap, null, Relationships_Utils.triggerAction.afterInsert);            
         }
