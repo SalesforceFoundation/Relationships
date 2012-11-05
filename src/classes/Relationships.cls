@@ -39,7 +39,10 @@ public with sharing class Relationships {
 	public Relationships(){}
 	
 	public Relationships(Map<Id, Contact> newMap, Map<Id, Contact> oldMap, Relationships_Utils.triggerAction ta){
-        List<Relationship__c> newRelationships = new List<Relationship__c>();
+        List<Id> ContactIds = new List<Id>();
+        List<Id> ReciprocalIds = new List<Id>();
+        List<String> Types = new List<String>();        
+        
         for (Id i : newMap.keySet()){
         	Contact c = newMap.get(i);
         	for(String s : Relationships_Utils.getAutoCreateMap().keySet()){
@@ -54,21 +57,29 @@ public with sharing class Relationships {
                     }    
                     
                     if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
-                        newRelationships.add(createAutoRelationship(c.Id, relatedContactId, rac));
+                        ContactIds.add(c.Id);
+                        ReciprocalIds.add(relatedContactId);
+                        Types.add(rac.Relationship_Type__c);
                     }
                     else if (ta == Relationships_Utils.triggerAction.afterUpdate && relatedContactId != null && relatedContactId != oldMap.get(c.id).get(rac.Field__c)){
-                    	newRelationships.add(createAutoRelationship(c.Id, relatedContactId, rac));
+                    	ContactIds.add(c.Id);
+                        ReciprocalIds.add(relatedContactId);
+                        Types.add(rac.Relationship_Type__c);
                     }
         		}        		
         	}        	
         }	
-        if (!newRelationships.isEmpty()){
-        	insert newRelationships;
+        //use @future for inserts
+        if (!ContactIds.isEmpty()){
+        	CreateNewRelationships(ContactIds, ReciprocalIds, Types);
         }        		
 	}
 	
 	public Relationships(Map<Id, CampaignMember> newMap, Map<Id, CampaignMember> oldMap, Relationships_Utils.triggerAction ta){
-        List<Relationship__c> newRelationships = new List<Relationship__c>();
+        List<Id> ContactIds = new List<Id>();
+        List<Id> ReciprocalIds = new List<Id>();
+        List<String> Types = new List<String>();  
+        
         for (Id i : newMap.keySet()){
             CampaignMember cm = newMap.get(i);
             if (cm.ContactId != null){
@@ -83,18 +94,23 @@ public with sharing class Relationships {
 	                        
 	                    }
 	                    if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
-	                        newRelationships.add(createAutoRelationship(cm.ContactId, relatedContactId, rac));
+	                        ContactIds.add(cm.ContactId);
+                            ReciprocalIds.add(relatedContactId);
+                            Types.add(rac.Relationship_Type__c);
 	                    }
 	                    else if (ta == Relationships_Utils.triggerAction.afterUpdate && relatedContactId != null && relatedContactId != oldMap.get(cm.id).get(rac.Field__c)){
-	                        newRelationships.add(createAutoRelationship(cm.ContactId, relatedContactId, rac));
+	                        ContactIds.add(cm.ContactId);
+                            ReciprocalIds.add(relatedContactId);
+                            Types.add(rac.Relationship_Type__c);
 	                    }
 	                }               
 	            }
             }           
         }   
-        if (!newRelationships.isEmpty()){
-            insert newRelationships;
-        }
+       //use @future for inserts
+        if (!ContactIds.isEmpty()){
+            CreateNewRelationships(ContactIds, ReciprocalIds, Types);
+        }    
 	}
 
 	/// <name> Relationships </name>
@@ -295,17 +311,27 @@ public with sharing class Relationships {
 		update relationshipsToUpdate;
 		
 	}
-
-	private static Relationship__c createAutoRelationship(Id ContactId, Id RelatedContactId, Relationship_Auto_Create__c rac){
-		Relationship__c r = new Relationship__c();
-		
-		
-		
-		//Select n.npe4__Type__c, n.npe4__Status__c, n.npe4__RelatedContact__c, n.npe4__Contact__c From npe4__Relationship__c n
-		
-		
-		return r;
-	}
+    
+    @future
+    public static void CreateNewRelationships(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
+    	Integer i = 0;
+    	List<Relationship__c> relationshipsForInsert = new List<Relationship__c>();
+    	
+    	for (Id conId : ContactIds){
+    		Relationship__c r = new Relationship__c(
+                Contact__c = conId, 
+                RelatedContact__c = RelatedContactIds[i],
+                Type__c = Types[i],    		  
+                Status__c = 'Current'    		      
+    		);
+    		relationshipsForInsert.add(r);
+    	}
+    	
+    	
+    	if (!relationshipsForInsert.isEmpty()){
+    		insert relationshipsForInsert;
+    	}
+    }
 	
 	private static void addType(list<Relationship__c> rList, list<Relationship__c> rCopy){
 		
