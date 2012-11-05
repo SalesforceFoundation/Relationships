@@ -38,22 +38,64 @@ public with sharing class Relationships {
 	/// <summary> Default Constructor </summary>
 	public Relationships(){}
 	
-	
-	public Relationships(Map<Id, Contact> newMap, Map<Id, Contact> oldMap, Map<String, Relationship_Auto_Create__c> autoFields, Relationships_Utils.triggerAction ta){}
-	
-	public Relationships(Map<Id, CampaignMember> newMap, Map<Id, CampaignMember> oldMap, Map<String, Relationship_Auto_Create__c> autoFields, Relationships_Utils.triggerAction ta){
-	
-	
-	
-	
-	
-	
+	public Relationships(Map<Id, Contact> newMap, Map<Id, Contact> oldMap, Relationships_Utils.triggerAction ta){
+        List<Relationship__c> newRelationships = new List<Relationship__c>();
+        for (Id i : newMap.keySet()){
+        	Contact c = newMap.get(i);
+        	for(String s : Relationships_Utils.getAutoCreateMap().keySet()){
+        		Relationship_Auto_Create__c rac = Relationships_Utils.getAutoCreateMap().get(s);
+        		if (rac.Object__c == 'Contact'){
+                    Id relatedContactId;
+                    try{
+                        //get the id from the field                        
+                        relatedContactId = (Id)c.get(rac.Field__c);
+                    }catch(Exception e){
+                        
+                    }    
+                    
+                    if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
+                        newRelationships.add(createAutoRelationship(c.Id, relatedContactId, rac));
+                    }
+                    else if (ta == Relationships_Utils.triggerAction.afterUpdate && relatedContactId != null && relatedContactId != oldMap.get(c.id).get(rac.Field__c)){
+                    	newRelationships.add(createAutoRelationship(c.Id, relatedContactId, rac));
+                    }
+        		}        		
+        	}        	
+        }	
+        if (!newRelationships.isEmpty()){
+        	insert newRelationships;
+        }        		
 	}
 	
-	
-	
-	
-	
+	public Relationships(Map<Id, CampaignMember> newMap, Map<Id, CampaignMember> oldMap, Relationships_Utils.triggerAction ta){
+        List<Relationship__c> newRelationships = new List<Relationship__c>();
+        for (Id i : newMap.keySet()){
+            CampaignMember cm = newMap.get(i);
+            if (cm.ContactId != null){
+	            for(String s : Relationships_Utils.getAutoCreateMap().keySet()){
+	                Relationship_Auto_Create__c rac = Relationships_Utils.getAutoCreateMap().get(s);
+	                if (rac.Object__c == 'CampaignMember'){
+	                    Id relatedContactId;
+	                    try{
+	                        //get the id from the field                        
+	                        relatedContactId = (Id)cm.get(rac.Field__c);
+	                    }catch(Exception e){
+	                        
+	                    }
+	                    if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
+	                        newRelationships.add(createAutoRelationship(cm.ContactId, relatedContactId, rac));
+	                    }
+	                    else if (ta == Relationships_Utils.triggerAction.afterUpdate && relatedContactId != null && relatedContactId != oldMap.get(cm.id).get(rac.Field__c)){
+	                        newRelationships.add(createAutoRelationship(cm.ContactId, relatedContactId, rac));
+	                    }
+	                }               
+	            }
+            }           
+        }   
+        if (!newRelationships.isEmpty()){
+            insert newRelationships;
+        }
+	}
 
 	/// <name> Relationships </name>
 	/// <summary> Overloads the Relationships object constructor to handle Relationship processing </summary>
@@ -253,22 +295,21 @@ public with sharing class Relationships {
 		update relationshipsToUpdate;
 		
 	}
-	
-	public static Relationship_Settings__c getRelationshipSettings(){
-		Relationship_Settings__c rs;
-		rs = Relationship_Settings__c.getOrgDefaults();
-		if (rs == null){
-			rs = new Relationship_Settings__c(Reciprocal_Method__c = 'List Setting');
-			insert rs;
-		}
+
+	private static Relationship__c createAutoRelationship(Id ContactId, Id RelatedContactId, Relationship_Auto_Create__c rac){
+		Relationship__c r = new Relationship__c();
 		
-		return rs;
 		
+		
+		//Select n.npe4__Type__c, n.npe4__Status__c, n.npe4__RelatedContact__c, n.npe4__Contact__c From npe4__Relationship__c n
+		
+		
+		return r;
 	}
 	
 	private static void addType(list<Relationship__c> rList, list<Relationship__c> rCopy){
 		
-		Relationship_Settings__c rs = getRelationshipSettings();
+		Relationship_Settings__c rs = Relationships_Utils.getRelationshipSettings();
         
         //used for tracking place in array
         integer counter = 0;		    
