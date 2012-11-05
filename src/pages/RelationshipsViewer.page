@@ -316,14 +316,14 @@ var mouseOutComplete = false;
     infoText += '<br /><a href=/' + currentContact.id + ' target="_blank" style="color: white; font-weight: bold;">[ View Contact Record ]</a><br />';
     var encodedNewRel = encodeURI('/a00/e?CF00Nd0000005CzKe=' + currentContact.name + '&CF00Nd0000005CzKe_lkid=' + currentContact.id + '&retURL=%2F' + currentContact.id);
     infoText += '<a href=' + encodedNewRel + ' target="_blank" style="color: white; font-weight: bold;" >[ Create New Relationship ]</a><br />';
-    infoText += '<a href=/apex/RelationshipViewer?id=' + currentContact.id + ' target="_parent" style="color: white; font-weight: bold;">[ Re-Center on This Contact ]</a><br />';
+    infoText += '<a href=/apex/RelationshipsViewer?id=' + currentContact.id + ' target="_parent" style="color: white; font-weight: bold;">[ Re-Center on This Contact ]</a><br />';
     infoText +='</strong></p>';     
     return infoText;
  }   
 
  //From Juan Mendes here: http://js-bits.blogspot.com/2010/07/canvas-rounded-corner-rectangles.html
  function roundRect(ctx, x, y, width, height, radius, fill, stroke) {
-  if (typeof stroke == "undefined" ) {
+  if (typeof stroke == "undefined" ) { 
     stroke = true;
   }
   if (typeof radius === "undefined") {
