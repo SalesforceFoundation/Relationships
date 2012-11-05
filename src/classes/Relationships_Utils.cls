@@ -62,8 +62,8 @@ public class Relationships_Utils {
     private static Boolean contactAutoCreate;
     public static Boolean hasContactAutoCreate{get{
         if (contactAutoCreate == null){
-            for(String s : AutoCreateMap.keySet()){
-        	   if (AutoCreateMap.get(s).Object__c == 'Contact'){
+            for(String s : getAutoCreateMap().keySet()){
+        	   if (getAutoCreateMap().get(s).Object__c == 'Contact'){
         	       contactAutoCreate = true;
         	       break;
         	   }        		
@@ -76,8 +76,8 @@ public class Relationships_Utils {
     private static Boolean cmAutoCreate;
     public static Boolean hasCMAutoCreate{get{
         if (cmAutoCreate == null){
-        	for(String s : AutoCreateMap.keySet()){
-        		if(AutoCreateMap.get(s).Object__c == 'CampaignMember'){
+        	for(String s : getAutoCreateMap().keySet()){
+        		if(getAutoCreateMap().get(s).Object__c == 'CampaignMember'){
         			cmAutoCreate = true;
         			break;
         		}
