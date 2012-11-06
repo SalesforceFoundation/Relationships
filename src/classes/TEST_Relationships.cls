@@ -35,28 +35,41 @@
 @isTest
 private class TEST_Relationships {
     
-    private static Contact c1;
-    private static Contact c2;
+    private static Contact c1;//male
+    private static Contact c2;//female
+    private static Contact c3;//unknown
     
     //helper for test methods
     private static void setupRelationshipTestData(Relationship_Settings__c rs){
         
-            //set running user to avoid dml issue            
-            System.runAs(new User(id = UserInfo.getUserId())){ 
+        //set running user to avoid dml issue            
+        System.runAs(new User(id = UserInfo.getUserId())){ 
+        
             //remove any existing settings
             delete [select id from Relationship_Settings__c];
-        
             if (rs != null)
                 insert rs;
             else{
                 rs = new Relationship_Settings__c(Reciprocal_Method__c = 'List Setting');
                 insert rs;           
-            }                    
+            }
+            
+            //add autocreate settings for CMs 
+            delete [select id from Relationship_Auto_Create__c];
+            insert new Relationship_Auto_Create__c(Object__c='CampaignMember',Field__c='ContactId',
+                                                    Relationship_Type__c = 'TestType');            
+            
+            //add Reciprocal Relationship
+            delete [select id from Relationship_Lookup__c];
+            insert new Relationship_Lookup__c(Name='TestLookupType',Male__c='TestMaleType',
+                                                Female__c='TestFemaleType',Neutral__c='TestNeutralType');                                
         
-            c1 = new Contact(FirstName = 'Walter_Test', LastName = 'Roosevelt_Test');
+            c1 = new Contact(Salutation = 'Mr.', FirstName = 'Walter_Test', LastName = 'Roosevelt_Test');
             insert c1;
-            c2 = new Contact(FirstName = 'Bobby_Test', LastName = 'Nixon_Test');    	
-    	   insert c2;
+            c2 = new Contact(Salutation = 'Mrs.', FirstName = 'Jane_Test', LastName = 'Nixon_Test');    	
+            insert c2;
+            c3 = new Contact(Salutation = 'Dr.', FirstName = 'Pat_Test', LastName = 'Cleveland_Test');
+            insert c3;
         }
     }
     
