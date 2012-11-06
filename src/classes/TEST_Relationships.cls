@@ -34,89 +34,109 @@
 */
 @isTest
 private class TEST_Relationships {
-
+    
+    private static Contact c1;
+    private static Contact c2;
+    
+    //helper for test methods
+    private static void setupRelationshipTestData(Relationship_Settings__c rs){
+        
+            //set running user to avoid dml issue            
+            System.runAs(new User(id = UserInfo.getUserId())){ 
+            //remove any existing settings
+            delete [select id from Relationship_Settings__c];
+        
+            if (rs != null)
+                insert rs;
+            else{
+                rs = new Relationship_Settings__c(Reciprocal_Method__c = 'List Setting');
+                insert rs;           
+            }                    
+        
+            c1 = new Contact(FirstName = 'Walter_Test', LastName = 'Roosevelt_Test');
+            insert c1;
+            c2 = new Contact(FirstName = 'Bobby_Test', LastName = 'Nixon_Test');    	
+    	   insert c2;
+        }
+    }
+    
 	/// <name> TestContactRel </name>
 	/// <summary> test method for relationships and the mirroring </summary>
 	static testMethod void TestContactRel() {
 			 
-		Contact firstContact = new Contact (
-			FirstName='Joe',
-			LastName='Johanssen'
-		);
-		insert firstContact;
-
-		Contact secondContact = new Contact (
-			FirstName='Bobby',
-			LastName='Johanssen'
-		);
-		insert secondContact;
-
-		Relationship__c[] crel = new Relationship__c[]{
-			new Relationship__c(contact__c = firstContact.id, relatedcontact__c = secondContact.id, Type__c='Friend',Status__c='Active',Description__c='notes')
-		};
-		insert crel;
+		setupRelationshipTestData(null);	 
+      
+		Relationship__c rel = new Relationship__c(
+		      contact__c = c1.id, 
+		      relatedcontact__c = c2.id, 
+		      Type__c='Friend',
+		      Status__c='Active',
+		      Description__c='notes');
+		insert rel;
 		
+		List<Relationship__c> relList = new List<Relationship__c>();
 		// check that rel gets created
-		Relationship__c crel_original = [select id,contact__c,Relatedcontact__c,Status__c,Type__c,ReciprocalRelationship__c  from Relationship__c where id=:crel[0].Id];
-		//relationship should be set right
-		System.assertEquals(crel_original.Type__c, 'Friend');
-		
+		relList = [select id,contact__c,Relatedcontact__c,Status__c,
+		                                  Type__c, ReciprocalRelationship__c
+		                                  from Relationship__c where Id= :rel.Id limit 1];
+		List<Relationship__c> mirrorList = new List<Relationship__c>();
 		// check for mirror rel
-		Relationship__c crel_mirror = [select id,contact__c,Relatedcontact__c,Status__c,Type__c,ReciprocalRelationship__c  from Relationship__c where ReciprocalRelationship__c=:crel_original.Id];
-		//mirror should reference the original
-		System.assertEquals(crel_mirror.ReciprocalRelationship__c, crel_original.Id);
-		//mirror should have the relationship set right
-		System.assertEquals(crel_mirror.Type__c, 'Friend');
+		mirrorList = [select id,contact__c,Relatedcontact__c,Status__c,
+		                                      Type__c,ReciprocalRelationship__c  
+		                                      from Relationship__c where ReciprocalRelationship__c=:relList[0].Id limit 1];
 		
-		//original should reference the mirror
-		System.assertEquals(crel_original.ReciprocalRelationship__c, crel_mirror.Id);
 		
+        //reference eachother
+        System.assertEquals(relList[0].ReciprocalRelationship__c, mirrorList[0].Id);
+		System.assertEquals(mirrorList[0].ReciprocalRelationship__c, relList[0].Id);
+
+		//same types
+		System.assertEquals(mirrorList[0].Type__c, 'Friend');
+		System.assertEquals(relList[0].Type__c, 'Friend');  
 		
 		// test changing the relationship
-		Relationship__c updated_original = 
-			new Relationship__c(id = crel_original.id, Type__c='Colleague', Description__c = 'test desc')
-		;
-		update updated_original;
+		relList[0].Type__c = 'Colleague';
+		relList[0].Description__c = 'test desc';        
+		
+		//reset the process controller to mimic a second user action
+		Relationships_ProcessControl.hasRun = false;
+		
+		Test.startTest();
+		update relList[0];
+		Test.stopTest();		
 		
 		// test change to the rel
-		updated_original = [select id, Description__c, Type__c,ReciprocalRelationship__c from Relationship__c where id = :crel_original.Id];
+		Relationship__c updated_original = [select id, Description__c, Type__c,ReciprocalRelationship__c 
+		                                      from Relationship__c where id = :relList[0].Id limit 1];
+		                                      
 		//original should have updated relationship
 		System.assertEquals('Colleague', updated_original.Type__c);
-		
 		//original should have updated notes
 		System.assertEquals('test desc', updated_original.Description__c);
 		
-		Relationship__c updated_mirror = [select id, Type__c, Description__c, ReciprocalRelationship__c from Relationship__c where ReciprocalRelationship__c = :crel_original.Id];
-		//mirror should have relationship set right
-		System.assertEquals('Colleague', updated_mirror.Type__c);
-		
+		Relationship__c updated_mirror = [select id, Type__c, Description__c, ReciprocalRelationship__c
+		                                      from Relationship__c where ReciprocalRelationship__c = :relList[0].Id limit 1];
+	    //mirror should have relationship set right
+		System.assertEquals('Colleague', updated_mirror.Type__c);	
 		//mirror should have updated notes
 		System.assertEquals('test desc', updated_mirror.Description__c);
-
+	
 		// test deleting the rel
 		delete updated_original;
-		Relationship__c[] mirror_after_original_deleted = [select id from Relationship__c where ReciprocalRelationship__c = :crel_original.Id];
+		Relationship__c[] mirror_after_original_deleted = [select id 
+		                                                   from Relationship__c 
+		                                                   where ReciprocalRelationship__c = :rel.Id];
 		//mirror should be deleted as well
 		System.assertEquals(0, mirror_after_original_deleted.size());
-
 	}
+	
 	/// <name> TestOrphanedRelDelete </name>
 	/// <summary> test method for relationships and deleting the mirror record </summary>
 	static testMethod void TestOrphanedRelDelete() {	
-		Contact firstContact = new Contact (
-			FirstName='Joe',
-			LastName='Johanssen'
-		);
-		insert firstContact;
-
-		Contact secondContact = new Contact (
-			FirstName='Bobby',
-			LastName='Johanssen'
-		);
-		insert secondContact;
+        setupRelationshipTestData(null);
 
 		Relationship__c[] crel = new Relationship__c[]{
-			new Relationship__c(contact__c = firstContact.id, Relatedcontact__c = secondContact.id, Type__c='Buddies')
+			new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='Buddies')
 		};
 		insert crel;
 		
@@ -129,7 +149,7 @@ private class TEST_Relationships {
 		Relationship__c crel_mirror = [select id, Description__c, reciprocalrelationship__c, Type__c from Relationship__c where reciprocalrelationship__c=:crel_original.Id];
 		//mirror should reference the original
 		System.assertEquals(crel_mirror.reciprocalrelationship__c, crel_original.Id);
-		Contact secondContactForDelete = [select id from contact where id=:secondContact.id];
+		Contact secondContactForDelete = [select id from contact where id=:c2.id];
 		Test.startTest();
 		delete secondContactForDelete;
 		Test.stopTest();
