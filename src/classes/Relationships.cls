@@ -155,7 +155,7 @@ public with sharing class Relationships {
 			
 			// AFTER UPDATE
 			if (ta==Relationships_Utils.triggerAction.afterUpdate) 
-			{
+			{				
 				if (r.ReciprocalRelationship__c == oldRelationships[i].ReciprocalRelationship__c && r.RelatedContact__c != null)
 				{
 					relationshipsToUpdate.add(r);
@@ -292,9 +292,6 @@ public with sharing class Relationships {
 
 		for(Relationship__c r : Relationships) 
 		{
-			system.debug('STATUS: ' + r.Type__c + ' -- ' + oldRelationships[counter].Type__c);
-			system.debug('Reciprocal Relationship: ' + r.ReciprocalRelationship__c);
-			
 			//SWA 2009-05-13 removed a duplicate check for change to Status__c from this OR statement
 			if ((r.Status__c != oldRelationships[counter].Status__c || r.Type__c != oldRelationships[counter].Type__c || r.Description__c != oldRelationships[counter].Description__c)&& r.ReciprocalRelationship__c != null)
 			{
@@ -310,14 +307,10 @@ public with sharing class Relationships {
 			}
 			counter += 1;
 		}
-		system.debug('++++++++++++++++++++++++++++++++++++++++++++' + relationshipsToUpdate.size());
-		
 		//add type info as needed
 		addType(Relationships, relationshipstoUpdate);
-		update relationshipsToUpdate;
-		
+		update relationshipsToUpdate;		
 	}
-    
     
     @future
     public static void CreateNewRelationshipsFuture(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
