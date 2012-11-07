@@ -274,6 +274,13 @@ public with sharing class RelationshipsSettings_CTRL {
     	//test relationship lookup creation
     	Relationship_Lookup__c newRL = new Relationship_Lookup__c(Name='TESTRL', Male__c='Male', Female__c='Female', Neutral__c='Neutral');
     	insert newRL;
+    	//insert an error so the controller posts a message
+    	Relationship_Error__c re = new Relationship_Error__c(
+    	   Error_Type__c = 'MyType',
+    	   Error_Date_Time__c = system.now(),
+    	   Full_Error_Message__c = 'FullTextErrorMessage'
+    	);
+    	insert re;
     	
     	//create a new instance of the controller
         RelationshipsSettings_CTRL rsCTRL = new RelationshipsSettings_CTRL();
@@ -281,7 +288,12 @@ public with sharing class RelationshipsSettings_CTRL {
         system.assertNotEquals(null, rsCTRL.relACMap);
         system.assertNotEquals(null, rsCTRL.relLookupMap);
         system.assertEquals('general_settings', rsCTRL.active_tab);
-          	
+        
+        //test behavior of uncovered getters
+        List<SelectOption> genderList;
+        genderList = rsCTRL.genderFieldOptions;
+        system.assertEquals('-None-', genderList[0].getLabel());        
+        
     	//test auto relationship behavior
     	system.assert(rsCTRL.relACMap.keySet().size() > 0);
     	system.assert(rsCTRL.relAutoCreateList.size() == rsCTRL.relACMap.keySet().size());
@@ -292,6 +304,10 @@ public with sharing class RelationshipsSettings_CTRL {
     	rsCTRL.saveAC();
     	system.assert(rsCTRL.relACMap.keySet().size() > 0);
     	system.assert(rsCTRL.relACMap.containsKey('TESTACAUTO2'));
+    	List<SelectOption> acList;
+        acList = rsCTRL.ACFieldOptions;
+        system.assertEquals('-None-', acList[0].getLabel());  	
+    	
     	rsCTRL.selectedACName = 'TESTACAUTO2';
     	rsCTRL.deleteAC();
     	system.assert(!rsCTRL.relACMap.containsKey('TESTACAUTO2'));
@@ -300,7 +316,9 @@ public with sharing class RelationshipsSettings_CTRL {
     	rsCTRL.activeAC.Field__c = 'TestField__c';
     	rsCTRL.activeAC.Relationship_Type__c = 'Whatever';
     	rsCTRL.saveAC();
-    	system.assert(rsCTRL.relACMap.keySet().size() > 0);
+    	system.assert(rsCTRL.relACMap.keySet().size() > 0);    	
+        acList = rsCTRL.ACFieldOptions;
+        system.assertEquals('-None-', acList[0].getLabel());
     	
     	//test relationships lookup behavior
     	system.assert(rsCTRL.relLookupMap.keySet().size() > 0);
@@ -326,11 +344,13 @@ public with sharing class RelationshipsSettings_CTRL {
     	rsCTRL.activeRL = rsCTRL.relLookupMap.get('TESTRL');
     	rsCTRL.cancel();
     	system.assertNotEquals('TESTRL', rsCTRL.activeRL.Name);
-    	
-    	
-    	
-    	
-    	
+        
+        //use the getter
+        Integer i = rsCTRL.pageCountRL;
+        
+        //other methods for coverage
+        rsCTRL.deleteErrors();
+        rsCTRL.saveGeneralSettings();
+        rsCTRL.editGeneralSettings();    	
     }
-
 }
