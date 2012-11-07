@@ -84,32 +84,34 @@ global with sharing class RelationshipsViewer_CTRL{
     }  
     
     public static testMethod void RelationshipsViewer_TEST(){
-        
-        //insert two contacts
-        Contact c1 = new Contact(LastName = 'Testy');
-        insert c1;
-        Contact c2 = new Contact(LastName = 'McTester');
-        insert c2;
-        //create a relationship between them
-        Relationship__c rel = new Relationship__c(
-              contact__c = c1.id, 
-              relatedcontact__c = c2.id, 
-              Type__c='Friend',
-              Status__c='Active',
-              Description__c='notes');
-        insert rel;
-        //list to hold nodes
-        List<RelationshipsViewer_CTRL.Node> nodeList = new List<RelationshipsViewer_CTRL.Node>();
-        
-        ApexPages.Standardcontroller sc = new ApexPages.Standardcontroller(c1);
-        RelationshipsViewer_CTRL rvc = new RelationshipsViewer_CTRL(sc);
-        
-        //call the remote static method to get the node list
-        nodeList = RelationshipsViewer_CTRL.getRelationships(c1.id);
-        
-        //check that a base node (contact) and the related contact are in the node list
-        system.assertEquals(2, nodeList.size());
-        system.assertEquals('Testy', nodeList[0].LastName);
-        system.assertEquals('McTester', nodeList[1].LastName);
+        //set running user to avoid dml issue            
+        System.runAs(new User(id = UserInfo.getUserId())){ 
+	        //insert two contacts
+	        Contact c1 = new Contact(LastName = 'Testy');
+	        insert c1;
+	        Contact c2 = new Contact(LastName = 'McTester');
+	        insert c2;
+	        //create a relationship between them
+	        Relationship__c rel = new Relationship__c(
+	              contact__c = c1.id, 
+	              relatedcontact__c = c2.id, 
+	              Type__c='Friend',
+	              Status__c='Active',
+	              Description__c='notes');
+	        insert rel;
+	        //list to hold nodes
+	        List<RelationshipsViewer_CTRL.Node> nodeList = new List<RelationshipsViewer_CTRL.Node>();
+	        
+	        ApexPages.Standardcontroller sc = new ApexPages.Standardcontroller(c1);
+	        RelationshipsViewer_CTRL rvc = new RelationshipsViewer_CTRL(sc);
+	        
+	        //call the remote static method to get the node list
+	        nodeList = RelationshipsViewer_CTRL.getRelationships(c1.id);
+	        
+	        //check that a base node (contact) and the related contact are in the node list
+	        system.assertEquals(2, nodeList.size());
+	        system.assertEquals('Testy', nodeList[0].LastName);
+	        system.assertEquals('McTester', nodeList[1].LastName);
+        }
     }
 }
