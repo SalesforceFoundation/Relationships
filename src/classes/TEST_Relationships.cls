@@ -56,8 +56,8 @@ private class TEST_Relationships {
             
             //add autocreate settings for CMs 
             delete [select id from Relationship_Auto_Create__c];
-            insert new Relationship_Auto_Create__c(Object__c='CampaignMember',Field__c='ContactId',
-                                                    Relationship_Type__c = 'TestType');            
+            insert new Relationship_Auto_Create__c(Name='AutoCreate',Object__c='CampaignMember',
+                                                    Field__c='ContactId',Relationship_Type__c = 'TestType');            
             
             //add Reciprocal Relationship
             delete [select id from Relationship_Lookup__c];
