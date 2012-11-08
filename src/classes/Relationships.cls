@@ -435,8 +435,12 @@ public with sharing class Relationships {
         else if(rs.Reciprocal_Method__c == 'Value Inversion'){
             for (Relationship__c r : rList){                           
                 //instead lets split the type
-                list<string> splitrelationship = r.Type__c.split(system.label.Relationship_Split);
-                string newstring = splitrelationship[1] + system.label.Relationship_Split + splitrelationship[0];
+                List<string> splitrelationship = r.Type__c.split(system.label.Relationship_Split);
+                String newstring = '';
+                if (splitrelationship.size() > 1)
+                    newstring = splitrelationship[1] + system.label.Relationship_Split + splitrelationship[0];
+                else
+                    newstring = r.Type__c;
             
                 rCopy[counter].Type__c = newstring;
                 counter++;
