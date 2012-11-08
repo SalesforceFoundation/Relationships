@@ -1,4 +1,4 @@
-<apex:page id="NPSPRelationshipsSettings" controller="RelationshipsSettings_CTRL" tabStyle="Relationships_Settings__tab">
+<apex:page id="NPSPRelationshipsSettings" controller="RelationshipsSettings_CTRL" action="{!getSettingsFirstTime}" tabStyle="Relationships_Settings__tab">
     <apex:PageBlock id="settingsblock"> 
         <apex:sectionHeader title="Relationships Configuration & Settings" subtitle="Configuration & Settings" />
         <apex:Pagemessages />
