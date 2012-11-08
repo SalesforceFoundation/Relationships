@@ -173,8 +173,8 @@
                                     <apex:column value="{!e.Error_Date_Time__c}"/>
                                     <apex:column value="{!e.Error_Type__c}"/>
                                     <apex:column headervalue="Record Link">
-                                        <apex:outputlink target="_blank" title="Link to the affected record" value="{!e.Error_Record_Link__c}">
-                                            {!e.Error_Record_Link__c}
+                                        <apex:outputlink target="_blank" title="Affected Record - Actual or Reciprocal" value="{!e.Error_Record_Link__c}">
+                                            {!e.Error_Record_Link__c} 
                                         </apex:outputlink>                                    
                                     </apex:column>
                                     <apex:column value="{!e.Full_Error_Message__c}"/>
