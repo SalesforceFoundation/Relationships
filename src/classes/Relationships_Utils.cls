@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009, Salesforce.com Foundation
+    Copyright (c) 2009,2012, Salesforce.com Foundation
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -29,8 +29,8 @@
 */
 /**
 * @author Salesforce.com Foundation
-* @date 2011 
-* @description Simple enum for defining trigger types
+* @date 2011,2012
+* @description Enum for triggers and static utils for settings and collections
 */
 public class Relationships_Utils {
 	private static Relationship_Settings__c RelationshipSettings;
