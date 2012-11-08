@@ -491,4 +491,18 @@ private class TEST_Relationships {
         Relationship__c recRel = [select id, Type__c from Relationship__c where ReciprocalRelationship__c = :crel[0].id];
         system.assertEquals('TestFemaleType', recRel.Type__c);
     }
+    static testMethod void testErrorRecordCreation(){
+    	setupRelationshipTestData(null);
+    	Relationship__c[] crel = new Relationship__c[]{
+            new Relationship__c(contact__c = c2.id, Type__c='TestLookupType')
+        };
+        Relationships_ProcessControl.hasRun = false;
+        Database.SaveResult[] sr = Database.insert(crel, false);
+        //assert an error
+        system.assertNotEquals(0, [select count() from Relationship_Error__c]);
+        Relationships_ProcessControl.hasRun = false;
+        crel[0].RelatedContact__c = c1.id;
+        sr = Database.update(crel, false);
+        Relationship_Error__c re = Relationships_Utils.createRelationshipError(sr[0], crel[0]);
+    }
 }
