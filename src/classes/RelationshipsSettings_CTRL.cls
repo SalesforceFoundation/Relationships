@@ -149,8 +149,7 @@ public with sharing class RelationshipsSettings_CTRL {
     	  
 	/******/
 	
-	public RelationshipsSettings_CTRL(){
-		relSettings = Relationships_Utils.getRelationshipSettings();
+	public RelationshipsSettings_CTRL(){		
 		relACMap = Relationship_Auto_Create__c.getAll();  
 		relLookupMap = Relationship_Lookup__c.getAll();
 		active_tab = 'general_settings'; 
@@ -160,6 +159,11 @@ public with sharing class RelationshipsSettings_CTRL {
             ApexPages.addMessage(new ApexPages.message(ApexPages.severity.WARNING, 'Some errors have occurred during the normal operation of your Relationships package.  Please check the Relationship Errors tab below for more information.'));			
 		}
 	}
+	
+	public void getSettingsFirstTime(){
+		relSettings = Relationships_Utils.getRelationshipSettings();		
+	}
+	
 	
 	public PageReference cancel(){		
 		
@@ -293,6 +297,7 @@ public with sharing class RelationshipsSettings_CTRL {
     	
     	//create a new instance of the controller
         RelationshipsSettings_CTRL rsCTRL = new RelationshipsSettings_CTRL();
+        rsCTRL.getSettingsFirstTime();
         system.assertNotEquals(null, rsCTRL.relSettings);
         system.assertNotEquals(null, rsCTRL.relACMap);
         system.assertNotEquals(null, rsCTRL.relLookupMap);
