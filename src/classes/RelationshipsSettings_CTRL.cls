@@ -186,13 +186,18 @@ public with sharing class RelationshipsSettings_CTRL {
 	/** General Settings Methods **/
 	
 	public PageReference saveGeneralSettings(){
+		canEditRelSettings = false;
+		try{
+			update relSettings;
+		}catch(Exception e){
+			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Error updating General Settings.  Please refresh your page and try again.'));
+		}
 		return null;
 	}
 	public PageReference editGeneralSettings(){
 		canEditRelSettings = true;		
 		return null;		
-	}
-	
+	}	
 	
 	/*** Autorelationships CRUD Methods ***/
 	public PageReference deleteAC(){     
