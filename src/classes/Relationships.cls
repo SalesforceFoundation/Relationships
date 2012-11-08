@@ -344,7 +344,7 @@ public with sharing class Relationships {
         integer counter = 0;		    
 		    
         if (rs.Reciprocal_Method__c == 'List Setting'){            
-            map<string, Relationship_Lookup__c> rlMap = Relationship_Lookup__c.getAll();
+            map<string, Relationship_Lookup__c> rlMap = Relationship_Lookup__c.getAll().clone();
         
             //remove inactive values
             for (string s : rlMap.keySet()){
