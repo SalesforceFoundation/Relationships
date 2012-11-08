@@ -86,4 +86,39 @@ public class Relationships_Utils {
         }	
     	return cmAutoCreate;
     }}
+    
+    public static Relationship_Error__c createRelationshipError(Database.SaveResult s, Relationship__c r){
+        Relationship_Error__c re = new Relationship_Error__c();
+        re.Error_Date_Time__c = system.now();
+        
+        string recordURL = URL.getSalesforceBaseUrl().toExternalForm() + '/';
+        
+        if (s.getId() != null)
+            recordURL += s.getId();
+        else            
+            recordURL += r.ReciprocalRelationship__c;
+                     
+        if (recordURL.startsWith('http:')){
+            recordURL = recordURL.replaceFirst('http:', 'https:');
+        }            
+        re.Error_Record_Link__c = recordURL; 
+        
+        if (s.getErrors()[0].getStatusCode() == system.Statuscode.REQUIRED_FIELD_MISSING){
+            re.Error_Type__c = 'Required Field Missing';   
+        }
+        else if (s.getErrors()[0].getStatusCode() == system.Statuscode.FIELD_CUSTOM_VALIDATION_EXCEPTION){
+            re.Error_Type__c = 'Custom Validation Rule Failed';
+        }
+        else{
+            re.Error_Type__c = 'Other';
+        }
+        
+        //trim error message
+        if (s.getErrors()[0].getMessage().length() > 255)
+            re.Full_Error_Message__c = s.getErrors()[0].getMessage().substring(0, 254);
+        else
+            re.Full_Error_Message__c = s.getErrors()[0].getMessage();
+    
+        return re;
+    }
 }
