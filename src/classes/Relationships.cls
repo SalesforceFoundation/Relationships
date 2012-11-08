@@ -275,9 +275,9 @@ public with sharing class Relationships {
 		}
 		
 		//evaluate and add the type
-		addType(Relationships, relationshipstoCreate);
-		
-		insert relationshipsToCreate;
+		addType(Relationships, relationshipstoCreate);		
+		Database.Saveresult[] sr = Database.insert(relationshipsToCreate, false);
+		inspectSaveResults(sr, relationshipsToCreate);
 	}
 
 	/// <name> updateRelationship </name>
@@ -309,7 +309,8 @@ public with sharing class Relationships {
 		}
 		//add type info as needed
 		addType(Relationships, relationshipstoUpdate);
-		update relationshipsToUpdate;		
+		Database.Saveresult[] sr = Database.update(relationshipsToUpdate,false);
+		inspectSaveResults(sr, relationshipsToUpdate);
 	}
     
     @future
@@ -332,7 +333,8 @@ public with sharing class Relationships {
     	
     	
     	if (!relationshipsForInsert.isEmpty()){
-    		insert relationshipsForInsert;
+    		Database.Saveresult[] sr = Database.insert(relationshipsForInsert, false);
+            inspectSaveResults(sr, relationshipsForInsert);
     	}
     }
 	
@@ -451,6 +453,21 @@ public with sharing class Relationships {
             	rCopy[counter].Type__c = r.Type__c;
             	counter++; 
         	}	
+        }
+	}	
+	
+	private static void inspectSaveResults(Database.SaveResult[] sr, List<Relationship__c> rl){
+		List<Relationship_Error__c> elist = new List<Relationship_Error__c>();
+        //needed to match errors to update list index
+        integer i = 0;
+        for(Database.SaveResult s: sr){         
+            if (!s.isSuccess()){
+                elist.add(Relationships_Utils.createRelationshipError(s, rl[i]));                              
+            }
+            i++;
+        }        
+        if(!elist.isEmpty()){
+            insert elist;
         }
 	}
 }
