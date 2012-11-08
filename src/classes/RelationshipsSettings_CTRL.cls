@@ -180,6 +180,10 @@ public with sharing class RelationshipsSettings_CTRL {
 	
 	public PageReference deleteErrors(){
 		delete relErrorsList;
+		//requery
+		relErrorsList = [select id, Name, Error_Record_Link__c, 
+                          Error_Type__c, Full_Error_Message__c, Error_Date_Time__c
+                          from Relationship_Error__c order by Error_Date_Time__c desc limit 1000];
 		return null;
 	}
 	
