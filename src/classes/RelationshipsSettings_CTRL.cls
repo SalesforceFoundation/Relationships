@@ -95,7 +95,7 @@ public with sharing class RelationshipsSettings_CTRL {
 	        	fieldTokenMap = Schema.SObjectType.CampaignMember.fields.getMap();        	
 	        } 	
 	        for (String s : fieldTokenMap.keySet()){
-	        	if (s.endsWith('__c') && !s.startsWith('npe01__') && !s.startsWith('npo02__') && !s.startsWith('npe03__')){
+	        	if (s.equalsIgnoreCase('ReportsToId') || (s.endsWith('__c') && !s.startsWith('npe01__') && !s.startsWith('npo02__') && !s.startsWith('npe03__'))){
 	                //if we've hit the limit, throw a warning and recommend manual entry
 	                if (system.Limits.getFieldsDescribes() == system.Limits.getLimitFieldsDescribes()){
 	                    ApexPages.addMessage(new ApexPages.message(ApexPages.severity.WARNING, system.Label.RelationshipsCustomFieldOverload));                	
