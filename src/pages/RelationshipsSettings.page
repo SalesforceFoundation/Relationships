@@ -76,7 +76,7 @@
                         <apex:pageblocksection columns="2" showheader="false" rendered="{!canCRUDRL}">
                             <apex:pageblocksectionitem helptext="The Relationships Type that should trigger the gendered reciprocal.  (i.e. 'Father' as the type should trigger a reciprocal of 'daughter', 'son' or 'child')">
                                 <apex:outputlabel value="Relationship Type" for="rlnamefld"/>
-                                <apex:inputfield value="{!activeRL.Name}" id="rlnamefld"/>                                
+                                <apex:inputfield value="{!activeRL.Name}" id="rlnamefld" required="false"/>                                
                             </apex:pageblocksectionitem>
                             <apex:pageblocksectionitem helptext="The male reciprocal type for the Relationship">
                                 <apex:outputlabel value="Male Reciprocal" for="rlmalefld"/>
