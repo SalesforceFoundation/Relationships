@@ -6,6 +6,15 @@
     <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <fields>
+        <fullName>Allow_AutoCreated_Duplicates__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Auto-created Relationships are automatically deduplicated to prevent duplicate Relationship records from being created between two Contacts.  Check this box to disable that behavior and allow multiple Relationships of the same Type to be created between Contacts</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Auto-created Relationships are auto-deduplicated to prevent duplicate Relationship records from being created between two Contacts.  Check this box to disable this behavior &amp; allow multiple Relationships of the same Type to be created between two Contacts</inlineHelpText>
+        <label>Allow Auto-Created Duplicates</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>DISABLE_RelationshipCM_trigger__c</fullName>
         <defaultValue>false</defaultValue>
         <description>DISABLES the RelationshipCampaignMembers.trigger (CampaignMember, after insert, after update) 
