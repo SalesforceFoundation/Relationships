@@ -20,8 +20,8 @@
 	                        <apex:selectList value="{!relSettings.Gender_Field__c}" size="1" multiselect="false" rendered="{!canEditRelSettings}">
 	                            <apex:selectOptions value="{!genderFieldOptions}"/>
 	                        </apex:selectList>
-	                     
-	                     
+                            <apex:outputField value="{!relSettings.Allow_AutoCreated_Duplicates__c}" rendered="{!NOT(canEditRelSettings)}"/>	                       
+                            <apex:inputfield value="{!relSettings.Allow_AutoCreated_Duplicates__c}" rendered="{!canEditRelSettings}"/>	                       
 	                    </apex:PageBlockSection>
 	                    
 	                    <apex:outputPanel style="text-align: center; display: block; margin-left:auto; margin-right:auto;">
