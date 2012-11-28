@@ -53,7 +53,7 @@ public with sharing class Relationships {
                         //get the id from the field                        
                         relatedContactId = (Id)c.get(rac.Field__c);
                     }catch(Exception e){
-                        
+                        c.addError(system.Label.AutoCreateFieldError);
                     }    
                     
                     if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
@@ -94,7 +94,7 @@ public with sharing class Relationships {
 	                        //get the id from the field                        
 	                        relatedContactId = (Id)cm.get(rac.Field__c);
 	                    }catch(Exception e){
-	                        
+	                        cm.addError(system.Label.AutoCreateFieldError); 
 	                    }
 	                    if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
 	                        ContactIds.add(cm.ContactId);
