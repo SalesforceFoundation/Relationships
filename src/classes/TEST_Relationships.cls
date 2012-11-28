@@ -505,4 +505,27 @@ private class TEST_Relationships {
         sr = Database.update(crel, false);
         Relationship_Error__c re = Relationships_Utils.createRelationshipError(sr[0], crel[0]);
     }
+    
+    static testMethod void testAutoCreateDupePrevention(){
+    	setupRelationshipTestData(null);
+    	
+    	Relationship__c[] crel = new Relationship__c[]{
+            new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='TestType')
+        };
+        crel.add(new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='TestType2'));
+        insert crel;
+        
+        //update the ReportsToId to trigger autocreation 
+        c1.ReportsToId = c2.id;
+        Relationships_ProcessControl.hasRun = false;
+                
+        Test.startTest();        
+        update c1;
+        Test.stopTest();
+        
+        //assert we only have one relationship since we've deduped the auto-created one   
+    	Relationship__c[] rel = [select id, Type__c, RelatedContact__c from Relationship__c where Contact__c = :c1.id and Type__c = 'TestType'];
+        system.assertEquals('TestType', rel[0].Type__c);
+        system.assertEquals(rel.size(), 1);    	
+    }
 }
