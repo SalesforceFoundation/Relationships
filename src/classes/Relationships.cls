@@ -314,10 +314,10 @@ public with sharing class Relationships {
 	}
     
     @future
-    public static void CreateNewRelationshipsFuture(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
+    public static void createNewRelationshipsFuture(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
         CreateNewRelationships(ContactIds, RelatedContactIds, Types);	
     }    
-    public static void CreateNewRelationships(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
+    public static void createNewRelationships(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
     	Integer i = 0;
     	List<Relationship__c> relationshipsForInsert = new List<Relationship__c>();
     	
