@@ -71,10 +71,10 @@ public with sharing class Relationships {
         }	
         //use @future for inserts
         if (!ContactIds.isEmpty() && !Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
-        	CreateNewRelationshipsFuture(ContactIds, ReciprocalIds, Types);
+        	createNewRelationshipsFuture(ContactIds, ReciprocalIds, Types);
         }        		
         else if (!ContactIds.isEmpty() && Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
-        	CreateNewRelationships(ContactIds, ReciprocalIds, Types);
+        	createNewRelationships(ContactIds, ReciprocalIds, Types);
         }
 	}
 	
@@ -112,10 +112,10 @@ public with sharing class Relationships {
         }   
         //use @future for inserts
         if (!ContactIds.isEmpty() && !Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
-            CreateNewRelationshipsFuture(ContactIds, ReciprocalIds, Types);
+            createNewRelationshipsFuture(ContactIds, ReciprocalIds, Types);
         }               
         else if (!ContactIds.isEmpty() && Relationships_Utils.getRelationshipSettings().Force_Synchronous_Auto_Create__c){
-            CreateNewRelationships(ContactIds, ReciprocalIds, Types);
+            createNewRelationships(ContactIds, ReciprocalIds, Types);
         }
 	}
 
@@ -147,7 +147,7 @@ public with sharing class Relationships {
 				{
 					relationshipsToCreate.add(r);
 				}
-				if (r.ReciprocalRelationship__c != null)
+				if (r.ReciprocalRelationship__c != null) 
 				{
 					reciprocalsToUpdate.add(r);
 				}
@@ -259,8 +259,6 @@ public with sharing class Relationships {
 	{
 		List<Relationship__c> relationshipsToCreate = new List<Relationship__c>();
 		List<Relationship__c> relationshipsToUpdate = new List<Relationship__c>();
-		
-		
 	            
         for(Relationship__c r : Relationships) 
         {
@@ -315,22 +313,56 @@ public with sharing class Relationships {
     
     @future
     public static void createNewRelationshipsFuture(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
-        CreateNewRelationships(ContactIds, RelatedContactIds, Types);	
+        createNewRelationships(ContactIds, RelatedContactIds, Types);	
     }    
     public static void createNewRelationships(List<Id> ContactIds, List<Id> RelatedContactIds, List<String> Types){
     	Integer i = 0;
     	List<Relationship__c> relationshipsForInsert = new List<Relationship__c>();
-    	
+        
+        //used to hold existing relationships for the group of contacts and check for dupes
+        List<Relationship__c> existingRelationships = new List<Relationship__c>();
+        Map<Id, List<Relationship__c>> relationshipsByContact = new Map<Id, List<Relationship__c>>();
+        
+        if (!Relationships_Utils.getRelationshipSettings().Allow_AutoCreated_Duplicates__c){
+            existingRelationships = [select Id, Contact__c, RelatedContact__c, Type__c from Relationship__c where Contact__c IN :ContactIds limit 2000];
+            
+            //sort by Contact__c so we can pull relationships based on the inserted Contact
+            for(Relationship__c r : existingRelationships){
+            	if(relationshipsByContact.containsKey(r.Contact__c)){
+                    List<Relationship__c> rList = relationshipsByContact.get(r.Contact__c);
+            		rList.add(r);
+            		relationshipsByContact.put(r.Contact__c, rList);
+            	}
+            	else{
+            		relationshipsByContact.put(r.Contact__c, new List<Relationship__c>{r});
+            	}            	
+            }        
+        }        
+        	
     	for (Id conId : ContactIds){
-    		Relationship__c r = new Relationship__c(
-                Contact__c = conId, 
-                RelatedContact__c = RelatedContactIds[i],
-                Type__c = Types[i],    		  
-                Status__c = 'Current'    		      
-    		);
-    		relationshipsForInsert.add(r);
-    	}
-    	
+    		boolean doNotCreate = false;
+    		
+    		//prevent duplicates from being created if they exist and setting is enabled
+    		if (relationshipsByContact.containsKey(conId)){
+                for (Relationship__c r : relationshipsByContact.get(conId)){
+                	if (r.Type__c == Types[i] && r.RelatedContact__c == RelatedContactIds[i]){
+                        doNotCreate = true;                		
+                        break;
+                	}                	
+                }    
+    		}
+    		
+    		if (!doNotCreate){
+	    		Relationship__c r = new Relationship__c(
+	                Contact__c = conId, 
+	                RelatedContact__c = RelatedContactIds[i],
+	                Type__c = Types[i],    		  
+	                Status__c = 'Current'    		      
+	    		);
+	    		relationshipsForInsert.add(r);
+    		}
+    		i++;
+    	}    	
     	
     	if (!relationshipsForInsert.isEmpty()){
     		Database.Saveresult[] sr = Database.insert(relationshipsForInsert, false);
