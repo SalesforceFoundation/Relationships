@@ -41,6 +41,14 @@
         <value>Male</value>
     </labels>
     <labels>
+        <fullName>Relationship_Explanation_Connector</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship Explanation Connector</shortDescription>
+        <value>is</value>
+    </labels>
+    <labels>
         <fullName>Relationship_Split</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
