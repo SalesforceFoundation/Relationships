@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
     <labels>
+        <fullName>AutoCreateFieldError</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AutoCreateFieldError</shortDescription>
+        <value>Unable to retrieve a valid Id for Relationship auto-creation.  Please check the settings under the Relationships Settings tab for valid fields and try again.</value>
+    </labels>
+    <labels>
         <fullName>Automatic_Relationship_Help_Text</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
