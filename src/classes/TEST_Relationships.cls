@@ -57,7 +57,8 @@ private class TEST_Relationships {
             //add autocreate settings for CMs 
             delete [select id from Relationship_Auto_Create__c];
             insert new Relationship_Auto_Create__c(Name='AutoCreate',Object__c='CampaignMember',
-                                                    Field__c='ContactId',Relationship_Type__c = 'TestType');    
+                                                    Field__c='ContactId',Relationship_Type__c = 'TestType',
+                                                    Campaign_Types__c = 'Other;');    
             
             insert new Relationship_Auto_Create__c(Name='AutoCreate2',Object__c='Contact',
                                                     Field__c='ReportsToId',Relationship_Type__c = 'TestType');
@@ -208,7 +209,7 @@ private class TEST_Relationships {
         Relationships_ProcessControl.hasRun = false;
         
         //insert a campaignmember
-        Campaign c = new Campaign(Name='TestCampaign', isActive=true);
+        Campaign c = new Campaign(Name='TestCampaign', isActive=true, Type='Other');
         insert c;
         CampaignMember cm = new CampaignMember(ContactId = c2.id, CampaignId = c.id);
         
@@ -229,7 +230,7 @@ private class TEST_Relationships {
         Relationships_ProcessControl.hasRun = false;
         
         //insert a campaignmember
-        Campaign c = new Campaign(Name='TestCampaign', isActive=true);
+        Campaign c = new Campaign(Name='TestCampaign', isActive=true, Type='Other');
         insert c;
         CampaignMember cm = new CampaignMember(ContactId = c2.id, CampaignId = c.id);
         
