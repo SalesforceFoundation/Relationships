@@ -529,4 +529,15 @@ private class TEST_Relationships {
         system.assertEquals('TestType', rel[0].Type__c);
         system.assertEquals(rel.size(), 1);    	
     }
+    
+    static testMethod void testRelationshipUTILS(){
+    	//to test the Relationship_Utils class    	
+    	System.runAs(new User(id = UserInfo.getUserId())){ 
+    	   delete [select id from Relationship_Settings__c];
+    	   Relationship_Settings__c rs = Relationships_Utils.getRelationshipSettings();
+    	   
+    	   Boolean cAuto = Relationships_Utils.hasContactAutoCreate;
+    	   Boolean cmAuto = Relationships_Utils.hasCMAutoCreate;
+    	}
+    }    
 }
