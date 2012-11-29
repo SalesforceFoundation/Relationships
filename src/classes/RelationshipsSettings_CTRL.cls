@@ -82,6 +82,7 @@ public with sharing class RelationshipsSettings_CTRL {
     private Map<String, Relationship_Auto_Create__c> relACMap = new Map<String, Relationship_Auto_Create__c>();
     public String selectedACName{get;set;}
     public Relationship_Auto_Create__c activeAC{get;set;}
+    public Boolean CMSelected{get{if(activeAC.Object__c == 'CampaignMember')return true;else return false;}}
     public Boolean canCRUDAC{get;set;}    
     public List<SelectOption> ACfieldOptions{get{
     	ACfieldOptions = new List<SelectOption>();
@@ -115,7 +116,16 @@ public with sharing class RelationshipsSettings_CTRL {
         }            	                       
         return ACfieldOptions;    	
     }set;}
-    
+    public List<String> cTypeOptions{get;set;}
+    public List<SelectOption> ACCampaignTypeOptions{get{
+        ACCampaignTypeOptions = new List<SelectOption>();
+        Map<String, Schema.SObjectField> fieldMap = Schema.Sobjecttype.Campaign.fields.getMap(); 
+        List<Schema.PicklistEntry> values = FieldMap.get('Type').getDescribe().getPickListValues();        
+        for (Schema.PicklistEntry a : values){ 
+            ACCampaignTypeOptions.add(new SelectOption(a.getLabel(), a.getValue())); 
+        }
+        return ACCampaignTypeOptions;
+    }set;}
     /******/
 	
 	/*** Relationship Lookup Properties ***/
@@ -217,16 +227,27 @@ public with sharing class RelationshipsSettings_CTRL {
 	}
 	public PageReference editAC(){		
 		activeAC = relACMap.get(selectedACName);
+		cTypeOptions = new List<String>();
+		if(activeAC.Campaign_Types__c != null)
+            cTypeOptions = activeAC.Campaign_Types__c.split(';');				
 		canCRUDAC = true;
 		return null;
 	}
 	public PageReference addAC(){
 		activeAC = new Relationship_Auto_Create__c();
+		cTypeOptions = new List<String>();
 		canCRUDAC = true;
 		return null;
 	}
 	public PageReference saveAC(){
-		canCRUDAC = false;
+		//compile the selected types
+		String cTypes = '';
+		if (activeAC.Object__c == 'CampaignMember'){
+			for (String s : cTypeOptions){
+	            cTypes += s + ';';						
+			}
+		}        			
+		activeAC.Campaign_Types__c = cTypes;
 		//if this is a new AC, we need to set the name 
 		if (activeAC.Id == null){
 			integer keyCount = relACMap.keySet().size();
@@ -237,17 +258,22 @@ public with sharing class RelationshipsSettings_CTRL {
 				activeAC.Name = 'AutoCreateRel-' + keyCount;
             }		
 		}
-		try{
-			//upsert our active ac
-			upsert activeAC;
-			//refetch the data
-			relACMap = Relationship_Auto_Create__c.getAll();  
-		}catch(Exception e){
-			ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Error Saving Auto-Relationship Record.  Please refresh your page and try again.'));
+		if (activeAC.Object__c != null && activeAC.Field__c != null && activeAC.Relationship_Type__c != null){
+			try{
+				//upsert our active ac
+				upsert activeAC;
+				canCRUDAC = false;
+				//refetch the data
+				relACMap = Relationship_Auto_Create__c.getAll();  
+			}catch(Exception e){
+				ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Error Saving Auto-Relationship Record.  Please refresh your page and try again.'));
+			}
 		}
+		else{
+            ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Auto-creation requires a valid Object, Field and Relationship Type to save.'));			
+		}			
 		return null;
 	}	
-
 
     /*** Relationship Lookup CRUD Methods ***/
     public PageReference deleteLookup(){    	

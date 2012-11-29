@@ -66,11 +66,12 @@
                                 </apex:pageblocktable> 
                             </apex:outputpanel>
                             <apex:commandLink action="{!addLookup}" value="Add New Reciprocal Relationship Type" rendered="{!NOT(canCRUDRL)}" id="addRLRowLink" rerender="relationshiplookup_panel"/>
+                            <apex:actionStatus startText="Loading Reciprocal Relationship Record..." id="rrLoadStatus" />
                         </apex:pageblocksection>                        
                         <apex:actionFunction action="{!deleteLookup}" name="DeleteRL" rerender="relationshiplookup_panel">
                             <apex:param name="rlname" value="" assignTo="{!selectedRLName}"/>
                         </apex:actionFunction>
-                        <apex:actionFunction action="{!editLookup}" name="EditRL" rerender="relationshiplookup_panel">
+                        <apex:actionFunction action="{!editLookup}" name="EditRL" rerender="relationshiplookup_panel" status="rrLoadStatus">
                             <apex:param name="rlname" value="" assignTo="{!selectedRLName}"/>
                         </apex:actionFunction>
                         <apex:pageblocksection columns="2" showheader="false" rendered="{!canCRUDRL}">
@@ -120,15 +121,19 @@
 		                            </apex:column>
 		                            <apex:column value="{!ac.Relationship_Type__c}">
 		                                <apex:facet name="header">Relationship Type</apex:facet> 
-		                            </apex:column>		                            
+		                            </apex:column>		   
+		                            <apex:column value="{!ac.Campaign_Types__c}">
+                                        <apex:facet name="header">Campaign Types</apex:facet>		                              
+		                            </apex:column>                         
 		                        </apex:pageblocktable>	                                        
 	                        </apex:outputpanel>
 	                        <apex:commandLink action="{!addAC}" value="Add New Auto-Created Relationship" rendered="{!NOT(canCRUDAC)}" id="addACRowLink" rerender="autorelationships_panel"/>
+	                        <apex:actionStatus startText="Loading Auto-Create Record..." id="acLoadStatus" />
 	                    </apex:pageblocksection>                        
                         <apex:actionFunction action="{!deleteAC}" name="DeleteAC" rerender="autorelationships_panel">
                             <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
                         </apex:actionFunction>
-                        <apex:actionFunction action="{!editAC}" name="EditAC" rerender="autorelationships_panel">
+                        <apex:actionFunction action="{!editAC}" name="EditAC" rerender="autorelationships_panel" status="acLoadStatus">
                             <apex:param name="acname" value="" assignTo="{!selectedACName}"/>
                         </apex:actionFunction>                   
 	                    <apex:pageblocksection columns="2" rendered="{!canCRUDAC}" id="acinputblock">
@@ -150,12 +155,18 @@
                             <apex:pageblocksectionitem helpText="Select the type of Relationship to be created.  A reciprocal Relationship will also automatically be created in this process.">
                                    <apex:outputlabel value="Relationship Type" for="reltypeinputfld"/>
                                    <apex:inputfield value="{!activeAC.Relationship_Type__c}" id="reltypeinputfld"/>
-                            </apex:pageblocksectionitem>                  
+                            </apex:pageblocksectionitem>
+                            <apex:pageblocksectionitem helpText="Select the Campaign Types for auto-creation.  Only Members of the selected types will have Relationships created.  (NOTE: Does not effect Contact auto-create types)">
+                                   <apex:outputlabel value="Campaign Types" for="ctypeselect"/>
+                                   <apex:selectlist value="{!cTypeOptions}" id="ctypeselect" multiselect="true" size="5" disabled="{!NOT(CMSelected)}"> 
+                                       <apex:selectOptions value="{!ACCampaignTypeOptions}"/>
+                                   </apex:selectlist>
+                            </apex:pageblocksectionitem>
 	                    </apex:pageblocksection>
 	                    <apex:outputPanel style="text-align: center; display: block; margin-left:auto; margin-right:auto;" rendered="{!canCRUDAC}">
-                            <apex:commandButton value="Save" action="{!saveAC}"/>  
+                            <apex:commandButton value="Save" action="{!saveAC}"/>   
                             <apex:commandButton value="Cancel" action="{!cancel}"/>                            
-                        </apex:outputpanel> 
+                        </apex:outputpanel>  
                     </apex:outputpanel>                                                                            
                 </apex:tab>
                 <apex:tab label="Relationships Errors" name="relationships_errors">
