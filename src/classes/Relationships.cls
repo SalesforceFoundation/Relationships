@@ -81,31 +81,48 @@ public with sharing class Relationships {
 	public Relationships(Map<Id, CampaignMember> newMap, Map<Id, CampaignMember> oldMap, Relationships_Utils.triggerAction ta){
         List<Id> ContactIds = new List<Id>();
         List<Id> ReciprocalIds = new List<Id>();
-        List<String> Types = new List<String>();  
+        List<String> Types = new List<String>();
+        List<Id> cIds = new List<Id>();  
         
+        //CREATE CAMPAIGN MAP BASED ON newMAP KEYSET, THEN GET TYPE AND USE THAT MAP TO DETERMINE IF TYPE MATCHED rac.CMType
+        //requery newMap to get Campaign type
+        for (Id i : newMap.keySet()){
+        	cIds.add(newMap.get(i).CampaignId);
+        }
+        
+        map<Id, Campaign> cMap = new Map<Id, Campaign>([select id, Type from Campaign where Id IN :cIds]);
+                
         for (Id i : newMap.keySet()){
             CampaignMember cm = newMap.get(i);
             if (cm.ContactId != null){
 	            for(String s : Relationships_Utils.getAutoCreateMap().keySet()){
 	                Relationship_Auto_Create__c rac = Relationships_Utils.getAutoCreateMap().get(s);
+	                //retrieve the campaign for matching type
+	                Campaign c = cMap.get(cm.CampaignId);
+	                //create a set from the rac
 	                if (rac.Object__c == 'CampaignMember'){
-	                    Id relatedContactId;
-	                    try{
-	                        //get the id from the field                        
-	                        relatedContactId = (Id)cm.get(rac.Field__c);
-	                    }catch(Exception e){
-	                        cm.addError(system.Label.AutoCreateFieldError); 
-	                    }
-	                    if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
-	                        ContactIds.add(cm.ContactId);
-                            ReciprocalIds.add(relatedContactId);
-                            Types.add(rac.Relationship_Type__c);
-	                    }
-	                    else if (ta == Relationships_Utils.triggerAction.afterUpdate && relatedContactId != null && relatedContactId != oldMap.get(cm.id).get(rac.Field__c)){
-	                        ContactIds.add(cm.ContactId);
-                            ReciprocalIds.add(relatedContactId);
-                            Types.add(rac.Relationship_Type__c);
-	                    }
+                        List<String> cTypeList = rac.Campaign_Types__c.split(','); 
+                        Set<String> cTypeSet = new Set<String>();
+                        cTypeSet.addAll(cTypeList);                        	                	
+	                	if (cTypeSet.contains(c.Type)){	                	
+		                    Id relatedContactId;
+		                    try{
+		                        //get the id from the field                        
+		                        relatedContactId = (Id)cm.get(rac.Field__c);
+		                    }catch(Exception e){
+		                        cm.addError(system.Label.AutoCreateFieldError); 
+		                    }
+		                    if(ta == Relationships_Utils.triggerAction.afterInsert && relatedContactId != null){                        
+		                        ContactIds.add(cm.ContactId);
+	                            ReciprocalIds.add(relatedContactId);
+	                            Types.add(rac.Relationship_Type__c);
+		                    }
+		                    else if (ta == Relationships_Utils.triggerAction.afterUpdate && relatedContactId != null && relatedContactId != oldMap.get(cm.id).get(rac.Field__c)){
+		                        ContactIds.add(cm.ContactId);
+	                            ReciprocalIds.add(relatedContactId);
+	                            Types.add(rac.Relationship_Type__c);
+		                    }
+	                	}		                    
 	                }               
 	            }
             }           
