@@ -101,7 +101,7 @@ public with sharing class Relationships {
 	                Campaign c = cMap.get(cm.CampaignId);
 	                //create a set from the rac
 	                if (rac.Object__c == 'CampaignMember'){
-                        List<String> cTypeList = rac.Campaign_Types__c.split(','); 
+                        List<String> cTypeList = rac.Campaign_Types__c.split(';'); 
                         Set<String> cTypeSet = new Set<String>();
                         cTypeSet.addAll(cTypeList);                        	                	
 	                	if (cTypeSet.contains(c.Type)){	                	
