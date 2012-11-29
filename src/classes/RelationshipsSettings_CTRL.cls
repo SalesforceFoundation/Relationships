@@ -307,7 +307,7 @@ public with sharing class RelationshipsSettings_CTRL {
     static testMethod void RelationshipsSettings_CTRL_TEST(){
     	    	
     	//test auto relationship creation
-    	Relationship_Auto_Create__c newAC = new Relationship_Auto_Create__c(Name = 'TESTACAUTO', Object__c = 'Contact', Field__c = 'Description', Relationship_Type__c = 'NewType');
+    	Relationship_Auto_Create__c newAC = new Relationship_Auto_Create__c(Name = 'TESTACAUTO', Object__c = 'Contact', Field__c = 'Description', Relationship_Type__c = 'NewType', Campaign_Types__c = 'Other;');
     	insert newAC;
     	
     	//test relationship lookup creation
@@ -340,7 +340,7 @@ public with sharing class RelationshipsSettings_CTRL {
     	rsCTRL.selectedACName = 'TESTACAUTO';
     	rsCTRL.editAC();
     	system.assertEquals('TESTACAUTO', rsCTRL.activeAC.Name);
-    	rsCTRL.activeAC.Name = 'TESTACAUTO2';
+    	rsCTRL.activeAC.Name = 'TESTACAUTO2';    	   	
     	rsCTRL.saveAC();
     	system.assert(rsCTRL.relACMap.keySet().size() > 0);
     	system.assert(rsCTRL.relACMap.containsKey('TESTACAUTO2'));
@@ -352,6 +352,7 @@ public with sharing class RelationshipsSettings_CTRL {
     	rsCTRL.deleteAC();
     	system.assert(!rsCTRL.relACMap.containsKey('TESTACAUTO2'));
     	rsCTRL.addAC();
+    	rsCTRL.cTypeOptions = new List<String>{'Other', 'Email'};
     	rsCTRL.activeAC.Object__c = 'CampaignMember';
     	rsCTRL.activeAC.Field__c = 'TestField__c';
     	rsCTRL.activeAC.Relationship_Type__c = 'Whatever';
@@ -387,6 +388,7 @@ public with sharing class RelationshipsSettings_CTRL {
         
         //use the getter
         Integer i = rsCTRL.pageCountRL;
+        List<SelectOption> campaignOptionList = rsCTRL.ACCampaignTypeOptions;
         
         //other methods for coverage
         rsCTRL.deleteErrors();
