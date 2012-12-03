@@ -540,4 +540,13 @@ private class TEST_Relationships {
     	   Boolean cmAuto = Relationships_Utils.hasCMAutoCreate;
     	}
     }    
+    
+    static testMethod void testInstallScript() {
+        Relationships_INST postinstall = new Relationships_INST();
+        Test.testInstall(postinstall, null);
+        Test.testInstall(postinstall, new Version(2,0), true);
+        
+        Relationship_Lookup__c[] rlList = [select id from Relationship_Lookup__c where Name = 'Father'];
+        System.assertEquals(rlList.size(), 1, 'Relationship Lookup not found');
+  }
 }
