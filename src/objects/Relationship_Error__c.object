@@ -57,6 +57,16 @@
         <type>Url</type>
     </fields>
     <fields>
+        <fullName>Error_Stack_Trace__c</fullName>
+        <description>Stack trace for the thrown error, if available at run time.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stack trace for the thrown error, if available at run time.</inlineHelpText>
+        <label>Error Stack Trace</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
         <fullName>Error_Type__c</fullName>
         <description>Type of error that occurred</description>
         <externalId>false</externalId>
