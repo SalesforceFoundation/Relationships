@@ -122,6 +122,23 @@ public class Relationships_Utils {
         return re;
     }
     
+    public static Relationship_Error__c createRelationshipError(Exception e){
+    	Relationship_Error__c re = new Relationship_Error__c();
+        re.Error_Date_Time__c = system.now();        
+        re.Error_Type__c = e.getTypeName();
+        
+        //trim error message
+        if (e.getMessage().length() > 255)
+            re.Full_Error_Message__c = e.getMessage().substring(0, 254);
+        else
+            re.Full_Error_Message__c = e.getMessage();
+        
+        re.Error_Stack_Trace__c = e.getStackTraceString();
+        
+        return re;
+    }
+    
+    
     //modified csv parser to load initial static resource for recip settings
     //http://wiki.developerforce.com/page/Code_Samples#Parse_a_CSV_with_APEX
     public static List<List<String>> parseCSV(String contents,Boolean skipHeaders) {
