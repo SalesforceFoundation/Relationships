@@ -34,14 +34,20 @@
 */
 public with sharing class RelationshipsViewer_CTRL{
     
-    public RelationshipsViewer_CTRL(ApexPages.StandardController controller){}  
-
+    public RelationshipsViewer_CTRL(ApexPages.StandardController controller){}
+    
     @RemoteAction
-    public static list<Node> getRelationships(id cid, boolean isInitialLoad) {
+    public static List<Node> getRelationships(id cid, boolean isInitialLoad, List<String> relIds) {
         list<Node> returnList = new list<Node>();
         list<Relationship__c> relationshipList = new list<Relationship__c>();
         
-        if (isInitialLoad){
+        List<Id> renderedRelationships;
+        if (relIds != null)
+            renderedRelationships = (List<Id>)relIds;
+        else
+            renderedRelationships = new List<Id>();
+        
+        if (isInitialLoad){        	
             //base node
             Node basenode = new Node();
       
@@ -59,11 +65,14 @@ public with sharing class RelationshipsViewer_CTRL{
         }        
         
         relationshipList = [select id, RelatedContact__r.LastName, Type__c, Status__c, RelatedContact__r.FirstName, 
-                                    RelatedContact__r.id, RelatedContact__r.Account.Name, RelatedContact__r.Title 
-                                    from Relationship__c where Contact__c = :cid];
+                                    RelatedContact__r.id, RelatedContact__r.Account.Name, RelatedContact__r.Title,
+                                    ReciprocalRelationship__r.id 
+                                    from Relationship__c 
+                                    where Contact__c = :cid and id NOT IN :renderedRelationships 
+                                    and ReciprocalRelationship__r.id NOT IN :renderedRelationships];
 
         for (Relationship__c r : relationshipList){
-            Node n = new Node();
+            Node n = new Node();             
             n.LastName = r.RelatedContact__r.LastName;
             n.id = r.RelatedContact__r.id;
             n.Type = r.Type__c;
@@ -71,8 +80,9 @@ public with sharing class RelationshipsViewer_CTRL{
             n.FirstName = r.RelatedContact__r.FirstName;
             n.link =  URL.getSalesforceBaseUrl().toExternalForm() + '/' + r.RelatedContact__r.id;
             n.AccountName = r.RelatedContact__r.Account.Name;
-            n.Title = r.RelatedContact__r.Title;            
-            returnList.add(n);            
+            n.Title = r.RelatedContact__r.Title;
+            n.relId = r.id;            
+            returnList.add(n);
         }
         return returnList;
     }
@@ -109,6 +119,7 @@ public with sharing class RelationshipsViewer_CTRL{
         String link;    
         String AccountName;
         String Title;
+        String relId;
     }  
     
     public static testMethod void RelationshipsViewer_TEST(){
@@ -134,7 +145,7 @@ public with sharing class RelationshipsViewer_CTRL{
 	        RelationshipsViewer_CTRL rvc = new RelationshipsViewer_CTRL(sc);
 	        
 	        //call the remote static method to get the node list
-	        nodeList = RelationshipsViewer_CTRL.getRelationships(c1.id, true);
+	        nodeList = RelationshipsViewer_CTRL.getRelationships(c1.id, true, null);
 	        
 	        //check that a base node (contact) and the related contact are in the node list
 	        system.assertEquals(2, nodeList.size());
