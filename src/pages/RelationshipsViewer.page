@@ -280,7 +280,7 @@
 			                if (RelNameId != '' && RelNameIdId != '')
 			                    uriString += RelNameId + conFirstName + ' ' + result[0].LastName + '&' + RelNameIdId + result[0].id + '&';  
 			        
-			                uriString += 'retURL=%2F' + result[0].id;
+			                uriString += 'retURL=' + result[0].id;
 			                var encodedNewRel = encodeURI(uriString);
 			                
 			                notice += '<a href=' + encodedNewRel + ' style="color: white; font-weight: bold;" >[ Create New Relationship ]</a><br />';
@@ -367,7 +367,7 @@
             if (RelNameId != '' && RelNameIdId != '')
                 uriString += RelNameId + currentContact.name + '&' + RelNameIdId + currentContact.id + '&';  
         
-            uriString += 'retURL=%2F' + currentContact.id;
+            uriString += 'retURL=' + currentContact.id;
             var encodedNewRel = encodeURI(uriString);
             infoText += '<a href=' + encodedNewRel + ' target="_blank" style="color: white; font-weight: bold;" >[ Create New Relationship ]</a><br />';
             infoText += '<a href=/apex/RelationshipsViewer?id=' + currentContact.id + ' target="_parent" style="color: white; font-weight: bold;">[ Re-Center on This Contact ]</a><br />';
