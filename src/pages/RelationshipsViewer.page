@@ -68,7 +68,7 @@
 		
 		                        if (edge.data.label) {
 		                            // set font style
-		                            ctx.font = 'italic 13px sans-serif';
+		                            ctx.font = 'italic 10px sans-serif';
 		
 		                            // add white box behind text to block line
 		                            ctx.fillStyle = "white";
@@ -186,10 +186,10 @@
 		                                        // if a node for result contact does not exist on the page, create it
 		                                        relatedNode = particleSystem.getNode(result[i].id);
 		                                        if (result[i].Status == 'Former') {
-		                                            thisLabel = 'Former ' + result[i].Type;
+		                                            thisLabel = result[i].Type + ' (Former)';
 		                                        }else{
 		                                            thisLabel = result[i].Type;
-		                                        }
+		                                        }		                                        
 		                        
 		                                        if (!relatedNode) {
 		                                            relatedNode = particleSystem.addNode(result[i].id, {label:result[i].FirstName + ' ' + result[i].LastName, color:colors[childColorIndex], colorIndex:childColorIndex, link:result[i].link, id:result[i].id, title:result[i].Title, accountName:result[i].AccountName})
@@ -197,7 +197,21 @@
 						                        // only add edge if the relationship is not already drawn
 						                        if (particleSystem.getEdges(currNode, relatedNode).length == 0 && particleSystem.getEdges(relatedNode, currNode).length == 0) {
 						                            particleSystem.addEdge(currNode, relatedNode, {label:thisLabel, status:result[i].Status});
-						                        } 		                        
+						                        }
+						                       
+						                        //if edge is already drawn, and the type is not listed, append the additional type to the label for this edge
+						                        else{
+                                                    var thisEdge;                                                    						                          
+						                            if (particleSystem.getEdges(currNode, relatedNode).length != 0)
+                                                        thisEdge = particleSystem.getEdges(currNode, relatedNode);
+                                                    else
+                                                        thisEdge = particleSystem.getEdges(relatedNode, currNode);						                              
+						                            var thisEdgeLabel = '';						                            
+						                            thisEdgeLabel = thisEdge[0].data.label;
+						                            //if this edge doesn't yet have the appended label
+						                            if (thisEdgeLabel.indexOf(thisLabel) == -1)						                            
+                                                        thisEdge[0].data.label = thisEdgeLabel + ', ' + thisLabel;
+						                        }  		                        
 		                                    }
 		                                }   
 		                            },{escape:true});
@@ -292,7 +306,7 @@
                             for (var i = 1; i < result.length; i++) {
 			                    var thisLabel = '';
 			                    if (result[i].Status == 'Former') {
-			                        thisLabel = 'Former ' + result[i].Type;
+			                        thisLabel = result[i].Type + ' (Former)';
 			                    } else {
 			                       thisLabel = result[i].Type;
 			                    }
