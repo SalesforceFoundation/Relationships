@@ -168,7 +168,7 @@
 		                            _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
 		                            nearest = dragged = particleSystem.nearest(_mouseP);      
 		            
-		                            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.RelationshipsViewer_CTRL.getRelationships}','{!id}',function(result, event){
+		                            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.RelationshipsViewer_CTRL.getRelationships}','{!id}', false,function(result, event){
 		            
 		                                if (event.status){
 		                                    var currNode = particleSystem.getNode(nearest.node.data.id);
@@ -242,7 +242,7 @@
             }    
 
             j$(document).ready(function(){
-                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.RelationshipsViewer_CTRL.getRelationships}','{!id}',function(result, event){
+                Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.RelationshipsViewer_CTRL.getRelationships}','{!id}', true,function(result, event){
                     if (event.status){
                         RelationshipInfo = getRelationshipInfo();
                         sys = arbor.ParticleSystem(1000, 200, 0.2) // create the system with sensible repulsion/stiffness/friction
