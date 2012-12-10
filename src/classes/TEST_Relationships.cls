@@ -506,6 +506,17 @@ private class TEST_Relationships {
         sr = Database.update(crel, false);
         Relationship_Error__c re = Relationships_Utils.createRelationshipError(sr[0], crel[0]);
     }
+    static testMethod void testExceptionRecordCreation(){
+    	setupRelationshipTestData(null);
+    	
+    	try{
+    		throw new MyException('TestException');
+    	}
+    	catch(Exception e){
+            Relationship_Error__c er = Relationships_Utils.createRelationshipError(e);
+            system.assertEquals('TestException', er.Full_Error_Message__c);
+    	}    	
+    }
     
     static testMethod void testAutoCreateDupePrevention(){
     	setupRelationshipTestData(null);
@@ -535,7 +546,6 @@ private class TEST_Relationships {
     	System.runAs(new User(id = UserInfo.getUserId())){ 
     	   delete [select id from Relationship_Settings__c];
     	   Relationship_Settings__c rs = Relationships_Utils.getRelationshipSettings();
-    	   
     	   Boolean cAuto = Relationships_Utils.hasContactAutoCreate;
     	   Boolean cmAuto = Relationships_Utils.hasCMAutoCreate;
     	}
@@ -549,4 +559,5 @@ private class TEST_Relationships {
         Relationship_Lookup__c[] rlList = [select id from Relationship_Lookup__c where Name = 'Father'];
         System.assertEquals(rlList.size(), 1, 'Relationship Lookup not found');
   }
+  public class MyException extends Exception{}
 }
