@@ -167,11 +167,13 @@
 		                            var pos = j$(canvas).offset();
 		                            _mouseP = arbor.Point(e.pageX-pos.left, e.pageY-pos.top)
 		                            nearest = dragged = particleSystem.nearest(_mouseP);      
-		            
-		                            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.RelationshipsViewer_CTRL.getRelationships}','{!id}', false,function(result, event){
-		            
+                                    
+                                    var currNode = particleSystem.getNode(nearest.node.data.id);                                    
+                                    		                              
+		                            Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.RelationshipsViewer_CTRL.getRelationships}',currNode.data.id, false,function(result, event){
+                                        		                                  
 		                                if (event.status){
-		                                    var currNode = particleSystem.getNode(nearest.node.data.id);
+		                                    
 		                                    output = '';
 		                                    var relatedNode = null;
 		                                    var childColorIndex = currNode.data.colorIndex;
@@ -180,10 +182,9 @@
 		                                    }
 		                  
 		                                    var thisLabel = '';
-		                                    for (var i = 1; i < result.length; i++) {
+		                                    for (var i = 0; i < result.length; i++) {
 		                                        // if a node for result contact does not exist on the page, create it
-		                                        relatedNode = particleSystem.getNode(result[i].id); 
-		                        
+		                                        relatedNode = particleSystem.getNode(result[i].id);
 		                                        if (result[i].Status == 'Former') {
 		                                            thisLabel = 'Former ' + result[i].Type;
 		                                        }else{
