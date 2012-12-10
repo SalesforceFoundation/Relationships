@@ -34,13 +34,17 @@
 */
 global class Relationships_INST implements InstallHandler{
 
+    //name of the static resource csv that contains the default reciprocal settings records
     global static final String RECIPROCAL_DEFAULT_RESOURCE_NAME = 'DefaultReciprocalRelationships';
     
     global void onInstall(InstallContext context){
         
         //only run if this is a user install 
         if(!context.isPush()){
-            //load some default custom settings
+            
+            String genderField = '';
+                        
+            //load default reciprocals
             List<Relationship_Lookup__c> rlList = new List<Relationship_Lookup__c>();
             StaticResource sr = [select body from StaticResource where Name = :RECIPROCAL_DEFAULT_RESOURCE_NAME];
             List<List<String>> recipRelList = Relationships_Utils.parseCSV(sr.Body.toString(), false);
@@ -54,25 +58,47 @@ global class Relationships_INST implements InstallHandler{
             	rlList.add(rl);            	
             }
             
-            if (!rlList.isEmpty())
-                insert rlList;            
+            if (!rlList.isEmpty()){
+            	try{
+            	   insert rlList;	
+            	}
+            	catch (Exception e){
+            		Relationship_Error__c re = Relationships_Utils.createRelationshipError(e);
+            		insert re;            		
+            	}
+            }                             
             
             //autodetect a gender field
+            Map<String, Schema.SObjectField> contactFieldMap = Schema.SObjectType.Contact.fields.getMap();
+        
+            if(contactFieldMap.containsKey('Gender__c')){
+                Schema.Describefieldresult dfr = contactFieldMap.get('Gender__c').getDescribe();              
+                if (dfr.getSoapType() == Schema.Soaptype.String && dfr.isUpdateable()){
+                	genderField = 'Gender__c';                	
+                }                
             
+            }else if (contactFieldMap.containsKey('gender__c')){
+            	Schema.Describefieldresult dfr = contactFieldMap.get('gender__c').getDescribe();              
+                if (dfr.getSoapType() == Schema.Soaptype.String && dfr.isUpdateable()){
+                    genderField = 'gender__c';                    
+                }            	
+            }
         
-            //detect other npsp packages
-        
+            //detect other npsp packages??
                
-        
-            //load default reciprocals
-      
-        	
-        	
+            //load some default custom settings
+            Relationship_Settings__c RelationshipSettings = Relationship_Settings__c.getOrgDefaults();
+            
+            //if we don't have org defaults...
+            if (RelationshipSettings.Id == null){
+                RelationshipSettings = new Relationship_Settings__c(
+                    Reciprocal_Method__c = 'List Setting'                    
+                );
+                if(genderField.length() > 0)
+                    RelationshipSettings.Gender_Field__c = genderField;
+                
+                insert RelationshipSettings;    
+            }  	
         }
-        
-        
-          
-        
-      
     }
 }
