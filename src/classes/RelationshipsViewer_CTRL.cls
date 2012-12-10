@@ -32,25 +32,31 @@
 * @date 2012 
 * @description Controller for Relationships viewer VF page 
 */
-global with sharing class RelationshipsViewer_CTRL{
+public with sharing class RelationshipsViewer_CTRL{
     
-    global RelationshipsViewer_CTRL(ApexPages.StandardController controller){}  
+    public RelationshipsViewer_CTRL(ApexPages.StandardController controller){}  
 
     @RemoteAction
-    global static list<Node> getRelationships(id cid) {
+    public static list<Node> getRelationships(id cid, boolean isInitialLoad) {
         list<Node> returnList = new list<Node>();
         list<Relationship__c> relationshipList = new list<Relationship__c>();
         
-        //base node
-        Node basenode = new Node();
+        if (isInitialLoad){
+            //base node
+            Node basenode = new Node();
       
-        Contact c = [select LastName, FirstName, id, Title, Account.Name from Contact where id = :cid];
-        basenode.LastName = c.LastName;
-        basenode.FirstName = c.FirstName;
-        basenode.Title = c.Title;
-        basenode.AccountName = c.Account.Name;
-        basenode.id = c.id;
-        returnList.add(basenode);
+            Contact c = [select LastName, FirstName, id, Title, Account.Name from Contact where id = :cid];
+            basenode.LastName = c.LastName;
+            basenode.FirstName = c.FirstName;
+            basenode.Title = c.Title;
+            basenode.AccountName = c.Account.Name;
+            basenode.id = c.id;
+            returnList.add(basenode);
+        }        
+        else{
+        	relationshipList.clear();
+        	returnList.clear();
+        }        
         
         relationshipList = [select id, RelatedContact__r.LastName, Type__c, Status__c, RelatedContact__r.FirstName, 
                                     RelatedContact__r.id, RelatedContact__r.Account.Name, RelatedContact__r.Title 
@@ -65,8 +71,7 @@ global with sharing class RelationshipsViewer_CTRL{
             n.FirstName = r.RelatedContact__r.FirstName;
             n.link =  URL.getSalesforceBaseUrl().toExternalForm() + '/' + r.RelatedContact__r.id;
             n.AccountName = r.RelatedContact__r.Account.Name;
-            n.Title = r.RelatedContact__r.Title;
-            
+            n.Title = r.RelatedContact__r.Title;            
             returnList.add(n);            
         }
         return returnList;
@@ -74,11 +79,11 @@ global with sharing class RelationshipsViewer_CTRL{
         
     //get Relationship object prefix for links
     @RemoteAction
-    global static RelationshipInfo getRelationshipInfo(){
+    public static RelationshipInfo getRelationshipInfo(){
     	return new RelationshipInfo();
     }
     
-    global class RelationshipInfo{
+    public class RelationshipInfo{
     	String prefix;
     	String NameField;
     	String NameIdField;
@@ -95,7 +100,7 @@ global with sharing class RelationshipsViewer_CTRL{
     	}    	
     }
 
-    global class Node { 
+    public class Node { 
         String FirstName;
         String LastName;
         String id;              
@@ -129,7 +134,7 @@ global with sharing class RelationshipsViewer_CTRL{
 	        RelationshipsViewer_CTRL rvc = new RelationshipsViewer_CTRL(sc);
 	        
 	        //call the remote static method to get the node list
-	        nodeList = RelationshipsViewer_CTRL.getRelationships(c1.id);
+	        nodeList = RelationshipsViewer_CTRL.getRelationships(c1.id, true);
 	        
 	        //check that a base node (contact) and the related contact are in the node list
 	        system.assertEquals(2, nodeList.size());
