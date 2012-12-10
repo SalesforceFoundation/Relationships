@@ -70,18 +70,17 @@ global class Relationships_INST implements InstallHandler{
             
             //autodetect a gender field
             Map<String, Schema.SObjectField> contactFieldMap = Schema.SObjectType.Contact.fields.getMap();
-        
-            if(contactFieldMap.containsKey('Gender__c')){
-                Schema.Describefieldresult dfr = contactFieldMap.get('Gender__c').getDescribe();              
-                if (dfr.getSoapType() == Schema.Soaptype.String && dfr.isUpdateable()){
-                	genderField = 'Gender__c';                	
-                }                
             
-            }else if (contactFieldMap.containsKey('gender__c')){
-            	Schema.Describefieldresult dfr = contactFieldMap.get('gender__c').getDescribe();              
-                if (dfr.getSoapType() == Schema.Soaptype.String && dfr.isUpdateable()){
-                    genderField = 'gender__c';                    
-                }            	
+            if((
+                contactFieldMap.containsKey('Gender__c') &&
+                contactFieldMap.get('Gender__c').getDescribe().getSoapType() == Schema.Soaptype.String &&
+                contactFieldMap.get('Gender__c').getDescribe().isUpdateable()
+                )||(
+                contactFieldMap.containsKey('gender__c') &&
+                contactFieldMap.get('gender__c').getDescribe().getSoapType() == Schema.Soaptype.String &&
+                contactFieldMap.get('gender__c').getDescribe().isUpdateable()                                            
+            )){                
+                genderField = 'Gender__c';
             }
         
             //detect other npsp packages??
