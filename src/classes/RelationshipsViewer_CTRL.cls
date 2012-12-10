@@ -71,16 +71,39 @@ global with sharing class RelationshipsViewer_CTRL{
         }
         return returnList;
     }
+        
+    //get Relationship object prefix for links
+    @RemoteAction
+    global static RelationshipInfo getRelationshipInfo(){
+    	return new RelationshipInfo();
+    }
+    
+    global class RelationshipInfo{
+    	String prefix;
+    	String NameField;
+    	String NameIdField;
+    	public RelationshipInfo(){
+    		Relationship_Settings__c rs = Relationships_Utils.getRelationshipSettings();
+    		
+    		this.prefix = Relationship__c.sObjectType.getDescribe().getKeyPrefix();
+    		if (rs.Relationship_Name_Field_Id__c != null){
+    			this.NameField = rs.Relationship_Name_Field_Id__c;
+    		}
+    		if (rs.Relationship_Name_Id_Field_Id__c != null){
+    			this.NameIdField = rs.Relationship_Name_Id_Field_Id__c;
+    		}    		
+    	}    	
+    }
 
     global class Node { 
-        string FirstName;
-        string LastName;
-        string id;              
-        string Status;
-        string Type;
-        string link;    
-        string AccountName;
-        string Title;
+        String FirstName;
+        String LastName;
+        String id;              
+        String Status;
+        String Type;
+        String link;    
+        String AccountName;
+        String Title;
     }  
     
     public static testMethod void RelationshipsViewer_TEST(){
