@@ -150,7 +150,12 @@ public with sharing class RelationshipsViewer_CTRL{
 	        //check that a base node (contact) and the related contact are in the node list
 	        system.assertEquals(2, nodeList.size());
 	        system.assertEquals('Testy', nodeList[0].LastName);
-	        system.assertEquals('McTester', nodeList[1].LastName);
+	        system.assertEquals('McTester', nodeList[1].LastName);	   
+	        List<String> sList = new List<String>();
+	        sList.add('01r80000000Gty5');     
+	        nodeList = RelationshipsViewer_CTRL.getRelationships(c1.id, false, sList);
+	        RelationshipsViewer_CTRL.RelationshipInfo ri = RelationshipsViewer_CTRL.getRelationshipInfo();
+	        system.assertNotEquals(null, ri);	        	        
         }
     }
 }
