@@ -88,16 +88,21 @@ global class Relationships_INST implements InstallHandler{
             //load some default custom settings
             Relationship_Settings__c RelationshipSettings = Relationship_Settings__c.getOrgDefaults();
             
+            Boolean doUpsert = false;
             //if we don't have org defaults...
             if (RelationshipSettings.Id == null){
                 RelationshipSettings = new Relationship_Settings__c(
                     Reciprocal_Method__c = 'List Setting'                    
                 );
-                if(genderField.length() > 0)
-                    RelationshipSettings.Gender_Field__c = genderField;
-                
-                insert RelationshipSettings;    
-            }  	
+                doUpsert = true;                                    
+            }            
+            
+            if(genderField.length() > 0 && RelationshipSettings.Gender_Field__c == null){
+                RelationshipSettings.Gender_Field__c = genderField;
+                doUpsert = true;
+            }
+            
+            if (doUpsert) upsert RelationshipSettings;
         }
     }
 }
