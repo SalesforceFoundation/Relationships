@@ -39,11 +39,10 @@ global class Relationships_INST implements InstallHandler{
     
     global void onInstall(InstallContext context){
         
-        //only run if this is a user install 
-        if(!context.isPush()){
+        //only run if this is a user install & previous version is less than 2.0 
+        if((context.previousVersion() == null || context.previousVersion().compareTo(new Version(2,0)) < 0) && !context.isPush()){
             
             String genderField = '';
-                        
             //load default reciprocals
             List<Relationship_Lookup__c> rlList = new List<Relationship_Lookup__c>();
             StaticResource sr = [select body from StaticResource where Name = :RECIPROCAL_DEFAULT_RESOURCE_NAME];
@@ -66,8 +65,7 @@ global class Relationships_INST implements InstallHandler{
             		Relationship_Error__c re = Relationships_Utils.createRelationshipError(e);
             		insert re;            		
             	}
-            }                             
-            
+            }
             //autodetect a gender field
             Map<String, Schema.SObjectField> contactFieldMap = Schema.SObjectType.Contact.fields.getMap();
             
@@ -81,9 +79,7 @@ global class Relationships_INST implements InstallHandler{
                 contactFieldMap.get('gender__c').getDescribe().isUpdateable()                                            
             )){                
                 genderField = 'Gender__c';
-            }
-        
-            //detect other npsp packages??
+            }        
                
             //load some default custom settings
             Relationship_Settings__c RelationshipSettings = Relationship_Settings__c.getOrgDefaults();
@@ -91,13 +87,11 @@ global class Relationships_INST implements InstallHandler{
             Boolean doUpsert = false;
             //if we don't have org defaults...
             if (RelationshipSettings.Id == null){
-                RelationshipSettings = new Relationship_Settings__c(
-                    Reciprocal_Method__c = 'List Setting'                    
-                );
+                RelationshipSettings = new Relationship_Settings__c(Reciprocal_Method__c = 'List Setting');
                 doUpsert = true;                                    
             }            
             
-            if(genderField.length() > 0 && RelationshipSettings.Gender_Field__c == null){
+            if(genderField.length() > 0 && (RelationshipSettings.Gender_Field__c == null || RelationshipSettings.Gender_Field__c == '')){
                 RelationshipSettings.Gender_Field__c = genderField;
                 doUpsert = true;
             }
