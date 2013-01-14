@@ -2,7 +2,9 @@ Nonprofit Starter Pack - Relationships
 =================================================
 
 The Nonprofit Starter Pack (NPSP) is available as 5 managed packages.
-This is the Recurring Donations package.
+This is the Relationships package.  
+master branch contains the latest patched release of Relationships available 'in the wild'
+dev branch contains larger code/configuration changes for the next version, and may or may not be stable 
 
 **Relationships**
 
@@ -26,5 +28,4 @@ Available [here](https://github.com/SalesforceFoundation/Recurring_Donations/wik
 
 Meta
 ----
-
 Released under the [BSD license](http://www.opensource.org/licenses/BSD-3-Clause).
