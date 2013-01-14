@@ -98,9 +98,21 @@
         <deprecated>false</deprecated>
         <description>Text formula that constructs a sentence explaining the relationship between the two Contacts</description>
         <externalId>false</externalId>
-        <formula>TEXT(RelatedContact__r.Salutation) + &quot; &quot; + RelatedContact__r.FirstName + &quot; &quot; + RelatedContact__r.LastName
-+ &quot;  &quot;  +  $Label.Relationship_Explanation_Connector + &quot; &quot; + 
-TEXT(Contact__r.Salutation) + &quot; &quot; + Contact__r.FirstName + &quot; &quot; + Contact__r.LastName + &quot;&apos;s &quot; + TEXT(Type__c)</formula>
+        <formula>IF( $Setup.Relationship_Settings__c.Reciprocal_Method__c = &quot;Value Inversion&quot;
+&amp;&amp; CONTAINS(TEXT(Type__c), $Label.Relationship_Split),
+
+
+TEXT(RelatedContact__r.Salutation) + &quot; &quot; + RelatedContact__r.FirstName + &quot; &quot; + RelatedContact__r.LastName
++ &quot;  &quot;  +  IF(ISPICKVAL(Status__c, &quot;Former&quot;), $Label.Relationship_Explanation_Connector_Past, $Label.Relationship_Explanation_Connector) + &quot; &quot; + 
+TEXT(Contact__r.Salutation) + &quot; &quot; + Contact__r.FirstName + &quot; &quot; + Contact__r.LastName + &quot;&apos;s &quot; + RIGHT(TEXT(Type__c), LEN(TEXT(Type__c))-FIND($Label.Relationship_Split,TEXT(Type__c))), 
+
+
+TEXT(RelatedContact__r.Salutation) + &quot; &quot; + RelatedContact__r.FirstName + &quot; &quot; + RelatedContact__r.LastName
++ &quot;  &quot;  +  IF(ISPICKVAL(Status__c, &quot;Former&quot;), $Label.Relationship_Explanation_Connector_Past, $Label.Relationship_Explanation_Connector) + &quot; &quot; + 
+TEXT(Contact__r.Salutation) + &quot; &quot; + Contact__r.FirstName + &quot; &quot; + Contact__r.LastName + &quot;&apos;s &quot; + TEXT(Type__c)
+
+
+)</formula>
         <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
         <inlineHelpText>Text formula that constructs a sentence explaining the relationship between the two Contacts</inlineHelpText>
         <label>Relationship Explanation</label>
@@ -239,6 +251,10 @@ TEXT(Contact__r.Salutation) + &quot; &quot; + Contact__r.FirstName + &quot; &quo
             </picklistValues>
             <picklistValues>
                 <fullName>Employee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Type1-Type2</fullName>
                 <default>false</default>
             </picklistValues>
             <sorted>false</sorted>
