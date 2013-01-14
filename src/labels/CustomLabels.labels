@@ -33,6 +33,14 @@
         <value>is</value>
     </labels>
     <labels>
+        <fullName>Relationship_Explanation_Connector_Past</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Relationship Explanation Connector Past</shortDescription>
+        <value>was</value>
+    </labels>
+    <labels>
         <fullName>Relationship_Split</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
