@@ -283,28 +283,28 @@
                         if (result.length < 2) {
                             var notice = '<p><strong>There are no relationships for this contact.</strong></p>';
                             notice += '<p><a href="/' + result[0].id + '" style="color: white; font-weight: bold;" >[ Return to Contact ] </a><br/>';  
-                         
-                            //retrieve metadata about the Relationship object in this org
-                            var ri = getRelationshipInfo();
-                               
+                            /*
+                            //the async callback means we can't guarantee the value is there when 
+                            //we go to render the link, so we'll just remove it for now
+                            var ri = getRelationshipInfo();                                                                                     
                             var RelPrefix = ri.prefix;
                             var RelNameId = '';
                             if (ri.NameField != null)
                                 RelNameId = ri.NameField + '=';
-                            
+                            alert(RelPrefix);
                             var RelNameIdId = '';
                             if (ri.NameIdField != null)
                                 RelNameIdId = ri.NameIdField + '=';
                         
                             var uriString = '/' + RelPrefix + '/e?';
-                    
+                            alert(uriString);
                             if (RelNameId != '' && RelNameIdId != '')
                                 uriString += RelNameId + conFirstName + ' ' + result[0].LastName + '&' + RelNameIdId + result[0].id + '&';  
                     
                             uriString += 'retURL=' + result[0].id;
-                            var encodedNewRel = encodeURI(uriString);
+                            var encodedNewRel = encodeURI(uriString); 
                             
-                            notice += '<a href=' + encodedNewRel + ' style="color: white; font-weight: bold;" >[ Create New Relationship ]</a><br />';
+                            notice += '<a href=' + encodedNewRel + ' style="color: white; font-weight: bold;" >[ Create New Relationship ]</a><br />'; */
                             drawToolTip(20, 20, notice);
                         }
                         else{            
@@ -388,6 +388,7 @@
             var ri = getRelationshipInfo();
                    
             var RelPrefix = ri.prefix;
+            
             var RelNameId = '';
             if (ri.NameField != null)
             RelNameId = ri.NameField + '=';
