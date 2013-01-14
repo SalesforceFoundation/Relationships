@@ -301,7 +301,7 @@ public with sharing class Relationships {
 	/// <param name="oldRelationships">  </param>
 	public static void updateRelationship(Relationship__c[] Relationships, Relationship__c[] oldRelationships)
 	{		
-		List<Relationship__c> relationshipsToCreate = new List<Relationship__c>();
+		List<Relationship__c> originalRelationships = new List<Relationship__c>();
 		List<Relationship__c> relationshipsToUpdate = new List<Relationship__c>();
 		Integer counter = 0;											// processing counter		
 
@@ -319,13 +319,16 @@ public with sharing class Relationships {
 				copy.Status__c = r.Status__c;
 				copy.Description__c = r.Description__c;
 				relationshipsToUpdate.add(copy);
+				originalRelationships.add(r);
 			}
 			counter += 1;
 		}
 		//add type info as needed
-		addType(Relationships, relationshipstoUpdate);
-		Database.Saveresult[] sr = Database.update(relationshipsToUpdate,false);
-		inspectSaveResults(sr, relationshipsToUpdate);
+		if (!originalRelationships.isEmpty() && !relationshipsToUpdate.isEmpty()){
+            addType(originalRelationships, relationshipstoUpdate);
+            Database.Saveresult[] sr = Database.update(relationshipsToUpdate,false);		
+            inspectSaveResults(sr, relationshipsToUpdate);
+		}            
 	}
     
     @future
