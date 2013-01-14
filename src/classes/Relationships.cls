@@ -433,12 +433,19 @@ public with sharing class Relationships {
                 Contact relatedContact = cMap.get(r.Contact__c);
             
                 if (rlMap.containsKey(r.Type__c)){
+                    
+                    List<String> malelist = system.label.Male.split(',');                                                                                                        
+                    List<String> femalelist = system.label.Female.split(',');
+                    
+                    Set<String> maleset = new Set<String>();
+                    Set<String> femaleset = new Set<String>();
+                    maleset.addAll(malelist);
+                    femaleset.addAll(femalelist);                    
+                                        
                     //was a gender field defined? 
                     if (gender_field != null && gender_field != '' && relatedContact.get(gender_field) != null){                        
                         
-                        String contact_gender = (String)relatedContact.get(gender_field);
-                        List<String> malelist = system.label.Male.split(',');                                                                                                        
-                        List<String> femalelist = system.label.Female.split(',');                       
+                        String contact_gender = (String)relatedContact.get(gender_field);                                               
                         String match_type = '';                        
                         
                         //try male
@@ -465,11 +472,10 @@ public with sharing class Relationships {
                         else
                             copy.Type__c = rlMap.get(r.Type__c).Neutral__c;
                     }
-                    
-                    else if (relatedContact.Salutation == 'Mr.' && rlMap.get(r.Type__c).Male__c != null){
+                    else if ((relatedContact.Salutation == 'Mr.' || maleset.contains(relatedContact.Salutation))  && rlMap.get(r.Type__c).Male__c != null){
                         copy.Type__c = rlMap.get(r.Type__c).Male__c;
                     }
-                    else if ((relatedContact.Salutation == 'Ms.' || relatedContact.Salutation == 'Mrs.') && rlMap.get(r.Type__c).Female__c != null){
+                    else if (((relatedContact.Salutation == 'Ms.' || relatedContact.Salutation == 'Mrs.') || femaleset.contains(relatedContact.Salutation)) && rlMap.get(r.Type__c).Female__c != null){
                         copy.Type__c = rlMap.get(r.Type__c).Female__c;
                     }
                     
