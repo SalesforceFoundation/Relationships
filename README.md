@@ -23,7 +23,7 @@ Installation
 
 Release Notes
 ---
-Available [here](https://github.com/SalesforceFoundation/Recurring_Donations/wiki/Release-Notes)
+Available [here](https://github.com/SalesforceFoundation/Relationships/wiki/Release-Notes)
 
 
 Meta
