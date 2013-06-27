@@ -39,6 +39,16 @@
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
     <fields>
+        <fullName>RelationshipViewer_Link_Label__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Status__c, &quot;Former&quot;), TEXT(Type__c) + &quot; (Former)&quot;, TEXT(Type__c))</formula>
+        <label>RelationshipViewer Link Label</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
         <fullName>Contact__c</fullName>
         <deprecated>false</deprecated>
         <description>Related Contact is this Contact&apos;s ______.</description>

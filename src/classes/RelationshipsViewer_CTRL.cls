@@ -66,7 +66,7 @@ public with sharing class RelationshipsViewer_CTRL{
         
         relationshipList = [select id, RelatedContact__r.LastName, Type__c, Status__c, RelatedContact__r.FirstName, 
                                     RelatedContact__r.id, RelatedContact__r.Account.Name, RelatedContact__r.Title,
-                                    ReciprocalRelationship__r.id 
+                                    ReciprocalRelationship__r.id, RelationshipViewer_Link_Label__c 
                                     from Relationship__c 
                                     where Contact__c = :cid and id NOT IN :renderedRelationships 
                                     and ReciprocalRelationship__r.id NOT IN :renderedRelationships];
@@ -81,7 +81,8 @@ public with sharing class RelationshipsViewer_CTRL{
             n.link =  URL.getSalesforceBaseUrl().toExternalForm() + '/' + r.RelatedContact__r.id;
             n.AccountName = r.RelatedContact__r.Account.Name;
             n.Title = r.RelatedContact__r.Title;
-            n.relId = r.id;            
+            n.relId = r.id; 
+            n.label = r.RelationshipViewer_Link_Label__c
             returnList.add(n);
         }
         return returnList;
@@ -120,6 +121,7 @@ public with sharing class RelationshipsViewer_CTRL{
         String AccountName;
         String Title;
         String relId;
+        String label;
     }  
     
     public static testMethod void RelationshipsViewer_TEST(){

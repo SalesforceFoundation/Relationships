@@ -189,11 +189,7 @@
                                             for (var i = 0; i < result.length; i++) {
                                                 // if a node for result contact does not exist on the page, create it
                                                 relatedNode = particleSystem.getNode(result[i].id);
-                                                if (result[i].Status == 'Former') {
-                                                    thisLabel = result[i].Type + ' (Former)';
-                                                }else{
-                                                    thisLabel = result[i].Type;
-                                                }                                               
+                                                thisLabel = result[i].label;
                                 
                                                 if (!relatedNode) {
                                                     relatedNode = particleSystem.addNode(result[i].id, {label:result[i].FirstName + ' ' + result[i].LastName, color:colors[childColorIndex]})
@@ -311,11 +307,8 @@
                             basenode = sys.addNode(result[0].id, {label:conFirstName + ' ' + result[0].LastName, color:colors[0], colorIndex:0, link:result[0].link, id:result[0].id, title:result[0].Title, accountName:result[0].AccountName})
                             for (var i = 1; i < result.length; i++) {
                                 var thisLabel = '';
-                                if (result[i].Status == 'Former') {
-                                    thisLabel = result[i].Type + ' (Former)';
-                                } else {
-                                   thisLabel = result[i].Type;
-                                }
+                                thisLabel = result[i].label;
+                                
                                 var thisConFirstName = '';
                                 if (result[i].FirstName === "undefined" || result[i].FirstName == null){
                                     thisConFirstName = '';
