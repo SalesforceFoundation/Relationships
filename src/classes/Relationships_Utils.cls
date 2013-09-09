@@ -33,32 +33,37 @@
 * @description Enum for triggers and static utils for settings and collections
 */
 public class Relationships_Utils {
-	private static Relationship_Settings__c RelationshipSettings;
-	
-	public enum triggerAction {beforeInsert, beforeUpdate, beforeDelete, afterInsert, afterUpdate, afterDelete, afterUndelete}
-    
+    private static Relationship_Settings__c RelationshipSettings;
+
+    public enum triggerAction {beforeInsert, beforeUpdate, beforeDelete, afterInsert, afterUpdate, afterDelete, afterUndelete}
+
     public static Relationship_Settings__c getRelationshipSettings(){
         if (RelationshipSettings == null){
-            RelationshipSettings = Relationship_Settings__c.getOrgDefaults();
-            
-            //if we don't have org defaults...
+            //retrive the lowest level hierachy setting
+            RelationshipSettings = Relationship_Settings__c.getInstance();
+
+            //check for an org wide setting and insert if required
             if (RelationshipSettings.Id == null){
-                RelationshipSettings = new Relationship_Settings__c(
-                    Reciprocal_Method__c = 'List Setting'
-                );
-                insert RelationshipSettings;	
+                Relationship_Settings__c newRS;
+                newRS = Relationship_Settings__c.getOrgDefaults();
+                //will return an empty object is it does not exist
+                if (newRS.Reciprocal_Method__c == null){
+                    newRS.Reciprocal_Method__c = 'List Settings';
+                    insert newRS;
+                    RelationshipSettings = newRS;
+                }
             }
-        }	
+        }
     	return RelationshipSettings;
-    }    
+    }
 
     private static Map<String, Relationship_Auto_Create__c> AutoCreateMap;
     public static Map<String, Relationship_Auto_Create__c> getAutoCreateMap(){
-    	if(AutoCreateMap == null){
-    		AutoCreateMap = Relationship_Auto_Create__c.getAll();
-    	}
-    	return AutoCreateMap;
-    }    
+        if(AutoCreateMap == null){
+            AutoCreateMap = Relationship_Auto_Create__c.getAll();
+        }
+        return AutoCreateMap;
+    }
     private static Boolean contactAutoCreate;
     public static Boolean hasContactAutoCreate{get{
         if (contactAutoCreate == null){
