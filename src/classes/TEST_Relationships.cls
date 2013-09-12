@@ -118,7 +118,7 @@ private class TEST_Relationships {
         relList[0].Description__c = 'test desc';        
         
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         Test.startTest();
         update relList[0];
@@ -195,7 +195,7 @@ private class TEST_Relationships {
         System.assertEquals(crel_mirror.reciprocalrelationship__c, crel_original.Id);        
         
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         Test.startTest();
         delete crel_original;
@@ -206,7 +206,7 @@ private class TEST_Relationships {
         setupRelationshipTestData(null);
         
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         //insert a campaignmember
         Campaign c = new Campaign(Name='TestCampaign', isActive=true, Type='Other');
@@ -227,7 +227,7 @@ private class TEST_Relationships {
         setupRelationshipTestData(new Relationship_Settings__c(Reciprocal_Method__c = 'List Setting', Force_Synchronous_Auto_Create__c = true));
         
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         //insert a campaignmember
         Campaign c = new Campaign(Name='TestCampaign', isActive=true, Type='Other');
@@ -247,14 +247,14 @@ private class TEST_Relationships {
     static testMethod void testAutoCreateCampaignMemberUpdate(){    	
         setupRelationshipTestData(null);        
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;        
+        //Relationships_ProcessControl.hasRun = false;        
         //insert a campaignmember
         Campaign c = new Campaign(Name='TestCampaign', isActive=true);
         insert c;
         CampaignMember cm = new CampaignMember(ContactId = c2.id, CampaignId = c.id);
         insert cm;        
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;        
+        //Relationships_ProcessControl.hasRun = false;        
         //do an update and check that a second relationship set is created for the new Contact
         cm.Status = 'SomethingDifferentForUpdate';        
         Test.startTest();        
@@ -265,7 +265,7 @@ private class TEST_Relationships {
         setupRelationshipTestData(null);
         
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         //insert a new Contact
         Contact c = new Contact(LastName='ReportingIn', ReportsToId = c1.id);        
@@ -286,7 +286,7 @@ private class TEST_Relationships {
         setupRelationshipTestData(new Relationship_Settings__c(Reciprocal_Method__c = 'List Setting', Force_Synchronous_Auto_Create__c = true));
         
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         //insert a new Contact
         Contact c = new Contact(LastName='ReportingIn', ReportsToId = c1.id);        
@@ -307,12 +307,12 @@ private class TEST_Relationships {
         setupRelationshipTestData(null);
         
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         //insert a new Contact
         Contact c = new Contact(LastName='ReportingIn', ReportsToId = c1.id);        
         insert c;
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         c.ReportsToId = c2.id;
         
         Test.startTest();        
@@ -330,7 +330,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='Buddies-Friends')
         };
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         Test.startTest();
         insert crel;
@@ -354,7 +354,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='BuddiesFriends')
         };
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         Test.startTest();
         insert crel;
@@ -378,7 +378,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='BuddiesFriends')
         };
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         
         Test.startTest();
         insert crel;
@@ -401,7 +401,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='TestLookupType')
         };        
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;    	
+        //Relationships_ProcessControl.hasRun = false;    	
     	
     	Test.startTest();
     	insert crel;
@@ -416,7 +416,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c2.id, Relatedcontact__c = c1.id, Type__c='TestLookupType')
         };        
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;        
+        //Relationships_ProcessControl.hasRun = false;        
         
         Test.startTest();
         insert crel;
@@ -431,7 +431,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c3.id, Relatedcontact__c = c2.id, Type__c='TestLookupType')
         };        
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;        
+        //Relationships_ProcessControl.hasRun = false;        
         
         Test.startTest();
         insert crel;
@@ -448,7 +448,7 @@ private class TEST_Relationships {
         c3.Description = 'Neutral';
         update c3;
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;        
+        //Relationships_ProcessControl.hasRun = false;        
         
         Test.startTest();
         insert crel;
@@ -465,7 +465,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c1.id, Relatedcontact__c = c2.id, Type__c='TestLookupType')
         };        
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;        
+        //Relationships_ProcessControl.hasRun = false;        
         
         Test.startTest();
         insert crel;
@@ -483,7 +483,7 @@ private class TEST_Relationships {
             new Relationship__c(contact__c = c2.id, Relatedcontact__c = c2.id, Type__c='TestLookupType')
         };
         //reset the process controller to mimic a second user action
-        Relationships_ProcessControl.hasRun = false;        
+        //Relationships_ProcessControl.hasRun = false;        
         
         Test.startTest();
         insert crel;
@@ -497,11 +497,11 @@ private class TEST_Relationships {
     	Relationship__c[] crel = new Relationship__c[]{
             new Relationship__c(contact__c = c2.id, Type__c='TestLookupType')
         };
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         Database.SaveResult[] sr = Database.insert(crel, false);
         //assert an error
         system.assertNotEquals(0, [select count() from Relationship_Error__c]);
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
         crel[0].RelatedContact__c = c1.id;
         sr = Database.update(crel, false);
         Relationship_Error__c re = Relationships_Utils.createRelationshipError(sr[0], crel[0]);
@@ -529,7 +529,7 @@ private class TEST_Relationships {
         
         //update the ReportsToId to trigger autocreation 
         c1.ReportsToId = c2.id;
-        Relationships_ProcessControl.hasRun = false;
+        //Relationships_ProcessControl.hasRun = false;
                 
         Test.startTest();        
         update c1;
@@ -558,6 +558,42 @@ private class TEST_Relationships {
         
         Relationship_Lookup__c[] rlList = [select id from Relationship_Lookup__c where Name = 'Father'];
         System.assertEquals(rlList.size(), 1, 'Relationship Lookup not found');
-  }
+  	}
+  
+  	static testmethod void test2Rels1Transaction() {
+		 // Create three contacts
+		Contact mainClient = new Contact(FirstName='Main',LastName='AAAClient');
+		insert mainClient;
+		Contact friend = new Contact(FirstName='Test',LastName='AAAFriend');
+		insert friend;
+		Contact coworker = new Contact(FirstName='Test',LastName='AAACoworker');
+		insert coworker;
+		
+		// Create two relationships
+		Relationship__c r = new Relationship__c(Contact__c=mainClient.Id,RelatedContact__c=friend.Id,Type__c='Friend');
+		insert r;
+		Relationship__c nr = [select id, ReciprocalRelationship__c from Relationship__c where Id = :r.id];		
+		system.assert(nr.ReciprocalRelationship__c != null); 		
+
+		// if done one at a time, we have to reset our static to mimic transaction scope
+        //Relationships_ProcessControl.hasRun = false;
+		r = new Relationship__c(Contact__c=mainClient.Id,RelatedContact__c=coworker.Id,Type__c='Coworker');
+		insert r;		
+		Relationship__c nr2 = [select id, ReciprocalRelationship__c from Relationship__c where Id = :r.id];
+		system.assert(nr2.ReciprocalRelationship__c != null); 		
+		
+		// ensure that we do correctly handle inserting two at once within a single transaction.
+        //Relationships_ProcessControl.hasRun = false;
+		list<Relationship__c> rels = new list<Relationship__c>(); 
+		rels.add(new Relationship__c(Contact__c=mainClient.Id,RelatedContact__c=friend.Id,Type__c='Friend2'));
+		rels.add(new Relationship__c(Contact__c=mainClient.Id,RelatedContact__c=coworker.Id,Type__c='Coworker2'));
+		insert rels;
+		list<Relationship__c> rels2 = [select id, ReciprocalRelationship__c from Relationship__c where Id = :rels[0].Id or Id = :rels[1].Id];
+		system.assertEquals(2, rels2.size());
+		system.assert(rels2[0].ReciprocalRelationship__c != null); 		
+		system.assert(rels2[1].ReciprocalRelationship__c != null); 		
+		
+  	}  
+  
   public class MyException extends Exception{}
 }
