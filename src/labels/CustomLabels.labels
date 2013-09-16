@@ -9,12 +9,28 @@
         <value>Unable to retrieve a valid Id for Relationship auto-creation.  Please check the settings under the Relationships Settings tab for valid fields and try again.</value>
     </labels>
     <labels>
+        <fullName>Automatic_Relationship_Help_Text</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Automatic Relationship Help Text</shortDescription>
+        <value>Defines the way a relationship type, and its reciprocal, is displayed.</value>
+    </labels>
+    <labels>
         <fullName>Female</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Female</shortDescription>
         <value>Female</value>
+    </labels>
+    <labels>
+        <fullName>List_Setting_Help_Text</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>List Setting Help Text</shortDescription>
+        <value>List Settings: Appends the reciprocal relationship based on the gender from the suffix and gender fields on the contact.  You can define the relationships in the custom settings section titled &quot;custom relationship settings&quot; label.</value>
     </labels>
     <labels>
         <fullName>Male</fullName>
@@ -83,5 +99,15 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <protected>false</protected>
         <shortDescription>RelationshipsSettingsDescription</shortDescription>
         <value>Settings that control the behavior of the Relationships package. Changing these will change how the Relationships records behave.</value>
+    </labels>
+    <labels>
+        <fullName>Value_Inversion_Help_Text</fullName>
+        <categories>Relationships</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Value Inversion Help Text</shortDescription>
+        <value>Value Inversion:
+
+Uses a hyphenated option as the type and inverts the selection on the reciprocal.</value>
     </labels>
 </CustomLabels>

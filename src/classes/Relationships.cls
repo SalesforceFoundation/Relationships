@@ -151,7 +151,7 @@ public with sharing class Relationships {
 		List<Relationship__c> reciprocalsToUpdate = new List<Relationship__c>();
 		
 		if (ta==Relationships_Utils.triggerAction.afterUpdate){
-		Relationships_ProcessControl.hasRun = true;
+			Relationships_ProcessControl.hasRun = true;
 		}
 		Integer i = 0;			// processing counter		
 		
@@ -211,6 +211,11 @@ public with sharing class Relationships {
 		if (relationshipsToDelete.size() > 0 ) {
 			deleteRelationship(relationshipsToDelete);
 		}
+
+		if (ta==Relationships_Utils.triggerAction.afterUpdate){
+            Relationships_ProcessControl.hasRun = false;
+		}
+
 	}
 
 
