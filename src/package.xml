@@ -4,5 +4,9 @@
         <members>RelationshipsSettings_CTRL</members>
         <name>ApexClass</name>
     </types>
+    <types>
+        <members>RelationshipsSettings</members>
+        <name>ApexPage</name>
+    </types>
     <version>28.0</version>
 </Package>
