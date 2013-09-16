@@ -12,14 +12,20 @@
                     <apex:outputpanel id="generalsettingspanel">
 	                    <apex:PageBlockSection columns="2" title="General Settings" collapsible="false">
 	                        <apex:outputField value="{!relSettings.Reciprocal_Method__c}" rendered="{!NOT(canEditRelSettings)}"/>
-	                        <apex:selectList value="{!relSettings.Reciprocal_Method__c}" size="1" multiselect="false" rendered="{!canEditRelSettings}">
-	                            <apex:selectOption itemValue="List Setting" itemLabel="List Settings"/>
-	                            <apex:selectOption itemValue="Value Inversion" itemLabel="Value Inversion"/>
-	                        </apex:selectList>
+	                        <apex:PageBlockSectionItem rendered="{!canEditRelSettings}" helpText="{!$ObjectType.Relationship_Settings__c.Fields.Reciprocal_Method__c.InlineHelpText}" >
+		                        <apex:outputLabel value="{!$ObjectType.Relationship_Settings__c.Fields.Reciprocal_Method__c.Label}" />
+		                        <apex:selectList value="{!relSettings.Reciprocal_Method__c}" size="1" multiselect="false" >
+		                            <apex:selectOption itemValue="List Setting" itemLabel="List Settings"/>
+		                            <apex:selectOption itemValue="Value Inversion" itemLabel="Value Inversion"/>
+		                        </apex:selectList>
+	                        </apex:PageBlockSectionItem>
 	                        <apex:outputField value="{!relSettings.Gender_Field__c}" rendered="{!NOT(canEditRelSettings)}"/>
-	                        <apex:selectList value="{!relSettings.Gender_Field__c}" size="1" multiselect="false" rendered="{!canEditRelSettings}">
-	                            <apex:selectOptions value="{!genderFieldOptions}"/>
-	                        </apex:selectList>
+                            <apex:PageBlockSectionItem rendered="{!canEditRelSettings}" helpText="{!$ObjectType.Relationship_Settings__c.Fields.Gender_Field__c.InlineHelpText}" >
+                                <apex:outputLabel value="{!$ObjectType.Relationship_Settings__c.Fields.Gender_Field__c.Label}" />
+		                        <apex:selectList value="{!relSettings.Gender_Field__c}" size="1" multiselect="false" >
+		                            <apex:selectOptions value="{!genderFieldOptions}"/>
+		                        </apex:selectList>
+		                    </apex:PageBlockSectionItem>
                             <apex:outputField value="{!relSettings.Allow_AutoCreated_Duplicates__c}" rendered="{!NOT(canEditRelSettings)}"/>	                       
                             <apex:inputfield value="{!relSettings.Allow_AutoCreated_Duplicates__c}" rendered="{!canEditRelSettings}"/>	                       
 	                    </apex:PageBlockSection>
