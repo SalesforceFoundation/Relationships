@@ -150,10 +150,23 @@ public with sharing class RelationshipsSettings_CTRL {
         return recDiv;
     }set;}
     public ApexPages.Standardsetcontroller setCon{get{
-        pageSize = 20;  
-        setCon = new ApexPages.Standardsetcontroller(relLookupMap.values());
-        numLookups = setCon.getResultSize();
-        setCon.setPageSize(pageSize);        
+    	if (setCon == null) {
+	        pageSize = 20;  
+	        
+	        // Sort them by name
+	        List<String> roleNames = new List<String>();
+	        roleNames.addAll(relLookupMap.keySet());
+	        roleNames.sort();  
+	        
+	        list<Relationship_Lookup__c> listRel = new list<Relationship_Lookup__c>();
+	        for (string str : roleNames) {
+	        	listRel.add(relLookupMap.get(str));
+	        }     
+	        
+	        setCon = new ApexPages.Standardsetcontroller(listRel);
+	        numLookups = setCon.getResultSize();
+	        setCon.setPageSize(pageSize);
+    	}        
         return setCon;            		
     }set;}
     	  
@@ -279,7 +292,8 @@ public with sharing class RelationshipsSettings_CTRL {
     public PageReference deleteLookup(){    	
     	activeRL = relLookupMap.get(selectedRLName);
     	delete activeRL;
-    	relLookupMap = Relationship_Lookup__c.getAll();    	
+    	relLookupMap = Relationship_Lookup__c.getAll();  
+    	setCon = null;  	
     	return null;
     } 
     public PageReference editLookup(){
@@ -297,6 +311,7 @@ public with sharing class RelationshipsSettings_CTRL {
     	try{
     		upsert activeRL;
             relLookupMap = Relationship_Lookup__c.getAll();
+            setCon = null;
     	}catch(Exception e){
     		ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Error Saving Relationship Lookup Record.  Please refresh your page and try again.'));
     	}
