@@ -47,11 +47,11 @@ public class Relationships_Utils {
                 Relationship_Settings__c newRS;
                 newRS = Relationship_Settings__c.getOrgDefaults();
                 //will return an empty object is it does not exist
-                if (newRS.Reciprocal_Method__c == null){
+                if (newRS.Id == null){
                     newRS.Reciprocal_Method__c = 'List Settings';
                     insert newRS;
-                    RelationshipSettings = newRS;
                 }
+                RelationshipSettings = newRS;
             }
         }
     	return RelationshipSettings;
