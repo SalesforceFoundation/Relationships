@@ -410,4 +410,22 @@ public with sharing class RelationshipsSettings_CTRL {
         rsCTRL.saveGeneralSettings();
         rsCTRL.editGeneralSettings();    	
     }
+    
+    
+    static testmethod void testSettingsObjectWithJustOrgDefaults() {
+        Relationship_Settings__c newRS;
+        newRS = Relationship_Settings__c.getOrgDefaults();
+        system.assertNotEquals(null, newRS);
+        system.assertEquals(null, newRS.Id);   
+        system.assertEquals(null, newRS.Reciprocal_Method__c); 	
+        newRS.Reciprocal_Method__c = 'List Settings';
+        insert newRS;
+        system.assertNotEquals(null, newRS.Id);
+    	
+        //create a new instance of the controller
+        RelationshipsSettings_CTRL rsCTRL = new RelationshipsSettings_CTRL();
+        rsCTRL.getSettingsFirstTime();
+        system.assertNotEquals(null, rsCTRL.relSettings);
+        system.assertNotEquals(null, rsCtrl.relSettings.Id);   	
+    }
 }
