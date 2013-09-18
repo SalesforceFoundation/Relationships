@@ -72,11 +72,11 @@ global class Relationships_INST implements InstallHandler{
 
         String genderField = '';
         //load default reciprocals
-        List<Relationship_Type__c> rlList = new List<Relationship_Type__c>();
+        List<Relationship_Lookup__c> rlList = new List<Relationship_Lookup__c>();
         StaticResource sr = [select body from StaticResource where Name = :RECIPROCAL_DEFAULT_RESOURCE_NAME];
         List<List<String>> recipRelList = Relationships_Utils.parseCSV(sr.Body.toString(), false);
         for (List<String> ls : recipRelList){
-            Relationship_Type__c rl = new Relationship_Type__c();                
+            Relationship_Lookup__c rl = new Relationship_Lookup__c();                
             rl.Name = ls[0];
             rl.Male__c = ls[1];
             rl.Female__c = ls[2];
