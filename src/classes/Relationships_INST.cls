@@ -1,6 +1,5 @@
 /*
     Copyright (c) 2012, Salesforce.com Foundation
-    Copyright (c) 2013, X-Squared On Demand
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -31,8 +30,8 @@
 /**
 * @author Salesforce.com Foundation
 * @date 2012
-* @author  David Schach
-* @date 2013
+* @author David Schach @dschach
+* @version 1.1
 * @description Install script for the Relationships package - can also be run without installing an AppExchange package
 */
 global class Relationships_INST implements InstallHandler{
@@ -81,8 +80,7 @@ global class Relationships_INST implements InstallHandler{
             rl.Male__c = ls[1];
             rl.Female__c = ls[2];
             rl.Neutral__c = ls[3];
-            rl.Active__c = true;  
-            rl.Default__c = true;              
+            rl.Active__c = true;      
             rlList.add(rl);             
         }
         
