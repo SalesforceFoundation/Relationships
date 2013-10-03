@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>RelationshipsSettings_CTRL</members>
+        <members>Relationships_INST</members>
+        <members>Relationships_INST_TEST</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>RelationshipsSettings</members>
+        <members>RelationshipsViewer</members>
         <name>ApexPage</name>
     </types>
     <version>28.0</version>
