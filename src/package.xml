@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
+        <members>Relationships</members>
         <members>RelationshipsSettings_CTRL</members>
+        <members>RelationshipsViewer_CTRL</members>
+        <members>Relationships_INST</members>
+        <members>Relationships_ProcessControl</members>
+        <members>Relationships_Utils</members>
+        <members>TEST_Relationships</members>
         <name>ApexClass</name>
     </types>
     <types>
         <members>RelationshipsSettings</members>
+        <members>RelationshipsViewer</members>
         <name>ApexPage</name>
+    </types>
+    <types>
+        <members>RelationshipCampaignMembers</members>
+        <members>RelationshipContacts</members>
+        <members>Relationships</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>CustomLabels</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>Relationship_Auto_Create__c</members>
+        <members>Relationship_Error__c</members>
+        <members>Relationship_Lookup__c</members>
+        <members>Relationship_Settings__c</members>
+        <members>Relationship__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Relationships_Settings</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>AToolTip</members>
+        <members>ArborJS</members>
+        <members>DefaultReciprocalRelationships</members>
+        <name>StaticResource</name>
     </types>
     <version>28.0</version>
 </Package>
