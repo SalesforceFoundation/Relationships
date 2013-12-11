@@ -62,7 +62,7 @@ global class Relationships_INST implements InstallHandler{
                    insert rlList;   
                 }
                 catch (Exception e){
-                    Relationship_Error__c re = Relationships_Utils.createRelationshipError(e);
+                    Relationship_Error__c re = createRelationshipError(e);
                     insert re;                  
                 }
             }
