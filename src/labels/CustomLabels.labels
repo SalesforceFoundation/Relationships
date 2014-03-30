@@ -9,28 +9,12 @@
         <value>Unable to retrieve a valid Id for Relationship auto-creation.  Please check the settings under the Relationships Settings tab for valid fields and try again.</value>
     </labels>
     <labels>
-        <fullName>Automatic_Relationship_Help_Text</fullName>
-        <categories>Relationships</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Automatic Relationship Help Text</shortDescription>
-        <value>Defines the way a relationship type, and its reciprocal, is displayed.</value>
-    </labels>
-    <labels>
         <fullName>Female</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>Female</shortDescription>
         <value>Female</value>
-    </labels>
-    <labels>
-        <fullName>List_Setting_Help_Text</fullName>
-        <categories>Relationships</categories>
-        <language>en_US</language>
-        <protected>true</protected>
-        <shortDescription>List Setting Help Text</shortDescription>
-        <value>List Settings: Appends the reciprocal relationship based on the gender from the suffix and gender fields on the contact.  You can define the relationships in the custom settings section titled &quot;custom relationship settings&quot; label.</value>
     </labels>
     <labels>
         <fullName>Male</fullName>
@@ -90,7 +74,10 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsLookupDescription</shortDescription>
-        <value>These settings allow you to configure reciprocal relationships, or the &quot;matching&quot; relationship between two Contacts. For example, if a father is related to his son, the son should likewise be related back to the father.  You can specify the Type value for the Name, and then what the reciprocal value should be based on the gender of the connecting Contact. You can define a male reciprocal, a female reciprocal and a neutral reciprocal to be used if gender is unable to be determined.  Gender determinations are based on salutation if possible, or a custom gender field you can define on the &apos;General Settings&apos; tab.  (NOTE: You may need to add the Type to your Relationships object to make it available for use. You can do so by going to: Setup|Customize|Create|Objects Click on &apos;Relationship&apos;, &apos;Type&apos;, and then &apos;New&apos; under the &apos;Picklist Values&apos; list.)</value>
+        <value>These settings allow you to configure reciprocal relationships, or the &quot;matching&quot; relationship between two Contacts. For example, if a father is related to his son, the son should likewise be related back to the father.  You can specify the Type value for the Name, and then what the reciprocal value should be based on the gender of the connecting Contact. You can define a male reciprocal, a female reciprocal and a neutral reciprocal to be used if gender is unable to be determined.  Gender determinations are based on Salutation if possible, or a custom gender field you can define on the Relationships Setting tab. 
+
+
+(NOTE: You may need to add the Type to your Relationships object to make it available for use. You can do so by going to: Setup|Customize|Create|Objects Click on &apos;Relationship&apos;, &apos;Type&apos;, and then &apos;New&apos; under the &apos;Picklist Values&apos; list.)</value>
     </labels>
     <labels>
         <fullName>RelationshipsSettingsDescription</fullName>
@@ -98,16 +85,6 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsSettingsDescription</shortDescription>
-        <value>Settings that control the behavior of the Relationships package. Changing these will change how the Relationships records behave.</value>
-    </labels>
-    <labels>
-        <fullName>Value_Inversion_Help_Text</fullName>
-        <categories>Relationships</categories>
-        <language>en_US</language>
-        <protected>false</protected>
-        <shortDescription>Value Inversion Help Text</shortDescription>
-        <value>Value Inversion:
-
-Uses a hyphenated option as the type and inverts the selection on the reciprocal.</value>
+        <value>Settings that control the behavior of Relationships. Changing these will change how the Relationships records behave.</value>
     </labels>
 </CustomLabels>

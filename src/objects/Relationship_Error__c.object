@@ -5,6 +5,10 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>Clone</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -17,11 +21,19 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
         <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
@@ -32,6 +44,7 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
     <description>Contains errors generated from the Relationships package during normal operations.  Errors can be viewed in the Relationships Settings tab.</description>
@@ -47,6 +60,7 @@
         <inlineHelpText>Date &amp; time the error occurred</inlineHelpText>
         <label>Error Date/Time</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>DateTime</type>
     </fields>
     <fields>
@@ -57,6 +71,7 @@
         <inlineHelpText>A link to the record which caused the error, if available.</inlineHelpText>
         <label>Error Record Link</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Url</type>
     </fields>
     <fields>
@@ -67,6 +82,7 @@
         <inlineHelpText>Stack trace for the thrown error, if available at run time.</inlineHelpText>
         <label>Error Stack Trace</label>
         <length>32768</length>
+        <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
@@ -78,6 +94,7 @@
         <inlineHelpText>Type of error that occurred</inlineHelpText>
         <label>Error Type</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>TextArea</type>
     </fields>
     <fields>
@@ -88,6 +105,7 @@
         <inlineHelpText>Full text of the error message</inlineHelpText>
         <label>Full Error Message</label>
         <length>32768</length>
+        <trackTrending>false</trackTrending>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
