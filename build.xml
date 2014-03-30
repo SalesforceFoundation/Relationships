@@ -1,5 +1,4 @@
-<project name="CumulusTesting" default="deploy" basedir="." xmlns:sf="antlib:com.salesforce">
-
+<project name="CumulusTesting" default="deploy" basedir="." xmlns:sf="antlib:com.salesforce"> 
     <taskdef uri="antlib:com.salesforce" resource="com/salesforce/antlib.xml" classpath="lib/ant-salesforce.jar"/>
 
     <include file="${basedir}/lib/ant-salesforce.xml" />
@@ -57,7 +56,7 @@
     </target>
 
     <target name="updatePackageXml">
-      <buildPackageXml package="${cumulusci.package.name}" version="29.0" />
+      <buildPackageXml package="${cumulusci.package.name}" version="${cumulusci.package.apiVersion}" />
     </target>
 
 </project>
