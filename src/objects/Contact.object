@@ -3,12 +3,12 @@
     <webLinks>
         <fullName>Relationships_Viewer</fullName>
         <availability>online</availability>
-        <description>this button has been replaced with a new Relationships Viewer button in the npsp package.</description>
         <displayType>button</displayType>
-        <linkType>javascript</linkType>
-        <masterLabel>DEPRECATED-Relationships Viewer</masterLabel>
-        <openType>onClickJavaScript</openType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Relationships Viewer</masterLabel>
+        <openType>replace</openType>
         <protected>false</protected>
-        <url>alert(&quot;Please update your page layout to use the new Relationships Viewer Visualforce page, REL_RelationshipsViewer.&quot;);</url>
+        <url>{!URLFOR(&apos;/apex/npsp__REL_RelationshipsViewer?id=&apos; + Contact.Id)}</url>
     </webLinks>
 </CustomObject>

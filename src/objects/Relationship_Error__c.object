@@ -47,7 +47,7 @@
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <deprecated>false</deprecated>
-    <description>Contains errors generated from the Relationships package during normal operations.  Errors can be viewed in the Relationships Settings tab.</description>
+    <description>Errors can now be found in the Errors Log tab in the NPSP Settings page.</description>
     <enableActivities>false</enableActivities>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
@@ -109,7 +109,7 @@
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
     </fields>
-    <label>Relationship Error</label>
+    <label>DEPRECATED-Relationship Error</label>
     <nameField>
         <displayFormat>E-{MMDDYY}-{00000000}</displayFormat>
         <label>Relationship Error Name</label>
