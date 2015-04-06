@@ -52,7 +52,6 @@
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
-    <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Error_Date_Time__c</fullName>
         <deprecated>false</deprecated>
