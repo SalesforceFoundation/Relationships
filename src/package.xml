@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Relationships</fullName>
-    <apiAccessLevel>Unrestricted</apiAccessLevel>
-    <namespacePrefix>npe4</namespacePrefix>
-    <postInstallClass>Relationships_INST</postInstallClass>
     <types>
         <members>Relationships_INST</members>
         <members>Relationships_INST_TEST</members>
@@ -61,10 +58,10 @@
         <name>CustomLabel</name>
     </types>
     <types>
-        <members>CustomLabels</members>
-        <name>CustomLabels</name>
+        <name>CustomLabel</name>
     </types>
     <types>
+        <members>Contact</members>
         <members>Relationship_Auto_Create__c</members>
         <members>Relationship_Error__c</members>
         <members>Relationship_Lookup__c</members>
@@ -95,5 +92,5 @@
         <members>Contact.Relationships_Viewer</members>
         <name>WebLink</name>
     </types>
-    <version>33.0</version>
+    <version>29.0</version>
 </Package>
