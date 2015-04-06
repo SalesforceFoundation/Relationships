@@ -49,7 +49,6 @@
     <deprecated>false</deprecated>
     <description>Errors can now be found in the Errors Log tab in the NPSP Settings page.</description>
     <enableActivities>false</enableActivities>
-    <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
