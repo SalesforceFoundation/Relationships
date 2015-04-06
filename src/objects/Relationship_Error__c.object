@@ -49,9 +49,12 @@
     <deprecated>false</deprecated>
     <description>Errors can now be found in the Errors Log tab in the NPSP Settings page.</description>
     <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Error_Date_Time__c</fullName>
         <deprecated>false</deprecated>
