@@ -1,5 +1,5 @@
 /*
-    Copyright (c) 2009, Salesforce.com Foundation
+    Copyright (c) 2009, 2012, Salesforce.com Foundation
     All rights reserved.
     
     Redistribution and use in source and binary forms, with or without
@@ -29,9 +29,25 @@
 */
 /**
 * @author Salesforce.com Foundation
-* @date 2012 
-* @description Provides process control to prevent relationship creation recursion in triggers 
+* @date 2013 
+* @description Testing for the Relationships class
 */
-public with sharing class Relationships_ProcessControl {
-    public static boolean hasRun = false;
+@isTest
+private class Relationships_INST_TEST {
+   
+    static testMethod void testInstallScript() {
+        Relationships_INST postinstall = new Relationships_INST();
+        Test.testInstall(postinstall, null);
+        Test.testInstall(postinstall, new Version(2,0), true);
+        
+        Relationship_Lookup__c[] rlList = [select id from Relationship_Lookup__c where Name = 'Father'];
+        System.assertEquals(rlList.size(), 1, 'Relationship Lookup not found');
+        
+        Relationships_INST.parseCSV('foobar', false);
+        Relationships_INST.createRelationshipError(new myexception());
+    }
+    
+    class myexception extends exception { }
+    
+    
 }

@@ -46,25 +46,25 @@ global class Relationships_INST implements InstallHandler{
             //load default reciprocals
             List<Relationship_Lookup__c> rlList = new List<Relationship_Lookup__c>();
             StaticResource sr = [select body from StaticResource where Name = :RECIPROCAL_DEFAULT_RESOURCE_NAME];
-            List<List<String>> recipRelList = Relationships_Utils.parseCSV(sr.Body.toString(), false);
+            List<List<String>> recipRelList = parseCSV(sr.Body.toString(), false);
             for (List<String> ls : recipRelList){
                 Relationship_Lookup__c rl = new Relationship_Lookup__c();                
                 rl.Name = ls[0];
                 rl.Male__c = ls[1];
                 rl.Female__c = ls[2];
                 rl.Neutral__c = ls[3];
-                rl.Active__c = true;             	
-            	rlList.add(rl);            	
+                rl.Active__c = true;                
+                rlList.add(rl);             
             }
             
             if (!rlList.isEmpty()){
-            	try{
-            	   insert rlList;	
-            	}
-            	catch (Exception e){
-            		Relationship_Error__c re = Relationships_Utils.createRelationshipError(e);
-            		insert re;            		
-            	}
+                try{
+                   insert rlList;   
+                }
+                catch (Exception e){
+                    Relationship_Error__c re = createRelationshipError(e);
+                    insert re;                  
+                }
             }
             //autodetect a gender field
             Map<String, Schema.SObjectField> contactFieldMap = Schema.SObjectType.Contact.fields.getMap();
@@ -99,4 +99,64 @@ global class Relationships_INST implements InstallHandler{
             if (doUpsert) upsert RelationshipSettings;
         }
     }
+    
+    // grabbed from Relationships_Utils, so we could remove that class for Cumulus.
+    //modified csv parser to load initial static resource for recip settings
+    //http://wiki.developerforce.com/page/Code_Samples#Parse_a_CSV_with_APEX
+    public static List<List<String>> parseCSV(String contents,Boolean skipHeaders) {
+        List<List<String>> allFields = new List<List<String>>();
+    
+        // replace instances where a double quote begins a field containing a comma
+        // in this case you get a double quote followed by a doubled double quote
+        // do this for beginning and end of a field
+        contents = contents.replaceAll(',"""',',"DBLQT').replaceall('""",','DBLQT",');
+        // now replace all remaining double quotes - we do this so that we can reconstruct
+        // fields with commas inside assuming they begin and end with a double quote
+        contents = contents.replaceAll('""','DBLQT');
+        // we are not attempting to handle fields with a newline inside of them
+        // so, split on newline to get the spreadsheet rows
+        List<String> lines = new List<String>();
+        try {
+            lines = contents.split('\n');
+        } catch (System.ListException e) {
+            System.debug('Limits exceeded?' + e.getMessage());
+        }
+        Integer num = 0;
+        for(String line : lines) {
+            // check for blank CSV lines (only commas)
+            if (line.replaceAll(',','').trim().length() == 0) break;
+            
+            List<String> fields = line.split(',');  
+            List<String> cleanFields = new List<String>();
+            String compositeField;
+            Boolean makeCompositeField = false;
+            for(String field : fields) {
+                cleanFields.add(field.replaceAll('DBLQT','"'));             
+            }
+            
+            allFields.add(cleanFields);
+        }
+        if (skipHeaders) allFields.remove(0);
+        return allFields;       
+    }  
+    
+    
+    // grabbed from Relationships_Utils, so we could remove that class for Cumulus.
+    public static Relationship_Error__c createRelationshipError(Exception e){
+        Relationship_Error__c re = new Relationship_Error__c();
+        re.Error_Date_Time__c = system.now();        
+        re.Error_Type__c = e.getTypeName();
+        
+        //trim error message
+        if (e.getMessage().length() > 255)
+            re.Full_Error_Message__c = e.getMessage().substring(0, 254);
+        else
+            re.Full_Error_Message__c = e.getMessage();
+        
+        re.Error_Stack_Trace__c = e.getStackTraceString();
+        
+        return re;
+    }
+    
+      
 }

@@ -3,7 +3,6 @@
     <customSettingsType>List</customSettingsType>
     <customSettingsVisibility>Public</customSettingsVisibility>
     <description>Automatically generates a Relationship between a Contact and another Contact or a Contact and a Contact/Campaign Member based on a custom lookup field.</description>
-    <enableEnhancedLookup>false</enableEnhancedLookup>
     <enableFeeds>false</enableFeeds>
     <fields>
         <fullName>Campaign_Types__c</fullName>
@@ -13,6 +12,7 @@
         <inlineHelpText>Eligible Campaign types for this Campaign Member auto-create. (Will be blank for Contact auto-create)</inlineHelpText>
         <label>Campaign Types</label>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>TextArea</type>
     </fields>
     <fields>
@@ -24,6 +24,7 @@
         <label>Field</label>
         <length>255</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -36,6 +37,7 @@
         <label>Object</label>
         <length>50</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
@@ -48,6 +50,7 @@
         <label>Relationship Type</label>
         <length>255</length>
         <required>false</required>
+        <trackTrending>false</trackTrending>
         <type>Text</type>
         <unique>false</unique>
     </fields>
