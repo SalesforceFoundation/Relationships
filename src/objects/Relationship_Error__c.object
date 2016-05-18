@@ -44,17 +44,20 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
-    <deprecated>false</deprecated>
     <description>Errors can now be found in the Errors Log tab in the NPSP Settings page.</description>
     <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Error_Date_Time__c</fullName>
-        <deprecated>false</deprecated>
         <description>Date &amp; time the error occurred</description>
         <externalId>false</externalId>
         <inlineHelpText>Date &amp; time the error occurred</inlineHelpText>
@@ -65,7 +68,6 @@
     </fields>
     <fields>
         <fullName>Error_Record_Link__c</fullName>
-        <deprecated>false</deprecated>
         <description>A link to the record which caused the error, if available.</description>
         <externalId>false</externalId>
         <inlineHelpText>A link to the record which caused the error, if available.</inlineHelpText>
@@ -76,7 +78,6 @@
     </fields>
     <fields>
         <fullName>Error_Stack_Trace__c</fullName>
-        <deprecated>false</deprecated>
         <description>Stack trace for the thrown error, if available at run time.</description>
         <externalId>false</externalId>
         <inlineHelpText>Stack trace for the thrown error, if available at run time.</inlineHelpText>
@@ -88,7 +89,6 @@
     </fields>
     <fields>
         <fullName>Error_Type__c</fullName>
-        <deprecated>false</deprecated>
         <description>Type of error that occurred</description>
         <externalId>false</externalId>
         <inlineHelpText>Type of error that occurred</inlineHelpText>
@@ -99,7 +99,6 @@
     </fields>
     <fields>
         <fullName>Full_Error_Message__c</fullName>
-        <deprecated>false</deprecated>
         <description>Full text of the error message</description>
         <externalId>false</externalId>
         <inlineHelpText>Full text of the error message</inlineHelpText>
