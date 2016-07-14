@@ -81,7 +81,7 @@ global class Relationships_INST implements InstallHandler{
     }
 
     global void importNewRelationships(String csvResourceName) {
-        StaticResource sr = [select body from StaticResource where Name = :RECIPROCAL_DEFAULT_RESOURCE_NAME];
+        StaticResource sr = [select body from StaticResource where Name = :csvResourceName];
         List<List<String>> recipRelList = parseCSV(sr.Body.toString(), false);
         importNewRelationships(recipRelList);
     }
