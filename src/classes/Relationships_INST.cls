@@ -44,28 +44,8 @@ global class Relationships_INST implements InstallHandler{
             
             String genderField = '';
             //load default reciprocals
-            List<Relationship_Lookup__c> rlList = new List<Relationship_Lookup__c>();
-            StaticResource sr = [select body from StaticResource where Name = :RECIPROCAL_DEFAULT_RESOURCE_NAME];
-            List<List<String>> recipRelList = parseCSV(sr.Body.toString(), false);
-            for (List<String> ls : recipRelList){
-                Relationship_Lookup__c rl = new Relationship_Lookup__c();                
-                rl.Name = ls[0];
-                rl.Male__c = ls[1];
-                rl.Female__c = ls[2];
-                rl.Neutral__c = ls[3];
-                rl.Active__c = true;                
-                rlList.add(rl);             
-            }
+            importNewRelationships(RECIPROCAL_DEFAULT_RESOURCE_NAME);
             
-            if (!rlList.isEmpty()){
-                try{
-                   insert rlList;   
-                }
-                catch (Exception e){
-                    Relationship_Error__c re = createRelationshipError(e);
-                    insert re;                  
-                }
-            }
             //autodetect a gender field
             Map<String, Schema.SObjectField> contactFieldMap = Schema.SObjectType.Contact.fields.getMap();
             
@@ -98,6 +78,35 @@ global class Relationships_INST implements InstallHandler{
             
             if (doUpsert) upsert RelationshipSettings;
         }
+    }
+
+    global void importNewRelationships(String csvResourceName) {
+        StaticResource sr = [select body from StaticResource where Name = :RECIPROCAL_DEFAULT_RESOURCE_NAME];
+        List<List<String>> recipRelList = parseCSV(sr.Body.toString(), false);
+        importNewRelationships(recipRelList);
+    }
+
+    global void importNewRelationships(List<List<String>> recipRelList) {
+        for (List<String> ls : recipRelList){
+            Relationship_Lookup__c rl = new Relationship_Lookup__c();                
+            rl.Name = ls[0];
+            rl.Male__c = ls[1];
+            rl.Female__c = ls[2];
+            rl.Neutral__c = ls[3];
+            rl.Active__c = true;                
+            rlList.add(rl);             
+        }
+        
+        if (!rlList.isEmpty()){
+            try{
+               insert rlList;   
+            }
+            catch (Exception e){
+                Relationship_Error__c re = createRelationshipError(e);
+                insert re;                  
+            }
+        }
+
     }
     
     // grabbed from Relationships_Utils, so we could remove that class for Cumulus.
