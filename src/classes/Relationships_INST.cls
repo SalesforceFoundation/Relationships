@@ -87,6 +87,7 @@ global class Relationships_INST implements InstallHandler{
     }
 
     global void importNewRelationships(List<List<String>> recipRelList) {
+        List<Relationship_Lookup__c> rlList = new List<Relationship_Lookup__c>();
         for (List<String> ls : recipRelList){
             Relationship_Lookup__c rl = new Relationship_Lookup__c();                
             rl.Name = ls[0];
