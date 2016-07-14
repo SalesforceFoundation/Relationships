@@ -44,7 +44,7 @@ global class Relationships_INST implements InstallHandler{
             
             String genderField = '';
             //load default reciprocals
-            importNewRelationships(RECIPROCAL_DEFAULT_RESOURCE_NAME);
+            importNewRelationships(RECIPROCAL_DEFAULT_RESOURCE_NAME, false);
             
             //autodetect a gender field
             Map<String, Schema.SObjectField> contactFieldMap = Schema.SObjectType.Contact.fields.getMap();
@@ -80,13 +80,39 @@ global class Relationships_INST implements InstallHandler{
         }
     }
 
-    global void importNewRelationships(String csvResourceName) {
+    global void importNewRelationships(String csvResourceName, Boolean checkForDuplicates) {
         StaticResource sr = [select body from StaticResource where Name = :csvResourceName];
         List<List<String>> recipRelList = parseCSV(sr.Body.toString(), false);
-        importNewRelationships(recipRelList);
+        importNewRelationships(parseRelationships(recipRelList), false);
     }
 
-    global void importNewRelationships(List<List<String>> recipRelList) {
+    global void importNewRelationships(List<Relationship_Lookup__c> rlList, Boolean checkForDuplicates) {
+        if (!rlList.isEmpty()){
+            
+            if (checkForDuplicates) {
+                List<Relationship_Lookup__c> existingRels = [SELECT Id, Name FROM Relationship_Lookup__c];
+                for (Relationship_Lookup__c newRel : rlList) {
+                    for (Relationship_Lookup__c existingRel : existingRels) {
+                        if (existingRel.Name == newRel.Name) {
+                            newRel.Id = existingRel.Id;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            try{
+               upsert rlList;   
+            }
+            catch (Exception e){
+                Relationship_Error__c re = createRelationshipError(e);
+                insert re;                  
+            }
+        }
+
+    }
+
+    global List<Relationship_Lookup__c> parseRelationships(List<List<String>> recipRelList) {
         List<Relationship_Lookup__c> rlList = new List<Relationship_Lookup__c>();
         for (List<String> ls : recipRelList){
             Relationship_Lookup__c rl = new Relationship_Lookup__c();                
@@ -97,17 +123,7 @@ global class Relationships_INST implements InstallHandler{
             rl.Active__c = true;                
             rlList.add(rl);             
         }
-        
-        if (!rlList.isEmpty()){
-            try{
-               insert rlList;   
-            }
-            catch (Exception e){
-                Relationship_Error__c re = createRelationshipError(e);
-                insert re;                  
-            }
-        }
-
+        return rlList;
     }
     
     // grabbed from Relationships_Utils, so we could remove that class for Cumulus.
