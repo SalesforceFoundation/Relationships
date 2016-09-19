@@ -80,6 +80,6 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsSettingsDescription</shortDescription>
-        <value>These settings control how Relationships behave in the Nonprofit Starter Pack.</value>
+        <value>These settings control how Relationships behave in the Nonprofit Success Pack.</value>
     </labels>
 </CustomLabels>
