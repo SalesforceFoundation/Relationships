@@ -72,7 +72,7 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsLookupDescription</shortDescription>
-        <value>The NPSP uses the settings in this list to determine reciprocal relationships. See the &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP Documentation&lt;/link&gt; for a full explanation of how these settings work, plus examples.</value>
+        <value>The NPSP uses the settings in this list to determine reciprocal relationships. See the &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP Documentation&lt;/a&gt; for a full explanation of how these settings work, plus examples.</value>
     </labels>
     <labels>
         <fullName>RelationshipsSettingsDescription</fullName>
@@ -80,6 +80,6 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsSettingsDescription</shortDescription>
-        <value>These settings control how Relationships behave in the Nonprofit Starter Pack.</value>
+        <value>These settings control how Relationships behave in the Nonprofit Success Pack.</value>
     </labels>
 </CustomLabels>
