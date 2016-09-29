@@ -11,7 +11,7 @@ dev branch contains larger code/configuration changes for the next version, and 
 * Provides a Contact-to-Contact Relationship
 
 
-For more information go to [http://nonprofitstarterpack.org](http://nonprofitstarterpack.org) 
+For more information go to [http://www.salesforce.org/nonprofit/nonprofit-success-pack](http://www.salesforce.org/nonprofit/nonprofit-success-pack) 
 
 How do I log an issue?
 ---
