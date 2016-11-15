@@ -1,0 +1,8 @@
+project:
+    name: Relationships
+    package:
+        name: Relationships
+        namespace: npe4
+        api_version: 36.0
+    git:
+        release: rel/
