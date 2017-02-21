@@ -1,0 +1,93 @@
+Language code: de
+Type: Bilingual
+
+------------------TRANSLATED-------------------
+
+ButtonOrLink.Contact.Relationships_Viewer	Relationships Viewer	Beziehungenanzeige	-
+CustomField.Relationship__c.Contact.FieldLabel	Contact	Kontakt	-
+CustomField.Relationship__c.Contact.HelpText	Related Contact is this Contact's ______.	Zugehöriger Kontakt ist der/die __________ des Kontakts	-
+CustomField.Relationship__c.Contact.RelatedListLabel	Relationships	Beziehungen	-
+CustomField.Relationship__c.Description.FieldLabel	Description	Beschreibung	-
+CustomField.Relationship__c.Description.HelpText	Additional information about this Relationship	Weitere Informationen zu dieser Beziehung	-
+CustomField.Relationship__c.ReciprocalRelationship.FieldLabel	Reciprocal Relationship	Wechselseitige Beziehung	-
+CustomField.Relationship__c.ReciprocalRelationship.HelpText	System field that links to the two sides of the Relationship together.  This field should not be modified directly.  The Reciprocal Relationship will have the opposite type, if available, of this Relationship.	Systemfeld, das die beiden Seiten der Beziehung miteinander verbindet  Das Feld sollte nicht direkt bearbeitet werden.  Die wechselseitige Beziehung hat den entgegengesetzten Typ dieser Beziehung, falls verfügbar.	-
+CustomField.Relationship__c.ReciprocalRelationship.RelatedListLabel	Relationships	Beziehungen	-
+CustomField.Relationship__c.RelatedContact.FieldLabel	Related Contact	Zugehöriger Kontakt	-
+CustomField.Relationship__c.RelatedContact.RelatedListLabel	Hidden Relationships List	Liste der verborgenen Beziehungen	-
+CustomField.Relationship__c.Relationship_Explanation.FieldLabel	Relationship Explanation	Erklärung der Beziehung	-
+CustomField.Relationship__c.Relationship_Explanation.HelpText	Text formula that constructs a sentence explaining the relationship between the two Contacts	Textformel, mit der ein Satz konstruiert wird, der die Beziehung zwischen den beiden Kontakten erklärt	-
+CustomField.Relationship__c.SYSTEM_SystemCreated.FieldLabel	_SYSTEM: SystemCreated	_SYSTEM: VomSystemErstellt	-
+CustomField.Relationship__c.SYSTEM_SystemCreated.HelpText	System field that indicates if this Relationship was created automatically as the reciprocal to another Relationships.	Systemfeld, das angibt, ob diese Beziehung automatisch als das Gegenteil zu einer anderen Beziehung erstellt wurde	-
+CustomField.Relationship__c.Status.HelpText	Status of the Relationship.	Status der Beziehung	-
+CustomField.Relationship__c.Type.FieldLabel	Type	Typ	-
+CustomField.Relationship__c.Type.HelpText	Field that describes how the Related Contact is connected to the Contact.	Feld, in dem beschrieben wird, wie der zugehörige Kontakt mit dem Kontakt verbunden ist	-
+CustomField.Relationship_Auto_Create__c.Campaign_Types.FieldLabel	Campaign Types	Kampagnentypen	-
+CustomField.Relationship_Auto_Create__c.Campaign_Types.HelpText	Eligible Campaign types for this Campaign Member auto-create. (Will be blank for Contact auto-create)	Für die automatische Erstellung dieses Kampagnenmitglieds berechtigte Kampagnentypen (Das Feld bleibt bei der automatischen Erstellung von Kontakten leer.)	-
+CustomField.Relationship_Auto_Create__c.Field.FieldLabel	Field	Feld	-
+CustomField.Relationship_Auto_Create__c.Field.HelpText	The field insert or update that triggers the creation of this Relationship	Der eingefügte Wert oder die Aktualisierung dieses Felds, der/die die Erstellung dieser Beziehung auslöst	-
+CustomField.Relationship_Auto_Create__c.Object.FieldLabel	Object	Objekt	-
+CustomField.Relationship_Auto_Create__c.Object.HelpText	The object this Auto-Relationship is associated with	Das Objekt, mit dem diese automatische Beziehung verbunden ist	-
+CustomField.Relationship_Auto_Create__c.Relationship_Type.FieldLabel	Relationship Type	Beziehungstyp	-
+CustomField.Relationship_Auto_Create__c.Relationship_Type.HelpText	The Relationship type to be created between the base object and the lookup object.  The lookup object will receive the reciprocal Relationship, if one is available.	Der Beziehungstyp, der zwischen dem Basisobjekt und dem Nachschlageobjekt erstellt werden soll  Das Nachschlageobjekt erhält die wechselseitige Beziehung, falls vorhanden.	-
+CustomField.Relationship_Error__c.Error_Date_Time.FieldLabel	Error Date/Time	Datum/Uhrzeit des Fehlers	-
+CustomField.Relationship_Error__c.Error_Date_Time.HelpText	Date & time the error occurred	Datum und Uhrzeit bei Auftreten des Fehlers	-
+CustomField.Relationship_Error__c.Error_Record_Link.FieldLabel	Error Record Link	Fehlerdatensatz-Link	-
+CustomField.Relationship_Error__c.Error_Record_Link.HelpText	A link to the record which caused the error, if available.	Link zum Datensatz, der den Fehler verursacht hat, falls verfügbar	-
+CustomField.Relationship_Error__c.Error_Stack_Trace.FieldLabel	Error Stack Trace	Fehlerstapel-Trace	-
+CustomField.Relationship_Error__c.Error_Stack_Trace.HelpText	Stack trace for the thrown error, if available at run time.	Stapel-Trace für den ausgegebenen Fehler, falls bei Laufzeit verfügbar	-
+CustomField.Relationship_Error__c.Error_Type.FieldLabel	Error Type	Fehlertyp	-
+CustomField.Relationship_Error__c.Error_Type.HelpText	Type of error that occurred	Typ des aufgetretenen Fehlers	-
+CustomField.Relationship_Error__c.Full_Error_Message.FieldLabel	Full Error Message	Vollständige Fehlermeldung	-
+CustomField.Relationship_Error__c.Full_Error_Message.HelpText	Full text of the error message	Vollständiger Text der Fehlermeldung	-
+CustomField.Relationship_Lookup__c.Active.FieldLabel	Active	Aktiv	-
+CustomField.Relationship_Lookup__c.Active.HelpText	Indicates if this reciprocal lookup is active.	Gibt an, ob wechselseitiges Nachschlagen aktiv ist	-
+CustomField.Relationship_Lookup__c.Female.FieldLabel	Female	Weiblich	-
+CustomField.Relationship_Lookup__c.Female.HelpText	The value used if the Contact's gender field matches the values in the Female Custom Label or the Contact's Salutation indicates gender.	Der verwendete Wert, wenn das Feld mit Angabe des Geschlechts mit den Werten in der benutzerdefinierten weiblichen Bezeichnung übereinstimmt oder in der Anrede des Kontakts das Geschlecht angegeben ist	-
+CustomField.Relationship_Lookup__c.Male.FieldLabel	Male	Männlich	-
+CustomField.Relationship_Lookup__c.Male.HelpText	The value used if the Contact's gender field matches the values in the Male Custom Label or the Contact's Salutation indicates gender.	Der verwendete Wert, wenn das Feld mit Angabe des Geschlechts mit den Werten in der benutzerdefinierten männlichen Bezeichnung übereinstimmt oder in der Anrede des Kontakts das Geschlecht angegeben ist	-
+CustomField.Relationship_Lookup__c.Neutral.HelpText	The value used if the Contact's gender field does not match either the Male or Female Custom Labels, and the Contact's Salutation does not infer gender.	Der verwendete Wert, wenn das Feld mit Angabe des Geschlecht nicht mit den Werten in der benutzerdefinierten weiblichen oder männlichen Bezeichnung übereinstimmt und in der Anrede des Kontakts kein Geschlecht angegeben ist	-
+CustomField.Relationship_Settings__c.Allow_AutoCreated_Duplicates.FieldLabel	Allow Auto-Created Duplicate Relations	Autom. erst. dopp. Beziehungen zulassen	-
+CustomField.Relationship_Settings__c.Allow_AutoCreated_Duplicates.HelpText	Auto-created Relationships are auto-deduplicated to prevent duplicate Relationship records from being created between two Contacts.  Check this box to disable this behavior & allow multiple Relationships of the same Type to be created between two Contacts	Duplikate autom. erstellter Bez. werden autom. entfernt, damit zwischen zwei Kontakten keine doppelten Bez.datens. erstellt werden. Zur Deakt. dieses Verhaltens und zum Zulassen der Erstell. mehrerer Bez. desselben Typs zw. zwei Kontakten Kontrollk. akt.	-
+CustomField.Relationship_Settings__c.Gender_Field.FieldLabel	Gender Field	Feld "Geschlecht"	-
+CustomField.Relationship_Settings__c.Gender_Field.HelpText	The custom field used to define the gender of a Contact for determining reciprocal relationships	Das benutzerdefinierte Feld, das zur Definition des Geschlechts eines Kontakts verwendet wird, um wechselseitige Beziehungen festzulegen	-
+CustomField.Relationship_Settings__c.Reciprocal_Method.FieldLabel	Reciprocal Method	Wechselseitige Methode	-
+CustomField.Relationship_Settings__c.Reciprocal_Method.HelpText	Determines method used to generate the reciprocal relationship.  Either List Setting which uses custom settings by gender (see Reciprocal Relationships tab), or Value Inversion, which inverts the type if appropriate ("Parent-Child" to "Child-Parent")	Legt Methode zur Generierung der wechselseitigen Bez. fest. Entw. Listeneinstellung, die benutzerdef. Einst. nach Geschlecht verwendet (siehe "Wechselseitige Beziehungen"), oder Wertumkehr, die ggf. den Typ umkehrt ("Überg.-Unterg." zu "Unterg.-Überg.")	-
+CustomField.Relationship_Settings__c.Relationship_Name_Field_Id.FieldLabel	Relationship Name Field Id	Kennung d. Felds mit dem Beziehungsnamen	-
+CustomField.Relationship_Settings__c.Relationship_Name_Field_Id.HelpText	Populating this value will allow the field to pre-populate when creating new Relationships from the Relationship Viewer (see description for more information)	Wenn dieser Wert eingetragen ist, kann das Feld vorab ausgefüllt werden, wenn neue Beziehungen über die Beziehungsanzeige erstellt werden (weitere Informationen in der Beschreibung).	-
+CustomField.Relationship_Settings__c.Relationship_Name_Id_Field_Id.FieldLabel	Relationship Name Id Field Id	Kennung d. Felds mit Kenn. d. Bez.namens	-
+CustomField.Relationship_Settings__c.Relationship_Name_Id_Field_Id.HelpText	Populating this value will allow the field to pre-populate when creating new Relationships from the Relationship Viewer (see description for more information)	Wenn dieser Wert eingetragen ist, kann das Feld vorab ausgefüllt werden, wenn neue Beziehungen über die Beziehungsanzeige erstellt werden (weitere Informationen in der Beschreibung)	-
+LayoutSection.Relationship__c.Relationship Layout.Relationship Information_0	Relationship Information	Beziehungsinformationen	-
+PicklistValue.Relationship__c.Status.Current	Current	Aktuell	-
+PicklistValue.Relationship__c.Status.Former	Former	Früher	-
+PicklistValue.Relationship__c.Type.Aunt	Aunt	Tante	-
+PicklistValue.Relationship__c.Type.Child	Child	Kind	-
+PicklistValue.Relationship__c.Type.Coworker	Coworker	Kollege	-
+PicklistValue.Relationship__c.Type.Daughter	Daughter	Tochter	-
+PicklistValue.Relationship__c.Type.Employee	Employee	Arbeitnehmer	-
+PicklistValue.Relationship__c.Type.Employer	Employer	Arbeitgeber	-
+PicklistValue.Relationship__c.Type.Family	Family	Familie	-
+PicklistValue.Relationship__c.Type.Father	Father	Vater	-
+PicklistValue.Relationship__c.Type.Friend	Friend	Freund	-
+PicklistValue.Relationship__c.Type.Grandchild	Grandchild	Enkel	-
+PicklistValue.Relationship__c.Type.Granddaughter	Granddaughter	Enkeltochter	-
+PicklistValue.Relationship__c.Type.Grandfather	Grandfather	Großvater	-
+PicklistValue.Relationship__c.Type.Grandmother	Grandmother	Großmutter	-
+PicklistValue.Relationship__c.Type.Grandparent	Grandparent	Großeltern	-
+PicklistValue.Relationship__c.Type.Grandson	Grandson	Enkelsohn	-
+PicklistValue.Relationship__c.Type.Husband	Husband	Ehemann	-
+PicklistValue.Relationship__c.Type.Mother	Mother	Mutter	-
+PicklistValue.Relationship__c.Type.Parent	Parent	Elternteil	-
+PicklistValue.Relationship__c.Type.Son	Son	Sohn	-
+PicklistValue.Relationship__c.Type.Uncle	Uncle	Onkel	-
+PicklistValue.Relationship__c.Type.Wife	Wife	Ehefrau	-
+ValidationFormula.Relationship__c.Related_Contact_Do_Not_Change	Rather than change the contacts in an existing relationship, delete this relationship and create a new on between the new contacts	Anstatt die Kontakte in einer bestehenden Beziehung zu ändern, ist es besser, diese Beziehung zu löschen und eine neue Beziehung für die neuen Kontakte zu erstellen	-
+WebTab.Relationships_Settings	Relationships Settings	Einstellungen für Beziehungen	-
+CustomLabel.AutoCreateFieldError	Unable to retrieve a valid Id for Relationship auto-creation.  Please check the settings under the Relationships Settings tab for valid fields and try again.	Es ist nicht möglich, eine gültige Kennung für die automatische Erstellung einer Beziehung abzurufen.  Prüfen Sie die Einstellungen auf der Registerkarte "Beziehungseinstellungen" auf gültige Felder und versuchen Sie es erneut.	-
+CustomLabel.Female	Female	Weiblich	-
+CustomLabel.Male	Male	Männlich	-
+CustomLabel.Relationship_Explanation_Connector	is	Ist	-
+CustomLabel.RelationshipsAutoDescription	Auto-created Relationships allow a custom Contact lookup field on the Contact or Campaign Member objects to automatically trigger the creation of a new Relationship type of your choice. For example, you might have a “Referred by” lookup field on the Campaign Member object to represent when a person new to your organization was brought to an event by an existing constituent. See the <a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank">NPSP Documentation</a> for more information.	Anhand der automatischen Beziehungen können Sie Ihre benutzerdefinierten Nachschlagefelder in den Kontakt- oder Kampagnenmitglieder-Objekten erkennen, die die Erstellung eines neuen Beziehungstyps Ihrer Wahl auslösen. Beispiel: Eine "Verweis"-Suche von "Kampagnenmitglied" bis "Kontakt" könnte eine Beziehung "Referrer" und "Referee" zwischen zwei Kontakten erstellen. \n\nBeachten Sie, dass diese Funktion nicht für Leads verfügbar ist oder für Kampagnenmitgliederobjekte, die auf Leads verweisen.	-
+CustomLabel.RelationshipsCustomFieldOverload	FieldsDescribes Limit has been exceeded, may not be able to show all available fields.  \n\nThere are more than 100 custom fields defined on the Contact or Campaign Member object. If the field you wish to use is not shown, you may need to enter this Auto-Create record manually.  Go to Setup->Develop->Custom Settings and click 'Manage' next to 'Relationship Auto-Create', then click 'New' to enter a new record manually.  Use API names (not the field label) to identify the fields that should trigger a new Relationship record.	Die Grenze von "Feldbeschreibungen" wurde überschritten und es werden möglicherweise nicht alle verfügbaren Felder angezeigt.  \n\nIm Kampagnenmitglied-Objekt sind mehr als 100 benutzerdefinierte Felder definiert. Wenn das Feld, das Sie verwenden möchten, nicht angezeigt wird, müssen Sie den Datensatz "Automatische Erstellung" möglicherweise manuell eingeben.  Gehen Sie zu Setup -> Entwickeln -> Benutzerdefinierte Einstellungen und klicken Sie neben "Automatische Erstellung der Beziehung" auf "Verwalten". Klicken Sie anschließend auf "Neu", um einen neuen Datensatz manuell einzugeben.  Verwenden Sie API-Namen (nicht die Feldbezeichnung), um die Felder zu kennzeichnen, die einen neuen Beziehungsdatensatz auslösen sollten.	-
+CustomLabel.RelationshipsErrorsDescription	Errors can occur during the normal operation of your Relationships Package.  They can be caused by things such as improperly constructed validation rules, required fields, security/permissions, and other reasons.  This tab provides information about errors that may have occurred, when, and why they occurred.	Im normalen Betrieb Ihres Beziehungen-Pakets können Fehler auftreten.  Sie können durch Dinge wie unsachgemäß zusammengestellte Validierungsregeln, erforderliche Felder, Sicherheit/Berechtigungen und andere Gründe verursacht werden.  Auf dieser Registerkarte finden Sie Informationen über Fehler, die möglicherweise aufgetreten sind, und darüber, wann und wieso sie aufgetreten sind.	-
+CustomLabel.RelationshipsLookupDescription	The NPSP uses the settings in this list to determine reciprocal relationships. See the <a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank">NPSP Documentation</a> for a full explanation of how these settings work, plus examples.	Anhand dieser Einstellungen können Sie wechselseitige Beziehungen konfigurieren oder d. "übereinstimmende" Beziehung zw. zwei Kontakten. Wenn z. B. ein Vater mit seinem Sohn verwandt ist, dann sollte auch d. Sohn mit d. Vater verwandt sein.  Sie können den Typwert für d. Namen angeben und anschließend das Geschlecht des verbindenden Kontakts, worauf der wechselseitige Wert basieren sollte. Sie können eine männliche oder eine weibliche wechselseitige Beziehung definieren oder eine neutrale, falls das Geschlecht nicht ermittelt werden kann.  Die Ermittlung des Geschlechts basiert auf der Anrede oder einem benutzerdefinierten Feld für das Geschlecht, das Sie auf der Registerkarte "Beziehungseinstellungen" definieren können. \n\n\n(HINWEIS: Sie müssen möglicherweise Ihrem Beziehungsobjekt den Typ hinzufügen, um es für die Verwendung bereitzustellen. Gehen Sie dazu zu: Setup|Anpassen|Erstellen|Objekte, klicken Sie auf „Beziehung", "Typ" und dann in der Liste "Auswahllistenwerte" auf "Neu".)	-
+CustomLabel.RelationshipsSettingsDescription	These settings control how Relationships behave in the Nonprofit Success Pack.	Einstellungen, die das Verhalten von Beziehungen steuern Wenn Sie dies ändern, wird auch das Verhalten der Beziehungsdatensätze geändert.	-
