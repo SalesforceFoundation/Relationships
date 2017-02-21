@@ -1,0 +1,96 @@
+Language code: ja
+Type: Bilingual
+
+------------------TRANSLATED-------------------
+
+ButtonOrLink.Contact.Relationships_Viewer	Relationships Viewer	関係する個人ビューア	-
+CustomField.Relationship__c.Contact.FieldLabel	Contact	個人	-
+CustomField.Relationship__c.Contact.HelpText	Related Contact is this Contact's ______.	関係する個人はこの個人の ______。	-
+CustomField.Relationship__c.Contact.RelatedListLabel	Relationships	関係する個人	-
+CustomField.Relationship__c.Description.FieldLabel	Description	説明	-
+CustomField.Relationship__c.Description.HelpText	Additional information about this Relationship	このリレーションの追加情報	-
+CustomField.Relationship__c.ReciprocalRelationship.FieldLabel	Reciprocal Relationship	相互関係	-
+CustomField.Relationship__c.ReciprocalRelationship.HelpText	System field that links to the two sides of the Relationship together.  This field should not be modified directly.  The Reciprocal Relationship will have the opposite type, if available, of this Relationship.	リレーションの両側を結合するシステム項目。この項目を直接変更しないでください。相互関係は、このリレーションの反対の種別になります (使用可能な場合)。	-
+CustomField.Relationship__c.ReciprocalRelationship.RelatedListLabel	Relationships	関係する個人	-
+CustomField.Relationship__c.RelatedContact.FieldLabel	Related Contact	関係する個人	-
+CustomField.Relationship__c.RelatedContact.RelatedListLabel	Hidden Relationships List	非表示の関係する個人	-
+CustomField.Relationship__c.Relationship_Explanation.FieldLabel	Relationship Explanation	リレーションの説明	-
+CustomField.Relationship__c.Relationship_Explanation.HelpText	Text formula that constructs a sentence explaining the relationship between the two Contacts	2 つの個人間のリレーションを説明する文章を作成するテキスト数式	-
+CustomField.Relationship__c.SYSTEM_SystemCreated.HelpText	System field that indicates if this Relationship was created automatically as the reciprocal to another Relationships.	このリレーションが別のリレーションの相互関係として自動的に作成されたかどうかを示すシステム項目	-
+CustomField.Relationship__c.Status.FieldLabel	Status	状況	-
+CustomField.Relationship__c.Status.HelpText	Status of the Relationship.	リレーションの状況。	-
+CustomField.Relationship__c.Type.FieldLabel	Type	種類	-
+CustomField.Relationship__c.Type.HelpText	Field that describes how the Related Contact is connected to the Contact.	関係する個人が個人に結び付けられている方法を説明する項目。	-
+CustomField.Relationship_Auto_Create__c.Campaign_Types.FieldLabel	Campaign Types	キャンペーン種別	-
+CustomField.Relationship_Auto_Create__c.Campaign_Types.HelpText	Eligible Campaign types for this Campaign Member auto-create. (Will be blank for Contact auto-create)	このキャンペーンメンバーの自動作成の対象となるキャンペーン種別(個人の自動作成では空白になります)。	-
+CustomField.Relationship_Auto_Create__c.Field.FieldLabel	Field	項目	-
+CustomField.Relationship_Auto_Create__c.Field.HelpText	The field insert or update that triggers the creation of this Relationship	このリレーションの作成をトリガする項目の挿入または更新	-
+CustomField.Relationship_Auto_Create__c.Object.FieldLabel	Object	オブジェクト	-
+CustomField.Relationship_Auto_Create__c.Object.HelpText	The object this Auto-Relationship is associated with	この自動リレーションが関連付けられるオブジェクト	-
+CustomField.Relationship_Auto_Create__c.Relationship_Type.FieldLabel	Relationship Type	リレーション種別	-
+CustomField.Relationship_Auto_Create__c.Relationship_Type.HelpText	The Relationship type to be created between the base object and the lookup object.  The lookup object will receive the reciprocal Relationship, if one is available.	ベースオブジェクトと参照オブジェクト間で作成されるリレーション種別。参照オブジェクトには相互関係が割り当てられます (使用可能な場合)。	-
+CustomField.Relationship_Error__c.Error_Date_Time.FieldLabel	Error Date/Time	エラー日付/時間	-
+CustomField.Relationship_Error__c.Error_Date_Time.HelpText	Date & time the error occurred	エラーが発生した日時	-
+CustomField.Relationship_Error__c.Error_Record_Link.FieldLabel	Error Record Link	エラーレコードリンク	-
+CustomField.Relationship_Error__c.Error_Record_Link.HelpText	A link to the record which caused the error, if available.	エラーが発生したレコードへのリンク (使用可能な場合)。	-
+CustomField.Relationship_Error__c.Error_Stack_Trace.FieldLabel	Error Stack Trace	エラースタック追跡	-
+CustomField.Relationship_Error__c.Error_Stack_Trace.HelpText	Stack trace for the thrown error, if available at run time.	発生したエラーのスタック追跡 (実行時に使用可能な場合)。	-
+CustomField.Relationship_Error__c.Error_Type.FieldLabel	Error Type	エラーの種類	-
+CustomField.Relationship_Error__c.Error_Type.HelpText	Type of error that occurred	発生したエラーの種類	-
+CustomField.Relationship_Error__c.Full_Error_Message.FieldLabel	Full Error Message	完全なエラーメッセージ	-
+CustomField.Relationship_Error__c.Full_Error_Message.HelpText	Full text of the error message	エラーメッセージの完全なテキスト	-
+CustomField.Relationship_Lookup__c.Active.FieldLabel	Active	有効	-
+CustomField.Relationship_Lookup__c.Active.HelpText	Indicates if this reciprocal lookup is active.	この相互参照が有効かどうかを示します。	-
+CustomField.Relationship_Lookup__c.Female.FieldLabel	Female	女性	-
+CustomField.Relationship_Lookup__c.Female.HelpText	The value used if the Contact's gender field matches the values in the Female Custom Label or the Contact's Salutation indicates gender.	個人の性別項目が女性カスタム表示ラベルと一致する場合、または個人の敬称が性別を示す場合に使用される値。	-
+CustomField.Relationship_Lookup__c.Male.FieldLabel	Male	男性	-
+CustomField.Relationship_Lookup__c.Male.HelpText	The value used if the Contact's gender field matches the values in the Male Custom Label or the Contact's Salutation indicates gender.	個人の性別項目が男性カスタム表示ラベルと一致する場合、または個人の敬称が性別を示す場合に使用される値。	-
+CustomField.Relationship_Lookup__c.Neutral.FieldLabel	Neutral	どちらでもない	-
+CustomField.Relationship_Lookup__c.Neutral.HelpText	The value used if the Contact's gender field does not match either the Male or Female Custom Labels, and the Contact's Salutation does not infer gender.	個人の性別項目が男性および女性カスタム表示ラベルと一致しない場合、および個人の敬称が性別を示さない場合に使用される値。	-
+CustomField.Relationship_Settings__c.Allow_AutoCreated_Duplicates.FieldLabel	Allow Auto-Created Duplicate Relations	自動作成された重複リレーションを許可	-
+CustomField.Relationship_Settings__c.Allow_AutoCreated_Duplicates.HelpText	Auto-created Relationships are auto-deduplicated to prevent duplicate Relationship records from being created between two Contacts.  Check this box to disable this behavior & allow multiple Relationships of the same Type to be created between two Contacts	自動作成されたリレーションは、2 つの個人間で重複リレーションレコードが作成されることを避けるため、自動的に重複が排除されます。このボックスをオンにするとこの動作が無効になり、2 つの個人間で同じ種別の複数のリレーションが許可されます。	-
+CustomField.Relationship_Settings__c.Gender_Field.FieldLabel	Gender Field	性別項目	-
+CustomField.Relationship_Settings__c.Gender_Field.HelpText	The custom field used to define the gender of a Contact for determining reciprocal relationships	相互関係を判断するための個人の性別の定義に使用されるカスタム項目	-
+CustomField.Relationship_Settings__c.Reciprocal_Method.FieldLabel	Reciprocal Method	相互方法	-
+CustomField.Relationship_Settings__c.Reciprocal_Method.HelpText	Determines method used to generate the reciprocal relationship.  Either List Setting which uses custom settings by gender (see Reciprocal Relationships tab), or Value Inversion, which inverts the type if appropriate ("Parent-Child" to "Child-Parent")	相互関係の生成に使用される方法を決定します。性別のカスタム設定を使用する「リスト設定」、または必要に応じて種別を反転 (「親-子」から「子-親」) する「値反転」のいずれか。	-
+CustomField.Relationship_Settings__c.Relationship_Name_Field_Id.FieldLabel	Relationship Name Field Id	リレーション名項目 ID	-
+CustomField.Relationship_Settings__c.Relationship_Name_Field_Id.HelpText	Populating this value will allow the field to pre-populate when creating new Relationships from the Relationship Viewer (see description for more information)	この値を入力すると、リレーションビューアから新しいリレーションを作成するときに、項目に自動入力できます (詳細は説明を参照)	-
+CustomField.Relationship_Settings__c.Relationship_Name_Id_Field_Id.FieldLabel	Relationship Name Id Field Id	リレーション名 ID 項目 ID	-
+CustomField.Relationship_Settings__c.Relationship_Name_Id_Field_Id.HelpText	Populating this value will allow the field to pre-populate when creating new Relationships from the Relationship Viewer (see description for more information)	この値を入力すると、リレーションビューアから新しいリレーションを作成するときに、項目に自動入力できます (詳細は説明を参照)	-
+LayoutSection.Relationship__c.Relationship Layout.Relationship Information_0	Relationship Information	リレーション情報	-
+PicklistValue.Relationship__c.Status.Current	Current	現在	-
+PicklistValue.Relationship__c.Status.Former	Former	以前	-
+PicklistValue.Relationship__c.Type.Aunt	Aunt	叔母	-
+PicklistValue.Relationship__c.Type.Child	Child	子ども	-
+PicklistValue.Relationship__c.Type.Cousin	Cousin	いとこ	-
+PicklistValue.Relationship__c.Type.Coworker	Coworker	同僚	-
+PicklistValue.Relationship__c.Type.Daughter	Daughter	娘	-
+PicklistValue.Relationship__c.Type.Employee	Employee	従業員	-
+PicklistValue.Relationship__c.Type.Employer	Employer	雇用主	-
+PicklistValue.Relationship__c.Type.Family	Family	家族	-
+PicklistValue.Relationship__c.Type.Father	Father	父	-
+PicklistValue.Relationship__c.Type.Friend	Friend	友人	-
+PicklistValue.Relationship__c.Type.Grandchild	Grandchild	孫	-
+PicklistValue.Relationship__c.Type.Granddaughter	Granddaughter	孫娘	-
+PicklistValue.Relationship__c.Type.Grandfather	Grandfather	祖父	-
+PicklistValue.Relationship__c.Type.Grandmother	Grandmother	祖母	-
+PicklistValue.Relationship__c.Type.Grandparent	Grandparent	祖父母	-
+PicklistValue.Relationship__c.Type.Grandson	Grandson	孫息子	-
+PicklistValue.Relationship__c.Type.Husband	Husband	夫	-
+PicklistValue.Relationship__c.Type.Mother	Mother	母	-
+PicklistValue.Relationship__c.Type.Parent	Parent	親	-
+PicklistValue.Relationship__c.Type.Partner	Partner	パートナー	-
+PicklistValue.Relationship__c.Type.Son	Son	息子	-
+PicklistValue.Relationship__c.Type.Uncle	Uncle	叔父	-
+PicklistValue.Relationship__c.Type.Wife	Wife	妻	-
+ValidationFormula.Relationship__c.Related_Contact_Do_Not_Change	Rather than change the contacts in an existing relationship, delete this relationship and create a new on between the new contacts	既存のリレーションで個人を変更する代わりに、このリレーションを削除して 2 つの個人間の新しいリレーションを作成します。	-
+WebTab.Relationships_Settings	Relationships Settings	リレーション設定	-
+CustomLabel.AutoCreateFieldError	Unable to retrieve a valid Id for Relationship auto-creation.  Please check the settings under the Relationships Settings tab for valid fields and try again.	リレーション自動作成の有効な ID を取得できません。[リレーション設定] タブの設定で有効な項目を確認し、もう一度お試しください。	-
+CustomLabel.Female	Female	女性	-
+CustomLabel.Male	Male	男性	-
+CustomLabel.Relationship_Explanation_Connector	is	次の値と等しい	-
+CustomLabel.RelationshipsAutoDescription	Auto-created Relationships allow a custom Contact lookup field on the Contact or Campaign Member objects to automatically trigger the creation of a new Relationship type of your choice. For example, you might have a “Referred by” lookup field on the Campaign Member object to represent when a person new to your organization was brought to an event by an existing constituent. See the <a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank">NPSP Documentation</a> for more information.	自動リレーションでは、任意の新規リレーション種別の作成をトリガする個人オブジェクトまたはキャンペーンメンバーオブジェクトの独自のカスタム参照項目を識別できます。たとえば、キャンペーンメンバーから個人への「参照」ルックアップでは、2 人の個人間に「参照元」と「参照先」のリレーションを作成できます。 \n\nこの機能は、リードオブジェクトや、リードを参照するキャンペーンメンバーオブジェクトでは使用できません。	-
+CustomLabel.RelationshipsCustomFieldOverload	FieldsDescribes Limit has been exceeded, may not be able to show all available fields.  \n\nThere are more than 100 custom fields defined on the Contact or Campaign Member object. If the field you wish to use is not shown, you may need to enter this Auto-Create record manually.  Go to Setup->Develop->Custom Settings and click 'Manage' next to 'Relationship Auto-Create', then click 'New' to enter a new record manually.  Use API names (not the field label) to identify the fields that should trigger a new Relationship record.	FieldsDescribes の制限を超えました。使用可能なすべての項目を表示できない可能性があります。  \n\n100 個を超えるカスタム項目が個人オブジェクトまたはキャンペーンメンバーオブジェクトで定義されています。使用する項目が表示されていない場合、必要に応じてこの自動作成レコードを手動で入力してください。[設定] -> [開発] -> [カスタム設定] に移動して [リレーションの自動作成] の横にある [管理] をクリックし、[新規] をクリックして新規レコードを手動で入力します。項目表示ラベルではなく API 参照名を使用して、新規リレーションレコードをトリガする項目を特定します。	-
+CustomLabel.RelationshipsErrorsDescription	Errors can occur during the normal operation of your Relationships Package.  They can be caused by things such as improperly constructed validation rules, required fields, security/permissions, and other reasons.  This tab provides information about errors that may have occurred, when, and why they occurred.	リレーションパッケージの通常の操作時にエラーが発生することがあります。これらのエラーは、不適切に構成された入力規則、必須項目、セキュリティ/権限、およびその他の原因で発生する可能性があります。このタブには、発生した可能性のエラー、発生したタイミングや原因に関する情報が表示されます。	-
+CustomLabel.RelationshipsLookupDescription	The NPSP uses the settings in this list to determine reciprocal relationships. See the <a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank">NPSP Documentation</a> for a full explanation of how these settings work, plus examples.	これらの設定により、相互関係 (2 人の個人の間の「一致する」関係) を設定できます。たとえば、父親がその息子に関連付けられている場合、同様にその息子も父親に関連付けられます。[名前] の [種別] の値を指定してから、リンクする個人の性別に基づく相互関係の値を指定できます。[男性] の相互関係、[女性] の相互関係、および性別を判断できない場合に使用される [どちらでもない] の相互関係を定義できます。性別は、可能であれば敬称に基づいて決定され、可能でなければ [リレーション設定] タブで定義できるカスタム性別項目に基づいて決定されます。 \n\n\n(注意: 必要に応じて、[種別] をリレーションオブジェクトに追加して使用できるようにします。これを行うには、[設定] | [カスタマイズ] | [作成] | [オブジェクト] に移動し、[リレーション]、[種別] をクリックして [選択リスト値] リストの [新規] をクリックします)	-
+CustomLabel.RelationshipsSettingsDescription	These settings control how Relationships behave in the Nonprofit Success Pack.	リレーションの動作を制御する設定。これらを変更すると、リレーションレコードの動作が変わります。	-
