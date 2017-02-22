@@ -4,6 +4,7 @@
     <types>
         <members>Relationships_INST</members>
         <members>Relationships_INST_TEST</members>
+        <members>UTIL_CustomLabel_TEST</members>
         <name>ApexClass</name>
     </types>
     <types>
