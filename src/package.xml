@@ -74,26 +74,32 @@
         <members>Contact-de</members>
         <members>Contact-en_US</members>
         <members>Contact-es</members>
+        <members>Contact-fr</members>
         <members>Contact-ja</members>
         <members>Relationship_Auto_Create__c-de</members>
         <members>Relationship_Auto_Create__c-en_US</members>
         <members>Relationship_Auto_Create__c-es</members>
+        <members>Relationship_Auto_Create__c-fr</members>
         <members>Relationship_Auto_Create__c-ja</members>
         <members>Relationship_Error__c-de</members>
         <members>Relationship_Error__c-en_US</members>
         <members>Relationship_Error__c-es</members>
+        <members>Relationship_Error__c-fr</members>
         <members>Relationship_Error__c-ja</members>
         <members>Relationship_Lookup__c-de</members>
         <members>Relationship_Lookup__c-en_US</members>
         <members>Relationship_Lookup__c-es</members>
+        <members>Relationship_Lookup__c-fr</members>
         <members>Relationship_Lookup__c-ja</members>
         <members>Relationship_Settings__c-de</members>
         <members>Relationship_Settings__c-en_US</members>
         <members>Relationship_Settings__c-es</members>
+        <members>Relationship_Settings__c-fr</members>
         <members>Relationship_Settings__c-ja</members>
         <members>Relationship__c-de</members>
         <members>Relationship__c-en_US</members>
         <members>Relationship__c-es</members>
+        <members>Relationship__c-fr</members>
         <members>Relationship__c-ja</members>
         <name>CustomObjectTranslation</name>
     </types>
@@ -116,6 +122,7 @@
         <members>de</members>
         <members>en_US</members>
         <members>es</members>
+        <members>fr</members>
         <members>ja</members>
         <name>Translations</name>
     </types>
