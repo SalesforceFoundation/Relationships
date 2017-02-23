@@ -14,7 +14,7 @@
         <name>Campaign_Types__c</name>
     </fields>
     <fields>
-        <help>Este campo completado o modificado que activará el desencadenador para la creación de esta relación.</help>
+        <help>El campo que al completarse o modificarse activará el desencadenador para la creación de esta relación.</help>
         <label>Campo</label>
         <name>Field__c</name>
     </fields>
