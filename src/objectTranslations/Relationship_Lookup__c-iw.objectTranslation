@@ -21,23 +21,23 @@
         <value><!-- הRelationship Lookup --></value>
     </caseValues>
     <fields>
-        <help><!-- Indicates if this reciprocal lookup is active. --></help>
-        <label><!-- Active --></label>
+        <help>מציין אם החיפוש ההדדי פעיל.</help>
+        <label>פעיל</label>
         <name>Active__c</name>
     </fields>
     <fields>
-        <help><!-- The value used if the Contact&apos;s gender field matches the values in the Female Custom Label or the Contact&apos;s Salutation indicates gender. --></help>
-        <label><!-- Female --></label>
+        <help>הערך המשמש אם שדה המגדר של איש הקשר תואם לערכים בתווית המותאמת אישית ממין נקבה או אם שדה התואר של איש הקשר מציין מגדר.</help>
+        <label>נקבה</label>
         <name>Female__c</name>
     </fields>
     <fields>
-        <help><!-- The value used if the Contact&apos;s gender field matches the values in the Male Custom Label or the Contact&apos;s Salutation indicates gender. --></help>
-        <label><!-- Male --></label>
+        <help>הערך המשמש אם שדה המגדר של איש הקשר תואם לערכים בתווית המותאמת אישית ממין זכר או אם שדה התואר של איש הקשר מציין מגדר.</help>
+        <label>זכר</label>
         <name>Male__c</name>
     </fields>
     <fields>
-        <help><!-- The value used if the Contact&apos;s gender field does not match either the Male or Female Custom Labels, and the Contact&apos;s Salutation does not infer gender. --></help>
-        <label><!-- Neutral --></label>
+        <help>הערך המשמש אם שדה המגדר של איש הקשר אינו תואם לערכים בתווית המותאמת אישית ממין זכר נקבה, ואם שדה התואר של איש הקשר אינו מציין מגדר.</help>
+        <label>ניטראלי</label>
         <name>Neutral__c</name>
     </fields>
     <gender><!-- Masculine --></gender>

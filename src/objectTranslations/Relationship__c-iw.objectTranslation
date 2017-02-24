@@ -21,158 +21,158 @@
         <value><!-- הRelationship --></value>
     </caseValues>
     <fields>
-        <help><!-- Related Contact is this Contact&apos;s ______. --></help>
-        <label><!-- Contact --></label>
+        <help>איש הקשר הקשור הוא ה______ של איש קשר זה.</help>
+        <label>איש קשר</label>
         <name>Contact__c</name>
-        <relationshipLabel><!-- Relationships --></relationshipLabel>
+        <relationshipLabel>קשרים</relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Additional information about this Relationship --></help>
-        <label><!-- Description --></label>
+        <help>מידע נוסף על קשר זה</help>
+        <label>תיאור</label>
         <name>Description__c</name>
     </fields>
     <fields>
-        <help><!-- System field that links to the two sides of the Relationship together.  This field should not be modified directly.  The Reciprocal Relationship will have the opposite type, if available, of this Relationship. --></help>
-        <label><!-- Reciprocal Relationship --></label>
+        <help>שדה מערכת המקשר אל שני הצדדים של הקשר.  אין לבצע בשדה זה שינויים באופן ישיר.  הקשר ההדדי יקבל את הסוג ההפוך, אם זמין, של קשר זה.</help>
+        <label>קשר הדדי</label>
         <name>ReciprocalRelationship__c</name>
-        <relationshipLabel><!-- Relationships --></relationshipLabel>
+        <relationshipLabel>קשרים</relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Related Contact --></label>
+        <label>תוכן קשור</label>
         <name>RelatedContact__c</name>
-        <relationshipLabel><!-- Hidden Relationships List --></relationshipLabel>
+        <relationshipLabel>רשימת קשרים מוסתרים</relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Text formula that constructs a sentence explaining the relationship between the two Contacts --></help>
-        <label><!-- Relationship Explanation --></label>
+        <help>נוסחת טקסט המרכיבה משפט המסביר את הקשר בין שני אנשי הקשר</help>
+        <label>הסבר על הקשר</label>
         <name>Relationship_Explanation__c</name>
     </fields>
     <fields>
-        <help><!-- System field that indicates if this Relationship was created automatically as the reciprocal to another Relationships. --></help>
+        <help>שדה מערכת המציין אם קשר זה נוצר באופן אוטומטי בתור ההופכי לקשרים אחרים.</help>
         <label><!-- _SYSTEM: SystemCreated --></label>
         <name>SYSTEM_SystemCreated__c</name>
     </fields>
     <fields>
-        <help><!-- Status of the Relationship. --></help>
-        <label><!-- Status --></label>
+        <help>מצב הקשר.</help>
+        <label>מצב</label>
         <name>Status__c</name>
         <picklistValues>
             <masterLabel>Current</masterLabel>
-            <translation><!-- Current --></translation>
+            <translation>נוכחי</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Former</masterLabel>
-            <translation><!-- Former --></translation>
+            <translation>קודם</translation>
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Field that describes how the Related Contact is connected to the Contact. --></help>
-        <label><!-- Type --></label>
+        <help>שדה המתאר כיצד שני אנשי הקשר קשורים זה לזה.</help>
+        <label>סוג</label>
         <name>Type__c</name>
         <picklistValues>
             <masterLabel>Aunt</masterLabel>
-            <translation><!-- Aunt --></translation>
+            <translation>דודה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Child</masterLabel>
-            <translation><!-- Child --></translation>
+            <translation>ילד/ה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Cousin</masterLabel>
-            <translation><!-- Cousin --></translation>
+            <translation>בן/ת דוד</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Coworker</masterLabel>
-            <translation><!-- Coworker --></translation>
+            <translation>עמית/ה לעבודה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Daughter</masterLabel>
-            <translation><!-- Daughter --></translation>
+            <translation>בת</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Employee</masterLabel>
-            <translation><!-- Employee --></translation>
+            <translation>עובד/ת</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Employer</masterLabel>
-            <translation><!-- Employer --></translation>
+            <translation>מעסיק/ה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Family</masterLabel>
-            <translation><!-- Family --></translation>
+            <translation>משפחה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Father</masterLabel>
-            <translation><!-- Father --></translation>
+            <translation>אב</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Friend</masterLabel>
-            <translation><!-- Friend --></translation>
+            <translation>חבר/ה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandchild</masterLabel>
-            <translation><!-- Grandchild --></translation>
+            <translation>נכד/ה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Granddaughter</masterLabel>
-            <translation><!-- Granddaughter --></translation>
+            <translation>נכדה</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandfather</masterLabel>
-            <translation><!-- Grandfather --></translation>
+            <translation>סבא</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandmother</masterLabel>
-            <translation><!-- Grandmother --></translation>
+            <translation>סבתא</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandparent</masterLabel>
-            <translation><!-- Grandparent --></translation>
+            <translation>סב(ת)א</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandson</masterLabel>
-            <translation><!-- Grandson --></translation>
+            <translation>נכד</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Husband</masterLabel>
-            <translation><!-- Husband --></translation>
+            <translation>בעל</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Mother</masterLabel>
-            <translation><!-- Mother --></translation>
+            <translation>אם</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Parent</masterLabel>
-            <translation><!-- Parent --></translation>
+            <translation>אב</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Partner</masterLabel>
-            <translation><!-- Partner --></translation>
+            <translation>שותף</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Son</masterLabel>
-            <translation><!-- Son --></translation>
+            <translation>בן</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Uncle</masterLabel>
-            <translation><!-- Uncle --></translation>
+            <translation>דוד</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Wife</masterLabel>
-            <translation><!-- Wife --></translation>
+            <translation>רעיה</translation>
         </picklistValues>
     </fields>
     <gender><!-- Masculine --></gender>
     <layouts>
         <layout>Relationship Layout</layout>
         <sections>
-            <label><!-- Relationship Information --></label>
+            <label>פרטי קשר</label>
             <section>Relationship Information</section>
         </sections>
     </layouts>
     <nameFieldLabel><!-- Relationship Number --></nameFieldLabel>
     <validationRules>
-        <errorMessage><!-- Rather than change the contacts in an existing relationship, delete this relationship and create a new on between the new contacts --></errorMessage>
+        <errorMessage>במקום לשנות את אנשי הקשר בקשר קיים, מחק קשר זה וצור אחד חדש בין אנשי הקשר החדשים</errorMessage>
         <name>Related_Contact_Do_Not_Change</name>
     </validationRules>
 </CustomObjectTranslation>

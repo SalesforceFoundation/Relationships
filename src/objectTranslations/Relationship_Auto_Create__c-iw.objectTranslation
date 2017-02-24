@@ -21,23 +21,23 @@
         <value><!-- הRelationship Auto-Create --></value>
     </caseValues>
     <fields>
-        <help><!-- Eligible Campaign types for this Campaign Member auto-create. (Will be blank for Contact auto-create) --></help>
-        <label><!-- Campaign Types --></label>
+        <help>סוגי המבצעים החוקיים עבור יצירה אוטומטית של חבר זה במבצע. (יהיה ריק עבור יצירה אוטומטית של אנשי קשר)</help>
+        <label>סוגי מבצעים</label>
         <name>Campaign_Types__c</name>
     </fields>
     <fields>
-        <help><!-- The field insert or update that triggers the creation of this Relationship --></help>
-        <label><!-- Field --></label>
+        <help>פעולת ההוספה או העדכון של שדה שמפעילה את היצירה של קשר זה</help>
+        <label>שדה</label>
         <name>Field__c</name>
     </fields>
     <fields>
-        <help><!-- The object this Auto-Relationship is associated with --></help>
-        <label><!-- Object --></label>
+        <help>האובייקט שקשר אוטומטי זה משויך אליו</help>
+        <label>אובייקט</label>
         <name>Object__c</name>
     </fields>
     <fields>
-        <help><!-- The Relationship type to be created between the base object and the lookup object.  The lookup object will receive the reciprocal Relationship, if one is available. --></help>
-        <label><!-- Relationship Type --></label>
+        <help>סוג הקשר שייווצר בין אובייקט הבסיס ואובייקט החיפוש.  אובייקט החיפוש יקבל את הקשר ההדדי, אם קשר כזה זמין.</help>
+        <label>סוג קשר</label>
         <name>Relationship_Type__c</name>
     </fields>
     <gender><!-- Masculine --></gender>
