@@ -5,7 +5,7 @@ project:
         namespace: npe4
         api_version: 36.0
     git:
-        release: rel/
+        prefix_release: rel/
 
 flows:
     release_beta:
