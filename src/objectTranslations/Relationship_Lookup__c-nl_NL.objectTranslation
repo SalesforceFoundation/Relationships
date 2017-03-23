@@ -9,23 +9,23 @@
         <value><!-- Relationship Lookup --></value>
     </caseValues>
     <fields>
-        <help><!-- Indicates if this reciprocal lookup is active. --></help>
-        <label><!-- Active --></label>
+        <help>Geeft aan of deze wederkerige opzoekrelatie actief is.</help>
+        <label>Actief</label>
         <name>Active__c</name>
     </fields>
     <fields>
-        <help><!-- The value used if the Contact&apos;s gender field matches the values in the Female Custom Label or the Contact&apos;s Salutation indicates gender. --></help>
-        <label><!-- Female --></label>
+        <help>De gebruikte waarde als het Contactpersoon’s geslacht veld gelijk is aan de Vrouw Aangepast Label of het geslacht blijkt uit de Contactpersoon’s salutatie.</help>
+        <label>Vrouw</label>
         <name>Female__c</name>
     </fields>
     <fields>
-        <help><!-- The value used if the Contact&apos;s gender field matches the values in the Male Custom Label or the Contact&apos;s Salutation indicates gender. --></help>
-        <label><!-- Male --></label>
+        <help>De gebruikte waarde als het Contactpersoon’s geslacht veld gelijk is aan de Man Aangepast Label of het geslacht blijkt uit de Contactpersoon’s salutatie.</help>
+        <label>Man</label>
         <name>Male__c</name>
     </fields>
     <fields>
-        <help><!-- The value used if the Contact&apos;s gender field does not match either the Male or Female Custom Labels, and the Contact&apos;s Salutation does not infer gender. --></help>
-        <label><!-- Neutral --></label>
+        <help>De gebruikte waarde als het Contactpersoon’s geslacht veld niet gelijk is aan de Man of Vrouw Aangepast Label, en uit de Contactpersoon’s salutatie blijkt geen geslacht.</help>
+        <label>Neutraal</label>
         <name>Neutral__c</name>
     </fields>
     <gender><!-- Neuter --></gender>

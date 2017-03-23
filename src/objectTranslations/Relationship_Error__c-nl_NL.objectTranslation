@@ -9,28 +9,28 @@
         <value><!-- DEPRECATED-Relationship Error --></value>
     </caseValues>
     <fields>
-        <help><!-- Date &amp; time the error occurred --></help>
-        <label><!-- Error Date/Time --></label>
+        <help>Datum en tijd van wanneer de fout is opgetreden</help>
+        <label>Fout Datum/Tijd</label>
         <name>Error_Date_Time__c</name>
     </fields>
     <fields>
-        <help><!-- A link to the record which caused the error, if available. --></help>
-        <label><!-- Error Record Link --></label>
+        <help>Een link naar het record dat de fout heet veroorzaakt, indien beschikbaar</help>
+        <label>Fout Record link</label>
         <name>Error_Record_Link__c</name>
     </fields>
     <fields>
-        <help><!-- Stack trace for the thrown error, if available at run time. --></help>
-        <label><!-- Error Stack Trace --></label>
+        <help>&quot;Stack Trace&quot; voor de &quot;thrown error&quot;, indien beschikbaar tijdens run time</help>
+        <label>Fout Stack Trace</label>
         <name>Error_Stack_Trace__c</name>
     </fields>
     <fields>
-        <help><!-- Type of error that occurred --></help>
-        <label><!-- Error Type --></label>
+        <help>Soort fout dat is opgetreden</help>
+        <label>Type Fout</label>
         <name>Error_Type__c</name>
     </fields>
     <fields>
-        <help><!-- Full text of the error message --></help>
-        <label><!-- Full Error Message --></label>
+        <help>De volledige tekst van de foutmelding</help>
+        <label>Volledige Foutmelding</label>
         <name>Full_Error_Message__c</name>
     </fields>
     <gender><!-- Neuter --></gender>

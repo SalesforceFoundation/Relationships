@@ -9,52 +9,52 @@
         <value><!-- Relationship --></value>
     </caseValues>
     <fields>
-        <help><!-- Related Contact is this Contact&apos;s ______. --></help>
-        <label><!-- Contact --></label>
+        <help>Gerelateerde Contactpersonen is dit Contact&apos;s_______</help>
+        <label>Contactpersoon</label>
         <name>Contact__c</name>
-        <relationshipLabel><!-- Relationships --></relationshipLabel>
+        <relationshipLabel>Relaties</relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Additional information about this Relationship --></help>
-        <label><!-- Description --></label>
+        <help>Extra informatie over deze Relatie</help>
+        <label>Beschrijving</label>
         <name>Description__c</name>
     </fields>
     <fields>
-        <help><!-- System field that links to the two sides of the Relationship together.  This field should not be modified directly.  The Reciprocal Relationship will have the opposite type, if available, of this Relationship. --></help>
-        <label><!-- Reciprocal Relationship --></label>
+        <help>Systeem veld die de twee kanten van de relatie samen linkt. Dit veld moet niet worden aangepast. De wederkerige relatie heeft de het tegenovergestelde type, indien beschikbaar, van deze relatie.</help>
+        <label>Wederkerige Relatie</label>
         <name>ReciprocalRelationship__c</name>
-        <relationshipLabel><!-- Relationships --></relationshipLabel>
+        <relationshipLabel>Relaties</relationshipLabel>
     </fields>
     <fields>
-        <label><!-- Related Contact --></label>
+        <label>Gerelateerde Contacpersoon</label>
         <name>RelatedContact__c</name>
-        <relationshipLabel><!-- Hidden Relationships List --></relationshipLabel>
+        <relationshipLabel>Verborgen Relaties Lijst</relationshipLabel>
     </fields>
     <fields>
-        <help><!-- Text formula that constructs a sentence explaining the relationship between the two Contacts --></help>
-        <label><!-- Relationship Explanation --></label>
+        <help>Tekst formule die een zin maakt die de relatie uitlegt tussen twee contactpersonen.</help>
+        <label>Relatie Uitleg</label>
         <name>Relationship_Explanation__c</name>
     </fields>
     <fields>
-        <help><!-- System field that indicates if this Relationship was created automatically as the reciprocal to another Relationships. --></help>
-        <label><!-- _SYSTEM: SystemCreated --></label>
+        <help>Systeem veld dat aangeeft of de relatie automatisch was gemaakt als de wederhelft van en ander relatie.</help>
+        <label>_SYSTEEM: SysteemAangemaakt</label>
         <name>SYSTEM_SystemCreated__c</name>
     </fields>
     <fields>
-        <help><!-- Status of the Relationship. --></help>
+        <help>Status van de Relatie</help>
         <label><!-- Status --></label>
         <name>Status__c</name>
         <picklistValues>
             <masterLabel>Current</masterLabel>
-            <translation><!-- Current --></translation>
+            <translation>Huidig</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Former</masterLabel>
-            <translation><!-- Former --></translation>
+            <translation>Oud</translation>
         </picklistValues>
     </fields>
     <fields>
-        <help><!-- Field that describes how the Related Contact is connected to the Contact. --></help>
+        <help>Veld die beschrijft hoe de gerelateerde contactpersoon is verwant aan de contactpersoon</help>
         <label><!-- Type --></label>
         <name>Type__c</name>
         <picklistValues>
@@ -154,13 +154,13 @@
     <layouts>
         <layout>Relationship Layout</layout>
         <sections>
-            <label><!-- Relationship Information --></label>
+            <label>Relatie Informatie</label>
             <section>Relationship Information</section>
         </sections>
     </layouts>
     <nameFieldLabel><!-- Relationship Number --></nameFieldLabel>
     <validationRules>
-        <errorMessage><!-- Rather than change the contacts in an existing relationship, delete this relationship and create a new on between the new contacts --></errorMessage>
+        <errorMessage>In plaats van de contacten te veranderen in een bestaande relatie, verwijder deze relatie en maak een nieuwe relatie aan tussen de nieuwe contacten</errorMessage>
         <name>Related_Contact_Do_Not_Change</name>
     </validationRules>
 </CustomObjectTranslation>

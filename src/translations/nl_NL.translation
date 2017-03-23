@@ -41,7 +41,7 @@
         <name>RelationshipsSettingsDescription</name>
     </customLabels>
     <customTabs>
-        <label><!-- Relationships Settings --></label>
+        <label>Relaties Instellingen</label>
         <name>Relationships_Settings</name>
     </customTabs>
 </Translations>
