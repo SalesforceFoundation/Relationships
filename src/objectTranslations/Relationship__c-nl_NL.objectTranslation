@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Relationship --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Relationship --></value>
+    </caseValues>
+    <fields>
+        <help>Gerelateerde Contactpersonen is dit Contact&apos;s_______</help>
+        <label>Contactpersoon</label>
+        <name>Contact__c</name>
+        <relationshipLabel>Relaties</relationshipLabel>
+    </fields>
+    <fields>
+        <help>Extra informatie over deze Relatie</help>
+        <label>Beschrijving</label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help>Systeem veld die de twee kanten van de relatie samen linkt. Dit veld moet niet worden aangepast. De wederkerige relatie heeft de het tegenovergestelde type, indien beschikbaar, van deze relatie.</help>
+        <label>Wederkerige Relatie</label>
+        <name>ReciprocalRelationship__c</name>
+        <relationshipLabel>Relaties</relationshipLabel>
+    </fields>
+    <fields>
+        <label>Gerelateerde Contacpersoon</label>
+        <name>RelatedContact__c</name>
+        <relationshipLabel>Verborgen Relaties Lijst</relationshipLabel>
+    </fields>
+    <fields>
+        <help>Tekst formule die een zin maakt die de relatie uitlegt tussen twee contactpersonen.</help>
+        <label>Relatie Uitleg</label>
+        <name>Relationship_Explanation__c</name>
+    </fields>
+    <fields>
+        <help>Systeem veld dat aangeeft of de relatie automatisch was gemaakt als de wederhelft van en ander relatie.</help>
+        <label>_SYSTEEM: SysteemAangemaakt</label>
+        <name>SYSTEM_SystemCreated__c</name>
+    </fields>
+    <fields>
+        <help>Status van de Relatie</help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Current</masterLabel>
+            <translation>Huidig</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Former</masterLabel>
+            <translation>Oud</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help>Veld die beschrijft hoe de gerelateerde contactpersoon is verwant aan de contactpersoon</help>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Aunt</masterLabel>
+            <translation><!-- Aunt --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Child</masterLabel>
+            <translation><!-- Child --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cousin</masterLabel>
+            <translation><!-- Cousin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coworker</masterLabel>
+            <translation><!-- Coworker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Daughter</masterLabel>
+            <translation><!-- Daughter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee</masterLabel>
+            <translation><!-- Employee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employer</masterLabel>
+            <translation><!-- Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Family</masterLabel>
+            <translation><!-- Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Father</masterLabel>
+            <translation><!-- Father --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friend</masterLabel>
+            <translation><!-- Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandchild</masterLabel>
+            <translation><!-- Grandchild --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Granddaughter</masterLabel>
+            <translation><!-- Granddaughter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandfather</masterLabel>
+            <translation><!-- Grandfather --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandmother</masterLabel>
+            <translation><!-- Grandmother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandparent</masterLabel>
+            <translation><!-- Grandparent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grandson</masterLabel>
+            <translation><!-- Grandson --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Husband</masterLabel>
+            <translation><!-- Husband --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mother</masterLabel>
+            <translation><!-- Mother --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parent</masterLabel>
+            <translation><!-- Parent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Son</masterLabel>
+            <translation><!-- Son --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Uncle</masterLabel>
+            <translation><!-- Uncle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wife</masterLabel>
+            <translation><!-- Wife --></translation>
+        </picklistValues>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <layouts>
+        <layout>Relationship Layout</layout>
+        <sections>
+            <label>Relatie Informatie</label>
+            <section>Relationship Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Relationship Number --></nameFieldLabel>
+    <validationRules>
+        <errorMessage>In plaats van de contacten te veranderen in een bestaande relatie, verwijder deze relatie en maak een nieuwe relatie aan tussen de nieuwe contacten</errorMessage>
+        <name>Related_Contact_Do_Not_Change</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- DEPRECATED-Relationship Error --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- DEPRECATED-Relationship Error --></value>
+    </caseValues>
+    <fields>
+        <help>Datum en tijd van wanneer de fout is opgetreden</help>
+        <label>Fout Datum/Tijd</label>
+        <name>Error_Date_Time__c</name>
+    </fields>
+    <fields>
+        <help>Een link naar het record dat de fout heet veroorzaakt, indien beschikbaar</help>
+        <label>Fout Record link</label>
+        <name>Error_Record_Link__c</name>
+    </fields>
+    <fields>
+        <help>&quot;Stack Trace&quot; voor de &quot;thrown error&quot;, indien beschikbaar tijdens run time</help>
+        <label>Fout Stack Trace</label>
+        <name>Error_Stack_Trace__c</name>
+    </fields>
+    <fields>
+        <help>Soort fout dat is opgetreden</help>
+        <label>Type Fout</label>
+        <name>Error_Type__c</name>
+    </fields>
+    <fields>
+        <help>De volledige tekst van de foutmelding</help>
+        <label>Volledige Foutmelding</label>
+        <name>Full_Error_Message__c</name>
+    </fields>
+    <gender><!-- Neuter --></gender>
+    <nameFieldLabel><!-- Relationship Error Name --></nameFieldLabel>
+</CustomObjectTranslation>

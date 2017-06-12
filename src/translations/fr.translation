@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Impossible de récupérer un ID valide pour la création automatique de relation.  Veuillez vérifier la validité des champs dans l’onglet de paramètres de relations et réessayer.</label>
+        <name>AutoCreateFieldError</name>
+    </customLabels>
+    <customLabels>
+        <label>Féminin</label>
+        <name>Female</name>
+    </customLabels>
+    <customLabels>
+        <label>Masculin</label>
+        <name>Male</name>
+    </customLabels>
+    <customLabels>
+        <label>est</label>
+        <name>Relationship_Explanation_Connector</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Relationship Split --></label>
+        <name>Relationship_Split</name>
+    </customLabels>
+    <customLabels>
+        <label>Les relations autocréées permettent à un champ de référence de contact sur les objets de contact ou de membre de campagne de déclencher automatiquement la création d’un nouveau type de relation de votre choix. Vous pouvez par exemple avoir un champ de référence « introduit par » sur l’objet de membre de campagne pour indiquer lorsqu’une nouvelle personne de votre organisation a été introduite à un événement par un membre existant. Consultez la &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;documentation de NPSP&lt;/a&gt; pour plus d’informations.</label>
+        <name>RelationshipsAutoDescription</name>
+    </customLabels>
+    <customLabels>
+        <label>La limite FieldsDescribes a été dépassée, il est possible que les champs disponibles ne soient pas tous affichés.  
+
+Il y a plus de 100 champs personnalisés définis sur l’objet de contact ou de membre de campagne. Si le champ que vous souhaitez utiliser n’est pas affiché, il se peut que vous deviez saisir son enregistrement d’autocréation manuellement.  Accédez à Configuration-&gt;Développement-&gt;Paramètres personnalisés et cliquez sur « Gérer » à côté de « Autocréation de relation », puis cliquez sur « Nouveau » pour saisir manuellement un nouvel enregistrement.  Utilisez les noms d’API (et non l’étiquette de champ) pour identifier les champs qui doivent déclencher un nouvel enregistrement de relation.</label>
+        <name>RelationshipsCustomFieldOverload</name>
+    </customLabels>
+    <customLabels>
+        <label>Des erreurs peuvent se produire lors du fonctionnement normal de votre package de relations.  Elles peuvent avoir des causes diverses, par exemple des règles de validation construites de manière incorrecte, des champs obligatoires, la sécurité / les autorisations, ...  Cet onglet fournit des informations sur les erreurs qui peuvent s’être produites, leur date et leur cause.</label>
+        <name>RelationshipsErrorsDescription</name>
+    </customLabels>
+    <customLabels>
+        <label>NPSP utilise les paramètres de cette liste pour déterminer les relations réciproques. Consultez la &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;documentation de NPSP&lt;/a&gt; pour une explication complète et illustrée par des exemples de la façon dont fonctionnent ces paramètres.</label>
+        <name>RelationshipsLookupDescription</name>
+    </customLabels>
+    <customLabels>
+        <label>Ces paramètres contrôlent la manière dont les relations fonctionnent dans le pack NPSP.</label>
+        <name>RelationshipsSettingsDescription</name>
+    </customLabels>
+    <customTabs>
+        <label>Paramètres de relations</label>
+        <name>Relationships_Settings</name>
+    </customTabs>
+</Translations>
