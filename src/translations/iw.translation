@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>לא ניתן לאחזר מזהה חוקי לצורך יצירה אוטומטית של קשר.  בדוק את הערכים בשדות הכרטיסייה &apos;הגדרות קשרים&apos; ונסה שוב.</label>
+        <name>AutoCreateFieldError</name>
+    </customLabels>
+    <customLabels>
+        <label>נקבה</label>
+        <name>Female</name>
+    </customLabels>
+    <customLabels>
+        <label>זכר</label>
+        <name>Male</name>
+    </customLabels>
+    <customLabels>
+        <label>הוא</label>
+        <name>Relationship_Explanation_Connector</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Relationship Split --></label>
+        <name>Relationship_Split</name>
+    </customLabels>
+    <customLabels>
+        <label>קשרים הנוצרים באופן אוטומטי מאפשרים לשדה חיפוש איש קשר מותאם אישית, הנכלל באובייקטים של איש הקשר או החבר במבצע, להפעיל באופן אוטומטי את היצירה של סוג קשר חדש, לפי בחירתך. לדוגמה, תוכל להשתמש בשדה החיפוש &apos;הופנה על-ידי&apos; באובייקט של חבר במבצע, כדי לייצג מצבים שבהם אחד התומכים הקיימים הביא אדם חדש בארגון שלך להשתתף באירוע. למידע נוסף, עיין &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;במסמכי התיעוד של NPSP‏&lt;/a&gt;.</label>
+        <name>RelationshipsAutoDescription</name>
+    </customLabels>
+    <customLabels>
+        <label>אירעה חריגה מהמגבלה של FieldsDescribes וייתכן שלא תהיה אפשרות להציג את כל השדות הזמינים.  
+
+הוגדרו יותר מ-100 שדות מותאמים אישית באובייקט של איש הקשר או החבר במבצע. אם השדה שבו אתה רוצה להשתמש אינו מוצג, ייתכן שתצטרך להזין את רשומת היצירה האוטומטית באופן ידני.  עבור אל &apos;הגדרה-&gt;פיתוח-&gt;הגדרות מותאמות אישית&apos; ולחץ על &apos;ניהול&apos; לצד &apos;יצירה אוטומטית של קשר&apos;, לאחר מכן לחץ על &apos;חדש&apos; והזן את הרשומה החדשה באופן ידני.  השתמש בשמות API (לא בתווית השדה) לזיהוי השדות שצריכים להפעיל רשומת קשר חדשה.</label>
+        <name>RelationshipsCustomFieldOverload</name>
+    </customLabels>
+    <customLabels>
+        <label>שגיאות עלולות להתרחש במהלך הפעולה התקינה של חבילת הקשרים שברשותך.  הן עשויות להיגרם כתוצאה ממבנה שגוי של כללי אימות שדות נדרשים, אבטחה/הרשאות וסיבות אחרות.  כרטיסייה זו מכילה מידע על שגיאות שייתכן שהתרחשו, המועד וסיבת השגיאה.</label>
+        <name>RelationshipsErrorsDescription</name>
+    </customLabels>
+    <customLabels>
+        <label>NPSP עושה שימוש בהגדרות המופיעות ברשימה זו כדי לקבוע קשרים הדדיים. עיין &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;במסמכי התיעוד של NPSP‏&lt;/a&gt; לקבלת הסבר מלא על אופן הפעולה של הגדרות אלה, בצירוף דוגמאות.</label>
+        <name>RelationshipsLookupDescription</name>
+    </customLabels>
+    <customLabels>
+        <label>הגדרות אלה קובעות את ההתנהגות של קשרים ב&apos;ערכת ההצלחה למלכ&quot;רים&apos;.</label>
+        <name>RelationshipsSettingsDescription</name>
+    </customLabels>
+    <customTabs>
+        <label>הגדרות קשרים</label>
+        <name>Relationships_Settings</name>
+    </customTabs>
+</Translations>

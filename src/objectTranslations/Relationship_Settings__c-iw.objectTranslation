@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <article>None</article>
+        <plural>false</plural>
+        <value><!-- Relationship Settings --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>false</plural>
+        <value><!-- הRelationship Settings --></value>
+    </caseValues>
+    <caseValues>
+        <article>None</article>
+        <plural>true</plural>
+        <value><!-- Relationship Settings --></value>
+    </caseValues>
+    <caseValues>
+        <article>Definite</article>
+        <plural>true</plural>
+        <value><!-- הRelationship Settings --></value>
+    </caseValues>
+    <fields>
+        <help>קשרים הנוצרים אוטומטית עוברים הסרת ערכים כפולים באופן אוטומטי, למניעת יצירה של רשומות קשר כפולות בין שני אנשי קשר.  סמן תיבה זו כדי להשבית התנהגות זו ולאפשר יצירה של קשרים מרובים מאותו סוג בין שני אנשי קשר</help>
+        <label>אפשר קשרים כפולים הנוצרים אוטומטית</label>
+        <name>Allow_AutoCreated_Duplicates__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
+        <label><!-- DEPRECATED-Disable_RelCM_trigger --></label>
+        <name>DISABLE_RelationshipCM_trigger__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
+        <label><!-- DEPRECATED-Disable_RelContacts_trigger --></label>
+        <name>DISABLE_RelationshipContacts_trigger__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
+        <label><!-- DEPRECATED-Disable_Relationships_trigger --></label>
+        <name>DISABLE_Relationships_trigger__c</name>
+    </fields>
+    <fields>
+        <help><!-- DEPRECATED.  This setting is not used. --></help>
+        <label><!-- DEPRECATED-Force Synchronous Auto Create --></label>
+        <name>Force_Synchronous_Auto_Create__c</name>
+    </fields>
+    <fields>
+        <help>השדה המותאם אישית המשמש להגדרת המגדר של איש קשר, לקביעת קשרים הדדיים</help>
+        <label>שדה מגדר</label>
+        <name>Gender_Field__c</name>
+    </fields>
+    <fields>
+        <help>השיטה המשמשת ליצירת הקשר ההדדי.  הערכים האפשריים הם &apos;הגדרת רשימה&apos;, אשר משתמש בהגדרות מותאמות אישית לפי מגדר (ראה את הכרטיסייה &apos;קשרים הדדיים&apos;) או &apos;היפוך ערכים&apos;, אשר הופך את הסוג לפי הצורך (&apos;הורה-צאצא&apos; ל&apos;צאצא-הורה&apos;)</help>
+        <label>שיטת הדדיות</label>
+        <name>Reciprocal_Method__c</name>
+    </fields>
+    <fields>
+        <help>ציון ערך זה יאפשר מילוי מראש של השדה בעת יצירה של קשרים חדשים מתוך מציג הקשרים (ראה תיאור לפרטים נוספים)</help>
+        <label>מזהה שדה שם קשר</label>
+        <name>Relationship_Name_Field_Id__c</name>
+    </fields>
+    <fields>
+        <help>ציון ערך זה יאפשר מילוי מראש של השדה בעת יצירה של קשרים חדשים מתוך מציג הקשרים (ראה תיאור לפרטים נוספים)</help>
+        <label>מזהה שדה מזהה שם קשר</label>
+        <name>Relationship_Name_Id_Field_Id__c</name>
+    </fields>
+    <gender><!-- Masculine --></gender>
+</CustomObjectTranslation>
