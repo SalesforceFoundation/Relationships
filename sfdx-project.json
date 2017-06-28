@@ -1,0 +1,10 @@
+{
+  "packageDirectories": [
+    {
+      "path": "src",
+      "default": true
+    }
+  ],
+  "namespace": "npe4",
+  "sourceApiVersion": "36.0"
+}
