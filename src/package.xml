@@ -125,8 +125,6 @@
         <name>Layout</name>
     </types>
     <types>
-        <members>AToolTip</members>
-        <members>ArborJS</members>
         <members>DefaultReciprocalRelationships</members>
         <name>StaticResource</name>
     </types>
