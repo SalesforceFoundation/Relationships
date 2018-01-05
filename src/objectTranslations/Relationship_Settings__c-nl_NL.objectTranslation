@@ -9,28 +9,28 @@
         <value><!-- Relationship Settings --></value>
     </caseValues>
     <fields>
-        <help>Auto-gemaakte relaties zijn auto-ontdubbelt om te voorkomen dat dubbele Relatie records worden gemaakt tussen twee Contactpersonen. Vink aan om dit gedrag uit te schakelen &amp; sta toe dat meerdere relaties van hetzelfde type word gemaakt tussen 2 Contacten</help>
-        <label>Toestaan Auto-Gemaakt Duplicaat Relaties</label>
+        <help>Automatisch aangemaakte Relaties worden standaard ontdubbeld als de Relatie al bestaat tussen twee Contactpersonen. Door deze functie in te schakelen wordt toegestaan meerdere Relaties van hetzelfde Type tussen twee Contactpersonen aan te maken.</help>
+        <label>Toestaan Autom. Creatie Dubbele Relaties</label>
         <name>Allow_AutoCreated_Duplicates__c</name>
     </fields>
     <fields>
-        <help>AFGEKEURD. Trigger gedrag wordt nu gecontroleerd op de Trigger Configuratiepagina van de NPSP Instellingen</help>
-        <label>AFGEKEURD-Schakeluit_RelCM_trigger</label>
+        <help>VEROUDERD. Trigger gedrag wordt nu gecontroleerd in de Trigger Configuratiepagina van NPSP Instellingen</help>
+        <label>VEROUDERD-Disable_RelCM_trigger</label>
         <name>DISABLE_RelationshipCM_trigger__c</name>
     </fields>
     <fields>
-        <help>AFGEKEURD. Trigger gedrag wordt nu gecontroleerd op de Trigger Configuratiepagina van de NPSP Instellingen</help>
-        <label>AFGEKEURD-Schakeluit_RelContacts_trigger</label>
+        <help>VEROUDERD. Trigger gedrag wordt nu gecontroleerd in de Trigger Configuratiepagina van NPSP Instellingen</help>
+        <label>VEROUDERD-Disable_RelContacts_trigger</label>
         <name>DISABLE_RelationshipContacts_trigger__c</name>
     </fields>
     <fields>
-        <help>AFGEKEURD. Trigger gedrag wordt nu gecontroleerd op de Trigger Configuratiepagina van de NPSP Instellingen</help>
-        <label>AFGEKEURD-Schakeluit_Relaties_trigger</label>
+        <help>VEROUDERD. Trigger gedrag wordt nu gecontroleerd in de Trigger Configuratiepagina van NPSP Instellingen</help>
+        <label>VEROUDERD-Disable_Relationships_trigger</label>
         <name>DISABLE_Relationships_trigger__c</name>
     </fields>
     <fields>
-        <help>AFGEKEURD. Deze instelling wordt niet gebruikt</help>
-        <label>AFGEKEURD-Dwing Gelijktijdig Auto Create</label>
+        <help>VEROUDERD.  This setting is not used.</help>
+        <label>VEROUDERD-Force Synchronous Auto Create</label>
         <name>Force_Synchronous_Auto_Create__c</name>
     </fields>
     <fields>
@@ -39,17 +39,17 @@
         <name>Gender_Field__c</name>
     </fields>
     <fields>
-        <help>Bepaald de methode gebruikt om de wederkerige relatie te genereren. Of Lijst Instellingen, die aangepaste instellingen volgens geslacht gebruikt (zie Wederkerige Relaties tab), of Waarde Inversie, die het type omkeert indien geschikt</help>
+        <help>De methode die gebruikt wordt om de wederkerige relatie te genereren. Lijst Instellingen = geslacht i.c.m. de aangepaste instellingen in de Wederkerige Relaties Waarde Inversie = de omgekeerde waarde (&quot;Vader-Zoon&quot; wordt &quot;Zoon-Vader&quot;)</help>
         <label>Wederkerige Methode</label>
         <name>Reciprocal_Method__c</name>
     </fields>
     <fields>
-        <help>Deze waarde invullen zal toestaan om het veld van te voren in te vullen wanneer nieuwe Relaties worden gemaakt van de Relatie kijker (zie beschrijving voor meer informatie)</help>
+        <help>Het vullen van deze waarde zorgt ervoor dat het veld vooraf wordt ingevuld bij het maken van Relaties vanuit het Relatie Overzicht (zie omschrijving voor meer informatie)</help>
         <label>Relatie Naam Veld Id</label>
         <name>Relationship_Name_Field_Id__c</name>
     </fields>
     <fields>
-        <help>Deze waarde invullen zal toestaan om het veld van te voren in te vullen wanneer nieuwe Relaties worden gemaakt van de Relatie kijker (zie beschrijving voor meer informatie)</help>
+        <help>Het vullen van deze waarde zorgt ervoor dat het veld vooraf wordt ingevuld bij het maken van Relaties vanuit het Relatie Overzicht (zie omschrijving voor meer informatie)</help>
         <label>Relatie Naam Id Veld Id</label>
         <name>Relationship_Name_Id_Field_Id__c</name>
     </fields>

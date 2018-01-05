@@ -14,17 +14,17 @@
         <name>Active__c</name>
     </fields>
     <fields>
-        <help>De gebruikte waarde als het Contactpersoon’s geslacht veld gelijk is aan de Vrouw Aangepast Label of het geslacht blijkt uit de Contactpersoon’s salutatie.</help>
+        <help>De gebruikte waarde als het geslachtveld op Contactpersoon gelijk is aan de Vrouw Aangepast Label of het geslacht blijkt uit de Aanhef.</help>
         <label>Vrouw</label>
         <name>Female__c</name>
     </fields>
     <fields>
-        <help>De gebruikte waarde als het Contactpersoon’s geslacht veld gelijk is aan de Man Aangepast Label of het geslacht blijkt uit de Contactpersoon’s salutatie.</help>
+        <help>De gebruikte waarde als het geslachtveld op Contactpersoon gelijk is aan de Man Aangepast Label of het geslacht blijkt uit de Aanhef.</help>
         <label>Man</label>
         <name>Male__c</name>
     </fields>
     <fields>
-        <help>De gebruikte waarde als het Contactpersoon’s geslacht veld niet gelijk is aan de Man of Vrouw Aangepast Label, en uit de Contactpersoon’s salutatie blijkt geen geslacht.</help>
+        <help>De gebruikte waarde als het geslachtveld op Contactpersoon niet gelijk is aan de Man Aangepast Label of het geslacht niet blijkt uit de Aanhef.</help>
         <label>Neutraal</label>
         <name>Neutral__c</name>
     </fields>
