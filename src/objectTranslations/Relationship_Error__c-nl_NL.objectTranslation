@@ -25,7 +25,7 @@
     </fields>
     <fields>
         <help>Soort fout dat is opgetreden</help>
-        <label>Type Fout</label>
+        <label>Fout Type</label>
         <name>Error_Type__c</name>
     </fields>
     <fields>
