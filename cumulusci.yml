@@ -7,6 +7,13 @@ project:
     git:
         prefix_release: rel/
 
+tasks:
+    uninstall_packaged_incremental:
+        options:
+            ignore:
+                ListView:
+                    Relationship_Lookup__c.All
+
 flows:
     release_beta:
         tasks:
