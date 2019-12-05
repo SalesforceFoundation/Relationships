@@ -1,38 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <caseValues>
-        <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
-    </caseValues>
-    <caseValues>
-        <plural>true</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
-    </caseValues>
-    <fields>
-        <help>Datum en tijd van wanneer de fout is opgetreden</help>
-        <label>Fout Datum/Tijd</label>
-        <name>Error_Date_Time__c</name>
-    </fields>
-    <fields>
-        <help>Een link naar het record dat de fout heet veroorzaakt, indien beschikbaar</help>
-        <label>Fout Record link</label>
-        <name>Error_Record_Link__c</name>
-    </fields>
-    <fields>
-        <help>&quot;Stack Trace&quot; voor de &quot;thrown error&quot;, indien beschikbaar tijdens run time</help>
-        <label>Fout Stack Trace</label>
-        <name>Error_Stack_Trace__c</name>
-    </fields>
-    <fields>
-        <help>Soort fout dat is opgetreden</help>
-        <label>Fout Type</label>
-        <name>Error_Type__c</name>
-    </fields>
-    <fields>
-        <help>De volledige tekst van de foutmelding</help>
-        <label>Volledige Foutmelding</label>
-        <name>Full_Error_Message__c</name>
-    </fields>
-    <gender><!-- Neuter --></gender>
-    <nameFieldLabel><!-- Relationship Error Name --></nameFieldLabel>
+  <fields>
+    <name>Error_Date_Time__c</name>
+    <help>Datum en tijd waarop de fout zich heeft voorgedaan</help>
+    <label>Datum/tijd van fout</label>
+  </fields>
+  <fields>
+    <name>Error_Record_Link__c</name>
+    <help>Een koppeling naar de record die de fout heeft veroorzaakt, indien beschikbaar.</help>
+    <label>Recordkoppeling voor fout</label>
+  </fields>
+  <fields>
+    <name>Error_Stack_Trace__c</name>
+    <help>Stack-tracering voor de veroorzaakte, indien beschikbaar tijdens run-time</help>
+    <label>Stack-traceringsfout</label>
+  </fields>
+  <fields>
+    <name>Error_Type__c</name>
+    <help>Type fout, dat is opgetreden</help>
+    <label>Type fout</label>
+  </fields>
+  <fields>
+    <name>Full_Error_Message__c</name>
+    <help>De volledige tekst van het foutbericht</help>
+    <label>Volledig foutbericht</label>
+  </fields>
+  <nameFieldLabel>Naam voor fout in relatie</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Naam voor fout in relatie</label>
+  </standardFields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>DEPRECATED-Fout in relatie</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Fouten in relatie</value>
+  </caseValues>
 </CustomObjectTranslation>
