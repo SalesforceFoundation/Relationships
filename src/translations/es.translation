@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
-        <name>AutoCreateFieldError</name>
         <label>No se puede encontrar un identificador válido para la creación automática de relaciones. Revise la validez de los campos en la configuración de la ficha Configuración de relaciones e inténtelo de nuevo.</label>
+        <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
-        <name>Female</name>
         <label>Femenino</label>
+        <name>Female</name>
     </customLabels>
     <customLabels>
-        <name>Male</name>
         <label>Masculino</label>
+        <name>Male</name>
     </customLabels>
     <customLabels>
-        <name>Relationship_Explanation_Connector</name>
         <label>es</label>
+        <name>Relationship_Explanation_Connector</name>
     </customLabels>
     <customLabels>
-        <name>Relationship_Split</name>
         <label>-</label>
+        <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
+        <label>Las relaciones creadas automáticamente permiten a un campo de búsqueda de contactos personalizado en los objetos Contacto o Miembro de campaña desencadenar la creación de una nueva relación del tipo que desee. Por ejemplo, un campo de búsqueda de contactos &quot;Referido por&quot; en el objeto Miembro de campaña puede representar el momento en que se aportó una persona nueva en su organización a un evento por parte de un integrante. Consulte la &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;Documentación de NPSP&lt;/a&gt; para obtener más información.</label>
         <name>RelationshipsAutoDescription</name>
-        <label>Las relaciones creadas automáticamente permiten a un campo de búsqueda de contactos personalizado en los objetos Contacto o Miembro de campaña desencadenar la creación de una nueva relación del tipo que desee. Por ejemplo, un campo de búsqueda de contactos "Referido por" en el objeto Miembro de campaña puede representar el momento en que se aportó una persona nueva en su organización a un evento por parte de un integrante. Consulte la &lt;a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank"&gt;Documentación de NPSP&lt;/a&gt; para obtener más información.</label>
     </customLabels>
     <customLabels>
-        <name>RelationshipsCustomFieldOverload</name>
         <label>Se ha superado el límite de FieldsDescribes, es posible que no se muestren todos los campos disponibles. 
 
-Hay más de 100 campos personalizados definidos en el objeto Contacto o Miembro de campaña. Si el campo que desea utilizar no se muestra, es posible que tenga que introducir este registro de creación automática manualmente. Vaya a Configuración-&gt; Desarrollar&gt; Configuración personalizada y haga clic en "Administrar" junto a "Creación automática de relaciones", y luego haga clic en "Nuevo" para introducir un nuevo registro manualmente. Utilice nombres de API (no la etiqueta de campo) para identificar los campos que deben desencadenar un nuevo registro Relación.</label>
+Hay más de 100 campos personalizados definidos en el objeto Contacto o Miembro de campaña. Si el campo que desea utilizar no se muestra, es posible que tenga que introducir este registro de creación automática manualmente. Vaya a Configuración-&gt; Desarrollar&gt; Configuración personalizada y haga clic en &quot;Administrar&quot; junto a &quot;Creación automática de relaciones&quot;, y luego haga clic en &quot;Nuevo&quot; para introducir un nuevo registro manualmente. Utilice nombres de API (no la etiqueta de campo) para identificar los campos que deben desencadenar un nuevo registro Relación.</label>
+        <name>RelationshipsCustomFieldOverload</name>
     </customLabels>
     <customLabels>
-        <name>RelationshipsErrorsDescription</name>
         <label>Se pueden producir errores durante el funcionamiento normal de su paquete Relaciones. Pueden venir provocados por reglas de validación creadas de forma inapropiada, campos obligatorios , seguridad/permisos y otros motivos. Esta ficha ofrece información sobre los errores que se hayan podido producir, así como el momento y el motivo por el que se produjeron.</label>
+        <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
+        <label>NPSP utiliza los parámetros de esta lista para determinar relaciones recíprocas. Consulte la &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;Documentación de NPSP&lt;/a&gt; para ver una explicación completa del funcionamiento de estos parámetros, junto con ejemplos.</label>
         <name>RelationshipsLookupDescription</name>
-        <label>NPSP utiliza los parámetros de esta lista para determinar relaciones recíprocas. Consulte la &lt;a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank"&gt;Documentación de NPSP&lt;/a&gt; para ver una explicación completa del funcionamiento de estos parámetros, junto con ejemplos.</label>
     </customLabels>
     <customLabels>
-        <name>RelationshipsSettingsDescription</name>
         <label>Estos parámetros controlan el comportamiento de las relaciones en el Nonprofit Success Pack.</label>
+        <name>RelationshipsSettingsDescription</name>
     </customLabels>
     <customTabs>
-        <name>Relationships_Settings</name>
         <label>Configuración de relaciones</label>
+        <name>Relationships_Settings</name>
     </customTabs>
-</Translations>
+ </Translations>
