@@ -9,23 +9,23 @@
         <value><!-- Relationship Lookup --></value>
     </caseValues>
     <fields>
-        <help>Indica si esta relación reciproca esta activa</help>
+        <help>Indica si esta búsqueda de relación reciproca esta activa.</help>
         <label>Activa</label>
         <name>Active__c</name>
     </fields>
     <fields>
-        <help>El valor usado si el campo de genero del contacto es igual al valor de la etiqueta personalizado de Femenino o si el saludo del contacto indica el genero.</help>
+        <help>El valor empleado si el campo de género del contacto es igual al valor de la etiqueta personalizada Femenino o si el saludo del contacto indica el género.</help>
         <label>Femenino</label>
         <name>Female__c</name>
     </fields>
     <fields>
-        <help>El valor usado si el campo de genero del contacto es igual al valor de la etiqueta personalizado de Masculino o si el saludo del contacto indica el genero.</help>
+        <help>El valor empleado si el campo de género del contacto es igual al valor de la etiqueta personalizada Masculino o si el saludo del contacto indica el género.</help>
         <label>Masculino</label>
         <name>Male__c</name>
     </fields>
     <fields>
-        <help>El valor usado si el campo de genero del contacto no es igual al valor de la etiqueta personalizado de Masculino o Femenino, y el saludo del contacto no infiere el genero.</help>
-        <label><!-- Neutral --></label>
+        <help>El valor empleado si el campo de género del contacto no es igual al valor de la etiqueta personalizada Masculino o Femenino, y el saludo del contacto no infiere el género.</help>
+        <label>Neutro</label>
         <name>Neutral__c</name>
     </fields>
     <gender><!-- Feminine --></gender>

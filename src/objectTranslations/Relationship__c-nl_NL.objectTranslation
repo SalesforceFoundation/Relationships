@@ -2,47 +2,47 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship --></value>
+        <value>Relatie</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship --></value>
+        <value>Relaties</value>
     </caseValues>
     <fields>
-        <help>Gerelateerde Contactpersoon is dit Contactpersoon&apos;s</help>
+        <help>Gerelateerde contactpersonen is _______ van deze contactpersoon.</help>
         <label>Contactpersoon</label>
         <name>Contact__c</name>
         <relationshipLabel>Relaties</relationshipLabel>
     </fields>
     <fields>
-        <help>Extra informatie over deze Relatie</help>
+        <help>Extra informatie over deze relatie</help>
         <label>Beschrijving</label>
         <name>Description__c</name>
     </fields>
     <fields>
-        <help>Systeemveld dat de twee zijden van de Relatie samenbindt. Dit veld moet niet direct worden bewerkt. De Wederkerige Relatie heeft, wanneer beschikbaar, het tegenovergestelde type van de Relatie.</help>
-        <label>Wederkerige Relatie</label>
+        <help>Systeemveld die de twee kanten van de relatie verbindt. Dit veld moet niet rechtstreeks worden gewijzigd. De wederzijdse relatie heeft het tegenovergestelde type, indien beschikbaar, van deze relatie.</help>
+        <label>Wederzijdse relatie</label>
         <name>ReciprocalRelationship__c</name>
         <relationshipLabel>Relaties</relationshipLabel>
     </fields>
     <fields>
-        <label>Gerelateerde Contacpersoon</label>
+        <label>Gerelateerde contacpersoon</label>
         <name>RelatedContact__c</name>
-        <relationshipLabel>Verborgen Relaties Lijst</relationshipLabel>
+        <relationshipLabel>Lijst Verborgen relaties</relationshipLabel>
     </fields>
     <fields>
-        <help>Een Tekst Formule die de Relatie in een zin uitlegt op basis van de gekozen Relatie tussen de twee Contactpersonen.</help>
-        <label>Relatie Uitleg</label>
+        <help>Tekstformule die een zin samenstelt, die de relatie uitlegt tussen twee contactpersonen.</help>
+        <label>Uitleg over relatie</label>
         <name>Relationship_Explanation__c</name>
     </fields>
     <fields>
-        <help>Systeemveld dat aangeeft of de Relatie automatisch was gemaakt als de wederhelft van een ander relatie.</help>
-        <label>_SYSTEEM: SysteemAangemaakt</label>
+        <help>Systeemveld dat aangeeft of de relatie automatisch is gemaakt als de wederhelft van een andere relatie.</help>
+        <label>_SYSTEM: SystemCreated</label>
         <name>SYSTEM_SystemCreated__c</name>
     </fields>
     <fields>
-        <help>Status van de Relatie</help>
-        <label><!-- Status --></label>
+        <help>Status van de relatie</help>
+        <label>Status</label>
         <name>Status__c</name>
         <picklistValues>
             <masterLabel>Current</masterLabel>
@@ -54,8 +54,8 @@
         </picklistValues>
     </fields>
     <fields>
-        <help>Veld dat beschrijft hoe de gerelateerde Contactpersoon verbonden is aan de Contactpersoon.</help>
-        <label><!-- Type --></label>
+        <help>Veld dat de manier beschrijft, waarop de gerelateerde contactpersoon is verbonden met de contactpersoon.</help>
+        <label>Type</label>
         <name>Type__c</name>
         <picklistValues>
             <masterLabel>Aunt</masterLabel>
@@ -135,7 +135,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Partner</masterLabel>
-            <translation><!-- Partner --></translation>
+            <translation>Partner</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Son</masterLabel>
@@ -150,17 +150,17 @@
             <translation>Echtgenote</translation>
         </picklistValues>
     </fields>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
     <layouts>
         <layout>Relationship Layout</layout>
         <sections>
-            <label>Relatie Informatie</label>
+            <label>Relatiegegevens</label>
             <section>Relationship Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Relationship Number --></nameFieldLabel>
+    <nameFieldLabel>Relatienummer</nameFieldLabel>
     <validationRules>
-        <errorMessage>In plaats van de Contactpersonen te veranderen in een bestaande relatie, verwijder deze relatie en maak een nieuwe relatie aan tussen de nieuwe Contactpersonen.</errorMessage>
+        <errorMessage>In plaats van ce Contactpersonen te wijzigen in een bestaande relatie, verwijdert u deze relatie en maakt u een nieuwe relatie aan tussen de nieuwe contactpersonen.</errorMessage>
         <name>Related_Contact_Do_Not_Change</name>
     </validationRules>
 </CustomObjectTranslation>

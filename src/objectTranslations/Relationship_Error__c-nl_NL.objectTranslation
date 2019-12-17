@@ -2,37 +2,37 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>DEPRECATED-Fout in relatie</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>Fouten in relatie</value>
     </caseValues>
     <fields>
-        <help>Datum en tijd van wanneer de fout is opgetreden</help>
-        <label>Fout Datum/Tijd</label>
+        <help>Datum en tijd waarop de fout zich heeft voorgedaan</help>
+        <label>Datum/tijd van fout</label>
         <name>Error_Date_Time__c</name>
     </fields>
     <fields>
-        <help>Een link naar het record dat de fout heet veroorzaakt, indien beschikbaar</help>
-        <label>Fout Record link</label>
+        <help>Een koppeling naar de record die de fout heeft veroorzaakt, indien beschikbaar.</help>
+        <label>Recordkoppeling voor fout</label>
         <name>Error_Record_Link__c</name>
     </fields>
     <fields>
-        <help>&quot;Stack Trace&quot; voor de &quot;thrown error&quot;, indien beschikbaar tijdens run time</help>
-        <label>Fout Stack Trace</label>
+        <help>Stack-tracering voor de veroorzaakte, indien beschikbaar tijdens run-time</help>
+        <label>Stack-traceringsfout</label>
         <name>Error_Stack_Trace__c</name>
     </fields>
     <fields>
-        <help>Soort fout dat is opgetreden</help>
-        <label>Fout Type</label>
+        <help>Type fout, dat is opgetreden</help>
+        <label>Type fout</label>
         <name>Error_Type__c</name>
     </fields>
     <fields>
-        <help>De volledige tekst van de foutmelding</help>
-        <label>Volledige Foutmelding</label>
+        <help>De volledige tekst van het foutbericht</help>
+        <label>Volledig foutbericht</label>
         <name>Full_Error_Message__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
-    <nameFieldLabel><!-- Relationship Error Name --></nameFieldLabel>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Naam voor fout in relatie</nameFieldLabel>
 </CustomObjectTranslation>

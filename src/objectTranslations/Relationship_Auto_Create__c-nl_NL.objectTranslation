@@ -9,23 +9,23 @@
         <value><!-- Relationship Auto-Create --></value>
     </caseValues>
     <fields>
-        <help>Geldige Campagne Typen voor het automatisch aanmaken van Campagneleden (zal leeg zijn bij het automatisch aanmaken van Contactpersonen).</help>
-        <label>Campagne Typen</label>
+        <help>In aanmerking komende campagnetypen voor dit campagnelid worden automatisch gemaakt. (Zijn blanco voor automatisch maken van Contactpersoon)</help>
+        <label>Campagnetypen</label>
         <name>Campaign_Types__c</name>
     </fields>
     <fields>
-        <help>Het veld dat met het invoegen of bijwerken de creatie van de Relatie triggert.</help>
+        <help>Het veld dat met het invoegen of bijwerken via een trigger het maken van de relatie activeert</help>
         <label>Veld</label>
         <name>Field__c</name>
     </fields>
     <fields>
-        <help>Het object waarmee de Automatische Relatie verbonden is.</help>
-        <label><!-- Object --></label>
+        <help>Het object waaraan deze Automatische relatie is gekoppeld</help>
+        <label>Object</label>
         <name>Object__c</name>
     </fields>
     <fields>
-        <help>Het Relatie Type die gecreëerd moet worden tussen het basis object en het opzoek object. Het opzoek object zal de wederkerige relatie krijgen, als die beschikbaar is.</help>
-        <label>Relatie Type</label>
+        <help>Het type te maken Relatie tussen het basisobject en het opzoekobject. Het opzoekobject krijgt de &quot;wederzijdse&quot; relatie krijgen, indien beschikbaar.</help>
+        <label>Relatietype</label>
         <name>Relationship_Type__c</name>
     </fields>
     <gender><!-- Neuter --></gender>

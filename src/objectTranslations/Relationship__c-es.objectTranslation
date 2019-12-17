@@ -2,14 +2,14 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship --></value>
+        <value>Relación</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship --></value>
+        <value>Relaciones</value>
     </caseValues>
     <fields>
-        <help>El contracto relacionad es el _______ de este contacto.</help>
+        <help>El contracto relacionado es el _______ de este contacto.</help>
         <label>Contacto</label>
         <name>Contact__c</name>
         <relationshipLabel>Relaciones</relationshipLabel>
@@ -20,7 +20,7 @@
         <name>Description__c</name>
     </fields>
     <fields>
-        <help>Campo del sistema que une a las dos partes de esta relación. Este campo no debe ser modificado directamente. La Relación recíproca tendrá el tipo opuesto de esta relación, si esta disponible.</help>
+        <help>Campo del sistema que une a las dos partes de esta relación. Este campo no debe modificarse directamente. La Relación recíproca tendrá el tipo opuesto de esta relación, si esta disponible.</help>
         <label>Relación reciproca</label>
         <name>ReciprocalRelationship__c</name>
         <relationshipLabel>Relaciones</relationshipLabel>
@@ -36,12 +36,12 @@
         <name>Relationship_Explanation__c</name>
     </fields>
     <fields>
-        <help>Campo del sistema que indica si esta relación a sido creada automáticamente como una relación reciproca a otra relación.</help>
-        <label><!-- _SYSTEM: SystemCreated --></label>
+        <help>Campo del sistema que indica si esta relación se creó automáticamente como una relación recíproca a otra relación.</help>
+        <label>_SYSTEM: SystemCreated</label>
         <name>SYSTEM_SystemCreated__c</name>
     </fields>
     <fields>
-        <help>Estado de la relación</help>
+        <help>Estado de la relación.</help>
         <label>Estado</label>
         <name>Status__c</name>
         <picklistValues>
@@ -54,7 +54,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help>Campo que describe como el contacto relacionado esta conectado a este contacto.</help>
+        <help>Campo que describe cómo el contacto relacionado está conectado con este contacto.</help>
         <label>Tipo</label>
         <name>Type__c</name>
         <picklistValues>
@@ -63,7 +63,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Child</masterLabel>
-            <translation>Hijo/a</translation>
+            <translation>Menor</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Cousin</masterLabel>
@@ -71,7 +71,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Coworker</masterLabel>
-            <translation>Compañeros de trabajo</translation>
+            <translation>Compañero de trabajo</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Daughter</masterLabel>
@@ -131,7 +131,7 @@
         </picklistValues>
         <picklistValues>
             <masterLabel>Parent</masterLabel>
-            <translation>Padre/Madre</translation>
+            <translation>Progenitor</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Partner</masterLabel>
@@ -150,7 +150,7 @@
             <translation>Esposa</translation>
         </picklistValues>
     </fields>
-    <gender><!-- Feminine --></gender>
+    <gender>Feminine</gender>
     <layouts>
         <layout>Relationship Layout</layout>
         <sections>
@@ -158,7 +158,7 @@
             <section>Relationship Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Relationship Number --></nameFieldLabel>
+    <nameFieldLabel>Número de relación</nameFieldLabel>
     <validationRules>
         <errorMessage>En lugar de cambiar los contactos en una relación existente, elimine esta relación y cree una nueva entre los nuevos contactos</errorMessage>
         <name>Related_Contact_Do_Not_Change</name>

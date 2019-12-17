@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>廃止-リレーションエラー</value>
     </caseValues>
     <fields>
         <help>エラーが発生した日時</help>
@@ -29,5 +29,5 @@
         <label>完全なエラーメッセージ</label>
         <name>Full_Error_Message__c</name>
     </fields>
-    <nameFieldLabel><!-- Relationship Error Name --></nameFieldLabel>
+    <nameFieldLabel>リレーションエラー名</nameFieldLabel>
 </CustomObjectTranslation>

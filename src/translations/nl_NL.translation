@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
-        <label>Niet in staat om een geldig Id op te halen voor het automatisch aanmaken van de Relatie. Controleer op geldige velden in de instellingen onder Relatie Instellingen.</label>
+        <label>Kan geen geldige ID ophalen voor het automatisch maken van de Relatie. Controleer de instellingen onder het tabblad Relatie-instellingen op geldige velden en probeer het opnieuw.</label>
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
@@ -13,35 +13,37 @@
         <name>Male</name>
     </customLabels>
     <customLabels>
-        <label><!-- Relationship Explanation Connector --></label>
+        <label>is</label>
         <name>Relationship_Explanation_Connector</name>
     </customLabels>
     <customLabels>
-        <label><!-- Relationship Split --></label>
+        <label>-</label>
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>Automatisch Gemaakte Relaties zorgt dat een aangepaste Contactpersoon opzoekveld of Campagnelid object het automatisch aanmaken van een Relatie naar keuze triggert.</label>
+        <label>Met Automatisch gemaakte relaties kan een aangepast opzoekveld van Contactpersoon voor de objecten Contactpersoon of Campagnelid automatisch via een trigger het maken van een nieuw type Relatie van uw keuze activeren. Wellicht hebt u bijvoorbeeld een opzoekveld &quot;Verwezen door&quot; voor het object Campagnelid om voor te stellen wanneer een in uw organisatie nieuw iemand is meegebracht naar een event door een bestaande volmachtgever. Zie de &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP-documentatie&lt;/a&gt; voor meer informatie.</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
-        <label>VeldOmschrijving Limiet is overschreden, niet in staat alle velden te tonen.</label>
+        <label>Limiet van FieldsDescribes is overschreden; mogelijk worden niet alle beschikbare velden getoond.  
+
+Er zijn meer dan 100 aangepaste velden gedefinieerd voor het object Contactpersoon Campagnelid. Als het veld dat u wilt gebruiken, niet wordt getoond, moet u deze record voor Automatisch maken mogelijk handmatig maken. Ga naar Set-up-&gt;Ontwikkelen-&gt;Aangepaste instellingen en klik op &apos;Beheren&apos; naast &apos;Relatie automatisch maken&apos; en klik vervolgens op &apos;Nieuw&apos; om handmatig een nieuwe record te maken. Gebruik API-namen (niet het veldlabel) om de velden te identificeren, die via een trigger een nieuwe record Relatie moeten activeren.</label>
         <name>RelationshipsCustomFieldOverload</name>
     </customLabels>
     <customLabels>
-        <label>Fouten kunnen optreden tijdens normaal gebruik van het Relatiepakket. Dit kan veroorzaakt worden door niet goed geconfigureerde validatieregels, verplichte velden, veiligheidsinstellingen en andere redenen. Deze tab geeft informatie over mogelijk opgetreden fouten, wanneer en waarom deze optraden.</label>
+        <label>Fouten kunnen optreden tijdens normaal gebruik van uw Relationships Package (Relatiepakket). Deze kunnen worden veroorzaakt door niet goed samengestelde validatieregels, verplichte velden, veiligheidsinstellingen/machtigingen en andere redenen. Dit tabblad biedt informatie over mogelijk opgetreden fouten, en wanneer en waarom deze optraden.</label>
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>Het NPSP gebruikt de instellingen in deze lijst om de Wederkerige Relaties te bepalen. Zie de &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP Documentatie&lt;/a&gt; fvoor een volledige verklaring hoe dit in zijn werk gaat en voor voorbeelden.</label>
+        <label>NPSP gebruikt de instellingen in deze lijst om de wederzijdse relaties te bepalen. Zie de &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP-documentatie&lt;/a&gt; voor een volledige uitleg van de manier waarop deze instellingen functioneren, plus voorbeelden.</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
-        <label>De instellingen bepalen hoe Relaties werken in het Nonprofit Success Pack.</label>
+        <label>De instellingen bepalen de manier waarop relaties werken in het Nonprofit Success Pack.</label>
         <name>RelationshipsSettingsDescription</name>
     </customLabels>
     <customTabs>
-        <label>Relaties Instellingen</label>
+        <label>Instellingen voor Relaties</label>
         <name>Relationships_Settings</name>
     </customTabs>
 </Translations>

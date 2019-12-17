@@ -3,42 +3,42 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehler</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehler</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehler</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehler</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehlers</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehler</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehler</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>ERSETZ-Beziehungsfehlern</value>
     </caseValues>
     <fields>
         <help>Datum und Uhrzeit bei Auftreten des Fehlers</help>
@@ -46,12 +46,12 @@
         <name>Error_Date_Time__c</name>
     </fields>
     <fields>
-        <help>Link zum Datensatz, der den Fehler verursacht hat, falls verfügbar</help>
+        <help>Link zum Datensatz, der den Fehler verursacht hat, falls verfügbar.</help>
         <label>Fehlerdatensatz-Link</label>
         <name>Error_Record_Link__c</name>
     </fields>
     <fields>
-        <help>Stapel-Trace für den ausgegebenen Fehler, falls bei Laufzeit verfügbar</help>
+        <help>Stapel-Trace für den ausgegebenen Fehler, falls bei Laufzeit verfügbar.</help>
         <label>Fehlerstapel-Trace</label>
         <name>Error_Stack_Trace__c</name>
     </fields>
@@ -65,6 +65,6 @@
         <label>Vollständige Fehlermeldung</label>
         <name>Full_Error_Message__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
-    <nameFieldLabel><!-- Relationship Error Name --></nameFieldLabel>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Beziehungsfehlername</nameFieldLabel>
 </CustomObjectTranslation>

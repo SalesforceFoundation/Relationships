@@ -9,22 +9,22 @@
         <value><!-- Relationship Lookup --></value>
     </caseValues>
     <fields>
-        <help>Indique si ce lien réciproque est actif.</help>
+        <help>Indique si cette recherche réciproque est active.</help>
         <label>Actif</label>
         <name>Active__c</name>
     </fields>
     <fields>
-        <help>La valeur utilisée par le champ de genre de ce contact correspond aux valeurs dans l’étiquette personnalisée Féminin ou la formule de salutation du contact indique son genre.</help>
+        <help>La valeur utilisée si le champ Sexe du contact correspond aux valeurs de l’étiquette personnalisée Féminin, ou la formule de salutation du contact indique le sexe.</help>
         <label>Féminin</label>
         <name>Female__c</name>
     </fields>
     <fields>
-        <help>La valeur utilisée par le champ de genre de ce contact correspond aux valeurs dans l’étiquette personnalisée Masculin ou la formule de salutation du contact indique son genre.</help>
+        <help>La valeur utilisée si le champ Sexe du contact correspond aux valeurs de l’étiquette personnalisée Masculin, ou la formule de salutation du contact indique le sexe.</help>
         <label>Masculin</label>
         <name>Male__c</name>
     </fields>
     <fields>
-        <help>La valeur utilisée par le champ de genre de ce contact ne correspond pas aux valeurs des étiquettes personnalisées Féminin ou Masculin et la formule de salutation du contact n’indique pas de genre.</help>
+        <help>La valeur utilisée si le champ Sexe de ce contact ne correspond pas aux valeurs des étiquettes personnalisées Féminin ou Masculin, et la formule de salutation du contact n’indique pas le sexe.</help>
         <label>Neutre</label>
         <name>Neutral__c</name>
     </fields>

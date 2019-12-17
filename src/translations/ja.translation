@@ -17,13 +17,11 @@
         <name>Relationship_Explanation_Connector</name>
     </customLabels>
     <customLabels>
-        <label><!-- Relationship Split --></label>
+        <label>-</label>
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>自動リレーションでは、任意の新規リレーション種別の作成をトリガする個人オブジェクトまたはキャンペーンメンバーオブジェクトの独自のカスタム参照項目を識別できます。たとえば、キャンペーンメンバーから個人への「参照」ルックアップでは、2 人の個人間に「参照元」と「参照先」のリレーションを作成できます。 
-
-この機能は、リードオブジェクトや、リードを参照するキャンペーンメンバーオブジェクトでは使用できません。</label>
+        <label>自動リレーションでは、任意の新規リレーション種別の作成をトリガする個人オブジェクトまたはキャンペーンメンバーオブジェクトの独自のカスタム参照項目を識別できます。たとえば、キャンペーンメンバーから個人への「参照」ルックアップでは、2 人の個人間に「参照元」と「参照先」のリレーションを作成できます。 詳細は、&lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP ドキュメント&lt;/a&gt;を参照してください。</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
@@ -37,14 +35,11 @@
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>これらの設定により、相互関係 (2 人の個人の間の「一致する」関係) を設定できます。たとえば、父親がその息子に関連付けられている場合、同様にその息子も父親に関連付けられます。[名前] の [種別] の値を指定してから、リンクする個人の性別に基づく相互関係の値を指定できます。[男性] の相互関係、[女性] の相互関係、および性別を判断できない場合に使用される [どちらでもない] の相互関係を定義できます。性別は、可能であれば敬称に基づいて決定され、可能でなければ [リレーション設定] タブで定義できるカスタム性別項目に基づいて決定されます。 
-
-
-(注意: 必要に応じて、[種別] をリレーションオブジェクトに追加して使用できるようにします。これを行うには、[設定] | [カスタマイズ] | [作成] | [オブジェクト] に移動し、[リレーション]、[種別] をクリックして [選択リスト値] リストの [新規] をクリックします)</label>
+        <label>NPSP は、このリストの設定を使用して相互関係を判断します。これらの設定の仕組みの詳細と例は、&lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP ドキュメント&lt;/a&gt;を参照してください。</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
-        <label>リレーションの動作を制御する設定。これらを変更すると、リレーションレコードの動作が変わります。</label>
+        <label>これらの設定は Nonprofit Success Pack でのリレーションの動作を制御します。</label>
         <name>RelationshipsSettingsDescription</name>
     </customLabels>
     <customTabs>

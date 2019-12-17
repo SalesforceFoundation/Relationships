@@ -10,23 +10,23 @@
         <name>Allow_AutoCreated_Duplicates__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
-        <label><!-- DEPRECATED-Disable_RelCM_trigger --></label>
+        <help>廃止。トリガの動作が [NPSP 設定] の [トリガ設定] ページで制御されるようになりました。</help>
+        <label>廃止-Disable_RelCM_trigger</label>
         <name>DISABLE_RelationshipCM_trigger__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
-        <label><!-- DEPRECATED-Disable_RelContacts_trigger --></label>
+        <help>廃止。トリガの動作が [NPSP 設定] の [トリガ設定] ページで制御されるようになりました。</help>
+        <label>廃止-Disable_RelContacts_trigger</label>
         <name>DISABLE_RelationshipContacts_trigger__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
-        <label><!-- DEPRECATED-Disable_Relationships_trigger --></label>
+        <help>廃止。トリガの動作が [NPSP 設定] の [トリガ設定] ページで制御されるようになりました。</help>
+        <label>廃止-Disable_Relationships_trigger</label>
         <name>DISABLE_Relationships_trigger__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED.  This setting is not used. --></help>
-        <label><!-- DEPRECATED-Force Synchronous Auto Create --></label>
+        <help>廃止。この設定は使用されません。</help>
+        <label>廃止-Force Synchronous Auto Create</label>
         <name>Force_Synchronous_Auto_Create__c</name>
     </fields>
     <fields>

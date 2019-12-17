@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>DÉPRÉCIÉ-Erreur de relation</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- DEPRECATED-Relationship Error --></value>
+        <value>Erreurs de relation</value>
     </caseValues>
     <fields>
         <help>Date et heure auxquelles l’erreur s’est produite</help>
@@ -19,7 +19,7 @@
         <name>Error_Record_Link__c</name>
     </fields>
     <fields>
-        <help>Trace de pile pour l’erreur déclenchée, si disponible dynamiquement.</help>
+        <help>Trace de pile pour l’erreur renvoyée, si disponible au moment de l’exécution.</help>
         <label>Trace de la pile lors de l’erreur</label>
         <name>Error_Stack_Trace__c</name>
     </fields>
@@ -33,7 +33,7 @@
         <label>Message d’erreur complet</label>
         <name>Full_Error_Message__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
-    <nameFieldLabel><!-- Relationship Error Name --></nameFieldLabel>
-    <startsWith><!-- Consonant --></startsWith>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Nom de l’erreur de relation</nameFieldLabel>
+    <startsWith>Vowel</startsWith>
 </CustomObjectTranslation>

@@ -9,33 +9,33 @@
         <value><!-- Relationship Settings --></value>
     </caseValues>
     <fields>
-        <help>Les relations autocréées sont automatiquement dédupliquées pour ne pas créer de doublons d’enregistrements de relations entre deux contacts. Cochez pour désactiver ce comportement et permettre plusieurs relations du même type entre deux contacts.</help>
-        <label>Relations dupliquées autocréées</label>
+        <help>Les relations autom. créées sont autom. dédupliquées pour empêcher la création d’enreg. de relation en double entre deux contacts. Cochez cette case pour désactiver ce comportement et autoriser plusieurs relations de même type entre deux contacts.</help>
+        <label>Autoriser relations dupl. autom. créées</label>
         <name>Allow_AutoCreated_Duplicates__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
-        <label><!-- DEPRECATED-Disable_RelCM_trigger --></label>
+        <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
+        <label>DEPRECATED-Disable_RelCM_trigger</label>
         <name>DISABLE_RelationshipCM_trigger__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
-        <label><!-- DEPRECATED-Disable_RelContacts_trigger --></label>
+        <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
+        <label>DEPRECATED-Disable_RelContacts_trigger</label>
         <name>DISABLE_RelationshipContacts_trigger__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED. Trigger behavior now controlled in the Trigger Configuration page of NPSP Settings. --></help>
-        <label><!-- DEPRECATED-Disable_Relationships_trigger --></label>
+        <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
+        <label>DEPRECATED-Disable_Relationships_trigger</label>
         <name>DISABLE_Relationships_trigger__c</name>
     </fields>
     <fields>
-        <help><!-- DEPRECATED.  This setting is not used. --></help>
-        <label><!-- DEPRECATED-Force Synchronous Auto Create --></label>
+        <help>DÉPRÉCIÉ. Ce paramètre n’est pas utilisé.</help>
+        <label>DÉPRÉCIÉ-Forcer création autom synchrone</label>
         <name>Force_Synchronous_Auto_Create__c</name>
     </fields>
     <fields>
         <help>Le champ personnalisé utilisé pour définir le genre d’un contact pour la détermination de relations réciproques</help>
-        <label>Champ de genre</label>
+        <label>Champ Genre</label>
         <name>Gender_Field__c</name>
     </fields>
     <fields>
@@ -44,12 +44,12 @@
         <name>Reciprocal_Method__c</name>
     </fields>
     <fields>
-        <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visualiseur de relations (voir la description pour plus d’informations)</help>
+        <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visionneur de relations (voir la description pour plus d’informations)</help>
         <label>ID du champ de nom de la relation</label>
         <name>Relationship_Name_Field_Id__c</name>
     </fields>
     <fields>
-        <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visualiseur de relations (voir la description pour plus d’informations)</help>
+        <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visionneur de relations (voir la description pour plus d’informations)</help>
         <label>ID du champ d’ID de nom de la relation</label>
         <name>Relationship_Name_Id_Field_Id__c</name>
     </fields>

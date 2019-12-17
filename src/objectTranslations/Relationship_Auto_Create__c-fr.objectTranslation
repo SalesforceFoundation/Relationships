@@ -9,8 +9,8 @@
         <value><!-- Relationship Auto-Create --></value>
     </caseValues>
     <fields>
-        <help>Types de campagnes éligibles pour cette autocréation de membre de campagne. (Restera vide pour autocréation de contact)</help>
-        <label>Types de campagnes</label>
+        <help>Types de campagne éligibles pour cette création automatique de membres de campagne (reste vide pour la création automatique de contacts)</help>
+        <label>Types de campagne</label>
         <name>Campaign_Types__c</name>
     </fields>
     <fields>
@@ -19,12 +19,12 @@
         <name>Field__c</name>
     </fields>
     <fields>
-        <help>L’objet auquel cette relation automatique est associé</help>
+        <help>L’objet auquel cette relation automatique est associée</help>
         <label>Objet</label>
         <name>Object__c</name>
     </fields>
     <fields>
-        <help>Le type de relation à créer entre l’objet de base et l’objet lié.  L’objet lié recevra la relation réciproque, s’il en existe une.</help>
+        <help>Le type de relation à créer entre l’objet de base et l’objet de recherche. L’objet de recherche reçoit la relation réciproque, si elle disponible.</help>
         <label>Type de relation</label>
         <name>Relationship_Type__c</name>
     </fields>

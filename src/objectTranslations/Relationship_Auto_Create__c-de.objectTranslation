@@ -56,7 +56,7 @@
         <name>Object__c</name>
     </fields>
     <fields>
-        <help>Der Beziehungstyp, der zwischen dem Basisobjekt und dem Nachschlageobjekt erstellt werden soll  Das Nachschlageobjekt erhält die wechselseitige Beziehung, falls vorhanden.</help>
+        <help>Der Beziehungstyp, der zwischen dem Basisobjekt und dem Nachschlageobjekt erstellt werden soll. Das Nachschlageobjekt erhält die wechselseitige Beziehung, falls vorhanden.</help>
         <label>Beziehungstyp</label>
         <name>Relationship_Type__c</name>
     </fields>

@@ -9,22 +9,22 @@
         <value><!-- Relationship Lookup --></value>
     </caseValues>
     <fields>
-        <help>Geeft aan of deze wederkerige opzoekrelatie actief is.</help>
+        <help>Geeft aan of deze wederzijdse opzoekopdracht actief is.</help>
         <label>Actief</label>
         <name>Active__c</name>
     </fields>
     <fields>
-        <help>De gebruikte waarde als het geslachtveld op Contactpersoon gelijk is aan de Vrouw Aangepast Label of het geslacht blijkt uit de Aanhef.</help>
+        <help>De gebruikte waarde als het veld voor geslacht/gender van Contactpersoon gelijk is aan de waarden in Aangepast label voor Vrouw of als Aanhef voor Contactpersoon dit geslacht/gender aangeeft.</help>
         <label>Vrouw</label>
         <name>Female__c</name>
     </fields>
     <fields>
-        <help>De gebruikte waarde als het geslachtveld op Contactpersoon gelijk is aan de Man Aangepast Label of het geslacht blijkt uit de Aanhef.</help>
+        <help>De gebruikte waarde als het veld voor geslacht/gender van Contactpersoon gelijk is aan de waarden in Aangepast label voor Man of als Aanhef voor Contactpersoon dit geslacht/gender aangeeft.</help>
         <label>Man</label>
         <name>Male__c</name>
     </fields>
     <fields>
-        <help>De gebruikte waarde als het geslachtveld op Contactpersoon niet gelijk is aan de Man Aangepast Label of het geslacht niet blijkt uit de Aanhef.</help>
+        <help>De gebruikte waarde als het veld voor geslacht/gender van Contactpersoon niet gelijk is aan de waarden in Aangepast label voor Man of Vrouw en er uit de Aanhef voor Contactpersoon geen geslacht/gender kan worden afgeleid.</help>
         <label>Neutraal</label>
         <name>Neutral__c</name>
     </fields>

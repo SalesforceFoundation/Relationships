@@ -2,13 +2,13 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship --></value>
+        <value>リレーション</value>
     </caseValues>
     <fields>
         <help>関係する個人はこの個人の ______。</help>
         <label>個人</label>
         <name>Contact__c</name>
-        <relationshipLabel>関係する個人</relationshipLabel>
+        <relationshipLabel>リレーション</relationshipLabel>
     </fields>
     <fields>
         <help>このリレーションの追加情報</help>
@@ -19,12 +19,12 @@
         <help>リレーションの両側を結合するシステム項目。この項目を直接変更しないでください。相互関係は、このリレーションの反対の種別になります (使用可能な場合)。</help>
         <label>相互関係</label>
         <name>ReciprocalRelationship__c</name>
-        <relationshipLabel>関係する個人</relationshipLabel>
+        <relationshipLabel>リレーション</relationshipLabel>
     </fields>
     <fields>
         <label>関係する個人</label>
         <name>RelatedContact__c</name>
-        <relationshipLabel>非表示の関係する個人</relationshipLabel>
+        <relationshipLabel>非表示のリレーションリスト</relationshipLabel>
     </fields>
     <fields>
         <help>2 つの個人間のリレーションを説明する文章を作成するテキスト数式</help>
@@ -33,7 +33,7 @@
     </fields>
     <fields>
         <help>このリレーションが別のリレーションの相互関係として自動的に作成されたかどうかを示すシステム項目</help>
-        <label><!-- _SYSTEM: SystemCreated --></label>
+        <label>_SYSTEM: SystemCreated</label>
         <name>SYSTEM_SystemCreated__c</name>
     </fields>
     <fields>
@@ -153,7 +153,7 @@
             <section>Relationship Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel><!-- Relationship Number --></nameFieldLabel>
+    <nameFieldLabel>リレーション番号</nameFieldLabel>
     <validationRules>
         <errorMessage>既存のリレーションで個人を変更する代わりに、このリレーションを削除して 2 つの個人間の新しいリレーションを作成します。</errorMessage>
         <name>Related_Contact_Do_Not_Change</name>
