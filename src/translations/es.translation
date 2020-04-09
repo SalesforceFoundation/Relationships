@@ -5,11 +5,11 @@
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
-        <label>Femenino</label>
+        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Hombre</label>
         <name>Female</name>
     </customLabels>
     <customLabels>
-        <label>Masculino</label>
+        <label>Male,Männlich,男性,Masculin,Masculino,Man,Mujer</label>
         <name>Male</name>
     </customLabels>
     <customLabels>

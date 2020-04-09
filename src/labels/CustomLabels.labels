@@ -13,16 +13,16 @@
         <categories>Relationships</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>Female</shortDescription>
-        <value>Female</value>
+        <shortDescription>Gender(s) for &quot;Female&quot; for reciprocal relationships. Do Not Change Translations.</shortDescription>
+        <value>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Mujer</value>
     </labels>
     <labels>
         <fullName>Male</fullName>
         <categories>Relationships</categories>
         <language>en_US</language>
         <protected>false</protected>
-        <shortDescription>Male</shortDescription>
-        <value>Male</value>
+        <shortDescription>Gender(s) for &quot;Male&quot; for reciprocal relationships. Do Not Change Translations.</shortDescription>
+        <value>Male,Männlich,男性,Masculin,Masculino,Man,Hombre</value>
     </labels>
     <labels>
         <fullName>Relationship_Explanation_Connector</fullName>
