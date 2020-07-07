@@ -1,70 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <caseValues>
-        <caseType>Nominative</caseType>
-        <plural>false</plural>
-        <value>ERSETZ-Beziehungsfehler</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Nominative</caseType>
-        <plural>true</plural>
-        <value>ERSETZ-Beziehungsfehler</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Accusative</caseType>
-        <plural>false</plural>
-        <value>ERSETZ-Beziehungsfehler</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Accusative</caseType>
-        <plural>true</plural>
-        <value>ERSETZ-Beziehungsfehler</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Genitive</caseType>
-        <plural>false</plural>
-        <value>ERSETZ-Beziehungsfehlers</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Genitive</caseType>
-        <plural>true</plural>
-        <value>ERSETZ-Beziehungsfehler</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Dative</caseType>
-        <plural>false</plural>
-        <value>ERSETZ-Beziehungsfehler</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Dative</caseType>
-        <plural>true</plural>
-        <value>ERSETZ-Beziehungsfehlern</value>
-    </caseValues>
-    <fields>
-        <help>Datum und Uhrzeit bei Auftreten des Fehlers</help>
-        <label>Datum/Uhrzeit des Fehlers</label>
-        <name>Error_Date_Time__c</name>
-    </fields>
-    <fields>
-        <help>Link zum Datensatz, der den Fehler verursacht hat, falls verfügbar.</help>
-        <label>Fehlerdatensatz-Link</label>
-        <name>Error_Record_Link__c</name>
-    </fields>
-    <fields>
-        <help>Stapel-Trace für den ausgegebenen Fehler, falls bei Laufzeit verfügbar.</help>
-        <label>Fehlerstapel-Trace</label>
-        <name>Error_Stack_Trace__c</name>
-    </fields>
-    <fields>
-        <help>Typ des aufgetretenen Fehlers</help>
-        <label>Fehlertyp</label>
-        <name>Error_Type__c</name>
-    </fields>
-    <fields>
-        <help>Vollständiger Text der Fehlermeldung</help>
-        <label>Vollständige Fehlermeldung</label>
-        <name>Full_Error_Message__c</name>
-    </fields>
-    <gender>Masculine</gender>
-    <nameFieldLabel>Beziehungsfehlername</nameFieldLabel>
+  <fields>
+    <name>Error_Date_Time__c</name>
+    <help>[Date &amp; time the error occurred]o'介引户הаí先]</help>
+    <label>[Error Date/Time]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Error_Record_Link__c</name>
+    <help>[A link to the record which caused the error, if available.]o'介引户הаí先ร简аน取정úσ]</help>
+    <label>[Error Record Link]o'介引户]</label>
+  </fields>
+  <fields>
+    <name>Error_Stack_Trace__c</name>
+    <help>[Stack trace for the thrown error, if available at run time.]o'介引户הаí先ร简аน取정úσ]</help>
+    <label>[Error Stack Trace]o'介引户]</label>
+  </fields>
+  <fields>
+    <name>Error_Type__c</name>
+    <help>[Type of error that occurred]o'介引户הаí]</help>
+    <label>[Error Type]o'介引]</label>
+  </fields>
+  <fields>
+    <name>Full_Error_Message__c</name>
+    <help>[Full text of the error message]o'介引户הаí先]</help>
+    <label>[Full Error Message]o'介引户]</label>
+  </fields>
+  <nameFieldLabel>[Relationship Error Name]o'介引户ה]</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>[Relationship Error Name]o'介引户ה]</label>
+  </standardFields>
+  <gender>Neuter</gender>
+  <caseValues>
+    <plural>false</plural>
+    <caseType>Nominative</caseType>
+    <value>[DEPRECATED-Relationship Error]gr''介引户הаí]</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <caseType>Nominative</caseType>
+    <value>[Relationship Errors]gr''介引户]</value>
+  </caseValues>
 </CustomObjectTranslation>
