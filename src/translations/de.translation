@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Translations xmlns="http://soap.sforce.com/2006/04/metadata">
     <customLabels>
-        <label>Es kann keine gültige Kennung für die automatische Erstellung einer Beziehung abgerufen werden. Prüfen Sie die Einstellungen auf der Registerkarte &quot;Beziehungseinstellungen&quot; auf gültige Felder und versuchen Sie es erneut.</label>
         <name>AutoCreateFieldError</name>
+        <label>Es kann keine gültige Kennung für die automatische Erstellung einer Beziehung abgerufen werden. Prüfen Sie die Einstellungen auf der Registerkarte "Beziehungseinstellungen" auf gültige Felder und versuchen Sie es erneut.</label>
     </customLabels>
     <customLabels>
-        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Hombre</label>
         <name>Female</name>
+        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Mujer</label>
     </customLabels>
     <customLabels>
-        <label>Male,Männlich,男性,Masculin,Masculino,Man,Mujer</label>
         <name>Male</name>
+        <label>Male,Männlich,男性,Masculin,Masculino,Man,Hombre</label>
     </customLabels>
     <customLabels>
-        <label>ist</label>
         <name>Relationship_Explanation_Connector</name>
+        <label>ist</label>
     </customLabels>
     <customLabels>
-        <label>-</label>
         <name>Relationship_Split</name>
+        <label>-</label>
     </customLabels>
     <customLabels>
-        <label>Anhand der automatischen Beziehungen können Sie Ihre benutzerdefinierten Nachschlagefelder in den Kontakt- oder Kampagnenmitglieder-Objekten erkennen, die die Erstellung eines neuen Beziehungstyps Ihrer Wahl auslösen. Beispielsweise können haben Sie ein Referenz-Nachschlagefeld im Objekt &quot;Kampagnenmitglied&quot;, um darzustellen, wenn eine Person, die neu in Ihrer Organisation ist, von einem bestehenden Mitglied zu einer Veranstaltung mitgebracht wird. Weitere Informationen finden Sie in der &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP Dokumentation&lt;/a&gt;.</label>
         <name>RelationshipsAutoDescription</name>
+        <label>Anhand der automatischen Beziehungen können Sie Ihre benutzerdefinierten Nachschlagefelder in den Kontakt- oder Kampagnenmitglieder-Objekten erkennen, die die Erstellung eines neuen Beziehungstyps Ihrer Wahl auslösen. Beispielsweise können haben Sie ein Referenz-Nachschlagefeld im Objekt "Kampagnenmitglied", um darzustellen, wenn eine Person, die neu in Ihrer Organisation ist, von einem bestehenden Mitglied zu einer Veranstaltung mitgebracht wird. Weitere Informationen finden Sie in der &lt;a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank"&gt;NPSP Dokumentation&lt;/a&gt;.</label>
     </customLabels>
     <customLabels>
-        <label>Die Grenze von &quot;Feldbeschreibungen&quot; wurde überschritten und es werden möglicherweise nicht alle verfügbaren Felder angezeigt. 
-
-Es gibt mehr als 100 benutzerdefinierte Felder, die im Objekt &quot;Kontakt&quot; oder &quot;Kampagnenmitglied&quot; definiert sind. Wenn das Feld, das Sie verwenden möchten, nicht angezeigt wird, müssen Sie den Datensatz zur automatischen Erstellung ggf. manuell eingeben. Gehen Sie zu Setup -&gt; Entwickeln -&gt; Benutzerdefinierte Einstellungen und klicken Sie neben &quot;Automatische Erstellung der Beziehung&quot; auf &quot;Verwalten&quot;. Klicken Sie anschließend auf &quot;Neu&quot;, um einen neuen Datensatz manuell einzugeben. Verwenden Sie API-Namen (nicht die Feldbezeichnung), um die Felder zu kennzeichnen, die einen neuen Beziehungsdatensatz auslösen sollten.</label>
         <name>RelationshipsCustomFieldOverload</name>
+        <label>Die Grenze von "Feldbeschreibungen" wurde überschritten und es werden möglicherweise nicht alle verfügbaren Felder angezeigt. 
+
+Es gibt mehr als 100 benutzerdefinierte Felder, die im Objekt "Kontakt" oder "Kampagnenmitglied" definiert sind. Wenn das Feld, das Sie verwenden möchten, nicht angezeigt wird, müssen Sie den Datensatz zur automatischen Erstellung ggf. manuell eingeben. Gehen Sie zu Setup -&gt; Entwickeln -&gt; Benutzerdefinierte Einstellungen und klicken Sie neben "Automatische Erstellung der Beziehung" auf "Verwalten". Klicken Sie anschließend auf "Neu", um einen neuen Datensatz manuell einzugeben. Verwenden Sie API-Namen (nicht die Feldbezeichnung), um die Felder zu kennzeichnen, die einen neuen Beziehungsdatensatz auslösen sollten.</label>
     </customLabels>
     <customLabels>
-        <label>Im normalen Betrieb Ihres Beziehungs-Pakets können Fehler auftreten. Sie können durch Dinge wie unsachgemäß zusammengestellte Validierungsregeln, Pflichtfelder, Sicherheitseinstellungen/Berechtigungen und andere Gründe verursacht werden. Auf dieser Registerkarte finden Sie Informationen über Fehler, die möglicherweise aufgetreten sind, und darüber, wann und wieso sie aufgetreten sind.</label>
         <name>RelationshipsErrorsDescription</name>
+        <label>Im normalen Betrieb Ihres Beziehungs-Pakets können Fehler auftreten. Sie können durch Dinge wie unsachgemäß zusammengestellte Validierungsregeln, Pflichtfelder, Sicherheitseinstellungen/Berechtigungen und andere Gründe verursacht werden. Auf dieser Registerkarte finden Sie Informationen über Fehler, die möglicherweise aufgetreten sind, und darüber, wann und wieso sie aufgetreten sind.</label>
     </customLabels>
     <customLabels>
-        <label>Das NPSP verwendet die Einstellungen in dieser Liste, um wechselseitige Beziehungen festzulegen. Eine vollständige Erläuterung dazu, wie diese Einstellungen funktionieren, sowie Beispiele dazu finden Sie in der &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP-Dokumentation&lt;/a&gt;.</label>
         <name>RelationshipsLookupDescription</name>
+        <label>Das NPSP verwendet die Einstellungen in dieser Liste, um wechselseitige Beziehungen festzulegen. Eine vollständige Erläuterung dazu, wie diese Einstellungen funktionieren, sowie Beispiele dazu finden Sie in der &lt;a href="https://powerofus.force.com/NPSP_Relationships_Settings" target="_blank"&gt;NPSP-Dokumentation&lt;/a&gt;.</label>
     </customLabels>
     <customLabels>
-        <label>Diese Einstellungen steuern das Verhalten von Beziehungen im Nonprofit Success Pack.</label>
         <name>RelationshipsSettingsDescription</name>
+        <label>Diese Einstellungen steuern das Verhalten von Beziehungen im Nonprofit Success Pack.</label>
     </customLabels>
     <customTabs>
-        <label>Einstellungen für Beziehungen</label>
         <name>Relationships_Settings</name>
+        <label>Einstellungen für Beziehungen</label>
     </customTabs>
 </Translations>
