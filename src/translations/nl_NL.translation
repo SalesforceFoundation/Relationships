@@ -6,11 +6,11 @@
     </customLabels>
     <customLabels>
         <name>Female</name>
-        <label>Vrouw</label>
+        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Mujer</label>
     </customLabels>
     <customLabels>
         <name>Male</name>
-        <label>Man</label>
+        <label>Male,Männlich,男性,Masculin,Masculino,Man,Hombre</label>
     </customLabels>
     <customLabels>
         <name>Relationship_Explanation_Connector</name>
