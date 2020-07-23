@@ -5,11 +5,11 @@
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
-        <label><!-- Female --></label>
+        <label><!-- Gender(s) for &quot;Female&quot; for reciprocal relationships. Do Not Change Translations. --></label>
         <name>Female</name>
     </customLabels>
     <customLabels>
-        <label><!-- Male --></label>
+        <label><!-- Gender(s) for &quot;Male&quot; for reciprocal relationships. Do Not Change Translations. --></label>
         <name>Male</name>
     </customLabels>
     <customLabels>
@@ -44,4 +44,4 @@
         <label><!-- Relationships Settings --></label>
         <name>Relationships_Settings</name>
     </customTabs>
-</Translations>
+    </Translations>
