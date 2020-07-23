@@ -14,6 +14,17 @@ tasks:
                 ListView:
                     Relationship_Lookup__c.All
 
+    cleanup_translation_metadata:
+        description: Delete metadata from translation files that should not be translated.
+        class_path: cumulusci.tasks.metadata.modify.RemoveElementsXPath
+        options:
+            output_style: salesforce
+            elements:
+                - path: src/translations/**.translation
+                  xpath: //ns:quickActions
+                - path: src/translations/**.translation
+                  xpath: //ns:reportTypes[ns:name='screen_flows_prebuilt_crt']
+
 flows:
     release_beta:
         tasks:

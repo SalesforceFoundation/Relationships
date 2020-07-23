@@ -5,7 +5,7 @@
         <value><!-- Relationship Auto-Create --></value>
     </caseValues>
     <fields>
-        <help>このキャンペーンメンバーの自動作成の対象となるキャンペーン種別(個人の自動作成では空白になります)。</help>
+        <help>このキャンペーンメンバーの自動作成の対象となるキャンペーン種別(取引先責任者の自動作成では空白になります)。</help>
         <label>キャンペーン種別</label>
         <name>Campaign_Types__c</name>
     </fields>

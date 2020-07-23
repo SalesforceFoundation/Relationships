@@ -5,8 +5,8 @@
         <value>リレーション</value>
     </caseValues>
     <fields>
-        <help>関係する個人はこの個人の ______。</help>
-        <label>個人</label>
+        <help>関連する取引先責任者はこの取引先責任者の ______。</help>
+        <label>取引先責任者</label>
         <name>Contact__c</name>
         <relationshipLabel>リレーション</relationshipLabel>
     </fields>
@@ -22,12 +22,12 @@
         <relationshipLabel>リレーション</relationshipLabel>
     </fields>
     <fields>
-        <label>関係する個人</label>
+        <label>関連する取引先責任者</label>
         <name>RelatedContact__c</name>
         <relationshipLabel>非表示のリレーションリスト</relationshipLabel>
     </fields>
     <fields>
-        <help>2 つの個人間のリレーションを説明する文章を作成するテキスト数式</help>
+        <help>2 つの取引先責任者間のリレーションを説明する文章を作成するテキスト数式</help>
         <label>リレーションの説明</label>
         <name>Relationship_Explanation__c</name>
     </fields>
@@ -50,7 +50,7 @@
         </picklistValues>
     </fields>
     <fields>
-        <help>関係する個人が個人に結び付けられている方法を説明する項目。</help>
+        <help>関係する取引先責任者が取引先責任者に結び付けられている方法を説明する項目。</help>
         <label>種類</label>
         <name>Type__c</name>
         <picklistValues>
@@ -155,7 +155,7 @@
     </layouts>
     <nameFieldLabel>リレーション番号</nameFieldLabel>
     <validationRules>
-        <errorMessage>既存のリレーションで個人を変更する代わりに、このリレーションを削除して 2 つの個人間の新しいリレーションを作成します。</errorMessage>
+        <errorMessage>既存のリレーションで取引先責任者を変更する代わりに、このリレーションを削除して 2 つの取引先責任者間の新しいリレーションを作成します。</errorMessage>
         <name>Related_Contact_Do_Not_Change</name>
     </validationRules>
 </CustomObjectTranslation>
