@@ -2,169 +2,169 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
   <fields>
     <name>Contact__c</name>
-    <help>El contracto relacionado es el _______ de este contacto.</help>
-    <relationshipLabel>Relaciones</relationshipLabel>
-    <label>Contacto</label>
+    <help>Related Contact is this Contact's ______.</help>
+    <relationshipLabel>Relationships</relationshipLabel>
+    <label>Contact</label>
   </fields>
   <fields>
     <name>Description__c</name>
-    <help>Información adicional sobre esta relación</help>
-    <label>Descripción</label>
+    <help>Additional information about this Relationship</help>
+    <label>Description</label>
   </fields>
   <fields>
     <name>ReciprocalRelationship__c</name>
-    <help>Campo del sistema que une a las dos partes de esta relación. Este campo no debe modificarse directamente. La Relación recíproca tendrá el tipo opuesto de esta relación, si esta disponible.</help>
-    <relationshipLabel>Relaciones</relationshipLabel>
-    <label>Relación reciproca</label>
+    <help>System field that links to the two sides of the Relationship together.  This field should not be modified directly.  The Reciprocal Relationship will have the opposite type, if available, of this Relationship.</help>
+    <relationshipLabel>Relationships</relationshipLabel>
+    <label>Reciprocal Relationship</label>
   </fields>
   <fields>
     <name>RelatedContact__c</name>
-    <relationshipLabel>Lista de relaciones oculta</relationshipLabel>
-    <label>Contacto relacionado</label>
+    <relationshipLabel>Hidden Relationships List</relationshipLabel>
+    <label>Related Contact</label>
   </fields>
   <fields>
     <name>Relationship_Explanation__c</name>
-    <help>Texto de fórmula que construye una oración que explica la relación entre dos contactos.</help>
-    <label>Explicación de la relación</label>
+    <help>Text formula that constructs a sentence explaining the relationship between the two Contacts</help>
+    <label>Relationship Explanation</label>
   </fields>
   <fields>
     <name>SYSTEM_SystemCreated__c</name>
-    <help>Campo del sistema que indica si esta relación se creó automáticamente como una relación recíproca a otra relación.</help>
+    <help>System field that indicates if this Relationship was created automatically as the reciprocal to another Relationships.</help>
     <label>_SYSTEM: SystemCreated</label>
   </fields>
   <fields>
     <name>Status__c</name>
-    <help>Estado de la relación.</help>
-    <label>Estado</label>
+    <help>Status of the Relationship.</help>
+    <label>Status</label>
     <picklistValues>
       <masterLabel>Current</masterLabel>
-      <translation>Vigente</translation>
+      <translation>Current</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Former</masterLabel>
-      <translation>Antiguo</translation>
+      <translation>Former</translation>
     </picklistValues>
   </fields>
   <fields>
     <name>Type__c</name>
-    <help>Campo que describe cómo el contacto relacionado está conectado con este contacto.</help>
-    <label>Tipo</label>
+    <help>Field that describes how the Related Contact is connected to the Contact.</help>
+    <label>Type</label>
     <picklistValues>
       <masterLabel>Friend</masterLabel>
-      <translation>Amigo/a</translation>
+      <translation>Friend</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Family</masterLabel>
-      <translation>Familia</translation>
+      <translation>Family</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Coworker</masterLabel>
-      <translation>Compañero de trabajo</translation>
+      <translation>Coworker</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Father</masterLabel>
-      <translation>Padre</translation>
+      <translation>Father</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Mother</masterLabel>
-      <translation>Madre</translation>
+      <translation>Mother</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Parent</masterLabel>
-      <translation>Progenitor</translation>
+      <translation>Parent</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Son</masterLabel>
-      <translation>Hijo</translation>
+      <translation>Son</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Daughter</masterLabel>
-      <translation>Hija</translation>
+      <translation>Daughter</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Child</masterLabel>
-      <translation>Menor</translation>
+      <translation>Child</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Aunt</masterLabel>
-      <translation>Tía</translation>
+      <translation>Aunt</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Uncle</masterLabel>
-      <translation>Tío</translation>
+      <translation>Uncle</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Husband</masterLabel>
-      <translation>Marido</translation>
+      <translation>Husband</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Wife</masterLabel>
-      <translation>Esposa</translation>
+      <translation>Wife</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Partner</masterLabel>
-      <translation>Pareja</translation>
+      <translation>Partner</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Cousin</masterLabel>
-      <translation>Primo/a</translation>
+      <translation>Cousin</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Grandmother</masterLabel>
-      <translation>Abuela</translation>
+      <translation>Grandmother</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Grandfather</masterLabel>
-      <translation>Abuelo</translation>
+      <translation>Grandfather</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Grandparent</masterLabel>
-      <translation>Abuelo/a</translation>
+      <translation>Grandparent</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Grandson</masterLabel>
-      <translation>Nieto</translation>
+      <translation>Grandson</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Granddaughter</masterLabel>
-      <translation>Nieta</translation>
+      <translation>Granddaughter</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Grandchild</masterLabel>
-      <translation>Nieto/a</translation>
+      <translation>Grandchild</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Employer</masterLabel>
-      <translation>Empleado</translation>
+      <translation>Employer</translation>
     </picklistValues>
     <picklistValues>
       <masterLabel>Employee</masterLabel>
-      <translation>Empleador</translation>
+      <translation>Employee</translation>
     </picklistValues>
   </fields>
   <validationRules>
-    <errorMessage>En lugar de cambiar los contactos en una relación existente, elimine esta relación y cree una nueva entre los nuevos contactos</errorMessage>
+    <errorMessage>Rather than change the contacts in an existing relationship, delete this relationship and create a new on between the new contacts</errorMessage>
     <name>Related_Contact_Do_Not_Change</name>
   </validationRules>
   <layouts>
     <layout>Relationship Layout</layout>
     <sections>
-      <label>Información de la relación</label>
+      <label>Relationship Information</label>
       <section>Relationship Information</section>
     </sections>
   </layouts>
-  <nameFieldLabel>Número de relación</nameFieldLabel>
+  <nameFieldLabel>Relationship Number</nameFieldLabel>
   <standardFields>
     <name>Name</name>
-    <label>Número de relación</label>
+    <label>Relationship Number</label>
   </standardFields>
-  <gender>Feminine</gender>
+  <startsWith>Consonant</startsWith>
   <caseValues>
     <plural>false</plural>
-    <value>Relación</value>
+    <value>Relationship</value>
   </caseValues>
   <caseValues>
     <plural>true</plural>
-    <value>Relaciones</value>
+    <value>Relationships</value>
   </caseValues>
 </CustomObjectTranslation>

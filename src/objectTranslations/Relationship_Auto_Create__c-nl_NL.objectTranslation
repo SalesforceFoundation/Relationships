@@ -1,32 +1,32 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <caseValues>
-        <plural>false</plural>
-        <value><!-- Relationship Auto-Create --></value>
-    </caseValues>
-    <caseValues>
-        <plural>true</plural>
-        <value><!-- Relationship Auto-Create --></value>
-    </caseValues>
-    <fields>
-        <help>In aanmerking komende campagnetypen voor dit campagnelid worden automatisch gemaakt. (Zijn blanco voor automatisch maken van Contactpersoon)</help>
-        <label>Campagnetypen</label>
-        <name>Campaign_Types__c</name>
-    </fields>
-    <fields>
-        <help>Het veld dat met het invoegen of bijwerken via een trigger het maken van de relatie activeert</help>
-        <label>Veld</label>
-        <name>Field__c</name>
-    </fields>
-    <fields>
-        <help>Het object waaraan deze Automatische relatie is gekoppeld</help>
-        <label>Object</label>
-        <name>Object__c</name>
-    </fields>
-    <fields>
-        <help>Het type te maken Relatie tussen het basisobject en het opzoekobject. Het opzoekobject krijgt de &quot;wederzijdse&quot; relatie krijgen, indien beschikbaar.</help>
-        <label>Relatietype</label>
-        <name>Relationship_Type__c</name>
-    </fields>
-    <gender><!-- Neuter --></gender>
+  <fields>
+    <name>Campaign_Types__c</name>
+    <help>In aanmerking komende campagnetypen voor dit campagnelid worden automatisch gemaakt. (Zijn blanco voor automatisch maken van Contactpersoon)</help>
+    <label>Campagnetypen</label>
+  </fields>
+  <fields>
+    <name>Field__c</name>
+    <help>Het veld dat met het invoegen of bijwerken via een trigger het maken van de relatie activeert</help>
+    <label>Veld</label>
+  </fields>
+  <fields>
+    <name>Object__c</name>
+    <help>Het object waaraan deze Automatische relatie is gekoppeld</help>
+    <label>Object</label>
+  </fields>
+  <fields>
+    <name>Relationship_Type__c</name>
+    <help>Het type te maken Relatie tussen het basisobject en het opzoekobject. Het opzoekobject krijgt de "wederzijdse" relatie krijgen, indien beschikbaar.</help>
+    <label>Relatietype</label>
+  </fields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Automatisch gemaakte relatie</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Automatisch gemaakte relaties</value>
+  </caseValues>
 </CustomObjectTranslation>

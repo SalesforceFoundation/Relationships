@@ -1,57 +1,57 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-    <caseValues>
-        <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
-    </caseValues>
-    <caseValues>
-        <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
-    </caseValues>
-    <fields>
-        <help>Se eliminan los duplicados de relaciones creadas automáticamente para evitar la creación de registros duplicados entre contactos. Al seleccionarse desactiva este comportamiento y permite la creación de múltiples relaciones del mismo tipo entre contactos.</help>
-        <label>Permitir creación auto relac duplicadas</label>
-        <name>Allow_AutoCreated_Duplicates__c</name>
-    </fields>
-    <fields>
-        <help>DESUSADO. El comportamiento del desencadenador está ahora controlado en la página Configuración de desencadenadores de Configuración de NPSP.</help>
-        <label>DESUSADO-Disable_RelCM_trigger</label>
-        <name>DISABLE_RelationshipCM_trigger__c</name>
-    </fields>
-    <fields>
-        <help>DESUSADO. El comportamiento del desencadenador está ahora controlado en la página Configuración de desencadenadores de Configuración de NPSP.</help>
-        <label>DESUSADO-Disable_RelContacts_trigger</label>
-        <name>DISABLE_RelationshipContacts_trigger__c</name>
-    </fields>
-    <fields>
-        <help>DESUSADO. El comportamiento del desencadenador está ahora controlado en la página Configuración de desencadenadores de Configuración de NPSP.</help>
-        <label>DESUSADO-Disable_Relationships_trigger</label>
-        <name>DISABLE_Relationships_trigger__c</name>
-    </fields>
-    <fields>
-        <help>DESUSADO. Este parámetro no se usa.</help>
-        <label>DESUSADO-Forzar creación autom. síncrona</label>
-        <name>Force_Synchronous_Auto_Create__c</name>
-    </fields>
-    <fields>
-        <help>Campo personalizado empleado para definir el género del contacto que se utiliza para determinar relaciones reciprocas.</help>
-        <label>Campo de género</label>
-        <name>Gender_Field__c</name>
-    </fields>
-    <fields>
-        <help>Método a usar para generar relaciones reciprocas. Ya sea Configuración de lista que emplea la configuración personalizada por género (ver Relaciones recíprocas), o Inversión de valores, que invierte el tipo si es apropiado (&quot;Padre-Hijo&quot; a &quot;Hijo-Padre&quot;)</help>
-        <label>Método de reciprocidad</label>
-        <name>Reciprocal_Method__c</name>
-    </fields>
-    <fields>
-        <help>Al rellenar este valor permite que el campo se cumplimente automáticamente cuando se crean nuevas relaciones desde el Visor de relaciones (vea la descripción para obtener más información).</help>
-        <label>Id del campo de nombre de la relación</label>
-        <name>Relationship_Name_Field_Id__c</name>
-    </fields>
-    <fields>
-        <help>Al rellenar este valor permite que el campo se cumplimente automáticamente cuando se crean nuevas relaciones desde el Visor de relaciones (vea la descripción para obtener más información).</help>
-        <label>Id del campo de Id de nombre de relación</label>
-        <name>Relationship_Name_Id_Field_Id__c</name>
-    </fields>
-    <gender><!-- Feminine --></gender>
+  <fields>
+    <name>Allow_AutoCreated_Duplicates__c</name>
+    <help>Se eliminan los duplicados de relaciones creadas automáticamente para evitar la creación de registros duplicados entre contactos. Al seleccionarse desactiva este comportamiento y permite la creación de múltiples relaciones del mismo tipo entre contactos.</help>
+    <label>Permitir creación auto relac duplicadas</label>
+  </fields>
+  <fields>
+    <name>DISABLE_RelationshipCM_trigger__c</name>
+    <help>DESUSADO. El comportamiento del desencadenador está ahora controlado en la página Configuración de desencadenadores de Configuración de NPSP.</help>
+    <label>DESUSADO-Disable_RelCM_trigger</label>
+  </fields>
+  <fields>
+    <name>DISABLE_RelationshipContacts_trigger__c</name>
+    <help>DESUSADO. El comportamiento del desencadenador está ahora controlado en la página Configuración de desencadenadores de Configuración de NPSP.</help>
+    <label>DESUSADO-Disable_RelContacts_trigger</label>
+  </fields>
+  <fields>
+    <name>DISABLE_Relationships_trigger__c</name>
+    <help>DESUSADO. El comportamiento del desencadenador está ahora controlado en la página Configuración de desencadenadores de Configuración de NPSP.</help>
+    <label>DESUSADO-Disable_Relationships_trigger</label>
+  </fields>
+  <fields>
+    <name>Force_Synchronous_Auto_Create__c</name>
+    <help>DESUSADO. Este parámetro no se usa.</help>
+    <label>DESUSADO-Forzar creación autom. síncrona</label>
+  </fields>
+  <fields>
+    <name>Gender_Field__c</name>
+    <help>Campo personalizado empleado para definir el género del contacto que se utiliza para determinar relaciones reciprocas.</help>
+    <label>Campo de género</label>
+  </fields>
+  <fields>
+    <name>Reciprocal_Method__c</name>
+    <help>Método a usar para generar relaciones reciprocas. Ya sea Configuración de lista que emplea la configuración personalizada por género (ver Relaciones recíprocas), o Inversión de valores, que invierte el tipo si es apropiado ("Padre-Hijo" a "Hijo-Padre")</help>
+    <label>Método de reciprocidad</label>
+  </fields>
+  <fields>
+    <name>Relationship_Name_Field_Id__c</name>
+    <help>Al rellenar este valor permite que el campo se cumplimente automáticamente cuando se crean nuevas relaciones desde el Visor de relaciones (vea la descripción para obtener más información).</help>
+    <label>Id del campo de nombre de la relación</label>
+  </fields>
+  <fields>
+    <name>Relationship_Name_Id_Field_Id__c</name>
+    <help>Al rellenar este valor permite que el campo se cumplimente automáticamente cuando se crean nuevas relaciones desde el Visor de relaciones (vea la descripción para obtener más información).</help>
+    <label>Id del campo de Id de nombre de relación</label>
+  </fields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Configuración de Relación</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Configuraciones de Relaciones</value>
+  </caseValues>
 </CustomObjectTranslation>
