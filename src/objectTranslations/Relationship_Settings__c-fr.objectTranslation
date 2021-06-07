@@ -1,58 +1,58 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-  <fields>
-    <name>Allow_AutoCreated_Duplicates__c</name>
-    <help>Les relations autom. créées sont autom. dédupliquées pour empêcher la création d’enreg. de relation en double entre deux contacts. Cochez cette case pour désactiver ce comportement et autoriser plusieurs relations de même type entre deux contacts.</help>
-    <label>Autoriser relations dupl. autom. créées</label>
-  </fields>
-  <fields>
-    <name>DISABLE_RelationshipCM_trigger__c</name>
-    <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
-    <label>DEPRECATED-Disable_RelCM_trigger</label>
-  </fields>
-  <fields>
-    <name>DISABLE_RelationshipContacts_trigger__c</name>
-    <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
-    <label>DEPRECATED-Disable_RelContacts_trigger</label>
-  </fields>
-  <fields>
-    <name>DISABLE_Relationships_trigger__c</name>
-    <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
-    <label>DEPRECATED-Disable_Relationships_trigger</label>
-  </fields>
-  <fields>
-    <name>Force_Synchronous_Auto_Create__c</name>
-    <help>DÉPRÉCIÉ. Ce paramètre n’est pas utilisé.</help>
-    <label>DÉPRÉCIÉ-Forcer création autom synchrone</label>
-  </fields>
-  <fields>
-    <name>Gender_Field__c</name>
-    <help>Le champ personnalisé utilisé pour définir le genre d’un contact pour la détermination de relations réciproques</help>
-    <label>Champ Genre</label>
-  </fields>
-  <fields>
-    <name>Reciprocal_Method__c</name>
-    <help>Détermine la méthode de génération de la relation réciproque : soit un paramètre de liste qui utilise des paramètres personnalisés par genre (voir l’onglet de relations réciproques), soit une inversion de valeur (de « Parent-Enfant » à « Enfant-Parent »)</help>
-    <label>Méthode de réciprocité</label>
-  </fields>
-  <fields>
-    <name>Relationship_Name_Field_Id__c</name>
-    <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visionneur de relations (voir la description pour plus d’informations)</help>
-    <label>ID du champ de nom de la relation</label>
-  </fields>
-  <fields>
-    <name>Relationship_Name_Id_Field_Id__c</name>
-    <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visionneur de relations (voir la description pour plus d’informations)</help>
-    <label>ID du champ d’ID de nom de la relation</label>
-  </fields>
-  <gender>Masculine</gender>
-  <startsWith>Consonant</startsWith>
-  <caseValues>
-    <plural>false</plural>
-    <value>Paramètre de relation</value>
-  </caseValues>
-  <caseValues>
-    <plural>true</plural>
-    <value>Paramètres de relation</value>
-  </caseValues>
+    <caseValues>
+        <plural>false</plural>
+        <value>Paramètre de relation</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Paramètres de relation</value>
+    </caseValues>
+    <fields>
+        <help>Les relations autom. créées sont autom. dédupliquées pour empêcher la création d’enreg. de relation en double entre deux contacts. Cochez cette case pour désactiver ce comportement et autoriser plusieurs relations de même type entre deux contacts.</help>
+        <label>Autoriser relations dupl. autom. créées</label>
+        <name>Allow_AutoCreated_Duplicates__c</name>
+    </fields>
+    <fields>
+        <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
+        <label>DEPRECATED-Disable_RelCM_trigger</label>
+        <name>DISABLE_RelationshipCM_trigger__c</name>
+    </fields>
+    <fields>
+        <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
+        <label>DEPRECATED-Disable_RelContacts_trigger</label>
+        <name>DISABLE_RelationshipContacts_trigger__c</name>
+    </fields>
+    <fields>
+        <help>DÉPRÉCIÉ. Le comportement du déclencheur est désormais contrôlé dans la page Configuration de déclencheur des paramètres NPSP.</help>
+        <label>DEPRECATED-Disable_Relationships_trigger</label>
+        <name>DISABLE_Relationships_trigger__c</name>
+    </fields>
+    <fields>
+        <help>DÉPRÉCIÉ. Ce paramètre n’est pas utilisé.</help>
+        <label>DÉPRÉCIÉ-Forcer création autom synchrone</label>
+        <name>Force_Synchronous_Auto_Create__c</name>
+    </fields>
+    <fields>
+        <help>Le champ personnalisé utilisé pour définir le genre d’un contact pour la détermination de relations réciproques</help>
+        <label>Champ Genre</label>
+        <name>Gender_Field__c</name>
+    </fields>
+    <fields>
+        <help>Détermine la méthode de génération de la relation réciproque : soit un paramètre de liste qui utilise des paramètres personnalisés par genre (voir l’onglet de relations réciproques), soit une inversion de valeur (de « Parent-Enfant » à « Enfant-Parent »)</help>
+        <label>Méthode de réciprocité</label>
+        <name>Reciprocal_Method__c</name>
+    </fields>
+    <fields>
+        <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visionneur de relations (voir la description pour plus d’informations)</help>
+        <label>ID du champ de nom de la relation</label>
+        <name>Relationship_Name_Field_Id__c</name>
+    </fields>
+    <fields>
+        <help>Renseigner cette valeur permet de préremplir le champ lors de la création de nouvelles relations depuis le visionneur de relations (voir la description pour plus d’informations)</help>
+        <label>ID du champ d’ID de nom de la relation</label>
+        <name>Relationship_Name_Id_Field_Id__c</name>
+    </fields>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>

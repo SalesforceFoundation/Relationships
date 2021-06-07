@@ -1,89 +1,89 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
-  <fields>
-    <name>Allow_AutoCreated_Duplicates__c</name>
-    <help>Duplikate autom. erstellter Bez. werden autom. entfernt, damit zwischen zwei Kontakten keine doppelten Bez.datens. erstellt werden. Zur Deakt. dieses Verhaltens und zum Zulassen der Erstell. mehrerer Bez. desselben Typs zw. zwei Kontakten Kontrollk. akt.</help>
-    <label>Autom. erst. dopp. Beziehungen zulassen</label>
-  </fields>
-  <fields>
-    <name>DISABLE_RelationshipCM_trigger__c</name>
-    <help>ERSETZT. Das Auslöserverhalten wird jetzt über die Seite "Auslöserkonfiguration" in den NPSP-Einstellungen gesteuert.</help>
-    <label>DEPRECATED-Disable_RelCM_trigger</label>
-  </fields>
-  <fields>
-    <name>DISABLE_RelationshipContacts_trigger__c</name>
-    <help>ERSETZT. Das Auslöserverhalten wird jetzt über die Seite "Auslöserkonfiguration" in den NPSP-Einstellungen gesteuert.</help>
-    <label>DEPRECATED-Disable_RelContacts_trigger</label>
-  </fields>
-  <fields>
-    <name>DISABLE_Relationships_trigger__c</name>
-    <help>ERSETZT. Das Auslöserverhalten wird jetzt über die Seite "Auslöserkonfiguration" in den NPSP-Einstellungen gesteuert.</help>
-    <label>DEPRECATED-Disable_Relationships_trigger</label>
-  </fields>
-  <fields>
-    <name>Force_Synchronous_Auto_Create__c</name>
-    <help>ERSETZT. Diese Einstellung wird nicht verwendet.</help>
-    <label>ERSETZT-Synchrone autom. Erst. erzw.</label>
-  </fields>
-  <fields>
-    <name>Gender_Field__c</name>
-    <help>Das benutzerdefinierte Feld, das zur Definition des Geschlechts eines Kontakts verwendet wird, um wechselseitige Beziehungen festzulegen</help>
-    <label>Feld "Geschlecht"</label>
-  </fields>
-  <fields>
-    <name>Reciprocal_Method__c</name>
-    <help>Legt Methode zur Generierung der wechselseitigen Bez. fest. Entw. Listeneinstellung, die benutzerdef. Einst. nach Geschlecht verwendet (siehe "Wechselseitige Beziehungen"), oder Wertumkehr, die ggf. den Typ umkehrt ("Überg.-Unterg." zu "Unterg.-Überg.")</help>
-    <label>Wechselseitige Methode</label>
-  </fields>
-  <fields>
-    <name>Relationship_Name_Field_Id__c</name>
-    <help>Wenn dieser Wert eingetragen ist, kann das Feld vorab ausgefüllt werden, wenn neue Beziehungen über die Beziehungsanzeige erstellt werden (weitere Informationen in der Beschreibung).</help>
-    <label>Kennung Beziehungsnamensfeld</label>
-  </fields>
-  <fields>
-    <name>Relationship_Name_Id_Field_Id__c</name>
-    <help>Wenn dieser Wert eingetragen ist, kann das Feld vorab ausgefüllt werden, wenn neue Beziehungen über die Beziehungsanzeige erstellt werden (weitere Informationen in der Beschreibung)</help>
-    <label>Kennung d. Felds mit Kenn. d. Bez.namens</label>
-  </fields>
-  <gender>Feminine</gender>
-  <caseValues>
-    <plural>false</plural>
-    <caseType>Nominative</caseType>
-    <value>Beziehungseinstellung</value>
-  </caseValues>
-  <caseValues>
-    <plural>false</plural>
-    <caseType>Accusative</caseType>
-    <value>Beziehungseinstellung</value>
-  </caseValues>
-  <caseValues>
-    <plural>false</plural>
-    <caseType>Dative</caseType>
-    <value>Beziehungseinstellung</value>
-  </caseValues>
-  <caseValues>
-    <plural>false</plural>
-    <caseType>Genitive</caseType>
-    <value>Beziehungseinstellung</value>
-  </caseValues>
-  <caseValues>
-    <plural>true</plural>
-    <caseType>Nominative</caseType>
-    <value>Beziehungseinstellungen</value>
-  </caseValues>
-  <caseValues>
-    <plural>true</plural>
-    <caseType>Accusative</caseType>
-    <value>Beziehungseinstellungen</value>
-  </caseValues>
-  <caseValues>
-    <plural>true</plural>
-    <caseType>Dative</caseType>
-    <value>Beziehungseinstellungen</value>
-  </caseValues>
-  <caseValues>
-    <plural>true</plural>
-    <caseType>Genitive</caseType>
-    <value>Beziehungseinstellungen</value>
-  </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Beziehungseinstellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Beziehungseinstellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Beziehungseinstellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Beziehungseinstellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Beziehungseinstellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Beziehungseinstellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Beziehungseinstellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Beziehungseinstellungen</value>
+    </caseValues>
+    <fields>
+        <help>Duplikate autom. erstellter Bez. werden autom. entfernt, damit zwischen zwei Kontakten keine doppelten Bez.datens. erstellt werden. Zur Deakt. dieses Verhaltens und zum Zulassen der Erstell. mehrerer Bez. desselben Typs zw. zwei Kontakten Kontrollk. akt.</help>
+        <label>Autom. erst. dopp. Beziehungen zulassen</label>
+        <name>Allow_AutoCreated_Duplicates__c</name>
+    </fields>
+    <fields>
+        <help>ERSETZT. Das Auslöserverhalten wird jetzt über die Seite &quot;Auslöserkonfiguration&quot; in den NPSP-Einstellungen gesteuert.</help>
+        <label>DEPRECATED-Disable_RelCM_trigger</label>
+        <name>DISABLE_RelationshipCM_trigger__c</name>
+    </fields>
+    <fields>
+        <help>ERSETZT. Das Auslöserverhalten wird jetzt über die Seite &quot;Auslöserkonfiguration&quot; in den NPSP-Einstellungen gesteuert.</help>
+        <label>DEPRECATED-Disable_RelContacts_trigger</label>
+        <name>DISABLE_RelationshipContacts_trigger__c</name>
+    </fields>
+    <fields>
+        <help>ERSETZT. Das Auslöserverhalten wird jetzt über die Seite &quot;Auslöserkonfiguration&quot; in den NPSP-Einstellungen gesteuert.</help>
+        <label>DEPRECATED-Disable_Relationships_trigger</label>
+        <name>DISABLE_Relationships_trigger__c</name>
+    </fields>
+    <fields>
+        <help>ERSETZT. Diese Einstellung wird nicht verwendet.</help>
+        <label>ERSETZT-Synchrone autom. Erst. erzw.</label>
+        <name>Force_Synchronous_Auto_Create__c</name>
+    </fields>
+    <fields>
+        <help>Das benutzerdefinierte Feld, das zur Definition des Geschlechts eines Kontakts verwendet wird, um wechselseitige Beziehungen festzulegen</help>
+        <label>Feld &quot;Geschlecht&quot;</label>
+        <name>Gender_Field__c</name>
+    </fields>
+    <fields>
+        <help>Legt Methode zur Generierung der wechselseitigen Bez. fest. Entw. Listeneinstellung, die benutzerdef. Einst. nach Geschlecht verwendet (siehe &quot;Wechselseitige Beziehungen&quot;), oder Wertumkehr, die ggf. den Typ umkehrt (&quot;Überg.-Unterg.&quot; zu &quot;Unterg.-Überg.&quot;)</help>
+        <label>Wechselseitige Methode</label>
+        <name>Reciprocal_Method__c</name>
+    </fields>
+    <fields>
+        <help>Wenn dieser Wert eingetragen ist, kann das Feld vorab ausgefüllt werden, wenn neue Beziehungen über die Beziehungsanzeige erstellt werden (weitere Informationen in der Beschreibung).</help>
+        <label>Kennung Beziehungsnamensfeld</label>
+        <name>Relationship_Name_Field_Id__c</name>
+    </fields>
+    <fields>
+        <help>Wenn dieser Wert eingetragen ist, kann das Feld vorab ausgefüllt werden, wenn neue Beziehungen über die Beziehungsanzeige erstellt werden (weitere Informationen in der Beschreibung)</help>
+        <label>Kennung d. Felds mit Kenn. d. Bez.namens</label>
+        <name>Relationship_Name_Id_Field_Id__c</name>
+    </fields>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>
