@@ -46,4 +46,4 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <label>Relationships Settings</label>
         <name>Relationships_Settings</name>
     </customTabs>
-    </Translations>
+</Translations>
