@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>リレーション設定</value>
     </caseValues>
     <fields>
         <help>自動作成されたリレーションは、2 つの取引先責任者間で重複リレーションレコードが作成されることを避けるため、自動的に重複が排除されます。このボックスをオンにするとこの動作が無効になり、2 つの取引先責任者間で同じ種別の複数のリレーションが許可されます。</help>

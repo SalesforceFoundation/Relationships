@@ -2,7 +2,7 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>リレーションルックアップ</value>
     </caseValues>
     <fields>
         <help>この相互参照が有効かどうかを示します。</help>

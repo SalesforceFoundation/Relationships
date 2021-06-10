@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Consulta de relación</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Consultas de relaciones</value>
     </caseValues>
     <fields>
         <help>Indica si esta búsqueda de relación reciproca esta activa.</help>
@@ -28,5 +28,5 @@
         <label>Neutro</label>
         <name>Neutral__c</name>
     </fields>
-    <gender><!-- Feminine --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

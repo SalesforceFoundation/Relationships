@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatisch gemaakte relatie</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatisch gemaakte relaties</value>
     </caseValues>
     <fields>
         <help>In aanmerking komende campagnetypen voor dit campagnelid worden automatisch gemaakt. (Zijn blanco voor automatisch maken van Contactpersoon)</help>
@@ -28,5 +28,5 @@
         <label>Relatietype</label>
         <name>Relationship_Type__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

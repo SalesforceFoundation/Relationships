@@ -3,42 +3,42 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuche</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuchen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuche</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuchen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuche</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuchen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuche</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Lookup --></value>
+        <value>Beziehungssuchen</value>
     </caseValues>
     <fields>
         <help>Gibt an, ob wechselseitiges Nachschlagen aktiv ist.</help>
@@ -60,5 +60,5 @@
         <label>Neutral</label>
         <name>Neutral__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Creación automática de relación</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Creaciones automáticas de relaciones</value>
     </caseValues>
     <fields>
         <help>Tipos de campañas aptos para este miembro de campaña creado automáticamente. (Estará en blanco para contactos creados automáticamente)</help>
@@ -28,5 +28,5 @@
         <label>Tipo de relación</label>
         <name>Relationship_Type__c</name>
     </fields>
-    <gender><!-- Feminine --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

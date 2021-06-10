@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Paramètre de relation</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Paramètres de relation</value>
     </caseValues>
     <fields>
         <help>Les relations autom. créées sont autom. dédupliquées pour empêcher la création d’enreg. de relation en double entre deux contacts. Cochez cette case pour désactiver ce comportement et autoriser plusieurs relations de même type entre deux contacts.</help>
@@ -53,6 +53,6 @@
         <label>ID du champ d’ID de nom de la relation</label>
         <name>Relationship_Name_Id_Field_Id__c</name>
     </fields>
-    <gender><!-- Masculine --></gender>
-    <startsWith><!-- Consonant --></startsWith>
+    <gender>Masculine</gender>
+    <startsWith>Consonant</startsWith>
 </CustomObjectTranslation>
