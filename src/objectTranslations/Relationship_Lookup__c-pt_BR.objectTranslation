@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Active__c</name>
+    <help>Indica se essa pesquisa recíproca está ativa.</help>
+    <label>Ativo</label>
+  </fields>
+  <fields>
+    <name>Female__c</name>
+    <help>O valor usado se o valor do campo Gênero do contato corresponder aos valores no rótulo personalizado Feminino ou a Saudação do Contato indicar o gênero.</help>
+    <label>Feminino</label>
+  </fields>
+  <fields>
+    <name>Male__c</name>
+    <help>O valor usado se o valor do campo Gênero do contato corresponder aos valores no rótulo personalizado Masculino ou a Saudação do Contato indicar o gênero.</help>
+    <label>Masculino</label>
+  </fields>
+  <fields>
+    <name>Neutral__c</name>
+    <help>O valor usado se o valor do campo Gênero do contato não corresponder aos valores nos rótulos personalizados Masculino ou Feminino e a Saudação do Contato não indicar o gênero.</help>
+    <label>Neutro</label>
+  </fields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Pesquisa de relacionamento</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Pesquisas de relacionamentos</value>
+  </caseValues>
+</CustomObjectTranslation>
