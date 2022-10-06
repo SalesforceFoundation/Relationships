@@ -22,7 +22,7 @@
     </customLabels>
     <customLabels>
         <name>RelationshipsAutoDescription</name>
-        <label>Os relacionamentos criados automaticamente permitem que um campo de pesquisa de contato personalizado nos objetos de Contato ou Membro de campanha acione automaticamente a criação de um tipo de relacionamento de sua escolha.</label>
+        <label>Os relacionamentos criados automaticamente permitem que um campo de pesquisa de contato personalizado nos objetos de Contato ou Membro de campanha acione automaticamente a criação de um tipo de relacionamento de sua escolha. Por exemplo, você pode ter um campo de pesquisa &quot;Recomendado por&quot; no objeto Membro da campanha para representar quando uma pessoa nova na sua organização foi levada a um evento por um membro existente.</label>
     </customLabels>
     <customLabels>
         <name>RelationshipsCustomFieldOverload</name>
