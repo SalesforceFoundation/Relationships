@@ -22,7 +22,7 @@
     </customLabels>
     <customLabels>
         <name>RelationshipsAutoDescription</name>
-        <label>Os relacionamentos criados automaticamente permitem que um campo de pesquisa de contato personalizado nos objetos de Contato ou Membro de campanha acione automaticamente a criação de um tipo de relacionamento de sua escolha. Por exemplo, você pode ter um campo de pesquisa &quot;Recomendado por&quot; no objeto Membro da campanha para representar quando uma pessoa nova na sua organização foi levada a um evento por um membro existente. Consulte a &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;Documentação do NPSP&lt;/a&gt; para obter mais informações.</label>
+        <label>Os relacionamentos criados automaticamente permitem que um campo de pesquisa de contato personalizado nos objetos de Contato ou Membro de campanha acione automaticamente a criação de um tipo de relacionamento de sua escolha. Por exemplo, você pode ter um campo de pesquisa &quot;Recomendado por&quot; no objeto Membro da campanha para representar quando uma pessoa nova na sua organização foi levada a um evento por um membro existente.</label>
     </customLabels>
     <customLabels>
         <name>RelationshipsCustomFieldOverload</name>
@@ -36,7 +36,7 @@ Existem mais de 100 campos personalizados definidos no objeto Contato ou Membro 
     </customLabels>
     <customLabels>
         <name>RelationshipsLookupDescription</name>
-        <label>O NPSP usa as configurações desta lista para determinar relações recíprocas. Consulte a &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;Documentação do NPSP&lt;/a&gt; para obter uma explicação completa de como essas configurações funcionam, além de exemplos.</label>
+        <label>O NPSP usa as configurações desta lista para determinar relações recíprocas.</label>
     </customLabels>
     <customLabels>
         <name>RelationshipsSettingsDescription</name>
