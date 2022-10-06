@@ -21,7 +21,7 @@
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>自動リレーションでは、任意の新規リレーション種別の作成をトリガする取引先責任者オブジェクトまたはキャンペーンメンバーオブジェクトの独自のカスタム参照項目を識別できます。たとえば、キャンペーンメンバーから取引先責任者への「参照」ルックアップでは、2 人の取引先責任者間に「参照元」と「参照先」のリレーションを作成できます。 詳細は、&lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP ドキュメント&lt;/a&gt;を参照してください。</label>
+        <label>自動リレーションでは、任意の新規リレーション種別の作成をトリガする取引先責任者オブジェクトまたはキャンペーンメンバーオブジェクトの独自のカスタム参照項目を識別できます。たとえば、キャンペーンメンバーから取引先責任者への「参照」ルックアップでは、2 人の取引先責任者間に「参照元」と「参照先」のリレーションを作成できます。</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
@@ -35,7 +35,7 @@
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>NPSP は、このリストの設定を使用して相互関係を判断します。これらの設定の仕組みの詳細と例は、&lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP ドキュメント&lt;/a&gt;を参照してください。</label>
+        <label>NPSP は、このリストの設定を使用して相互関係を判断します。</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
