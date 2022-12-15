@@ -46,7 +46,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsAutoDescription</shortDescription>
-        <value>Auto-created Relationships allow a custom Contact lookup field on the Contact or Campaign Member objects to automatically trigger the creation of a new Relationship type of your choice. For example, you might have a “Referred by” lookup field on the Campaign Member object to represent when a person new to your organization was brought to an event by an existing constituent. See the &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP Documentation&lt;/a&gt; for more information.</value>
+        <value>Auto-created Relationships allow a custom Contact lookup field on the Contact or Campaign Member objects to automatically trigger the creation of a new Relationship type of your choice. For example, you might have a “Referred by” lookup field on the Campaign Member object to represent when a person new to your organization was brought to an event by an existing constituent.</value>
     </labels>
     <labels>
         <fullName>RelationshipsCustomFieldOverload</fullName>
@@ -72,7 +72,7 @@ There are more than 100 custom fields defined on the Contact or Campaign Member 
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>RelationshipsLookupDescription</shortDescription>
-        <value>The NPSP uses the settings in this list to determine reciprocal relationships. See the &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP Documentation&lt;/a&gt; for a full explanation of how these settings work, plus examples.</value>
+        <value>The NPSP uses the settings in this list to determine reciprocal relationships.</value>
     </labels>
     <labels>
         <fullName>RelationshipsSettingsDescription</fullName>
