@@ -5,11 +5,11 @@
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
-        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Hombre</label>
+        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Mujer</label>
         <name>Female</name>
     </customLabels>
     <customLabels>
-        <label>Male,Männlich,男性,Masculin,Masculino,Man,Mujer</label>
+        <label>Male,Männlich,男性,Masculin,Masculino,Man,Hombre</label>
         <name>Male</name>
     </customLabels>
     <customLabels>
@@ -21,7 +21,7 @@
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>Las relaciones creadas automáticamente permiten a un campo de búsqueda de contactos personalizado en los objetos Contacto o Miembro de campaña desencadenar la creación de una nueva relación del tipo que desee. Por ejemplo, un campo de búsqueda de contactos &quot;Referido por&quot; en el objeto Miembro de campaña puede representar el momento en que se aportó una persona nueva en su organización a un evento por parte de un integrante. Consulte la &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;Documentación de NPSP&lt;/a&gt; para obtener más información.</label>
+        <label>Las relaciones creadas automáticamente permiten a un campo de búsqueda de contactos personalizado en los objetos Contacto o Miembro de campaña desencadenar la creación de una nueva relación del tipo que desee. Por ejemplo, un campo de búsqueda de contactos &quot;Referido por&quot; en el objeto Miembro de campaña puede representar el momento en que se aportó una persona nueva en su organización a un evento por parte de un integrante.</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
@@ -35,7 +35,7 @@ Hay más de 100 campos personalizados definidos en el objeto Contacto o Miembro 
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>NPSP utiliza los parámetros de esta lista para determinar relaciones recíprocas. Consulte la &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;Documentación de NPSP&lt;/a&gt; para ver una explicación completa del funcionamiento de estos parámetros, junto con ejemplos.</label>
+        <label>NPSP utiliza los parámetros de esta lista para determinar relaciones recíprocas.</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
@@ -46,4 +46,4 @@ Hay más de 100 campos personalizados definidos en el objeto Contacto o Miembro 
         <label>Configuración de relaciones</label>
         <name>Relationships_Settings</name>
     </customTabs>
-</Translations>
+    </Translations>

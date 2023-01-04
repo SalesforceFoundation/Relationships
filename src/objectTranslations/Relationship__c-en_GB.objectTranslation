@@ -2,160 +2,165 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value>リレーション</value>
+        <value>Relationship</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Relationships</value>
     </caseValues>
     <fields>
-        <help>関連する取引先責任者はこの取引先責任者の ______。</help>
-        <label>取引先責任者</label>
+        <help>Related Contact is this Contact&apos;s ______.</help>
+        <label>Contact</label>
         <name>Contact__c</name>
-        <relationshipLabel>リレーション</relationshipLabel>
+        <relationshipLabel>Relationships</relationshipLabel>
     </fields>
     <fields>
-        <help>このリレーションの追加情報</help>
-        <label>説明</label>
+        <help>Additional information about this Relationship</help>
+        <label>Description</label>
         <name>Description__c</name>
     </fields>
     <fields>
-        <help>リレーションの両側を結合するシステム項目。この項目を直接変更しないでください。相互関係は、このリレーションの反対の種別になります (使用可能な場合)。</help>
-        <label>相互関係</label>
+        <help>System field that links to the two sides of the Relationship together.  This field should not be modified directly.  The Reciprocal Relationship will have the opposite type, if available, of this Relationship.</help>
+        <label>Reciprocal Relationship</label>
         <name>ReciprocalRelationship__c</name>
-        <relationshipLabel>リレーション</relationshipLabel>
+        <relationshipLabel>Relationships</relationshipLabel>
     </fields>
     <fields>
-        <label>関連する取引先責任者</label>
+        <label>Related Contact</label>
         <name>RelatedContact__c</name>
-        <relationshipLabel>非表示のリレーションリスト</relationshipLabel>
+        <relationshipLabel>Hidden Relationships List</relationshipLabel>
     </fields>
     <fields>
-        <help>2 つの取引先責任者間のリレーションを説明する文章を作成するテキスト数式</help>
-        <label>リレーションの説明</label>
+        <help>Text formula that constructs a sentence explaining the relationship between the two Contacts</help>
+        <label>Relationship Explanation</label>
         <name>Relationship_Explanation__c</name>
     </fields>
     <fields>
-        <help>このリレーションが別のリレーションの相互関係として自動的に作成されたかどうかを示すシステム項目</help>
+        <help>System field that indicates if this Relationship was created automatically as the reciprocal to another Relationships.</help>
         <label>_SYSTEM: SystemCreated</label>
         <name>SYSTEM_SystemCreated__c</name>
     </fields>
     <fields>
-        <help>リレーションの状況。</help>
-        <label>状況</label>
+        <help>Status of the Relationship.</help>
+        <label>Status</label>
         <name>Status__c</name>
         <picklistValues>
             <masterLabel>Current</masterLabel>
-            <translation>現在</translation>
+            <translation>Current</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Former</masterLabel>
-            <translation>以前</translation>
+            <translation>Former</translation>
         </picklistValues>
     </fields>
     <fields>
-        <help>関係する取引先責任者が取引先責任者に結び付けられている方法を説明する項目。</help>
-        <label>種類</label>
+        <help>Field that describes how the Related Contact is connected to the Contact.</help>
+        <label>Type</label>
         <name>Type__c</name>
         <picklistValues>
             <masterLabel>Aunt</masterLabel>
-            <translation>叔母</translation>
+            <translation>Aunt</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Child</masterLabel>
-            <translation>子ども</translation>
+            <translation>Child</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Cousin</masterLabel>
-            <translation>いとこ</translation>
+            <translation>Cousin</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Coworker</masterLabel>
-            <translation>同僚</translation>
+            <translation>Coworker</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Daughter</masterLabel>
-            <translation>娘</translation>
+            <translation>Daughter</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Employee</masterLabel>
-            <translation>従業員</translation>
+            <translation>Employee</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Employer</masterLabel>
-            <translation>雇用主</translation>
+            <translation>Employer</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Family</masterLabel>
-            <translation>家族</translation>
+            <translation>Family</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Father</masterLabel>
-            <translation>父</translation>
+            <translation>Father</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Friend</masterLabel>
-            <translation>友人</translation>
+            <translation>Friend</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandchild</masterLabel>
-            <translation>孫</translation>
+            <translation>Grandchild</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Granddaughter</masterLabel>
-            <translation>孫娘</translation>
+            <translation>Granddaughter</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandfather</masterLabel>
-            <translation>祖父</translation>
+            <translation>Grandfather</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandmother</masterLabel>
-            <translation>祖母</translation>
+            <translation>Grandmother</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandparent</masterLabel>
-            <translation>祖父母</translation>
+            <translation>Grandparent</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Grandson</masterLabel>
-            <translation>孫息子</translation>
+            <translation>Grandson</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Husband</masterLabel>
-            <translation>夫</translation>
+            <translation>Husband</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Mother</masterLabel>
-            <translation>母</translation>
+            <translation>Mother</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Parent</masterLabel>
-            <translation>親</translation>
+            <translation>Parent</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Partner</masterLabel>
-            <translation>パートナー</translation>
+            <translation>Partner</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Son</masterLabel>
-            <translation>息子</translation>
+            <translation>Son</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Uncle</masterLabel>
-            <translation>叔父</translation>
+            <translation>Uncle</translation>
         </picklistValues>
         <picklistValues>
             <masterLabel>Wife</masterLabel>
-            <translation>妻</translation>
+            <translation>Wife</translation>
         </picklistValues>
     </fields>
     <layouts>
         <layout>Relationship Layout</layout>
         <sections>
-            <label>リレーション情報</label>
+            <label>Relationship Information</label>
             <section>Relationship Information</section>
         </sections>
     </layouts>
-    <nameFieldLabel>リレーション番号</nameFieldLabel>
+    <nameFieldLabel>Relationship Number</nameFieldLabel>
+    <startsWith>Consonant</startsWith>
     <validationRules>
-        <errorMessage>既存のリレーションで取引先責任者を変更する代わりに、このリレーションを削除して 2 つの取引先責任者間の新しいリレーションを作成します。</errorMessage>
+        <errorMessage>Rather than change the contacts in an existing relationship, delete this relationship and create a new on between the new contacts</errorMessage>
         <name>Related_Contact_Do_Not_Change</name>
     </validationRules>
 </CustomObjectTranslation>

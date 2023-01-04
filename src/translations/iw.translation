@@ -5,6 +5,14 @@
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
+        <label><!-- Gender(s) for &quot;Female&quot; for reciprocal relationships. Do Not Change Translations. --></label>
+        <name>Female</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Gender(s) for &quot;Male&quot; for reciprocal relationships. Do Not Change Translations. --></label>
+        <name>Male</name>
+    </customLabels>
+    <customLabels>
         <label>הוא</label>
         <name>Relationship_Explanation_Connector</name>
     </customLabels>
@@ -13,7 +21,7 @@
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>קשרים הנוצרים באופן אוטומטי מאפשרים לשדה חיפוש איש קשר מותאם אישית, הנכלל באובייקטים של איש הקשר או החבר במבצע, להפעיל באופן אוטומטי את היצירה של סוג קשר חדש, לפי בחירתך. לדוגמה, תוכל להשתמש בשדה החיפוש &apos;הופנה על-ידי&apos; באובייקט של חבר במבצע, כדי לייצג מצבים שבהם אחד התומכים הקיימים הביא אדם חדש בארגון שלך להשתתף באירוע. למידע נוסף, עיין &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;במסמכי התיעוד של NPSP‏&lt;/a&gt;.</label>
+        <label>קשרים הנוצרים באופן אוטומטי מאפשרים לשדה חיפוש איש קשר מותאם אישית, הנכלל באובייקטים של איש הקשר או החבר במבצע, להפעיל באופן אוטומטי את היצירה של סוג קשר חדש, לפי בחירתך. לדוגמה, תוכל להשתמש בשדה החיפוש &apos;הופנה על-ידי&apos; באובייקט של חבר במבצע, כדי לייצג מצבים שבהם אחד התומכים הקיימים הביא אדם חדש בארגון שלך להשתתף באירוע.</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
@@ -27,7 +35,7 @@
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>NPSP עושה שימוש בהגדרות המופיעות ברשימה זו כדי לקבוע קשרים הדדיים. עיין &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;במסמכי התיעוד של NPSP‏&lt;/a&gt; לקבלת הסבר מלא על אופן הפעולה של הגדרות אלה, בצירוף דוגמאות.</label>
+        <label>NPSP עושה שימוש בהגדרות המופיעות ברשימה זו כדי לקבוע קשרים הדדיים.</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
@@ -38,4 +46,4 @@
         <label>הגדרות קשרים</label>
         <name>Relationships_Settings</name>
     </customTabs>
-</Translations>
+    </Translations>

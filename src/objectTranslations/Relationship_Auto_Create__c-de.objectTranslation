@@ -3,42 +3,42 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung einer Beziehung</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung von Beziehungen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung einer Beziehung</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung von Beziehungen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung einer Beziehung</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung von Beziehungen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung einer Beziehung</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Auto-Create --></value>
+        <value>Automatische Erstellung von Beziehungen</value>
     </caseValues>
     <fields>
         <help>Für die automatische Erstellung dieses Kampagnenmitglieds berechtigte Kampagnentypen (Das Feld bleibt bei der automatischen Erstellung von Kontakten leer.)</help>
@@ -60,5 +60,5 @@
         <label>Beziehungstyp</label>
         <name>Relationship_Type__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

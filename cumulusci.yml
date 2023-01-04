@@ -3,9 +3,12 @@ project:
     package:
         name: Relationships
         namespace: npe4
-        api_version: 36.0
+        api_version: 53.0
     git:
         prefix_release: rel/
+        default_branch: main
+    dependency_resolutions:
+        preproduction: include_beta
 
 tasks:
     uninstall_packaged_incremental:
@@ -14,9 +17,13 @@ tasks:
                 ListView:
                     Relationship_Lookup__c.All
 
-flows:
-    release_beta:
-        tasks:
-            # Ignore failures on release notes generation
-            3:
-                ignore_failure: True
+    cleanup_translation_metadata:
+        description: Delete metadata from translation files that should not be translated.
+        class_path: cumulusci.tasks.metadata.modify.RemoveElementsXPath
+        options:
+            output_style: salesforce
+            elements:
+                - path: src/translations/**.translation
+                  xpath: //ns:quickActions
+                - path: src/translations/**.translation
+                  xpath: //ns:reportTypes[ns:name='screen_flows_prebuilt_crt']

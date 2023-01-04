@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Contact__c</name>
+    <help>O contato relacionado é _______ deste contato.</help>
+    <relationshipLabel>Relações</relationshipLabel>
+    <label>Contato</label>
+  </fields>
+  <fields>
+    <name>Description__c</name>
+    <help>Informações adicionais sobre este relacionamento</help>
+    <label>Descrição</label>
+  </fields>
+  <fields>
+    <name>ReciprocalRelationship__c</name>
+    <help>Campo de sistema que conecta os dois lados do relacionamento. Este campo não deve ser modificado diretamente. A relação recíproca terá o tipo oposto, se disponível, desta relação.</help>
+    <relationshipLabel>Relações</relationshipLabel>
+    <label>Relação recíproca</label>
+  </fields>
+  <fields>
+    <name>RelatedContact__c</name>
+    <relationshipLabel>Lista de relacionamentos ocultos</relationshipLabel>
+    <label>Contato relacionado</label>
+  </fields>
+  <fields>
+    <name>Relationship_Explanation__c</name>
+    <help>Fórmula de texto que cria uma frase explicando a relação entre os dois contatos</help>
+    <label>Explicação do relacionamento</label>
+  </fields>
+  <fields>
+    <name>SYSTEM_SystemCreated__c</name>
+    <help>Campo de sistema que indica se essa relação foi criada automaticamente como recíproca a outras relações.</help>
+    <label>_SYSTEM: SystemCreated</label>
+  </fields>
+  <fields>
+    <name>Status__c</name>
+    <help>Status do relacionamento.</help>
+    <label>Status</label>
+    <picklistValues>
+      <masterLabel>Current</masterLabel>
+      <translation>Atual</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Former</masterLabel>
+      <translation>Anterior</translation>
+    </picklistValues>
+  </fields>
+  <fields>
+    <name>Type__c</name>
+    <help>Campo que descreve como o contato relacionado está conectado ao contato.</help>
+    <label>Tipo</label>
+    <picklistValues>
+      <masterLabel>Friend</masterLabel>
+      <translation>Amigo</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Family</masterLabel>
+      <translation>Família</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Coworker</masterLabel>
+      <translation>Colega</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Father</masterLabel>
+      <translation>Pai</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Mother</masterLabel>
+      <translation>Mãe</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Parent</masterLabel>
+      <translation>Pai</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Son</masterLabel>
+      <translation>Filho</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Daughter</masterLabel>
+      <translation>Filha</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Child</masterLabel>
+      <translation>Filho</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Aunt</masterLabel>
+      <translation>Tia</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Uncle</masterLabel>
+      <translation>Tio</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Husband</masterLabel>
+      <translation>Marido</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Wife</masterLabel>
+      <translation>Esposa</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Partner</masterLabel>
+      <translation>Parceiro</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Cousin</masterLabel>
+      <translation>Primo</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Grandmother</masterLabel>
+      <translation>Avó</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Grandfather</masterLabel>
+      <translation>Avô</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Grandparent</masterLabel>
+      <translation>Avô</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Grandson</masterLabel>
+      <translation>Neto</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Granddaughter</masterLabel>
+      <translation>Neta</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Grandchild</masterLabel>
+      <translation>Neto</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Employer</masterLabel>
+      <translation>Empregador</translation>
+    </picklistValues>
+    <picklistValues>
+      <masterLabel>Employee</masterLabel>
+      <translation>Funcionário</translation>
+    </picklistValues>
+  </fields>
+  <validationRules>
+    <errorMessage>Em vez de alterar os contatos em uma relação existente, exclua essa relação e crie outra relação entre os novos contatos</errorMessage>
+    <name>Related_Contact_Do_Not_Change</name>
+  </validationRules>
+  <layouts>
+    <layout>Relationship Layout</layout>
+    <sections>
+      <label>Informações sobre o relacionamento</label>
+      <section>Relationship Information</section>
+    </sections>
+  </layouts>
+  <nameFieldLabel>Número do relacionamento</nameFieldLabel>
+  <standardFields>
+    <name>Name</name>
+    <label>Número do relacionamento</label>
+  </standardFields>
+  <gender>Masculine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Relacionamento</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Relacionamentos</value>
+  </caseValues>
+</CustomObjectTranslation>

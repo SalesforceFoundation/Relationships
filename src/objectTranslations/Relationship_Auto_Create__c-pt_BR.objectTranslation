@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+  <fields>
+    <name>Campaign_Types__c</name>
+    <help>Tipos de campanha qualificáveis para criação automática deste membro de campanha. (Ficará em branco para criação automática de contato.)</help>
+    <label>Tipos de campanha</label>
+  </fields>
+  <fields>
+    <name>Field__c</name>
+    <help>A inserção ou atualização de campo que aciona a criação automática do relacionamento</help>
+    <label>Campo</label>
+  </fields>
+  <fields>
+    <name>Object__c</name>
+    <help>O objeto com o qual este relacionamento automático está associado</help>
+    <label>Objeto</label>
+  </fields>
+  <fields>
+    <name>Relationship_Type__c</name>
+    <help>O tipo de relacionamento a ser criado entre o objeto base e o objeto de pesquisa. O objeto de pesquisa receberá a relação recíproca, se estiver disponível.</help>
+    <label>Tipo de relacionamento</label>
+  </fields>
+  <gender>Feminine</gender>
+  <caseValues>
+    <plural>false</plural>
+    <value>Criação automática de relacionamento</value>
+  </caseValues>
+  <caseValues>
+    <plural>true</plural>
+    <value>Criações automáticas de relacionamentos</value>
+  </caseValues>
+</CustomObjectTranslation>

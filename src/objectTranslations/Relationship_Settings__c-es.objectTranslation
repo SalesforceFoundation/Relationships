@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Configuración de Relación</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Configuraciones de Relaciones</value>
     </caseValues>
     <fields>
         <help>Se eliminan los duplicados de relaciones creadas automáticamente para evitar la creación de registros duplicados entre contactos. Al seleccionarse desactiva este comportamiento y permite la creación de múltiples relaciones del mismo tipo entre contactos.</help>
@@ -53,5 +53,5 @@
         <label>Id del campo de Id de nombre de relación</label>
         <name>Relationship_Name_Id_Field_Id__c</name>
     </fields>
-    <gender><!-- Feminine --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

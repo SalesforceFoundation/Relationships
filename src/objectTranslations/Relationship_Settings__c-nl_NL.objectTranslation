@@ -2,11 +2,11 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Relatie-instelling</value>
     </caseValues>
     <caseValues>
         <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Relatie-instellingen</value>
     </caseValues>
     <fields>
         <help>Autom. gemaakte relaties worden autom. van duplicaten ontdaan om dup.-records voor Relatie tussen twee contactpersonen te vermijden. Selecteren: uitschakelen van werking en maken van meerdere relaties van zelfde type tussen twee contactpersonen toestaan.</help>
@@ -53,5 +53,5 @@
         <label>ID van veld ID van naam van relatie</label>
         <name>Relationship_Name_Id_Field_Id__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

@@ -5,11 +5,11 @@
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
-        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Hombre</label>
+        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Mujer</label>
         <name>Female</name>
     </customLabels>
     <customLabels>
-        <label>Male,Männlich,男性,Masculin,Masculino,Man,Mujer</label>
+        <label>Male,Männlich,男性,Masculin,Masculino,Man,Hombre</label>
         <name>Male</name>
     </customLabels>
     <customLabels>
@@ -21,7 +21,7 @@
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>Met Automatisch gemaakte relaties kan een aangepast opzoekveld van Contactpersoon voor de objecten Contactpersoon of Campagnelid automatisch via een trigger het maken van een nieuw type Relatie van uw keuze activeren. Wellicht hebt u bijvoorbeeld een opzoekveld &quot;Verwezen door&quot; voor het object Campagnelid om voor te stellen wanneer een in uw organisatie nieuw iemand is meegebracht naar een event door een bestaande volmachtgever. Zie de &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP-documentatie&lt;/a&gt; voor meer informatie.</label>
+        <label>Met Automatisch gemaakte relaties kan een aangepast opzoekveld van Contactpersoon voor de objecten Contactpersoon of Campagnelid automatisch via een trigger het maken van een nieuw type Relatie van uw keuze activeren. Wellicht hebt u bijvoorbeeld een opzoekveld &quot;Verwezen door&quot; voor het object Campagnelid om voor te stellen wanneer een in uw organisatie nieuw iemand is meegebracht naar een event door een bestaande volmachtgever.</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
@@ -35,7 +35,7 @@ Er zijn meer dan 100 aangepaste velden gedefinieerd voor het object Contactperso
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>NPSP gebruikt de instellingen in deze lijst om de wederzijdse relaties te bepalen. Zie de &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP-documentatie&lt;/a&gt; voor een volledige uitleg van de manier waarop deze instellingen functioneren, plus voorbeelden.</label>
+        <label>NPSP gebruikt de instellingen in deze lijst om de wederzijdse relaties te bepalen.</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
@@ -46,4 +46,4 @@ Er zijn meer dan 100 aangepaste velden gedefinieerd voor het object Contactperso
         <label>Instellingen voor Relaties</label>
         <name>Relationships_Settings</name>
     </customTabs>
-</Translations>
+    </Translations>

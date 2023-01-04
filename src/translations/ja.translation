@@ -5,11 +5,11 @@
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
-        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Hombre</label>
+        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Mujer</label>
         <name>Female</name>
     </customLabels>
     <customLabels>
-        <label>Male,Männlich,男性,Masculin,Masculino,Man,Mujer</label>
+        <label>Male,Männlich,男性,Masculin,Masculino,Man,Hombre</label>
         <name>Male</name>
     </customLabels>
     <customLabels>
@@ -21,13 +21,13 @@
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>自動リレーションでは、任意の新規リレーション種別の作成をトリガする個人オブジェクトまたはキャンペーンメンバーオブジェクトの独自のカスタム参照項目を識別できます。たとえば、キャンペーンメンバーから個人への「参照」ルックアップでは、2 人の個人間に「参照元」と「参照先」のリレーションを作成できます。 詳細は、&lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP ドキュメント&lt;/a&gt;を参照してください。</label>
+        <label>自動リレーションでは、任意の新規リレーション種別の作成をトリガする取引先責任者オブジェクトまたはキャンペーンメンバーオブジェクトの独自のカスタム参照項目を識別できます。たとえば、キャンペーンメンバーから取引先責任者への「参照」ルックアップでは、2 人の取引先責任者間に「参照元」と「参照先」のリレーションを作成できます。</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
         <label>FieldsDescribes の制限を超えました。使用可能なすべての項目を表示できない可能性があります。  
 
-100 個を超えるカスタム項目が個人オブジェクトまたはキャンペーンメンバーオブジェクトで定義されています。使用する項目が表示されていない場合、必要に応じてこの自動作成レコードを手動で入力してください。[設定] -&gt; [開発] -&gt; [カスタム設定] に移動して [リレーションの自動作成] の横にある [管理] をクリックし、[新規] をクリックして新規レコードを手動で入力します。項目表示ラベルではなく API 参照名を使用して、新規リレーションレコードをトリガする項目を特定します。</label>
+100 個を超えるカスタム項目が取引先責任者オブジェクトまたはキャンペーンメンバーオブジェクトで定義されています。使用する項目が表示されていない場合、必要に応じてこの自動作成レコードを手動で入力してください。[設定] -&gt; [開発] -&gt; [カスタム設定] に移動して [リレーションの自動作成] の横にある [管理] をクリックし、[新規] をクリックして新規レコードを手動で入力します。項目表示ラベルではなく API 参照名を使用して、新規リレーションレコードをトリガする項目を特定します。</label>
         <name>RelationshipsCustomFieldOverload</name>
     </customLabels>
     <customLabels>
@@ -35,7 +35,7 @@
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>NPSP は、このリストの設定を使用して相互関係を判断します。これらの設定の仕組みの詳細と例は、&lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP ドキュメント&lt;/a&gt;を参照してください。</label>
+        <label>NPSP は、このリストの設定を使用して相互関係を判断します。</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
@@ -46,4 +46,4 @@
         <label>リレーション設定</label>
         <name>Relationships_Settings</name>
     </customTabs>
-</Translations>
+    </Translations>

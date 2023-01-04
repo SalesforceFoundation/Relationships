@@ -5,11 +5,11 @@
         <name>AutoCreateFieldError</name>
     </customLabels>
     <customLabels>
-        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Hombre</label>
+        <label>Female,Weiblich,女性,Féminin,Femenino,Vrouw,Mujer</label>
         <name>Female</name>
     </customLabels>
     <customLabels>
-        <label>Male,Männlich,男性,Masculin,Masculino,Man,Mujer</label>
+        <label>Male,Männlich,男性,Masculin,Masculino,Man,Hombre</label>
         <name>Male</name>
     </customLabels>
     <customLabels>
@@ -21,7 +21,7 @@
         <name>Relationship_Split</name>
     </customLabels>
     <customLabels>
-        <label>Anhand der automatischen Beziehungen können Sie Ihre benutzerdefinierten Nachschlagefelder in den Kontakt- oder Kampagnenmitglieder-Objekten erkennen, die die Erstellung eines neuen Beziehungstyps Ihrer Wahl auslösen. Beispielsweise können haben Sie ein Referenz-Nachschlagefeld im Objekt &quot;Kampagnenmitglied&quot;, um darzustellen, wenn eine Person, die neu in Ihrer Organisation ist, von einem bestehenden Mitglied zu einer Veranstaltung mitgebracht wird. Weitere Informationen finden Sie in der &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP Dokumentation&lt;/a&gt;.</label>
+        <label>Anhand der automatischen Beziehungen können Sie Ihre benutzerdefinierten Nachschlagefelder in den Kontakt- oder Kampagnenmitglieder-Objekten erkennen, die die Erstellung eines neuen Beziehungstyps Ihrer Wahl auslösen. Beispielsweise können haben Sie ein Referenz-Nachschlagefeld im Objekt &quot;Kampagnenmitglied&quot;, um darzustellen, wenn eine Person, die neu in Ihrer Organisation ist, von einem bestehenden Mitglied zu einer Veranstaltung mitgebracht wird.</label>
         <name>RelationshipsAutoDescription</name>
     </customLabels>
     <customLabels>
@@ -35,7 +35,7 @@ Es gibt mehr als 100 benutzerdefinierte Felder, die im Objekt &quot;Kontakt&quot
         <name>RelationshipsErrorsDescription</name>
     </customLabels>
     <customLabels>
-        <label>Das NPSP verwendet die Einstellungen in dieser Liste, um wechselseitige Beziehungen festzulegen. Eine vollständige Erläuterung dazu, wie diese Einstellungen funktionieren, sowie Beispiele dazu finden Sie in der &lt;a href=&quot;https://powerofus.force.com/NPSP_Relationships_Settings&quot; target=&quot;_blank&quot;&gt;NPSP-Dokumentation&lt;/a&gt;.</label>
+        <label>Das NPSP verwendet die Einstellungen in dieser Liste, um wechselseitige Beziehungen festzulegen.</label>
         <name>RelationshipsLookupDescription</name>
     </customLabels>
     <customLabels>
@@ -46,4 +46,4 @@ Es gibt mehr als 100 benutzerdefinierte Felder, die im Objekt &quot;Kontakt&quot
         <label>Einstellungen für Beziehungen</label>
         <name>Relationships_Settings</name>
     </customTabs>
-</Translations>
+    </Translations>

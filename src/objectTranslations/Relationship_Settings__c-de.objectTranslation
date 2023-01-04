@@ -3,42 +3,42 @@
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellung</value>
     </caseValues>
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellungen</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellung</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellungen</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellung</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellungen</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellung</value>
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
         <plural>true</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>Beziehungseinstellungen</value>
     </caseValues>
     <fields>
         <help>Duplikate autom. erstellter Bez. werden autom. entfernt, damit zwischen zwei Kontakten keine doppelten Bez.datens. erstellt werden. Zur Deakt. dieses Verhaltens und zum Zulassen der Erstell. mehrerer Bez. desselben Typs zw. zwei Kontakten Kontrollk. akt.</help>
@@ -85,5 +85,5 @@
         <label>Kennung d. Felds mit Kenn. d. Bez.namens</label>
         <name>Relationship_Name_Id_Field_Id__c</name>
     </fields>
-    <gender><!-- Neuter --></gender>
+    <gender>Feminine</gender>
 </CustomObjectTranslation>

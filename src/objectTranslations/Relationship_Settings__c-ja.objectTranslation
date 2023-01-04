@@ -2,10 +2,10 @@
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
-        <value><!-- Relationship Settings --></value>
+        <value>リレーション設定</value>
     </caseValues>
     <fields>
-        <help>自動作成されたリレーションは、2 つの個人間で重複リレーションレコードが作成されることを避けるため、自動的に重複が排除されます。このボックスをオンにするとこの動作が無効になり、2 つの個人間で同じ種別の複数のリレーションが許可されます。</help>
+        <help>自動作成されたリレーションは、2 つの取引先責任者間で重複リレーションレコードが作成されることを避けるため、自動的に重複が排除されます。このボックスをオンにするとこの動作が無効になり、2 つの取引先責任者間で同じ種別の複数のリレーションが許可されます。</help>
         <label>自動作成された重複リレーションを許可</label>
         <name>Allow_AutoCreated_Duplicates__c</name>
     </fields>
@@ -30,7 +30,7 @@
         <name>Force_Synchronous_Auto_Create__c</name>
     </fields>
     <fields>
-        <help>相互関係を判断するための個人の性別の定義に使用されるカスタム項目</help>
+        <help>相互関係を判断するための取引先責任者の性別の定義に使用されるカスタム項目</help>
         <label>性別項目</label>
         <name>Gender_Field__c</name>
     </fields>
