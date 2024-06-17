@@ -1,10 +1,8 @@
 Nonprofit Success Pack - Relationships
 =================================================
 
-The Nonprofit Success Pack (NPSP) is available as 5 managed packages.
+The Nonprofit Success Pack (NPSP) is available as 6 managed packages.
 This is the Relationships package.  
-master branch contains the latest patched release of Relationships available 'in the wild'
-dev branch contains larger code/configuration changes for the next version, and may or may not be stable 
 
 **Relationships**
 
@@ -13,26 +11,28 @@ dev branch contains larger code/configuration changes for the next version, and 
 
 For more information go to [http://www.salesforce.org/nonprofit/nonprofit-success-pack](http://www.salesforce.org/nonprofit/nonprofit-success-pack) 
 
-How do I log an issue?
 ---
 
-Issue logging for the Nonprofit Success Pack has moved!  All issues for the Relationships package should now be logged [here](https://github.com/SalesforceFoundation/Cumulus/issues/new).  All existing open issues have been moved to the [new location](https://github.com/SalesforceFoundation/Cumulus/issues?labels=npe4&page=1&state=open).
+### For Nonprofit Success Pack Users and admins
 
-If your issue applies to older versions of the stand-alone Affiliations package, please post them in the [Nonprofit Success Pack Group](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHitSAE)
+* Check out existing [Nonprofit feature and enhancement requests](https://ideas.salesforce.com/s/search#t=All&sort=relevancy&f:@sfcategoryfull=[Nonprofit%7CNonprofit%20Cloud,Nonprofit%7CNonprofit%20Success%20Pack%20(NPSP)%20-%20Managed%20Package]).
+* [Ask questions or get help with the Nonprofit Success Pack](https://trailhead.salesforce.com/trailblazer-community/groups/0F94S000000kHitSAE)
+* [Ask for support or questions with other Nonprofit Users and Partners](https://trailhead.salesforce.com/trailblazer-community/groups/0F9300000001ocxCAA)
+* [Nonprofit Success Pack (NPSP) Documentation](https://help.salesforce.com/s/articleView?id=sfdo.Nonprofit_Success_Pack.htm)
+* [Release Notes](https://sfdc.co/bnL4Cb)
+* [Known Issues](https://issues.salesforce.com/#f[sfcategoryfull]=Nonprofit%7CNonprofit%20Success%20Pack%20(NPSP)%20-%20Managed%20Package)
 
-Installation
----
+###  Try out the Nonprofit Success Pack
 
-* This code can be deployed into a Salesforce organization using Eclipse or Ant
-* The master branch contain the most current release available via managed package
-* The dev branch contains the development source for the next major Recurring Donations release
+You can install NPSP utilizing our custom application installer into any Developer Edition, Sandbox or Enterprise Edition Salesforce org.
 
+* [NPSP Installer](https://install.salesforce.org/products/npsp)
 
-Release Notes
----
-Available [here](https://github.com/SalesforceFoundation/Relationships/wiki/Release-Notes)
+### Try out the New Nonprofit Cloud
+
+* [Nonprofit Cloud Learning Org Signup](https://help.salesforce.com/s/articleView?id=sfdo.NPC_Create_Nonprofit_Cloud_Trial_Org.htm&type=5)
 
 
-Meta
-----
-Released under the [BSD license](http://www.opensource.org/licenses/BSD-3-Clause).
+### Meta
+
+* Released under the [BSD license](http://www.opensource.org/licenses/BSD-3-Clause).
