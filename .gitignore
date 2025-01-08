@@ -26,3 +26,5 @@ Referenced Packages
 build.properties
 salesforce.schema
 .cci
+.sfdx
+.sf
