@@ -79,6 +79,7 @@
         <members>Contact-iw</members>
         <members>Contact-ja</members>
         <members>Contact-nl_NL</members>
+        <members>Contact-pt_BR</members>
         <members>Relationship_Auto_Create__c-de</members>
         <members>Relationship_Auto_Create__c-en_GB</members>
         <members>Relationship_Auto_Create__c-en_US</members>
@@ -87,6 +88,7 @@
         <members>Relationship_Auto_Create__c-iw</members>
         <members>Relationship_Auto_Create__c-ja</members>
         <members>Relationship_Auto_Create__c-nl_NL</members>
+        <members>Relationship_Auto_Create__c-pt_BR</members>
         <members>Relationship_Error__c-de</members>
         <members>Relationship_Error__c-en_GB</members>
         <members>Relationship_Error__c-en_US</members>
@@ -95,6 +97,7 @@
         <members>Relationship_Error__c-iw</members>
         <members>Relationship_Error__c-ja</members>
         <members>Relationship_Error__c-nl_NL</members>
+        <members>Relationship_Error__c-pt_BR</members>
         <members>Relationship_Lookup__c-de</members>
         <members>Relationship_Lookup__c-en_GB</members>
         <members>Relationship_Lookup__c-en_US</members>
@@ -103,6 +106,7 @@
         <members>Relationship_Lookup__c-iw</members>
         <members>Relationship_Lookup__c-ja</members>
         <members>Relationship_Lookup__c-nl_NL</members>
+        <members>Relationship_Lookup__c-pt_BR</members>
         <members>Relationship_Settings__c-de</members>
         <members>Relationship_Settings__c-en_GB</members>
         <members>Relationship_Settings__c-en_US</members>
@@ -111,6 +115,7 @@
         <members>Relationship_Settings__c-iw</members>
         <members>Relationship_Settings__c-ja</members>
         <members>Relationship_Settings__c-nl_NL</members>
+        <members>Relationship_Settings__c-pt_BR</members>
         <members>Relationship__c-de</members>
         <members>Relationship__c-en_GB</members>
         <members>Relationship__c-en_US</members>
@@ -119,6 +124,7 @@
         <members>Relationship__c-iw</members>
         <members>Relationship__c-ja</members>
         <members>Relationship__c-nl_NL</members>
+        <members>Relationship__c-pt_BR</members>
         <name>CustomObjectTranslation</name>
     </types>
     <types>
@@ -143,6 +149,7 @@
         <members>iw</members>
         <members>ja</members>
         <members>nl_NL</members>
+        <members>pt_BR</members>
         <name>Translations</name>
     </types>
     <types>
